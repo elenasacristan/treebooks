@@ -1,0 +1,8 @@
+notas.txt
+env.py
+.venv/
+.vscode/
+*.sqlite3
+__pycache__
+*.pyc
+static/
