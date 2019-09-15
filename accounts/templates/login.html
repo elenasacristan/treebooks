@@ -6,13 +6,10 @@
 
 {% block content %}
 
-<!-- ========================= SECTION MAIN ========================= -->
-<section class="section-main bg padding-top-sm">
-    <div class="container-fluid">
-        Login form here
-    </div> <!-- container .//  -->
-</section>
-<!-- ========================= SECTION MAIN END// ========================= -->
-
+<form method="POST">
+    {% csrf_token %}
+    {{ login_form }}
+    <button type="submit">Login</button>
+</form>
 
 {% endblock%}
