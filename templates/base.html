@@ -50,15 +50,15 @@
                     <div class="col-auto ml-auto">
                         <ul>
                             <li><a href=""><i class="fa fa-search"></i></a></li>
-                            <li>
-                                <a href=""><i class="fa fa-shopping-cart"></i></a>
-                            </li>
-                            <li>
-                                <a href="{% url 'login' %}"><i class="fa fa-user"></i></a>
-                            </li>
-                            <li>
-                                <a href="{% url 'logout' %}"><i class="fa fa-sign-out-alt"></i></a>
-                            </li>
+
+                            <!-- will display the login icon or the sign out icon depending
+                                 on if the user is already loged in or not -->
+                            {% if user.is_authenticated %}
+                            <li><a href=""><i class="fa fa-shopping-cart"></i></a></li>
+                            <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out-alt"></i></a></li>
+                            {% else %}
+                            <li><a href="{% url 'login' %}"><i class="fa fa-user"></i></a></li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>
@@ -82,13 +82,15 @@
                         <a class="nav-link" href="#">books</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="#">our projects</a>
                     </li>
+                    {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="#">profile</a>
                     </li>
+                    {% endif %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="#">contact us</a>
                     </li>
                 </ul>
             </div>
