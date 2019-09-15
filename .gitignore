@@ -6,3 +6,4 @@ env.py
 __pycache__
 *.pyc
 static/
+links.txt
