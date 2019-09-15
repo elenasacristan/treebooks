@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
-from .forms import LoginForm
+from .forms import LoginForm, RegistrationForm
 
 # Create your views here.
 
@@ -42,4 +42,29 @@ def logout(request):
     auth.logout(request)
     messages.success(request,'You have been succesfully loged out')
     return redirect (reverse('index'))
+
+
+def registration(request):
+    if request.user.is_authenticated:
+        return redirect(reverse('index'))
+
+    if request.method == 'POST':
+        registration_form = RegistrationForm(request.POST)
+
+        if registration_form.is_valid():
+            registration_form.save()
+
+            user = auth.authenticate(username = request.POST['username'],
+                                    password = request.POST['password1'])
+            
+            if user:
+                auth.login(request=request, user=user)
+                messages.success(request, 'You have been succesfully registered')
+                return redirect(reverse('index'))
+            else:
+                messages.error(request, 'We were unable to register your account at this time')
+    else:
+        registration_form = RegistrationForm()
+    
+    return render(request, 'registration.html', {'registration_form':registration_form})
 
