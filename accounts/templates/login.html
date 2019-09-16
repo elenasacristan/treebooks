@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load bootstrap_tags %}
+
 {% load staticfiles %}
 
 {% block title %}Login{% endblock %}
@@ -8,8 +10,8 @@
 
 <form method="POST">
     {% csrf_token %}
-    {{ login_form }}
-    <button type="submit">Login</button>
+    {{ login_form | as_bootstrap}}
+    <button type="submit" class="btn btn-default">Login</button>
     <p>New user? create your account <a href="{% url 'registration' %}">here</a></p>
     <p><a href="{% url 'password_reset' %}">Reset password</a></p>
 </form>
