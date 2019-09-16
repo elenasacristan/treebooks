@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}{{user}}'s Profile{% endblock %}
+
+{% block content %}
+
+{{ profile.email }}
+
+
+<p>Create model and form</p>
+
+<h2>Personal details</h2>
+<ul>
+    <li>Profile image</li>
+    <li>Full name</li>
+    <li>Borough</li>
+    <li>DOB</li>
+    <li>Telephone</li>
+    <li>email</li>
+</ul>
+
+<h2>Membership details</h2>
+<ul>
+    <li>Member since:....</li>
+    <li>Currently reading "sdfsd"/ No reading at the moment (link find your next book to read)</li>
+    <li>If reading and "store delivery option"-> Return to store on the 12/12/18</li>
+    <li>If reading and "postal delivery option"-> Book collection by the 12/12/18 (if added Postal delivery in the cart)
+    </li>
+</ul>
+
+<h2>More</h2>
+<ul>
+    <li>8 Books rented</li>
+    <li>In waiting list for 2 Books</li>
+    <li>5 Favourites</li>
+</ul>
+
+<h2>Books read</h2>
+<li>Book 1<a href="">Leave a review</a></li>
+<li>Book 2<a href="">Leave a review</a></li>
+<li>Book 3</li>
+<li>Book 4</li>
+<li>Book 5<a href="">Leave a review</a></li>
+
+<h2>Books in waiting list (order by position in waiting list)</h2>
+<li>Book 1 - you are next in the list<a href="">See waiting list</a></li>
+<li>Book 2 - you are second in the list<a href="">See waiting list</a></li>
+
+<h2>Favourites</h2>
+<li>Book 1</li>
+<li>Book 2</li>
+</ul>
+{% endblock %}

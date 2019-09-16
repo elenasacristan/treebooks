@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from .forms import LoginForm, RegistrationForm
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -45,6 +46,9 @@ def logout(request):
 
 
 def registration(request):
+    '''Registration page'''
+
+    '''If the user is already logged in it redirects them to the index page'''
     if request.user.is_authenticated:
         return redirect(reverse('index'))
 
@@ -54,10 +58,13 @@ def registration(request):
         if registration_form.is_valid():
             registration_form.save()
 
+            '''Checks that user and password are valid and if
+            they are returns a User object'''
             user = auth.authenticate(username = request.POST['username'],
                                     password = request.POST['password1'])
             
             if user:
+                '''If the user and password are correct the log the user in'''
                 auth.login(request=request, user=user)
                 messages.success(request, 'You have been succesfully registered')
                 return redirect(reverse('index'))
@@ -67,4 +74,10 @@ def registration(request):
         registration_form = RegistrationForm()
     
     return render(request, 'registration.html', {'registration_form':registration_form})
+
+@login_required
+def user_profile(request):
+    '''The user profile page'''
+    profile = User.objects.get(email=request.user.email)
+    return render(request, 'profile.html', {'profile':profile})
 
