@@ -72,18 +72,18 @@
                 <span class="navbar-toggler-icon "></span>
             </button>
             <span class="navbar-brand w-100 "><a href="{% url 'index' %}"><img class="logo"
-                        src="{% static 'images/project/logo8.png' %}"></a></span>
+                        src="{% static 'images/project/logotext.png' %}"></a></span>
 
             <div class="navbar-collapse collapse w-100 justify-content-center" id="navbar5">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">about</a>
+                        <a class="nav-link" href="{% url 'about' %}">about</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">books</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">our projects</a>
+                        <a class="nav-link" href="{% url 'projects' %}">our projects</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
@@ -91,7 +91,7 @@
                     </li>
                     {% endif %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">contact us</a>
+                        <a class="nav-link" href="{% url 'contact' %}">contact us</a>
                     </li>
                 </ul>
             </div>
