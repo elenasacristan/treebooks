@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
+from .models import Profile
 
 
 
@@ -22,7 +23,7 @@ class RegistrationForm(UserCreationForm):
     
     class Meta:
         model = User
-        fields = ['email', 'username', 'password1', 'password2']
+        fields = ['first_name','last_name', 'email', 'username', 'password1', 'password2']
 
 
     def clean_email(self):
@@ -45,3 +46,9 @@ class RegistrationForm(UserCreationForm):
             raise forms.ValidationError(u'The passwords must match')
 
         
+class UserProfileForm(forms.ModelForm):
+    '''Form to enter additional fields'''
+    class Meta:
+        model = Profile
+        # fields = ['subscribe','test']
+        fields = ['subscribe','profile_img','test']

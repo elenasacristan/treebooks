@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
-from .forms import LoginForm, RegistrationForm
+from .forms import LoginForm, RegistrationForm, UserProfileForm
 from django.contrib.auth.models import User
+from .models import Profile
 
 # Create your views here.
 
@@ -54,9 +55,20 @@ def registration(request):
 
     if request.method == 'POST':
         registration_form = RegistrationForm(request.POST)
+        profile_form = UserProfileForm(request.POST, request.FILES)
 
-        if registration_form.is_valid():
-            registration_form.save()
+        if registration_form.is_valid() and profile_form.is_valid():
+            user = registration_form.save()
+
+            '''Now I create a new profile using the data from the form 
+            I use commit=False so I don't save it to the db'''
+            profile = profile_form.save(commit=False)
+
+            '''Here is we we indicate the OneToOne'''
+            profile.user = user
+
+            '''This should save my user'''
+            profile.save()
 
             '''Checks that user and password are valid and if
             they are returns a User object'''
@@ -72,12 +84,14 @@ def registration(request):
                 messages.error(request, 'We were unable to register your account at this time')
     else:
         registration_form = RegistrationForm()
-    
-    return render(request, 'registration.html', {'registration_form':registration_form})
+        profile_form = UserProfileForm()
+
+    return render(request, 'registration.html', {'registration_form':registration_form, 'profile_form':profile_form})
 
 @login_required
 def user_profile(request):
     '''The user profile page'''
-    profile = User.objects.get(email=request.user.email)
+    profile = Profile.objects.get(user__email=request.user.email)
+    
     return render(request, 'profile.html', {'profile':profile})
 

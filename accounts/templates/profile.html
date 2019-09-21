@@ -6,7 +6,28 @@
 
 {% block content %}
 
-{{ profile.email }}
+{{profile.test}}<br>
+{{profile.user.email}}
+{{ MEDIA_URL }}{{profile.profile_img}}
+
+<!-- <img src='{{MEDIA_URL}}{{profile.profile_img}}'> -->
+
+<div class="profile" style="background-image: url('{{ MEDIA_URL }}{{ profile.profile_img }}')"></div>
+
+
+<br>
+-------------------
+
+
+<br>
+-------------------<br>
+-------------------<br>
+-------------------
+
+
+
+
+
 
 
 <p>Create model and form</p>
@@ -26,7 +47,8 @@
     <li>Member since:....</li>
     <li>Currently reading "sdfsd"/ No reading at the moment (link find your next book to read)</li>
     <li>If reading and "store delivery option"-> Return to store on the 12/12/18</li>
-    <li>If reading and "postal delivery option"-> Book collection by the 12/12/18 (if added Postal delivery in the cart)
+    <li>If reading and "postal delivery option"-> Book collection by the 12/12/18 (if added Postal delivery in the
+        cart)
     </li>
 </ul>
 
