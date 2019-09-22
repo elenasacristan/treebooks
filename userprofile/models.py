@@ -1,3 +1,8 @@
+'''
+I have created the userprofile app following the steps in the following tutorial
+https://www.youtube.com/watch?v=qLRxkStiaUg
+'''
+
 from django.db import models
 from django.contrib.auth.models import User
 

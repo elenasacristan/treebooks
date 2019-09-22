@@ -2,9 +2,6 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
-# from .models import Profile
-
-
 
 class LoginForm(forms.Form):
     '''Form to be used to log users in'''
@@ -26,14 +23,21 @@ class RegistrationForm(UserCreationForm):
         fields = ['first_name','last_name', 'email', 'username', 'password1', 'password2']
 
 
-    # def first_name(self):
-    #     first_name = self.cleaned_data.get('first_name')
-    #     return first_name
+    def clean_first_name(self):
+        first_name = self.cleaned_data.get('first_name')
+        return first_name
 
-    # def last_name(self):
-    #     first_name = self.cleaned_data.get('last_name')
-    #     return last_name
-    
+
+    def clean_last_name(self):
+        last_name = self.cleaned_data.get('last_name')
+        return last_name
+
+
+    def clean_username(self):
+        username = self.cleaned_data.get('username')
+        return username
+
+
     def clean_email(self):
         email = self.cleaned_data.get('email')
         username = self.cleaned_data.get('username')
@@ -54,9 +58,3 @@ class RegistrationForm(UserCreationForm):
             raise forms.ValidationError(u'The passwords must match')
 
         
-# class UserProfileForm(forms.ModelForm):
-#     '''Form to enter additional fields'''
-#     class Meta:
-#         model = Profile
-#         # fields = ['subscribe','test']
-#         fields = ['subscribe','profile_img','test']
