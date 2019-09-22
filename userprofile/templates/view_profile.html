@@ -1,28 +1,35 @@
 {% extends 'base.html' %}
 
+{% load bootstrap_tags %}
+
 {% load staticfiles %}
 
 {% block title %}{{user}}'s Profile{% endblock %}
 
+
 {% block content %}
 
-{{profile.test}}<br>
-{{profile.user.email}}
-{{ MEDIA_URL }}{{profile.profile_img}}
+<h2>Personal details</h2>
+First Name: {{user_profile.first_name}}<br>
+Last Name: {{user_profile.last_name}}<br>
 
-<!-- <img src='{{MEDIA_URL}}{{profile.profile_img}}'> -->
+<br><br>
+Last Name: {{user_profile.username}}<br>
 
-<div class="profile" style="background-image: url('{{ MEDIA_URL }}{{ profile.profile_img }}')"></div>
+<br><br>
+<div class="profile" style="background-image: url('{{ MEDIA_URL }}{{ user_profile.profile.profile_img }}')">
+</div>
 
+{{user_profile.profile.bio}}<br>
+
+<a href="{% url 'edit_user_profile' user_profile.id%}">Edit profile</a>
 
 <br>
--------------------
-
-
 <br>
--------------------<br>
--------------------<br>
--------------------
+<br>
+<br>
+<br>
+---------------------------------------------------------
 
 
 
