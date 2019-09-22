@@ -8,15 +8,19 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+
 class UserProfile(models.Model):
+
     '''extending the user Model using a OneToOneField'''
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     profile_img = models.ImageField(upload_to='images', default="images/default_profile.png")
-    subscribe = models.BooleanField(blank=False, default=False)
-    bio = models.TextField()
+    subscribe = models.BooleanField(blank=True, default=False)
+    bio = models.TextField(blank=True)
     dob = models.DateField(max_length=8, null=True, blank=True)
     telephone = models.CharField(max_length=20, null=True, blank=True)
+    contact_by_phone = models.BooleanField(blank=True, default=False)
+    contact_by_email = models.BooleanField(blank=True, default=False)
 
 
     def __str__(self):

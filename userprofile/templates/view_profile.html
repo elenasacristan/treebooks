@@ -8,56 +8,43 @@
 
 
 {% block content %}
-
-<h2>Personal details</h2>
-First Name: {{user_profile.first_name}}<br>
-Last Name: {{user_profile.last_name}}<br>
-
-<br><br>
-Last Name: {{user_profile.username}}<br>
-
-<br><br>
+<h3>{{user_profile.username}}</h3>
 <div class="profile" style="background-image: url('{{ MEDIA_URL }}{{ user_profile.profile.profile_img }}')">
 </div>
 
+<h3>Personal details</h3>
+First Name: {{user_profile.first_name}}<br>
+Last Name: {{user_profile.last_name}}<br>
+Date of birth: {{user_profile.profile.dob}}
+
+<h3>Contact details</h3>
+Telephone: {{user_profile.profile.Telephone}}<br>
+email: {{user_profile.email}}
+
+<h3>Contact preferences</h3>
+{% if user_profile.profile.contact_by_email and user_profile.profile.contact_by_phone %}
+by email and Telephone
+{% elif user_profile.profile.contact_by_email %}
+by email
+{% elif user_profile.profile.contact_by_phone %}
+by telephone
+{% else %}
+Not specified
+{% endif %}
+
+<h3>About you</h3>
 {{user_profile.profile.bio}}<br>
 
-<a href="{% url 'edit_user_profile' user_profile.id%}">Edit profile</a>
 
-<br>
-<br>
-<br>
-<br>
-<br>
----------------------------------------------------------
-
-
+<a class="btn btn-success" href="{% url 'edit_user_profile' user_profile.id%}">Edit profile</a>
+<br><br><br>
+-----------------
+<h3>Your membership</h3>
+member since: {{user_profile.date_joined}}<br>
+Current reading: xxxx<br>
+Return_date: dd/mm/yyyy<br>
 
 
-
-
-
-<p>Create model and form</p>
-
-<h2>Personal details</h2>
-<ul>
-    <li>Profile image</li>
-    <li>Full name</li>
-    <li>Borough</li>
-    <li>DOB</li>
-    <li>Telephone</li>
-    <li>email</li>
-</ul>
-
-<h2>Membership details</h2>
-<ul>
-    <li>Member since:....</li>
-    <li>Currently reading "sdfsd"/ No reading at the moment (link find your next book to read)</li>
-    <li>If reading and "store delivery option"-> Return to store on the 12/12/18</li>
-    <li>If reading and "postal delivery option"-> Book collection by the 12/12/18 (if added Postal delivery in the
-        cart)
-    </li>
-</ul>
 
 <h2>More</h2>
 <ul>
