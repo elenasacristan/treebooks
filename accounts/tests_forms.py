@@ -55,6 +55,59 @@ class TestAccountsForms(TestCase):
         self.assertFalse(form.is_valid())  
         self.assertEqual(form.errors['password2'],[u'The passwords must match'])
 
+    def test_both_passwords_filled_in(self):
+        form = RegistrationForm({
+            'first_name':'first_name',
+            'last_name':'last_name', 
+            'email':'email@test.es', 
+            'username':'username', 
+            'password1':'', 
+            'password2':'wwwww1111'})
+        self.assertFalse(form.is_valid())  
+        self.assertEqual(form.errors['password2'],[u'Please confirm your password'])
+
+    def test_unique_email_in_registration(self):
+        form = RegistrationForm({
+            'first_name':'first_name',
+            'last_name':'last_name', 
+            'email':'email@test.es', 
+            'username':'username', 
+            'password1':'12345abcds', 
+            'password2':'12345abcds'})
+        self.assertTrue(form.is_valid())
+        
+        form.save()
+        form2 = RegistrationForm({
+            'first_name':'first_name2',
+            'last_name':'last_name2', 
+            'email':'email@test.es', 
+            'username':'username2', 
+            'password1':'12345abcds', 
+            'password2':'12345abcds'})
+        self.assertFalse(form2.is_valid())
+        self.assertEqual(form2.errors['email'],[u'Email address must be unique'])
+
+    def test_unique_username_in_registration(self):
+        form = RegistrationForm({
+            'first_name':'first_name',
+            'last_name':'last_name', 
+            'email':'email@test.es', 
+            'username':'username', 
+            'password1':'12345abcds', 
+            'password2':'12345abcds'})
+        self.assertTrue(form.is_valid())
+        
+        form.save()
+        form2 = RegistrationForm({
+            'first_name':'first_name2',
+            'last_name':'last_name2', 
+            'email':'test@test.es', 
+            'username':'username', 
+            'password1':'12345abcds', 
+            'password2':'12345abcds'})
+        self.assertFalse(form2.is_valid())
+        self.assertEqual(form2.errors['username'],[u'A user with that username already exists.'])
+
 
     # def test_user_cannot_login_without_username(self):
     #     form = LoginForm({'username':'', 'password':'password'})
