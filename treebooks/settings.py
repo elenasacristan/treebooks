@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'accounts',
     'home',
     'userprofile',
+    'books',
     'django_forms_bootstrap',
 ]
 
