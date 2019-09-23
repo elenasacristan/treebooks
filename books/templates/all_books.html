@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load bootstrap_tags %}
+
+{% load staticfiles %}
+
+
+{% block title %}Books{% endblock %}
+
+{% block content %}
+<uL>
+    {% for book in books %}
+    <li>
+        {{ book.title }}
+        <div class="profile" style="background-image: url('{{ MEDIA_URL }}{{ book.book_img }}')">
+        </div>
+
+        {{ book.rating }}
+
+
+
+        {{ book.price_day }}
+        <a class="btn btn-default" href="{% url 'detail' book.id %}">More</a><br>
+
+        <!-- if book available -->
+        <a class="btn btn-success" href="#">Add to cart</a><br>
+        <!-- if book not available -->
+        <a class="btn btn-warning" href="#">Join waiting list</a><br>
+
+    </li>
+    {% endfor %}
+
+    </>
+
+    {% endblock%}

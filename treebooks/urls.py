@@ -3,6 +3,7 @@ from django.contrib import admin
 from accounts import urls as accounts_urls
 from home import urls as home_urls
 from userprofile import urls as profile_urls
+from books import urls as books_urls
 from home.views import index
 from django.views import static
 from .settings import MEDIA_ROOT
@@ -13,6 +14,7 @@ urlpatterns = [
     url(r'^accounts/', include(accounts_urls)),
     url(r'^home/', include(home_urls)),
     url(r'^profile/', include(profile_urls)),
+    url(r'^books/', include(books_urls)),
     url(r'media/(?P<path>.*)$', static.serve, {'document_root':MEDIA_ROOT}),
 
 ]
