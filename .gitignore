@@ -8,3 +8,5 @@ __pycache__
 static/
 links.txt
 media
+htmlcov
+.coverage
