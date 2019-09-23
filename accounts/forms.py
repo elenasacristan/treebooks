@@ -25,11 +25,17 @@ class RegistrationForm(UserCreationForm):
 
     def clean_first_name(self):
         first_name = self.cleaned_data.get('first_name')
+        
+        if not first_name:
+            raise forms.ValidationError(u'This field is required.')
         return first_name
 
 
     def clean_last_name(self):
         last_name = self.cleaned_data.get('last_name')
+        
+        if not last_name:
+            raise forms.ValidationError(u'This field is required.')
         return last_name
 
 
@@ -41,6 +47,9 @@ class RegistrationForm(UserCreationForm):
     def clean_email(self):
         email = self.cleaned_data.get('email')
         username = self.cleaned_data.get('username')
+
+        if not email:
+            raise forms.ValidationError(u'This field is required.')
 
         if User.objects.filter(email=email).exclude(username=username):
             raise forms.ValidationError(u'Email address must be unique')
