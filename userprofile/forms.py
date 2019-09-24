@@ -1,11 +1,10 @@
 from django import forms
 from .models import UserProfile
-from dobwidget import DateOfBirthWidget
 
 
 
 class UserProfileForm(forms.ModelForm):
-    
+    dob = forms.DateField(input_formats=['%d-%m-%Y'], label="Date of Birth (DD-MM-YYYY)")
     class Meta:
         model = UserProfile
         fields = [
@@ -17,7 +16,4 @@ class UserProfileForm(forms.ModelForm):
             'contact_by_phone',
             'contact_by_email'
             ]
-        widgets = {
-            'dob': DateOfBirthWidget(),
-        }
-        
+

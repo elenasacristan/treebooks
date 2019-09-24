@@ -14,7 +14,7 @@ class UserProfile(models.Model):
     '''extending the user Model using a OneToOneField'''
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
-    profile_img = models.ImageField(upload_to='images', default="images/default_profile.png", blank=True)
+    profile_img = models.ImageField(upload_to='images', default="images/default_profile.png")
     subscribe = models.BooleanField(blank=True, default=False)
     bio = models.TextField(blank=True)
     dob = models.DateField(null=True, blank=True)

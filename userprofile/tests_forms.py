@@ -37,13 +37,12 @@ class TestUserProfileForm(TestCase):
             'profile_img':image, 
             'subscribe':False, 
             'bio':'asdjklsad asdkj;s', 
-            'dob':'2010-01-01',
+            'dob':'01-12-2000',
             'telephone' : '12324',
             'contact_by_phone' : True,
             'contact_by_email' : True,
         }
         
         form = UserProfileForm(data=valid_data)
-        self.assertEqual(form.errors, 'any text to check the errors')
         self.assertTrue(form.is_valid())
      
