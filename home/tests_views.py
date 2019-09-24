@@ -3,7 +3,7 @@ from django.test import TestCase, Client
 c=Client()
 
 # Create your tests here.
-class TestAccountsViews(TestCase):
+class TestHomeViews(TestCase):
     
     def test_index_page(self):
         page = c.get("/")

@@ -53,15 +53,12 @@ class Book(models.Model):
     pages = models.IntegerField(default=0)
     avg_days = models.IntegerField(default=0)
     language_book = models.CharField(max_length=20, default='')
+    available = models.BooleanField(default=True)
+    current_reader = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     
 
     def __str__(self):
         return self.title
 
 
-class StatusBook(models.Model):
-    reader = models.ForeignKey(User, on_delete=models.CASCADE, default='')
-    book = models.ForeignKey(Book, on_delete=models.CASCADE, default='')
-    available = models.BooleanField(default=False)
-    rented_date =  models.DateField(default=datetime.now)
-    available_date = models.DateField(default=datetime.now)
+

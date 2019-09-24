@@ -5,7 +5,8 @@ from .models import Book
 
 def view_all_books(request):
     '''
-    This view will display all the books
+    This view will display all the books 
+    sorted by publication date
     '''
     books = Book.objects.all()
     return render(request, 'all_books.html', {'books':books})

@@ -8,27 +8,26 @@
 {% block title %}Detail{% endblock %}
 
 {% block content %}
-<uL>
+<div>
 
-    <li>
-        {{ book.title }}
-        {{ book.author }}
-        {{ book.category }}
-        {{ book.rating }}
+    title:{{ book.title }}<br>
+    Views:{{ book.views }}<br>
+    By:{{ book.author }}<br>
+    Category:{{ book.category }}<br>
+    Rating:{{ book.rating }}<br>
 
-        <div class="profile" style="background-image: url('{{ MEDIA_URL }}{{ book.book_img }}')">
-        </div>
-        {{ book.ISBN }}
-        {{ book.publication_date }}
-        {{ book.summary }}
-        {{ book.format_book }}
-        {{ book.price_day }}
-        {{ book.pages }}
-        {{ book.avg_days }}
-        {{ book.language_book }}
-    </li>
+    <div class="profile" style="background-image: url('{{ MEDIA_URL }}{{ book.book_img }}')">
+    </div>
+    ISBN:{{ book.ISBN }}<br>
+    Publication date: {{ book.publication_date }}<br>
+    Summary:{{ book.summary }}<br>
+    Format: {{ book.format_book }}<br>
+    Price/day:{{ book.price_day }}<br>
+    Pages:{{ book.pages }}<br>
+    Average days needed to read it:{{ book.avg_days }}<br>
+    Language:{{ book.language_book }}<br>
 
 
-    </>
+</div>
 
-    {% endblock%}
+{% endblock%}
