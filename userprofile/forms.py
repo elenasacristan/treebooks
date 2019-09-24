@@ -3,6 +3,7 @@ from .models import UserProfile
 from dobwidget import DateOfBirthWidget
 
 
+
 class UserProfileForm(forms.ModelForm):
     
     class Meta:

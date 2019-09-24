@@ -14,10 +14,10 @@ class UserProfile(models.Model):
     '''extending the user Model using a OneToOneField'''
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
-    profile_img = models.ImageField(upload_to='images', default="images/default_profile.png")
+    profile_img = models.ImageField(upload_to='images', default="images/default_profile.png", blank=True)
     subscribe = models.BooleanField(blank=True, default=False)
     bio = models.TextField(blank=True)
-    dob = models.DateField(max_length=8, null=True, blank=True)
+    dob = models.DateField(null=True, blank=True)
     telephone = models.CharField(max_length=20, null=True, blank=True)
     contact_by_phone = models.BooleanField(blank=True, default=False)
     contact_by_email = models.BooleanField(blank=True, default=False)
