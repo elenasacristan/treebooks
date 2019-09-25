@@ -23,24 +23,26 @@
                         <img src="{% static 'images/project/slide1.jpg' %}" class="d-block img-fluid " alt="...">
 
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Discover new books</h5>
                             <p>Rent a book today.</p>
+                            <a class='btn btn-success' href={% url 'view_all_books' %}>See our collection</a>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="{% static 'images/project/slide2b.jpg' %}" class="d-block img-fluid" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Reforestation projects</h5>
                             <p>In the last 2 years we have raised money to contribute to the reforestation
                                 of 5 national parks.</p>
+                            <a class='btn btn-success' href={% url 'projects' %}>Find out more</a>
+
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="{% static 'images/project/slide.jpg' %}" class="d-block img-fluid" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Donate your all Books</h5>
                             <p>Get in touch with us to organise a collection. By donating your books you are
                                 helping to save more trees.</p>
+                            <a class='btn btn-success' href={% url 'donate' %}>Donate Book</a>
+
                         </div>
                     </div>
                 </div>
@@ -54,9 +56,35 @@
                 </a>
             </div>
         </div>
-
-
     </div>
+
+    <div class="container-fluid index">
+        <div class="row">
+            <div class="col text-center">
+                <h2>Register with us and you will...</h2>
+            </div>
+        </div>
+        <div class="row justify-content-between text-center">
+            <div class="col-sm-12 col-md-5 col-lg-3 circles shadow1 mx-auto">
+                <img src={% static 'images/project/book.png' %}>
+                <h3>Discover new books</h3>
+            </div>
+            <div class="col-sm-12 col-md-5 col-lg-3 circles shadow2 mx-auto">
+                <img src={% static 'images/project/tree.png' %}>
+                <h3>Help to save the planet</h3>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3 circles shadow3 mx-auto">
+                <img src={% static 'images/project/money.png' %}>
+                <h3>Save money</h3>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col">
+                <a class="btn btn-success text-center" href="{% url 'registration' %}">Register</a>
+            </div>
+        </div>
+    </div>
+
 
 
 

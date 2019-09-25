@@ -62,7 +62,9 @@
                             <!-- will display the login icon or the sign out icon depending
                                  on if the user is already loged in or not -->
                             {% if user.is_authenticated %}
-                            <li><a href="{% url 'view_cart' %}"><i class="fa fa-shopping-cart"></i></a></li>
+                            <li><a href="{% url 'view_cart' %}"><i class="fa fa-shopping-cart"></i><span
+                                        class="badge badge-success">{{books_count}}</span>
+                                </a></li>
                             <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out-alt"></i></a></li>
                             {% else %}
                             <li><a href="{% url 'login' %}"><i class="fa fa-user"></i></a></li>

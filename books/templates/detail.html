@@ -41,6 +41,8 @@
             </span>
         </div>
     </form>
+    {% else %}
+    <a class="btn btn-success" href="{% url 'registration' %}">Register to be able to rent this book</a>
     {% endif %}
 
 </div>
