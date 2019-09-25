@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse
+from django.contrib import messages
 
 
 # Create your views here.
@@ -22,7 +23,14 @@ def add_to_cart(request, id):
     if the book haven't been added to the cart
     yet it will be added
     '''
-    if id not in cart:
+    # if id not in cart:
+    #     cart[id] = cart.get(id, days)
+
+    if id in cart:
+        messages.success(request, 'This book is already added to cart')
+
+    else:
+        messages.success(request, 'Book succesfully added to the cart')
         cart[id] = cart.get(id, days)
 
     '''
@@ -31,7 +39,6 @@ def add_to_cart(request, id):
     request.session['cart'] = cart
 
     return redirect('detail', id)
-    # return redirect(reverse('view_Cart'))
 
 
 
