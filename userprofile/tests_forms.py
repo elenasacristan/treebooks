@@ -8,7 +8,7 @@ from django.core.files.uploadedfile import SimpleUploadedFile
 from base64 import b64decode
 from django.core.files.base import ContentFile
 from django.core.files.uploadedfile import InMemoryUploadedFile
-from io import StringIO, BytesIO
+from io import BytesIO
 
 class TestUserProfileForm(TestCase):
 
@@ -45,4 +45,12 @@ class TestUserProfileForm(TestCase):
         
         form = UserProfileForm(data=valid_data)
         self.assertTrue(form.is_valid())
+
+    def test_correct_label_in_date_field(self):
+        form = UserProfileForm()
+        self.assertTrue(form.fields['dob'].label == 'Date of Birth (DD-MM-YYYY)')
+
+    def test_correct_format_in_date_field(self):
+        form = UserProfileForm()
+        self.assertTrue(form.fields['dob'].input_formats == ['%d-%m-%Y'])
      

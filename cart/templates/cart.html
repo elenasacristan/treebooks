@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% load bootstrap_tags %}
+
+{% load staticfiles %}
+
+
+{% block title %}Cart{% endblock %}
+
+{% block content %}
+<ul class="details text-center">
+    {% for book_item in cart_books %}
+    <li>
+        {{ book_item.book.title }}
+        <div class="profile" style="background-image: url('{{ MEDIA_URL }}{{ book_item.book.book_img }}')">
+        </div>
+
+        <form method="POST" class="form-inline" action="{% url 'adjust_cart' book_item.id %}">
+            {% csrf_token %}
+            <div class='form-group'>
+                <label for='exampleInputAmount' class='sr-only'>Update days</label>
+                <div class="input-group">
+                    <div class="input-group-addon">Days</div>
+                    <input name="days" type="number" min="0" max="365" class="form-control">
+                    <div class="input-group-addon">{{ book_item.days }}
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                Amend
+            </button>
+
+        </form>>
+        Days: {{ book_item.days }}<br>
+
+        Price: {{ book_item.book.price_day }}
+
+        Total: {{ total }}<br>
+
+        Items in cart: {{ books_count }}
+
+
+    </li>
+    {% endfor %}
+
+
+    {% endblock%}

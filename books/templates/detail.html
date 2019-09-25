@@ -26,6 +26,17 @@
     Pages:{{ book.pages }}<br>
     Average days needed to read it:{{ book.avg_days }}<br>
     Language:{{ book.language_book }}<br>
+    Price / day: {{ book.price_day }}
+
+    <form method="post" action="{% url 'add_to_cart' book.id %}">
+        {% csrf_token %}
+        <div class="input-group">
+            <input name="days" type="number" min="1" max="999" class="form-control" placeholder="Days">
+            <span class="input-group-btn">
+                <button class="btn btn-success" type="submit">Add to cart</button>
+            </span>
+        </div>
+    </form>
 
 
 </div>
