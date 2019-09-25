@@ -48,7 +48,14 @@
                 <div class="row">
                     <div class="col-auto ml-auto">
                         <ul>
-                            <li><a href=""><i class="fa fa-search"></i></a></li>
+                            <li>
+                                <form method="GET" action="{% url 'do_search' %}">
+                                    <input type="text" id="search" name="q">
+                                    <button type="submit"><i class="fa fa-search"></i></button>
+                                </form>
+
+
+                            </li>
                             <!-- will display the login icon or the sign out icon depending
                                  on if the user is already loged in or not -->
                             {% if user.is_authenticated %}

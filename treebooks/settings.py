@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'userprofile',
     'books',
     'cart',
+    'search',
     'django_forms_bootstrap',
 ]
 

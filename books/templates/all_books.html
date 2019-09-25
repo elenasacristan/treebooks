@@ -10,6 +10,8 @@
 {% block content %}
 <ul class="details text-center">
     {% for book in books %}
+
+
     <li>
         {{ book.title }}
         <div class="profile" style="background-image: url('{{ MEDIA_URL }}{{ book.book_img }}')">
@@ -22,6 +24,8 @@
 
 
     </li>
+    {% empty %}
+    We didn't find any books or authors matching your seach criteria
     {% endfor %}
 
 
