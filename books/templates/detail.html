@@ -28,7 +28,9 @@
     Language:{{ book.language_book }}<br>
     Price / day: {{ book.price_day }}<br>
 
-    On average people reads this book on {{book.avg_days}} days
+    {% if user.is_authenticated %}
+    *The minimun number of days to rent any book is 10.
+    On average people reads "{{book.title}}" this book on {{book.avg_days}} days
     <form method="post" action="{% url 'add_to_cart' book.id %}">
         {% csrf_token %}
         <div class="input-group">
@@ -39,7 +41,7 @@
             </span>
         </div>
     </form>
-
+    {% endif %}
 
 </div>
 

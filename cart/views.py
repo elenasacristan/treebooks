@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -7,9 +8,11 @@ from django.contrib import messages
 We don't need to pass the cart as a dictionary because
 the cart is available from everywhere
 '''
+@login_required
 def view_cart(request):
     return render(request, 'cart.html')
 
+@login_required
 def add_to_cart(request, id):
 
     '''
@@ -41,7 +44,7 @@ def add_to_cart(request, id):
     return redirect('detail', id)
 
 
-
+@login_required
 def adjust_cart(request, id):
     '''
     Adjust the number of days that the user

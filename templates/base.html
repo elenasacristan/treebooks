@@ -38,6 +38,10 @@
     <!-- custom javascript -->
     <script src="{% static 'js/script.js' %}" type="text/javascript"></script>
 
+    <!-- MY SCRIPTS -->
+    <script src="{% static 'js/my_scripts.js' %}" type="text/javascript"></script>
+
+
 </head>
 
 <body>
@@ -49,13 +53,12 @@
                     <div class="col-auto ml-auto">
                         <ul>
                             <li>
-                                <form method="GET" action="{% url 'do_search' %}">
+                                <form method="GET" id="search-form" action="{% url 'do_search' %}">
                                     <input type="text" id="search" name="search">
                                     <button type="submit"><i class="fa fa-search"></i></button>
                                 </form>
-
-
                             </li>
+                            <!-- <li><a href="{% url 'view_cart' %}"><i class="fa fa-search"></i></a></li> -->
                             <!-- will display the login icon or the sign out icon depending
                                  on if the user is already loged in or not -->
                             {% if user.is_authenticated %}
@@ -141,7 +144,6 @@
         </div><!-- //container -->
     </footer>
     <!-- ========================= FOOTER END // ========================= -->
-
 
 </body>
 
