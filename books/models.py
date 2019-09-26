@@ -7,10 +7,12 @@ from django.contrib.auth.models import User
 
 class Category(models.Model):
     CATEGORIES_CHOICES = (
-        ('B', 'Biography'),
-        ('N', 'Novel'),
+        ("Kid's Books", "Kid's Books"),
+        ('Politics', 'Politics'),
+        ('Self Help', 'Self Help'),
+        ('Novel', 'Novel'),
     )
-    name = models.CharField(max_length=1, choices=CATEGORIES_CHOICES)
+    name = models.CharField(max_length=15, choices=CATEGORIES_CHOICES)
     class Meta:
         verbose_name_plural = "Categories"
 
@@ -28,8 +30,8 @@ class Author(models.Model):
 
 class Book(models.Model):
     FORMAT_CHOICES = (
-            ('H', 'Hardcover'),
-            ('P', 'Paperback'),
+            ('Hardcover', 'Hardcover'),
+            ('Paperback', 'Paperback'),
         )
     STORE_CHOICES = (
                 ('1', 'Store1'),
@@ -38,7 +40,7 @@ class Book(models.Model):
 
     title = models.CharField(max_length=50, default='')
 
-    author = models.ForeignKey(Author, on_delete=models.CASCADE, default='')
+    author = models.ForeignKey(Author, on_delete=models.CASCADE,blank=True, default='')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     views = models.IntegerField(default=0, blank=True,null=True)
@@ -47,8 +49,8 @@ class Book(models.Model):
     ISBN = models.CharField(max_length=13, default='')
     publication_date = models.DateField(default=datetime.now)
     summary = models.TextField()
-    format_book = models.CharField(max_length=1, choices=FORMAT_CHOICES)
-    store = models.CharField(max_length=1, choices=STORE_CHOICES)
+    format_book = models.CharField(max_length=15, choices=FORMAT_CHOICES)
+    store = models.CharField(max_length=15, choices=STORE_CHOICES)
     price_day = models.DecimalField(decimal_places=2, max_digits=3)
     pages = models.IntegerField(default=0)
     avg_days = models.IntegerField(default=0)
