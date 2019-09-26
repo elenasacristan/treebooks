@@ -56,12 +56,16 @@
                                     </form>
                                 </li>
                                 {% if user.is_authenticated %}
-                                <li><a href="{% url 'view_cart' %}"><i class="fa fa-shopping-cart"></i><span
+                                <li class="d-none d-md-inline"><a href="{% url 'view_cart' %}"><i
+                                            class="fa fa-shopping-cart"></i><span
                                             class="badge badge-success">{{books_count}}</span>
                                     </a></li>
-                                <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out-alt"></i></a></li>
+                                <li class="d-none d-md-inline"><a href="{% url 'logout' %}"><i
+                                            class="fa fa-sign-out-alt"></i></a></li>
                                 {% else %}
-                                <li><a href="{% url 'login' %}"><i class="fa fa-user"></i></a></li>
+                                <li class="d-none d-md-inline"><a href="{% url 'login' %}"><i
+                                            class="fa fa-user"></i></a>
+                                </li>
                                 {% endif %}
                             </ul>
                         </div>
@@ -80,6 +84,16 @@
 
                 <div class="navbar-collapse collapse w-100 justify-content-center" id="navbar5">
                     <ul class="navbar-nav mx-auto">
+                        {% if user.is_authenticated %}
+                        <li class="nav-item d-block d-sm-none">
+                            <a class="nav-link" href="{% url 'view_cart' %}">Your cart - {{books_count}} books</span>
+                            </a></li>
+                        <li class="nav-item d-block d-sm-none">
+                            <a class="nav-link" href="{% url 'logout' %}">log out</a></li>
+                        {% else %}
+                        <li class="nav-item d-block d-sm-none">
+                            <a class="nav-link" href="{% url 'login' %}">log in</a></li>
+                        {% endif %}
                         <li class="nav-item active">
                             <a class="nav-link" href="{% url 'about' %}">about</a>
                         </li>
