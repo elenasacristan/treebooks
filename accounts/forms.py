@@ -11,13 +11,24 @@ class LoginForm(forms.Form):
 
 class RegistrationForm(UserCreationForm):
     '''Form used to register a new user'''
+    
+    first_name = forms.CharField(
+        widget=forms.TextInput(attrs={'placeholder': 'first_name'}))
+    last_name = forms.CharField(
+        widget=forms.TextInput(attrs={'placeholder': 'last_name'}))
+    username = forms.CharField(
+        widget=forms.TextInput(attrs={'placeholder': 'username'}))
+    email = forms.CharField(
+        widget=forms.TextInput(attrs={'placeholder': 'email'}))
     password1 = forms.CharField(
         label="Password", 
-        widget=forms.PasswordInput)
+        widget=forms.PasswordInput(
+            attrs={'placeholder': 'password'}))
     password2 = forms.CharField(
         label="Confirm the password", 
-        widget=forms.PasswordInput)
-    
+        widget=forms.PasswordInput(
+            attrs={'placeholder': 'confirm password'}))
+
     class Meta:
         model = User
         fields = ['first_name','last_name', 'email', 'username', 'password1', 'password2']
