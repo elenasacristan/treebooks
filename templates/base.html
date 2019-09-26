@@ -40,8 +40,11 @@
 
 </head>
 
-<body class="d-flex flex-column" style="min-height: 100vh">
-    <main class="flex-fill">
+<!-- <body class="d-flex flex-column" style="min-height: 100vh">
+    <main class="flex-fill"> -->
+
+<body>
+    <main>
         <header class="section-header">
 
             <section class="top-header">
@@ -79,8 +82,15 @@
                 <button class="navbar-toggler mr-2 " type="button" data-toggle="collapse" data-target="#navbar5">
                     <span class="navbar-toggler-icon "></span>
                 </button>
-                <span class="navbar-brand w-100 "><a href="{% url 'index' %}"><img class="logo"
-                            src="{% static 'images/project/logotext.png' %}"></a></span>
+                <span class="navbar-brand w-100 ">
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'view_all_books' %}">
+                        {% else %}
+                        <a href="{% url 'index' %}">
+                            {% endif %}
+                            <img class="logo" src="{% static 'images/project/logotext.png' %}">
+                        </a>
+                </span>
 
                 <div class="navbar-collapse collapse w-100 justify-content-center" id="navbar5">
                     <ul class="navbar-nav mx-auto">
@@ -127,13 +137,12 @@
         </div>
         {% endif %}
 
-        <!-- MAIN SECTION -->
-        <section class="section-main bg padding-top-sm">
-            <div class="container-fluid">
-                {% block content %}
-                {% endblock%}
-            </div>
-        </section>
+
+        <div class="container-fluid">
+            {% block content %}
+            {% endblock%}
+        </div>
+
         <!-- END MAIN SECTION -->
     </main>
 
