@@ -8,43 +8,146 @@
 {% block title %}Detail{% endblock %}
 
 {% block content %}
-<div>
 
-    title:{{ book.title }}<br>
-    Views:{{ book.views }}<br>
-    By:{{ book.author }}<br>
-    Category:{{ book.category }}<br>
-    Rating:{{ book.rating }}<br>
 
-    <div class="profile" style="background-image: url('{{ MEDIA_URL }}{{ book.book_img }}')">
-    </div>
-    ISBN:{{ book.ISBN }}<br>
-    Publication date: {{ book.publication_date }}<br>
-    Summary:{{ book.summary }}<br>
-    Format: {{ book.format_book }}<br>
-    Price/day:{{ book.price_day }}<br>
-    Pages:{{ book.pages }}<br>
-    Average days needed to read it:{{ book.avg_days }}<br>
-    Language:{{ book.language_book }}<br>
-    Price / day: {{ book.price_day }}<br>
+<div class="container-fluid detail">
+    <h2>{{ book.title }} </h2>
+    <h6 class="pull-right">({{ book.views }}views)<i class="fa fa-heart"></i></h6>
+    <div class="card">
+        <div class="row no-gutters">
+            <aside class="col-sm-5 border-right text-center">
+                <div class="rating-wrap">
+                    <ul class="rating-stars">
+                        <li style="width:80%" class="stars-active">
+                            <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </li>
+                    </ul>
+                    <div class="label-rating">{{ book.rating }}</div>
+                </div> <!-- rating-wrap.// -->
+                <article class="gallery-wrap">
+                    <div class="img-big-wrap">
+                        <div> <img src="{{ MEDIA_URL }}{{ book.book_img }}"></div>
+                    </div> <!-- slider-product.// -->
+                </article> <!-- gallery-wrap .end// -->
 
-    {% if user.is_authenticated %}
-    *The minimun number of days to rent any book is 10.
-    On average people reads "{{book.title}}" this book on {{book.avg_days}} days
-    <form method="post" action="{% url 'add_to_cart' book.id %}">
-        {% csrf_token %}
-        <div class="input-group">
-            <input name="days" type="number" min="1" max="999" class="form-control"
-                placeholder="type here the number of days you want to rent the book for">
-            <span class="input-group-btn">
-                <button class="btn btn-success" type="submit">Add to cart</button>
-            </span>
-        </div>
-    </form>
-    {% else %}
-    <a class="btn btn-success" href="{% url 'registration' %}">Register to be able to rent this book</a>
-    {% endif %}
+
+            </aside>
+            <aside class="col-sm-7">
+
+                <article class="p-5">
+                    <h3 class="title mb-3 r"><a href=''>{{ book.author }}</a></h3>
+
+
+
+                    <dl>
+                        <dt>Summary</dt>
+                        <dd>
+                            <p>{{ book.summary }}</p>
+
+                        </dd>
+                    </dl>
+                    <dl class="row">
+
+                        <dt class="col-sm-3">Category</dt>
+                        <dd class="col-sm-9">{{ book.category.name }}</dd>
+
+                        <dt class="col-sm-3">Publication Date</dt>
+                        <dd class="col-sm-9">{{ book.publication_date }}</dd>
+
+                        <dt class="col-sm-3">ISBN#</dt>
+                        <dd class="col-sm-9">{{ book.isbn }}</dd>
+
+
+                    </dl>
+
+                    <hr>
+
+                    <div class="container-fluid">
+
+                        <div class="row justify-content-between text-center">
+                            <div class="col-sm-12 col-md-5 col-lg-3 circles shadow1 mx-auto">
+                                <img src={% static 'images/project/book.png' %}>
+                                <h3>Format: {{ book.format_book}}</h3>
+                            </div>
+                            <div class="col-sm-12 col-md-5 col-lg-3 circles shadow2 mx-auto">
+                                <img src={% static 'images/project/tree.png' %}>
+                                <h3>When this book is available you can collect it on <b>{{ book.store }}</b> store</h3>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-3 circles shadow3 mx-auto">
+                                <img src={% static 'images/project/money.png' %}>
+                                <h3>On average readers spend {{ book.avg_days }} days to read this book</h3>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+                </article> <!-- card-body.// -->
+            </aside> <!-- col.// -->
+        </div> <!-- row.// -->
+
+
+
+
+
+        {% if book.available %}
+        <div class="mb-3 text-right">
+
+            <h5 class="text-success">AVAILABLE</h5>
+            <var class="price h3 text-warning ">
+                <span class="currency ">£</span><span class="num">{{ book.price_day }}<small>/per
+                        day</small></span>
+            </var>
+
+
+        </div> <!-- price-detail-wrap .// -->
+
+        {% else %}
+        <h5 class="text-right"><a href="#">Join the waiting list</a></h5>
+        {% endif %}
+        <hr>
+
+        {% if user.is_authenticated %}
+        *The minimun number of days to rent any book is 10.
+        On average people reads "{{book.title}}" on {{book.avg_days}} days
+        <form method="post" action="{% url 'add_to_cart' book.id %}">
+            {% csrf_token %}
+            <div class="input-group">
+                <input name="days" type="number" min="1" max="999" class="form-control"
+                    placeholder="type here the number of days you want to rent the book for">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="submit">Rent now</button>
+
+                    <button class="btn btn-outline-primary" type="submit">Add to cart</button>
+                </span>
+            </div>
+        </form>
+        {% else %}
+        <a class="btn btn-success" href="{% url 'registration' %}">Register to be able to rent
+            this book</a>
+        {% endif %}
+
+    </div> <!-- card.// -->
+
+
+
+
+
+
 
 </div>
+
+
 
 {% endblock%}
