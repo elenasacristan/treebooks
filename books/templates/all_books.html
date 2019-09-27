@@ -8,25 +8,62 @@
 {% block title %}Books{% endblock %}
 
 {% block content %}
-<ul class="details text-center">
-    {% for book in books %}
+
+<div class="container-fluid allbooks">
+
+    {% for category in categories %}
 
 
-    <li>
-        {{ book.title }}
-        <div class="profile" style="background-image: url('{{ MEDIA_URL }}{{ book.book_img }}')">
-        </div>
+    <h2 class="categories-headers">{{ category.name }}</h2>
+    <!-- < class="details text-center"> -->
+    <hr>
 
-        Rating: {{ book.rating }}<br>
+    <!-- <li style="list-style: none;"> -->
+    <div class="row categories-row mx-auto">
+        {% for book in books %}
+        {% if category.name == book.category.name %}
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 book-columns">
+            <figure class="card card-product">
+                <h5 class="title"> {{ book.title }}</h5>
+                <div class="img-wrap"><img src="{{ MEDIA_URL }}{{ book.book_img }}"></div>
+                <figcaption class="info-wrap">
+                    <div class="rating-wrap">
+                        <ul class="rating-stars">
+                            <li style="width:80%" class="stars-active">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                    class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                    class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </li>
+                        </ul>
+                        <div class="label-rating"><strong>{{book.rating}}</strong></div>
+                        <div>{% if book.available %}
+                            <span class="available text-success text-uppercase font-weight-bold">Available</span>
+                            {% else %}
+                            <a href="#">Join waiting list</a>{% endif %}</div>
+                    </div> <!-- rating-wrap.// -->
 
-        Price: {{ book.price_day }}
-        <a class="btn btn-default" href="{% url 'detail' book.id %}">More</a><br>
+
+                </figcaption>
+                <div class="bottom-wrap text-left">
+                    <a href="{% url 'detail' book.id %}" class="btn btn-sm btn-primary float-right">More</a>
+                    <div class="price-wrap h5">
+                        <span class="price-new">{{ book.price_day }}<small>/day</small></span>
+                    </div> <!-- price-wrap.// -->
+                </div> <!-- bottom-wrap.// -->
+            </figure>
+        </div> <!-- col // -->
+        {% endif %}
+
+        <!-- </li> -->
+        {% endfor %}
+    </div>
+</div>
+{% endfor %}
 
 
-    </li>
-    {% empty %}
-    We didn't find any books or authors matching your seach criteria
-    {% endfor %}
 
 
-    {% endblock%}
+{% endblock %}
