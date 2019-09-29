@@ -24,6 +24,7 @@
         {% if category.name == book.category.name %}
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 book-columns">
             <figure class="card card-product">
+                <h2 class="fav-books favorite text-right"><i class="fa fa-heart"></i></h2>
                 <h5 class="title"> {{ book.title }}</h5>
                 <div class="img-wrap"><img src="{{ MEDIA_URL }}{{ book.book_img }}"></div>
                 <figcaption class="info-wrap">
