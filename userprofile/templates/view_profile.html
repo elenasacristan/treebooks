@@ -8,64 +8,155 @@
 
 
 {% block content %}
-<h3>{{user_profile.username}}</h3>
-<div class="profile" style="background-image: url('{{ MEDIA_URL }}{{ user_profile.profile.profile_img }}')">
+
+
+<div class="container-fluid view-profile detail-wrapper">
+    <div class="row">
+        <div class="col book-detail">
+            <div class="container detail mx-auto">
+                <div class="book-name row">
+                    <div class="col">
+                        <h2>username: {{user_profile.username}}</h2>
+                    </div>
+                </div>
+                <div class="row first-row">
+                    <div class="col-sm-12 col-lg-5 text-center profile-section">
+                        <div> <img class="img-fluid rounded-circle"
+                                src="{{ MEDIA_URL }}{{ user_profile.profile.profile_img }}">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-7 profile-section">
+
+                        <div class="row">
+                            <div class="col text-right edit-profile">
+                                <a class="btn btn-warning" href="{% url 'edit_user_profile' user_profile.id%}">Edit
+                                    profile</a>
+                            </div>
+                        </div>
+
+                        <h3>Membership details</h3>
+                        <div class="row">
+                            <dt class="col-xs-12 col-sm-5">Member since:</dt>
+                            <dd class="col-xs-12 col-sm-7">{{user_profile.date_joined}}</dd>
+
+                            <dt class="col-xs-12 col-sm-5">Current Book:</dt>
+                            <dd class="col-xs-12 col-sm-7">xxxxxxxxx</dd>
+
+                            <dt class="col-xs-12 col-sm-5">Return by:</dt>
+                            <dd class="col-xs-12 col-sm-7">xx/xx/xxxx</dd>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+                <div class="row second-row">
+                    <div class="col-sm-12 col-md-5 profile-section">
+                        <h3>Personal details</h3>
+                        <div class="row">
+                            <dt class="col-xs-12 col-sm-7">First Name:</dt>
+                            <dd class="col-xs-12 col-sm-5 text-capitalize">{{user_profile.first_name}}</dd>
+
+                            <dt class="col-xs-12 col-sm-7">Last Name:</dt>
+                            <dd class="col-xs-12 col-sm-5 text-capitalize">{{user_profile.last_name}}</dd>
+
+                            <dt class="col-xs-12 col-sm-7">Date of Birth:</dt>
+                            <dd class="col-xs-12 col-sm-5">{{user_profile.dob}}</dd>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-12 col-md-7 profile-section">
+                        <h3>Contact details</h3>
+                        <div class="row">
+                            <dt class="col-xs-12 col-sm-7">Email:</dt>
+                            <dd class="col-xs-12 col-sm-5">{{user_profile.email}}</dd>
+
+                            <dt class="col-xs-12 col-sm-7">Telephone:</dt>
+                            <dd class="col-xs-12 col-sm-5">{{user_profile.Telephone}}</dd>
+
+                            <dt class="col-xs-12 col-sm-7">Preferred method:</dt>
+                            <dd class="col-xs-12 col-sm-5">
+                                {% if user_profile.profile.contact_by_email and user_profile.profile.contact_by_phone %}
+                                by email and Telephone
+                                {% elif user_profile.profile.contact_by_email %}
+                                by email
+                                {% elif user_profile.profile.contact_by_phone %}
+                                by telephone
+                                {% else %}
+                                Not specified
+                                {% endif %}</dd>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row last-row justify-content-center">
+                    <div class=" col-sm-12 col-md-4 col-lg-3 shape shadow1" data-toggle="modal"
+                        data-target="#modalBooksRead">
+                        <img src={% static 'images/project/store.png' %}>
+                        <h3>See the books you read</h3></a>
+                    </div>
+                    <div class=" col-sm-12 col-md-4 col-lg-3 shape shadow2">
+                        <img src={% static 'images/project/timer.png' %}>
+                        <h3>See the waiting lists</h3>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-3 shape shadow3" data-toggle="modal"
+                        data-target="#modalBooksFavourites">
+                        <img src={% static 'images/project/book.png' %}>
+                        <h3>See your favourites</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<h3>Personal details</h3>
-First Name: {{user_profile.first_name}}<br>
-Last Name: {{user_profile.last_name}}<br>
-Date of birth: {{user_profile.profile.dob}}
-
-<h3>Contact details</h3>
-Telephone: {{user_profile.profile.Telephone}}<br>
-email: {{user_profile.email}}
-
-<h3>Contact preferences</h3>
-{% if user_profile.profile.contact_by_email and user_profile.profile.contact_by_phone %}
-by email and Telephone
-{% elif user_profile.profile.contact_by_email %}
-by email
-{% elif user_profile.profile.contact_by_phone %}
-by telephone
-{% else %}
-Not specified
-{% endif %}
-
-<h3>About you</h3>
-{{user_profile.profile.bio}}<br>
-
-
-<a class="btn btn-success" href="{% url 'edit_user_profile' user_profile.id%}">Edit profile</a>
-<br><br><br>
------------------
-<h3>Your membership</h3>
-member since: {{user_profile.date_joined}}<br>
-Current reading: xxxx<br>
-Return_date: dd/mm/yyyy<br>
 
 
 
-<h2>More</h2>
-<ul>
-    <li>8 Books rented</li>
-    <li>In waiting list for 2 Books</li>
-    <li>5 Favourites</li>
-</ul>
+<!-- Modal Books Read-->
+<div class="modal fade" id="modalBooksRead" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Books you have read</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <li>Book 1<a href="">Leave a review</a></li>
+                <li>Book 2<a href="">Leave a review</a></li>
+                <li>Book 3</li>
+                <li>Book 4</li>
+                <li>Book 5<a href="">Leave a review</a></li>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
-<h2>Books read</h2>
-<li>Book 1<a href="">Leave a review</a></li>
-<li>Book 2<a href="">Leave a review</a></li>
-<li>Book 3</li>
-<li>Book 4</li>
-<li>Book 5<a href="">Leave a review</a></li>
+<!-- Modal Favourites-->
+<div class="modal fade" id="modalBooksFavourites" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">These are your favourites</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <li>Book 1</li>
+                <li>Book 2</li>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
-<h2>Books in waiting list (order by position in waiting list)</h2>
-<li>Book 1 - you are next in the list<a href="">See waiting list</a></li>
-<li>Book 2 - you are second in the list<a href="">See waiting list</a></li>
-
-<h2>Favourites</h2>
-<li>Book 1</li>
-<li>Book 2</li>
-</ul>
 {% endblock %}

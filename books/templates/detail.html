@@ -10,156 +10,161 @@
 {% block content %}
 
 <div class="container-fluid detail-wrapper">
-    <div class="container detail mx-auto">
-        <div class="book-name row d-flex">
-            <div class="col-10 ">
-                <h2>{{ book.title }}</h2>
-            </div>
-
-            <div class="col-2 align-self-end">
-                <h6 class="text-right">({{ book.views }}views)</h6>
-            </div>
-        </div>
-        <div class="row">
-            <div class="first-column col-xs-12 col-md-5">
-                <div class="container justify-content-center">
-                    <div class="row">
-                        <div class="col text-center">
-                            <div class="rating-wrap">
-                                <ul class="rating-stars">
-                                    <li style="width:80%" class="stars-active">
-                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </li>
-                                </ul>
-                                <div class="label-rating"><strong>{{ book.rating }}</strong></div>
-                            </div> <!-- rating-wrap.// -->
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col text-center">
-                            <div> <img class="img-fluid" src="{{ MEDIA_URL }}{{ book.book_img }}"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-7 second-column">
-                <div class="container justify-content-center">
-                    <div class="row">
-                        <div class="col">
-                            <h2 class="favorite"><i class="fa fa-heart"></i></h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-
-                            <h3 class="title mb-3 r"><a href=''>{{ book.author }}</a></h3>
-                            <dl>
-                                <dt>Summary</dt>
-                                <dd>
-                                    <p class="text-justify">{{ book.summary }}</p>
-
-                                </dd>
-                            </dl>
-                            <dl class="row">
-
-                                <dt class="col-5">Category</dt>
-                                <dd class="col-7">{{ book.category.name }}</dd>
-
-                                <dt class="col-5">Publication Date</dt>
-                                <dd class="col-7">{{ book.publication_date }}</dd>
-
-                                <dt class="col-5">ISBN#</dt>
-                                <dd class="col-7">{{ book.isbn }}</dd>
-
-                            </dl>
-
-                        </div>
+    <div class="row">
+        <div class="col book-detail">
+            <div class="container detail mx-auto">
+                <div class="book-name row d-flex">
+                    <div class="col-10 ">
+                        <h2>{{ book.title }}</h2>
                     </div>
 
-
+                    <div class="col-2 align-self-end">
+                        <h6 class="text-right">({{ book.views }}views)</h6>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="row justify-content-center">
-            <div class="col-sm-12 col-md-5 shape shadow1">
-                <img src={% static 'images/project/store.png' %}>
-                <h3>{{ book.store }}</h3>
-            </div>
-            <div class="col-sm-12 col-sm-6 col-md-5 shape shadow2">
-                <img src={% static 'images/project/timer.png' %}>
-                <h3>Avg: {{ book.avg_days }} days </h3>
-            </div>
-            <div class="col-sm-12 col-sm-6 col-md-5 shape shadow3">
-                <img src={% static 'images/project/book.png' %}>
-                <h3>{{ book.format_book}}</h3>
-            </div>
-        </div>
-        <hr>
-        {% if user.is_authenticated and book.available %}
-
-        <div class="container price-section">
-            <div class="row justify-content-between">
-
-                <div class="col-sm-5 available text-center">
-                    <h4>AVAILABLE</h4>
-                </div>
-                <div class="col-sm-7">
-                    <var class="price h3">
-                        <span class="currency">£</span><span class="num">{{ book.price_day }}<small>/per
-                                day</small></span>
-                    </var>
-                </div>
-            </div>
-        </div>
-        <div class="container add-days">
-            <div class="row justify-content-center">
-                <div class="col-10">
-                    <form method="post" action="{% url 'add_to_cart' book.id %}">
-                        {% csrf_token %}
-                        <div class="input-group">
-                            <input name="days" type="number" min="1" max="999" class="form-control"
-                                placeholder="type here the number of days you want to rent the book for">
-                            <span class="input-group-btn">
-                                <button class="btn btn-primary" type="submit">Rent now</button>
-
-                                <button class="btn btn-outline-primary" type="submit">Add to cart</button>
-                            </span>
+                <div class="row">
+                    <div class="first-column col-xs-12 col-md-5">
+                        <div class="container justify-content-center">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <div class="rating-wrap">
+                                        <ul class="rating-stars">
+                                            <li style="width:80%" class="stars-active">
+                                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </li>
+                                        </ul>
+                                        <div class="label-rating"><strong>{{ book.rating }}</strong></div>
+                                    </div> <!-- rating-wrap.// -->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col text-center">
+                                    <div> <img class="img-fluid" src="{{ MEDIA_URL }}{{ book.book_img }}"></div>
+                                </div>
+                            </div>
                         </div>
-                    </form>
-                    *The minimun number of days to rent any book is 10.
+                    </div>
+                    <div class="col-xs-12 col-md-7 second-column">
+                        <div class="container justify-content-center">
+                            <div class="row">
+                                <div class="col">
+                                    <h2 class="favorite"><i class="fa fa-heart"></i></h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+
+                                    <h3 class="title mb-3 r"><a href=''>{{ book.author }}</a></h3>
+                                    <dl>
+                                        <dt>Summary</dt>
+                                        <dd>
+                                            <p class="text-justify">{{ book.summary }}</p>
+
+                                        </dd>
+                                    </dl>
+                                    <dl class="row">
+
+                                        <dt class="col-5">Category</dt>
+                                        <dd class="col-7">{{ book.category.name }}</dd>
+
+                                        <dt class="col-5">Publication Date</dt>
+                                        <dd class="col-7">{{ book.publication_date }}</dd>
+
+                                        <dt class="col-5">ISBN#</dt>
+                                        <dd class="col-7">{{ book.isbn }}</dd>
+
+                                    </dl>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        {% elif user.is_authenticated and not book.available %}
-
-        <div class="container waiting-section">
-            <div class="row justify-content-center">
-                <div class="col-7">
-                    <h5 class="text-center"><a class="btn btn-warning" href="#">Join the waiting list</a>
-                    </h5>
+                <div class="row justify-content-center">
+                    <div class="col-sm-12 col-md-5 shape shadow1">
+                        <img src={% static 'images/project/store.png' %}>
+                        <h3>{{ book.store }}</h3>
+                    </div>
+                    <div class="col-sm-12 col-md-5 shape shadow2">
+                        <img src={% static 'images/project/timer.png' %}>
+                        <h3>Avg: {{ book.avg_days }} days </h3>
+                    </div>
+                    <div class="col-sm-12 col-md-5 shape shadow3">
+                        <img src={% static 'images/project/book.png' %}>
+                        <h3>{{ book.format_book}}</h3>
+                    </div>
                 </div>
+                <hr>
+                {% if user.is_authenticated and book.available %}
+
+                <div class="container price-section">
+                    <div class="row justify-content-between">
+
+                        <div class="col-sm-5 available text-center">
+                            <h4>AVAILABLE</h4>
+                        </div>
+                        <div class="col-sm-7">
+                            <var class="price h3">
+                                <span class="currency">£</span><span class="num">{{ book.price_day }}<small>/per
+                                        day</small></span>
+                            </var>
+                        </div>
+                    </div>
+                </div>
+                <div class="container add-days">
+                    <div class="row justify-content-center">
+                        <div class="col-10">
+                            <form method="post" action="{% url 'add_to_cart' book.id %}">
+                                {% csrf_token %}
+                                <div class="input-group">
+                                    <input name="days" type="number" min="1" max="999" class="form-control"
+                                        placeholder="type here the number of days you want to rent the book for">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary" type="submit">Rent now</button>
+
+                                        <button class="btn btn-outline-primary" type="submit">Add to cart</button>
+                                    </span>
+                                </div>
+                            </form>
+                            *The minimun number of days to rent any book is 10.
+                        </div>
+                    </div>
+                </div>
+
+                {% elif user.is_authenticated and not book.available %}
+
+                <div class="container waiting-section last-row">
+                    <div class="row justify-content-center">
+                        <div class="col-7">
+                            <h5 class="text-center"><a class="btn btn-warning" href="#">Join the waiting list</a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <div class="row detail-register justify-content-center">
+                    <div class="col-5">
+
+                        <a class="btn btn-warning" href="{% url 'registration' %}">
+                            Register to be able to rent this book</a>
+
+                    </div>
+                </div>
+                {% endif %}
+
             </div>
+
         </div>
-        {% else %}
-        <div class="row detail-register justify-content-center">
-            <div class="col-5">
-
-                <a class="btn btn-warning" href="{% url 'registration' %}">
-                    Register to be able to rent this book</a>
-
-            </div>
-        </div>
-        {% endif %}
-
     </div>
 </div>
 
