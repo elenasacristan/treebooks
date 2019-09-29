@@ -10,3 +10,4 @@ links.txt
 media
 htmlcov
 .coverage
+books/templates/gridbt4.html

@@ -34,8 +34,8 @@ class Book(models.Model):
             ('Paperback', 'Paperback'),
         )
     STORE_CHOICES = (
-                ('1', 'Store1'),
-                ('2', 'Store2'),
+                ('Store1', 'Store1'),
+                ('Store2', 'Store2'),
             )
 
     title = models.CharField(max_length=50, default='')
