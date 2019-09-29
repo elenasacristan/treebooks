@@ -16,7 +16,6 @@ class UserProfile(models.Model):
 
     profile_img = models.ImageField(upload_to='images', default="images/default_profile.png")
     subscribe = models.BooleanField(blank=True, default=False)
-    bio = models.TextField(blank=True)
     dob = models.DateField(null=True, blank=True)
     telephone = models.CharField(max_length=20, null=True, blank=True)
     contact_by_phone = models.BooleanField(blank=True, default=False)
