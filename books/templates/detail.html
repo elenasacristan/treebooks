@@ -129,8 +129,9 @@
                             <form method="post" action="{% url 'add_to_cart' book.id %}">
                                 {% csrf_token %}
                                 <div class="input-group">
-                                    <input name="days" type="number" min="1" max="999" class="form-control"
-                                        placeholder="type here the number of days you want to rent the book for">
+                                    <input name="days" type="number" min="10" max="999" class="form-control"
+                                        placeholder="type here the number of days you want to rent the book for"
+                                        required>
                                     <span class="input-group-btn">
                                         <button class="btn btn-primary" type="submit">Rent now</button>
 

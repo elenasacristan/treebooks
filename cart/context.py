@@ -16,12 +16,14 @@ def cart_content(request):
     cart_books = []
     total = 0
     books_count = 0
+    book_price = 0
 
     for id, days in cart.items():
         book = get_object_or_404(Book, pk=id)
-        total += days * book.price_day
+        book_price = days * book.price_day
+        total += book_price
         books_count += 1
-        cart_books.append({'id':id, 'days':days, 'book':book})
+        cart_books.append({'id':id, 'book_price':book_price, 'days':days, 'book':book})
     
     return {'cart_books':cart_books, 'total':total, 'books_count':books_count}
     

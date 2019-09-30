@@ -19,16 +19,13 @@ def add_to_cart(request, id):
     Add number of days to read the book
     '''
     days = int(request.POST.get('days'))
-
     cart = request.session.get('cart',{})
 
     '''
     if the book haven't been added to the cart
     yet it will be added
     '''
-    # if id not in cart:
-    #     cart[id] = cart.get(id, days)
-
+   
     if id in cart:
         messages.success(request, 'This book is already added to cart')
 
@@ -40,7 +37,6 @@ def add_to_cart(request, id):
     saves the cart into the session
     '''
     request.session['cart'] = cart
-
     return redirect('detail', id)
 
 
