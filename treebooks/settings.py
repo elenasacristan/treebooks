@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'cart',
     'search',
     'django_forms_bootstrap',
+    'checkout'
 ]
 
 MIDDLEWARE = [
@@ -161,3 +162,9 @@ EMAIL_PORT = 587
 In order to tell django that there is an extension of the User model
 '''
 AUTH_PROFILE_MODULE = 'userprofile.UserProfile'
+
+'''
+These are the codes needed to used Stripe to take payments
+'''
+STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
+STRIPE_SECRET = os.getenv('STRIPE_SECRET')

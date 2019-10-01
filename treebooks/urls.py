@@ -6,6 +6,7 @@ from userprofile import urls as profile_urls
 from books import urls as books_urls
 from cart import urls as cart_urls
 from search import urls as search_urls
+from checkout import urls as checkout_urls
 from home.views import index
 from django.views import static
 from .settings import MEDIA_ROOT
@@ -19,5 +20,6 @@ urlpatterns = [
     url(r'^books/', include(books_urls)),
     url(r'^cart/', include(cart_urls)),
     url(r'^search/', include(search_urls)),
+    url(r'^checkout/', include(checkout_urls)),
     url(r'media/(?P<path>.*)$', static.serve, {'document_root':MEDIA_ROOT}),
 ]
