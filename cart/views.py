@@ -57,4 +57,17 @@ def adjust_cart(request, id):
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))
 
-   
+
+@login_required
+def remove_from_cart(request, id):
+    '''
+    Remove a book from the cart
+    clicking the trash button
+    
+    '''
+    cart = request.session.get('cart',{})
+
+    cart.pop(id)
+
+    request.session['cart'] = cart
+    return redirect(reverse('view_cart'))
