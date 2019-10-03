@@ -51,7 +51,7 @@ def checkout(request):
             
             if customer.paid:
                 messages.error(request, "You have succesfully paid")
-                request.session['cart']={}
+                request.session['cart'] = {}
                 return redirect(reverse('view_all_books'))
             else:
                 messages.error(request, "Unable to make payment")
@@ -64,4 +64,4 @@ def checkout(request):
         payment_form = MakePaymentForm()
         order_form = OrderForm()
 
-    return render(request, 'checkout.html', {'payment_form':payment_form, 'order_form':order_form, 'publisable':settings.STRIPE_PUBLISHABLE})
+    return render(request, 'checkout.html', {'payment_form':payment_form, 'order_form':order_form, 'publishable':settings.STRIPE_PUBLISHABLE})

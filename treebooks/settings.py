@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'cart',
     'search',
     'django_forms_bootstrap',
-    'checkout'
+    'checkout',
 ]
 
 MIDDLEWARE = [
@@ -149,6 +149,13 @@ MEDIA_URL = '/media/'
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
+'''
+These are the codes needed to used Stripe to take payments
+'''
+STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
+STRIPE_SECRET = os.getenv('STRIPE_SECRET')
+
+
 DEFAULT_FROM_EMAIL = os.environ.get("EMAIL_ADDRESS")
 SERVER_EMAIL = os.environ.get("EMAIL_ADDRESS")
 
@@ -163,8 +170,3 @@ In order to tell django that there is an extension of the User model
 '''
 AUTH_PROFILE_MODULE = 'userprofile.UserProfile'
 
-'''
-These are the codes needed to used Stripe to take payments
-'''
-STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
-STRIPE_SECRET = os.getenv('STRIPE_SECRET')
