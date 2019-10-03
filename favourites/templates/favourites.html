@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load bootstrap_tags %}
+
+{% load staticfiles %}
+
+{% block title %}{{user}}'s Favourites{% endblock %}
+
+
+{% block content %}
+
+{% for favourite in favourites %}
+{{ favourite }}
+{% endfor %}
+
+{% endblock %}

@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'search',
     'django_forms_bootstrap',
     'checkout',
+    'favourites',
 ]
 
 MIDDLEWARE = [

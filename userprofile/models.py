@@ -5,6 +5,7 @@ https://www.youtube.com/watch?v=qLRxkStiaUg
 
 from django.db import models
 from django.contrib.auth.models import User
+from books.models import Book
 
 # Create your models here.
 
@@ -20,6 +21,7 @@ class UserProfile(models.Model):
     telephone = models.CharField(max_length=20, null=True, blank=True)
     contact_by_phone = models.BooleanField(blank=True, default=False)
     contact_by_email = models.BooleanField(blank=True, default=False)
+    favourites = models.ManyToManyField(Book, related_name='favorited_by')
 
 
     def __str__(self):
