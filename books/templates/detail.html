@@ -55,10 +55,15 @@
                         <div class="container justify-content-center">
                             <div class="row">
                                 <div class="col">
-                                    <form method="POST" action={% url 'add_remove_favourites' book.id %}>
+                                    <form class="text-right fav-form" method="POST"
+                                        action={% url 'add_remove_favourites' book.id %}>
                                         {% csrf_token %}
                                         <button type="submit">
-                                            <h2 class="favorite"><i class="fa fa-heart"></i></h2>
+                                            {% if book in user.profile.favourites.all %}
+                                            <h2 class="favorited text-right"><i class="fa fa-heart"></i></h2>
+                                            {% else %}
+                                            <h2 class="favorite text-right"><i class="fa fa-heart"></i></h2>
+                                            {% endif %}
                                         </button>
                                     </form>
                                 </div>

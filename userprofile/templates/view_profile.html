@@ -60,7 +60,7 @@
                             <dd class="col-xs-12 col-sm-5 text-capitalize">{{user_profile.last_name}}</dd>
 
                             <dt class="col-xs-12 col-sm-7">Date of Birth:</dt>
-                            <dd class="col-xs-12 col-sm-5">{{user_profile.dob}}</dd>
+                            <dd class="col-xs-12 col-sm-5">{{user_profile.profile.dob}}</dd>
                         </div>
 
                     </div>
@@ -98,7 +98,6 @@
                         <img src={% static 'images/project/timer.png' %}>
                         <h3>See the waiting lists</h3>
                     </div>
-                    <a href="{% url 'see_favourites' %}">VER FAVORITOS</a>
                     <div class="col-sm-12 col-md-4 col-lg-3 shape shadow3" data-toggle="modal"
                         data-target="#modalBooksFavourites">
                         <img src={% static 'images/project/book.png' %}>
@@ -150,8 +149,11 @@
                 </button>
             </div>
             <div class="modal-body">
-                <li>Book 1</li>
-                <li>Book 2</li>
+                <ul>
+                    {% for favourite in user_profile.profile.favourites.all %}
+                    <li><a href="{% url 'detail' favourite.id %}"> {{ favourite.title }}</a></li>
+                    {% endfor %}
+                </ul>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
