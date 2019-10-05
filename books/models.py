@@ -56,7 +56,8 @@ class Book(models.Model):
     language_book = models.CharField(max_length=20, default='')
     available = models.BooleanField(default=True)
     current_reader = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    
+    return_date = models.DateField(default=datetime.now)
+
 
     def __str__(self):
         return self.title

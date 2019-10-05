@@ -38,12 +38,17 @@
                         <div class="row">
                             <dt class="col-xs-12 col-sm-5">Member since:</dt>
                             <dd class="col-xs-12 col-sm-7">{{user_profile.date_joined}}</dd>
-
+                            {% for book_current in current_books %}
                             <dt class="col-xs-12 col-sm-5">Current Book:</dt>
-                            <dd class="col-xs-12 col-sm-7">xxxxxxxxx</dd>
+                            <dd class="col-xs-12 col-sm-7">
+
+                                {{ book_current }}
+
+                            </dd>
 
                             <dt class="col-xs-12 col-sm-5">Return by:</dt>
-                            <dd class="col-xs-12 col-sm-7">xx/xx/xxxx</dd>
+                            <dd class="col-xs-12 col-sm-7">{{ book_current.return_date }}</dd>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -124,11 +129,9 @@
                 </button>
             </div>
             <div class="modal-body">
-                <li>Book 1<a href="">Leave a review</a></li>
-                <li>Book 2<a href="">Leave a review</a></li>
-                <li>Book 3</li>
-                <li>Book 4</li>
-                <li>Book 5<a href="">Leave a review</a></li>
+                {% for read_book in user_profile.profile.read_books.all %}
+                <li><a href="{% url 'detail' read_book.id %}"> {{ read_book.title }}</a></li>
+                {% endfor %}
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

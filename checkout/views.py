@@ -6,6 +6,7 @@ from .models import OrderLineItem
 from django.conf import settings
 from django.utils import timezone
 from books.models import Book
+from userprofile.models import UserProfile
 import stripe
 
 # Create your views here.
@@ -49,10 +50,21 @@ def checkout(request):
             except stripe.error.CardError:
                 messages.error(request, "Your card was declined!")
             
+            # timedelta - https://stackoverflow.com/questions/27491248/django-default-timezone-now-delta
             if customer.paid:
                 messages.error(request, "You have succesfully paid")
+                '''save book in list of read books'''
+                profile = UserProfile.objects.get(user = request.user)
+                for id, days in cart.items():
+                    book = get_object_or_404(Book, pk=id)
+                    profile.read_books.add(book)
+                    book.return_date = order.date + timezone.timedelta(days=days)
+                    book.available = False
+                    book.save()
+
                 request.session['cart'] = {}
                 return redirect(reverse('view_all_books'))
+            
             else:
                 messages.error(request, "Unable to make payment")
     
