@@ -132,23 +132,32 @@
                     </div>
                 </div>
                 <div class="container add-days">
-                    <div class="row justify-content-center">
-                        <div class="col-xs-12 col-sm-10">
+                    <div class="row justify-content-center align-items-end">
+                        <div class="col-sm-8">
+                            <p>Select below the number of days that you want to rent the book for:</p>
+                            <small>*The minimun number of days to rent any book is 10.</small>
+
                             <form method="post" action="{% url 'add_to_cart' book.id %}">
                                 {% csrf_token %}
                                 <div class="input-group">
-                                    <input name="days" type="number" min="10" max="999" class="form-control"
-                                        placeholder="type here the number of days you want to rent the book for"
-                                        value="10" required>
+                                    <input name="days" type="number" min="10" max="999" class="form-control" value="10"
+                                        required>
                                     <span class="input-group-btn">
-                                        <button class="btn btn-primary" type="submit">Rent now</button>
-
-                                        <button class="btn btn-outline-primary" type="submit">Add to cart</button>
+                                        <button class="btn btn-primary" type="submit">Add to cart</button>
                                     </span>
                                 </div>
                             </form>
-                            *The minimun number of days to rent any book is 10.
+
+
                         </div>
+                        {% for bookitem in cart_books %}
+                        {% if book.title == bookitem.book.title %}
+                        <div class="col-sm-2">
+                            <a class="btn btn-primary" href="{% url 'view_cart' %}">Rent now</a>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+
                     </div>
                 </div>
 
