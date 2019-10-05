@@ -15,6 +15,5 @@ def view_all_books(request):
 
 def detail(request, pk):
     book = get_object_or_404(Book,pk=pk)
-    book.views += 1
     book.save()
     return render(request, 'detail.html', {'book':book})
