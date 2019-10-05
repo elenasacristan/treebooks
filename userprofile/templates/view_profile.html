@@ -19,16 +19,15 @@
                         <h2>username: {{user_profile.username}}</h2>
                     </div>
                 </div>
-                <div class="row first-row">
+                <div class="row first-row align-items-center">
                     <div class="col-sm-12 col-lg-5 text-center profile-section">
-                        <div> <img class="img-fluid rounded-circle"
-                                src="{{ MEDIA_URL }}{{ user_profile.profile.profile_img }}">
-                        </div>
+                        <img class="rounded-circle" src="{{ MEDIA_URL }}{{ user_profile.profile.profile_img }}">
+                        <img>
                     </div>
                     <div class="col-sm-12 col-lg-7 profile-section">
 
                         <div class="row">
-                            <div class="col text-right edit-profile">
+                            <div class="col edit-profile">
                                 <a class="btn btn-warning" href="{% url 'edit_user_profile' user_profile.id%}">Edit
                                     profile</a>
                             </div>
