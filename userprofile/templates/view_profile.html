@@ -35,50 +35,53 @@
 
                         <h3>Membership details</h3>
                         <div class="row">
-                            <dt class="col-xs-12 col-sm-5">Member since:</dt>
-                            <dd class="col-xs-12 col-sm-7">{{user_profile.date_joined}}</dd>
+                            <dt class="col-xs-12 col-sm-7">Member since:</dt>
+                            <dd class="col-xs-12 col-sm-5">{{user_profile.date_joined}}</dd>
+
+                        </div>
+                        <hr>
+                        <h5>Currently reading</h5>
+                        <div class="row">
+
                             {% for book_current in current_books %}
-                            <dt class="col-xs-12 col-sm-5">Current Book:</dt>
-                            <dd class="col-xs-12 col-sm-7">
+                            <dt class="col-xs-12">{{ book_current }} <small>(Return by:
+                                    {{ book_current.return_date }})</small></dt>
 
-                                {{ book_current }}
+                            <br><br>
 
-                            </dd>
-
-                            <dt class="col-xs-12 col-sm-5">Return by:</dt>
-                            <dd class="col-xs-12 col-sm-7">{{ book_current.return_date }}</dd>
                             {% endfor %}
                         </div>
+
                     </div>
                 </div>
 
                 <hr>
                 <div class="row second-row">
-                    <div class="col-sm-12 col-md-5 profile-section">
+                    <div class="col-sm-12 col-lg-5 profile-section">
                         <h3>Personal details</h3>
                         <div class="row">
-                            <dt class="col-xs-12 col-sm-7">First Name:</dt>
-                            <dd class="col-xs-12 col-sm-5 text-capitalize">{{user_profile.first_name}}</dd>
+                            <dt class="col-xs-12 col-sm-5">First Name:</dt>
+                            <dd class="col-xs-12 col-sm-7 text-capitalize">{{user_profile.first_name}}</dd>
 
-                            <dt class="col-xs-12 col-sm-7">Last Name:</dt>
-                            <dd class="col-xs-12 col-sm-5 text-capitalize">{{user_profile.last_name}}</dd>
+                            <dt class="col-xs-12 col-sm-5">Last Name:</dt>
+                            <dd class="col-xs-12 col-sm-7 text-capitalize">{{user_profile.last_name}}</dd>
 
-                            <dt class="col-xs-12 col-sm-7">Date of Birth:</dt>
-                            <dd class="col-xs-12 col-sm-5">{{user_profile.profile.dob}}</dd>
+                            <dt class="col-xs-12 col-sm-5 ">DOB:</dt>
+                            <dd class="col-xs-12 col-sm-7">{{user_profile.profile.dob}}</dd>
                         </div>
 
                     </div>
-                    <div class="col-sm-12 col-md-7 profile-section">
+                    <div class="col-sm-12 col-lg-7 profile-section">
                         <h3>Contact details</h3>
                         <div class="row">
-                            <dt class="col-xs-12 col-sm-7">Email:</dt>
-                            <dd class="col-xs-12 col-sm-5">{{user_profile.email}}</dd>
+                            <dt class="col-xs-12 col-sm-5 ">Email:</dt>
+                            <dd class="col-xs-12 col-sm-7 ">{{user_profile.email}}</dd>
 
-                            <dt class="col-xs-12 col-sm-7">Telephone:</dt>
-                            <dd class="col-xs-12 col-sm-5">{{user_profile.Telephone}}</dd>
+                            <dt class="col-xs-12 col-sm-5">Telephone:</dt>
+                            <dd class="col-xs-12 col-sm-7 ">{{user_profile.profile.telephone}}</dd>
 
-                            <dt class="col-xs-12 col-sm-7">Preferred method:</dt>
-                            <dd class="col-xs-12 col-sm-5">
+                            <dt class="col-xs-12 col-sm-5">Preferred method:</dt>
+                            <dd class="col-xs-12 col-sm-7">
                                 {% if user_profile.profile.contact_by_email and user_profile.profile.contact_by_phone %}
                                 by email and Telephone
                                 {% elif user_profile.profile.contact_by_email %}
@@ -151,11 +154,15 @@
                 </button>
             </div>
             <div class="modal-body">
+                {% if user_profile.profile.favourites.all%}
                 <ul>
                     {% for favourite in user_profile.profile.favourites.all %}
                     <li><a href="{% url 'detail' favourite.id %}"> {{ favourite.title }}</a></li>
                     {% endfor %}
                 </ul>
+                {% else %}
+                <p class="alert alert-info" role="alert">You haven't saved any book as favourite</p>
+                {% endif %}
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
