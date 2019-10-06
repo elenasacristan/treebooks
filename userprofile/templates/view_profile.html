@@ -131,9 +131,25 @@
                 </button>
             </div>
             <div class="modal-body">
+                {% if user_profile.profile.read_books.all %}
+
+
                 {% for read_book in user_profile.profile.read_books.all %}
-                <li><a href="{% url 'detail' read_book.id %}"> {{ read_book.title }}</a></li>
+                <a href="{% url 'detail' read_book.id %}">
+                    <div class="favourite-read-link row justify-content-center align-items-center">
+                        <div class="col-4">
+                            <img width="50" src="{{ MEDIA_URL }}{{ read_book.book_img }}">
+                        </div>
+                        <div class="col-6">
+
+                            {{ read_book.title }}
+                        </div>
+                    </div>
+                </a>
                 {% endfor %}
+                {% else %}
+                <p class="alert alert-info" role="alert">You haven't read any book yet</p>
+                {% endif %}
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -155,11 +171,20 @@
             </div>
             <div class="modal-body">
                 {% if user_profile.profile.favourites.all%}
-                <ul>
-                    {% for favourite in user_profile.profile.favourites.all %}
-                    <li><a href="{% url 'detail' favourite.id %}"> {{ favourite.title }}</a></li>
-                    {% endfor %}
-                </ul>
+
+                {% for favourite in user_profile.profile.favourites.all %}
+                <a href="{% url 'detail' favourite.id %}">
+                    <div class="favourite-read-link row justify-content-center align-items-center">
+                        <div class="col-4">
+                            <img width="50" src="{{ MEDIA_URL }}{{ favourite.book_img }}">
+                        </div>
+                        <div class="col-6">
+
+                            {{ favourite.title }}
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
                 {% else %}
                 <p class="alert alert-info" role="alert">You haven't saved any book as favourite</p>
                 {% endif %}
