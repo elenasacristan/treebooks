@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load bootstrap_tags %}
+
+{% load staticfiles %}
+
+{% block title %}Add review{% endblock %}
+
+{% block content %}
+
+<div class='bg-login-register'>
+    <div class="h-100 d-flex row justify-content-center align-items-center text-center">
+        <div class="col-xs-6">
+            <div class="circle-shape">
+                <h2 class="heading-form">Add review</h2>
+                <form class="review-form  mx-auto" method="POST">
+                    {% csrf_token %}
+                    {{ review_form | as_bootstrap}}
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock%}

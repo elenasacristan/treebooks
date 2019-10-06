@@ -135,17 +135,16 @@
 
 
                 {% for read_book in user_profile.profile.read_books.all %}
-                <a href="{% url 'detail' read_book.id %}">
-                    <div class="favourite-read-link row justify-content-center align-items-center">
-                        <div class="col-4">
-                            <img width="50" src="{{ MEDIA_URL }}{{ read_book.book_img }}">
-                        </div>
-                        <div class="col-6">
-
-                            {{ read_book.title }}
-                        </div>
+                <div class="favourite-read-link row justify-content-center align-items-center">
+                    <div class="col-3">
+                        <img width="50" src="{{ MEDIA_URL }}{{ read_book.book_img }}">
                     </div>
-                </a>
+                    <div class="col-8">
+                        <a href="{% url 'detail' read_book.id %}">{{ read_book.title }}</a><a
+                            href="{% url 'add_review' %}"> - Leave a
+                            review</a>
+                    </div>
+                </div>
                 {% endfor %}
                 {% else %}
                 <p class="alert alert-info" role="alert">You haven't read any book yet</p>
@@ -179,7 +178,6 @@
                             <img width="50" src="{{ MEDIA_URL }}{{ favourite.book_img }}">
                         </div>
                         <div class="col-6">
-
                             {{ favourite.title }}
                         </div>
                     </div>

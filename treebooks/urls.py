@@ -8,6 +8,7 @@ from cart import urls as cart_urls
 from search import urls as search_urls
 from checkout import urls as checkout_urls
 from favourites import urls as favourites_urls
+from reviews import urls as review_urls
 from home.views import index
 from django.views import static
 from .settings import MEDIA_ROOT
@@ -23,5 +24,6 @@ urlpatterns = [
     url(r'^search/', include(search_urls)),
     url(r'^checkout/', include(checkout_urls)),
     url(r'^favourites/', include(favourites_urls)),
+    url(r'^reviews/', include(review_urls)),
     url(r'media/(?P<path>.*)$', static.serve, {'document_root':MEDIA_ROOT}),
 ]
