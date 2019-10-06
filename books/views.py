@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Book, Category
+from reviews.models import ReviewBook
 
 # Create your views here.
 
@@ -16,4 +17,5 @@ def view_all_books(request):
 def detail(request, pk):
     book = get_object_or_404(Book,pk=pk)
     book.save()
-    return render(request, 'detail.html', {'book':book})
+    reviews = ReviewBook.objects.filter(reviewed_book__id=pk)
+    return render(request, 'detail.html', {'book':book, 'reviews':reviews})

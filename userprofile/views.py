@@ -12,7 +12,9 @@ def view_profile(request):
     user_profile = User.objects.get(email=request.user.email)
     user_profile.save()
     current_books = user_profile.profile.read_books.filter(return_date__gt = timezone.now())
-    return render(request, 'view_profile.html', {'user_profile':user_profile, 'current_books':current_books})
+    return render(request, 'view_profile.html', 
+                {'user_profile':user_profile, 
+                'current_books':current_books})
 
 @login_required
 def edit_user_profile(request, id):

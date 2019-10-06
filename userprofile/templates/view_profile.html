@@ -140,9 +140,8 @@
                         <img width="50" src="{{ MEDIA_URL }}{{ read_book.book_img }}">
                     </div>
                     <div class="col-8">
-                        <a href="{% url 'detail' read_book.id %}">{{ read_book.title }}</a><a
-                            href="{% url 'add_review' %}"> - Leave a
-                            review</a>
+                        <a href="{% url 'detail' read_book.id %}">{{ read_book.title }}</a>
+                        <a href="{% url 'add_review' read_book.id %}"> - Leave a review</a>
                     </div>
                 </div>
                 {% endfor %}

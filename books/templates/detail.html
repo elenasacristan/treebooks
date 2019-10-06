@@ -36,7 +36,8 @@
                                                 <i class="fa fa-star"></i>
                                             </li>
                                         </ul>
-                                        <div class="label-rating"><strong>{{ book.rating }}</strong></div>
+                                        <div class="label-rating"><strong>{{ book.rating }}</strong> </div>
+                                        <div><a href="#reviews_section">See reviews</a></div>
                                     </div> <!-- rating-wrap.// -->
                                 </div>
                             </div>
@@ -178,19 +179,29 @@
                 </div>
                 {% endif %}
 
+                {% if reviews %}
+                <hr>
+                <div id="reviews_section">
+                    <h3 class="text-center">Reviews</h3>
+                    <div class="row justify-content-center">
+                        {% for review in reviews %}
+                        <div class="col-5">
+
+
+                            <h4>{{ review.review_title }} <small>(Score: {{ review.score }})</small></h4>
+                            <p>{{ review.comment }}</p>
+                            <p class="text-right">{{ review.review_date }}</p>
+                            <p class="text-right">{{ review.review_author }}</p>
+
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
             </div>
 
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
 
 {% endblock%}
