@@ -163,11 +163,49 @@
                 <div class="container waiting-section last-row">
                     <div class="row justify-content-center">
                         <div class="col-7">
-                            <h5 class="text-center"><a class="btn btn-warning" href="#">Join the waiting list</a>
-                            </h5>
+
+                            {% if waiting_list %}
+
+                            {% for x in waiting_list %}
+                            {% for userinlist in x.wl_user.all %}
+                            {% if userinlist == user %}
+
+                            <h4 class="empty-cart text-center alert alert-info" role="alert">You are in the waiting list
+                            </h4>
+                            {% else %}
+
+                            <form class="text-right fav-form" method="POST"
+                                action={% url 'join_waiting_list' book.id %}>
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-warning">
+                                    <h5 class="text-center">Join the waiting list</h5>
+                                </button>
+                            </form>
+                            {% endif%}
+                            {% endfor %}
+                            {% endfor %}
+                            {% else %}
+                            <form class="text-right fav-form" method="POST"
+                                action={% url 'join_waiting_list' book.id %}>
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-warning">
+                                    <h5 class="text-center">Join the waiting list</h5>
+                                </button>
+                            </form>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
+
+
+                <!-- test -->
+
+
+
+
+
+
+
                 {% else %}
                 <div class="row detail-register justify-content-center">
                     <div class="col-5">

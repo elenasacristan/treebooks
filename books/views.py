@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Book, Category
 from reviews.models import ReviewBook
+from waiting_list.models import WaitingList
 
 # Create your views here.
 
@@ -18,4 +19,8 @@ def detail(request, pk):
     book = get_object_or_404(Book,pk=pk)
     book.save()
     reviews = ReviewBook.objects.filter(reviewed_book__id=pk)
-    return render(request, 'detail.html', {'book':book, 'reviews':reviews})
+    waiting_list = WaitingList.objects.filter(wl_book__id=pk)
+    return render(request, 'detail.html', 
+                {'book':book,
+                'reviews':reviews,
+                'waiting_list':waiting_list})

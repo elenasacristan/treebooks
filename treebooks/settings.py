@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'checkout',
     'favourites',
     'reviews',
+    'waiting_list',
 ]
 
 MIDDLEWARE = [
