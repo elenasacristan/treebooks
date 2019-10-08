@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load bootstrap_tags %}
+
+{% load staticfiles %}
+
+{% block title %}{{user}}'s Profile{% endblock %}
+
+{% block content %}
+
+
+{% for list in waiting_list %}
+{{ list.wl_book }}<br>
+{{list.wl_user.all}}
+{% for waiting_user in list.wl_user.all %}
+{{ waiting_user }}<br>
+{% endfor %}
+<br>
+<br>
+{% endfor %}
+
+{% endblock %}

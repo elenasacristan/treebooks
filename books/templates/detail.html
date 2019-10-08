@@ -166,8 +166,8 @@
 
                             {% if waiting_list %}
 
-                            {% for x in waiting_list %}
-                            {% for userinlist in x.wl_user.all %}
+                            {% for list in waiting_list %}
+                            {% for userinlist in list.wl_user.all %}
                             {% if userinlist == user %}
 
                             <h4 class="empty-cart text-center alert alert-info" role="alert">You are in the waiting list

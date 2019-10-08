@@ -101,7 +101,8 @@
                         <img src={% static 'images/project/store.png' %}>
                         <h3>See the books you read</h3></a>
                     </div>
-                    <div class=" col-sm-12 col-md-4 col-lg-3 shape shadow2">
+                    <div class=" col-sm-12 col-md-4 col-lg-3 shape shadow2" data-toggle="modal"
+                        data-target="#modalBooksWaitingList">
                         <img src={% static 'images/project/timer.png' %}>
                         <h3>See the waiting lists</h3>
                     </div>
@@ -110,11 +111,17 @@
                         <img src={% static 'images/project/book.png' %}>
                         <h3>See your favourites</h3>
                     </div>
+
                 </div>
+
             </div>
         </div>
+
     </div>
+
 </div>
+
+
 
 
 
@@ -155,6 +162,47 @@
         </div>
     </div>
 </div>
+
+
+<!-- Modal Books Waiting List-->
+<div class="modal fade" id="modalBooksWaitingList" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Books you are waiting for</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                {% if user.users %}
+                {% for current_user in user.users.all %}
+                <div class="favourite-read-link row justify-content-center align-items-center">
+                    <div class="col-3">
+                        <img width="50" src="{{ MEDIA_URL }}{{ current_user.wl_book.book_img }}">
+                    </div>
+                    <div class="col-8">
+                        <a href="{% url 'detail' current_user.wl_book.id %}">{{current_user.wl_book.title}}</a>
+                        <a href="{% url 'view_waiting_lists' current_user.wl_book.id %}"> - See waiting list</a>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <p class="alert alert-info" role="alert">You are not in waiting list for any book</p>
+                {% endif %}
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 
 <!-- Modal Favourites-->
 <div class="modal fade" id="modalBooksFavourites" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
