@@ -165,15 +165,14 @@
                         <div class="col-7">
 
                             {% if waiting_list %}
+                            {% for wl in waiting_list %}
 
-                            {% for list in waiting_list %}
-                            {% for userinlist in list.wl_user.all %}
+                            {% for userinlist in wl.wl_user.all %}
                             {% if userinlist == user %}
 
                             <h4 class="empty-cart text-center alert alert-info" role="alert">You are in the waiting list
                             </h4>
                             {% else %}
-
                             <form class="text-right fav-form" method="POST"
                                 action={% url 'join_waiting_list' book.id %}>
                                 {% csrf_token %}
@@ -184,6 +183,7 @@
                             {% endif%}
                             {% endfor %}
                             {% endfor %}
+
                             {% else %}
                             <form class="text-right fav-form" method="POST"
                                 action={% url 'join_waiting_list' book.id %}>
@@ -198,7 +198,7 @@
                 </div>
 
 
-                <!-- test -->
+
 
 
 

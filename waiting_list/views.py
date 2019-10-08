@@ -12,7 +12,7 @@ from django.http import HttpResponseRedirect
 # Create your views here.
 @login_required
 def view_waiting_lists(request, pk):
-    waiting_list = WaitingList.objects.filter(wl_book__id = pk)
+    waiting_list = WaitingList.objects.filter(wl_book__id = pk).distinct()
     return render (request, 'waiting_list.html',{'waiting_list':waiting_list})
 
 @login_required
