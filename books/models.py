@@ -43,6 +43,9 @@ class Book(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE,blank=True, default='')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
+    total_number_reviews = models.IntegerField(default=0)
+    total_ratings = models.IntegerField(default=0)
+    percentage_rating = models.IntegerField(default=0)
     rating = models.DecimalField(decimal_places=2, max_digits=3, blank=True,null=True)
     book_img = models.ImageField(upload_to='images', default="images/book.png")
     ISBN = models.CharField(max_length=13, default='')

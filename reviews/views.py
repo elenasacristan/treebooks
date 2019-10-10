@@ -7,7 +7,9 @@ from django.utils import timezone
 
 
 # Create your views here.
-
+'''
+Add review and calculate rating
+'''
 @login_required
 def add_review(request, pk):
     book = get_object_or_404(Book,pk=pk)
@@ -22,8 +24,19 @@ def add_review(request, pk):
              review.review_author = request.user
              review.reviewed_book = book
              review.save()
+
+             book.total_number_reviews += 1
+             book.total_ratings += review.score
+             book.rating = book.total_ratings / book.total_number_reviews
+             book.percentage_rating = (book.rating * 100)/5
+             book.save()
+             
              return redirect(reverse('view_profile'))
     
     else:
         review_form = ReviewForm()
     return render(request, 'review_form.html', {'review_form':review_form})
+
+
+
+
