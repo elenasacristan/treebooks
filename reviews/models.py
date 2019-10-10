@@ -17,7 +17,7 @@ class ReviewBook(models.Model):
     comment = models.TextField()
     score = models.IntegerField(default=0, choices=CHOICES)
     review_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
-    review_author = models.ForeignKey(User)
+    review_author = models.ForeignKey(User, related_name="review_author")
     reviewed_book = models.ForeignKey(Book, default='')
     
     def __str__(self):

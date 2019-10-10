@@ -44,7 +44,7 @@
                         <div class="row">
 
                             {% for book_current in current_books %}
-                            <dt class="col-xs-12">{{ book_current }} <small>(Return by:
+                            <dt class="col-12">{{ book_current }} <small>(Return by:
                                     {{ book_current.return_date }})</small></dt>
 
                             <br><br>
@@ -148,7 +148,13 @@
                     </div>
                     <div class="col-8">
                         <a href="{% url 'detail' read_book.id %}">{{ read_book.title }}</a>
-                        <a href="{% url 'add_review' read_book.id %}"> - Leave a review</a>
+
+                        {% if read_book.id in reviewed_books %}
+                        Already reviewed
+                        {% else %}
+                        <p> <a href="{% url 'add_review' read_book.id %}">Leave a review</a></p>
+                        {%endif%}
+
                     </div>
                 </div>
                 {% endfor %}
