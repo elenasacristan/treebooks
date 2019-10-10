@@ -26,7 +26,7 @@ class ReviewForm(forms.ModelForm):
     def clean_score(self):
             score = self.cleaned_data.get('score')
             
-            if not score:
+            if (score not in [0,1,2,3,4,5]):
                 raise forms.ValidationError(u'This field is required.')
 
             return score
