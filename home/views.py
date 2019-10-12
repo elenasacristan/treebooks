@@ -1,6 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from .forms import ContactUsForm
 from django.utils import timezone
+from django.contrib import auth, messages
+
+
 
 # Create your views here.
 
@@ -29,6 +32,8 @@ def contact(request):
             contact = contact_form.save(commit=False)
             contact.contact_date = timezone.now()
             contact.save()
+            messages.success(request, 'We have received your request and we will be in touch shortly')
+            return redirect(reverse('index'))
 
     else:
         contact_form = ContactUsForm()
