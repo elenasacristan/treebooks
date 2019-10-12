@@ -114,27 +114,33 @@
                 <hr>
                 {% if user.is_authenticated and book.available %}
 
-                <div class="container price-section">
-                    <div class="row justify-content-between">
+                <div class="container price-section text-center">
+                    <div class="row justify-content-center">
 
-                        <div class="col-xs-12 col-sm-5 available text-center">
+                        <div class="col-10 col-sm-5 available">
                             <h4>AVAILABLE</h4>
                         </div>
-                        <div class="col-xs-12 col-sm-7">
-                            <var class="price h3">
+                        <div class="col-10 col-sm-6 ">
+                            <var class="price h3 float-sm-right">
                                 <span class="currency">£</span><span class="num">{{ book.price_day }}<small>/per
                                         day</small></span>
                             </var>
                         </div>
                     </div>
                 </div>
-                <div class="container add-days">
-                    <div class="row justify-content-center align-items-end">
-                        <div class="col-sm-8">
-                            <p>Select below the number of days that you want to rent the book for:</p>
-                            <small>*The minimun number of days to rent any book is 10.</small>
+                <!-- <div class="container add-days"> -->
+                <div class="container">
 
-                            <form method="post" action="{% url 'add_to_cart' book.id %}">
+                    <div class="row justify-content-center align-items-start">
+                        <div class="col-10 col-md-7">
+                            <p>Select the number of days that you want to rent the book for:<br>
+                                <small>*The minimun number of days to rent any book is 10.</small>
+                            </p>
+
+
+                        </div>
+                        <div class="col-10 col-md-4">
+                            <form class="justify-content-center" method="post" action="{% url 'add_to_cart' book.id %}">
                                 {% csrf_token %}
                                 <div class="input-group">
                                     <input name="days" type="number" min="10" max="999" class="form-control" value="10"
@@ -144,16 +150,7 @@
                                     </span>
                                 </div>
                             </form>
-
-
                         </div>
-                        {% for bookitem in cart_books %}
-                        {% if book.title == bookitem.book.title %}
-                        <div class="col-sm-2">
-                            <a class="btn btn-primary" href="{% url 'view_cart' %}">Rent now</a>
-                        </div>
-                        {% endif %}
-                        {% endfor %}
 
                     </div>
                 </div>
