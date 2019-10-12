@@ -6,22 +6,43 @@
 
 {% block content %}
 
-<p>TreeBooks is a small charity and out mission is to raise money to help reforest our planet.</p>
+<div class="container-fluid">
+    <div class='row justify-content-center'>
+        <div class='col-10 col-sm-9 col-lg-7 col-xl-6 about text-justify'>
 
-<h3>How we do it?</h3>
-
-<p>We collect second hand books that people donate and then we rent them for a small fee in order to raise money. 
-The money collected is then used to help in <a href="{% url 'projects' %}">reforestation projects</a>.</p>
+            <h2 class="text-center">About us</h2>
 
 
-<h3>How can you collaborate?</h3>
+            <h6>TreeBooks is a small charity founded in October 2018 and our mission is to raise money to help reforest
+                our planet.</h6>
 
-<p>By reading second hand books you are reducing the number of trees that are cut to create new books.</p>
+            <h4>How we do it?</h4>
 
-<p>By paying us to rent a book instead of buying a brand new book you are contributing to reforest the planet.</p>
+            <p>We collect second hand books that people donate and then we rent them for a small fee in order to raise
+                money.
+                The money collected is then used to help in <a href="{% url 'projects' %}">reforestation projects</a>.
+            </p>
 
-<p>You can also <a href="{% url 'donate' %}">donate</a> your second hand books to help us growing the collection and offer more choice to our members. (See our collection points)</p>
 
-<p>Spread the word and help us get more members. More member reading our books means less trees being cut.</p>
+            <h4>How can you collaborate?</h4>
+            <ul>
+                <li>By reading second hand books you are reducing the number of trees that are cut to create new books.
+                </li>
+
+                <li>By paying us to rent a book instead of buying a brand new book you are contributing to reforest the
+                    planet.</li>
+
+                <li>You can also <a href="{% url 'donate' %}">donate</a> your second hand books to help us growing the
+                    collection and offer more choice to our members. (See our collection points)</li>
+
+                <li>Spread the word and help us get more members. More member reading our books means less trees being
+                    cut.</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+
 
 {% endblock%}

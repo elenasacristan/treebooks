@@ -35,10 +35,14 @@
     <!-- custom javascript -->
     <script src="{% static 'js/script.js' %}" type="text/javascript"></script>
 
+    <!-- loader script -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
     <!-- MY SCRIPTS -->
     <script src="{% static 'js/my_scripts.js' %}" type="text/javascript"></script>
 
     <!-- This block is used to add some js to the checkout.html page -->
+
     {% block head_js %}
     {% endblock head_js %}
 </head>
@@ -169,5 +173,8 @@
     <!-- ========================= FOOTER END // ========================= -->
 
 </body>
+
+<!-- https://smallenvelop.com/display-loading-icon-page-loads-completely/ -->
+<div class="loader"></div>
 
 </html>
