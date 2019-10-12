@@ -92,13 +92,10 @@
                     <span class="navbar-toggler-icon "></span>
                 </button>
                 <span class="navbar-brand w-100 ">
-                    {% if user.is_authenticated %}
-                    <a href="{% url 'view_all_books' %}">
-                        {% else %}
-                        <a href="{% url 'index' %}">
-                            {% endif %}
-                            <img class="logo" src="{% static 'images/project/logotext.png' %}">
-                        </a>
+
+                    <a href="{% url 'index' %}">
+                        <img class="logo" src="{% static 'images/project/logotext.png' %}">
+                    </a>
                 </span>
 
                 <div class="navbar-collapse collapse w-100 justify-content-center" id="navbar5">
