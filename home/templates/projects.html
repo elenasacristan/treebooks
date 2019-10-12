@@ -5,13 +5,46 @@
 {% block title %}Projects{% endblock %}
 
 {% block content %}
-<h2>Our projects</h2>
-<p>We have only been active since the 1st October of 2019 and since then we have collected XX books from donations and we have raised £XXX renting books.</p>
-
-<p>These are some of the project that we are aiming to contribute to:</p>
 
 
-<p>reforest project 1;;; image and description</p>
-<p>reforest project 2;;; image and description</p>
+<div class='bg-login-register container-fluid projects'>
+    <div class="h-100 d-flex row justify-content-center align-items-center">
+        <div class="col-xs-10 about">
+            <h2 class="heading-form text-center">Our projects</h2>
+            <div class="login-register login-f  mx-auto">
+                <p>We have only been active since the 1st October of 2019 and since then we have collected XX books
+                    from donations and we have raised £XXX renting books.</p>
+
+
+                <h4>Right now we are raising money for these two projects:</h4>
+                <ul>
+                    <li class="row align-items-center justify-content-center">
+                        <div class="col-12 col-md-6">
+                            <a target="_blank" href="https://onetreeplanted.org/pages/yulaenergy">Amazon
+                                Reforestation Project
+                                - Peru</a>
+                            <p>target: £1000</p>
+                        </div>
+                        <img class="col-12 col-md-6  rounded" width='200'
+                            src="{% static 'images/project/reforestation3.jpg' %}">
+                    </li>
+                    <hr>
+                    <li class="row align-items-center justify-content-center">
+                        <img class="order-2 order-md-1 col-12 col-md-6 rounded" width='200'
+                            src="{% static 'images/project/reforestation1.jpg' %}">
+                        <div class="order-1 order-md-2 col-12 col-md-6 text-left text-md-right">
+
+                            <a target="_blank" href="https://tree-nation.com/projects/copaiba-brazil/updates">Copaíba,
+                                Brazil</a>
+                            <p>target: £2000</p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 {% endblock%}
