@@ -58,12 +58,17 @@
         </div>
     </div>
 
+
+
     <div class="container-fluid index">
+        {% if not user.is_authenticated %}
         <div class="row">
             <div class="col text-center">
-                <h2>Register with us and you will...</h2>
+                <h2>Become a member and you will...</h2>
             </div>
         </div>
+        {% endif %}
+
         <div class="row justify-content-between text-center">
             <div class="col-sm-12 col-md-5 col-lg-3 shape shadow1 mx-auto">
                 <img src={% static 'images/project/book.png' %}>
@@ -78,11 +83,13 @@
                 <h3>Save money</h3>
             </div>
         </div>
+        {% if not user.is_authenticated %}
         <div class="row text-center">
             <div class="col">
                 <a class="btn btn-success text-center" href="{% url 'registration' %}">Register</a>
             </div>
         </div>
+        {% endif %}
     </div>
 
 
