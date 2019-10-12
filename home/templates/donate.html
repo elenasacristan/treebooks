@@ -4,28 +4,9 @@
 
 {% block title %}Donate{% endblock %}
 
+
+
 {% block content %}
-
-<h2>Donate your books</h2>
-<p>We have several collections points all over London.</p>
-
-<p>If you want to donate a book just find the one that is most convenient for you and bring us your book.</p>
-
-<p>See all our collections points below:</p>
-
-
-
-Collection point 1
-
-Collection point 2
-
-Collection point 3
-
-Collection point 4
-
-Collection point 5
-
-Collection point 6
 
 
 <div class='bg-login-register container-fluid projects'>
@@ -40,29 +21,54 @@ Collection point 6
 
 
                 <h4>See all our collections points below:</h4>
-                <ul>
-                    <li class="row align-items-center justify-content-center">
-                        <div class="col-12 col-md-6 text-md-center">
-                            <a>Collection point 1</a>
-                            <p>Street A, number 1</p>
-                        </div>
-                        <img class="col-12 col-md-6" src="{% static 'images/project/reforestation3.jpg' %}">
-                    </li>
-                    <hr>
-                    <li class="row align-items-center justify-content-center">
-                        <img class="order-2 order-md-1 col-12 col-md-6"
-                            src="{% static 'images/project/reforestation1.jpg' %}">
-                        <div class="order-1 order-md-2 col-12 col-md-6 text-md-center">
-                            <a>Collection point 2</a>
-                            <p>Street B, number 2</p>
-                        </div>
-                    </li>
 
-                </ul>
+                <div id="map"></div>
+
             </div>
         </div>
     </div>
 </div>
+<!-- https://www.youtube.com/watch?v=wVnimcQsuwk -->
+<!-- http://bl.ocks.org/d3noob/9150014 -->
+<script>
+    var map = L.map("map").setView([51.531941, -0.106017], 11);
 
+    L.tileLayer(
+        "https://api.maptiler.com/maps/streets/256/{z}/{x}/{y}.png?key=TNsK0bad4nktUtLS6Mdo",
+        {
+            attribution:
+                '<a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a>'
+        }
+    ).addTo(map);
+
+
+    var markers = [
+        ["<div class='text-center'><h5><strong>collection point 1</stron></h5><p>Street A, number 1<br> <small>Phone number:111111111</small></p></div>", 51.504514, -0.046066],
+        ["<div class='text-center'><h5><strong>collection point 2</stron></h5><p>Street A, number 2<br> <small>Phone number:111111222</small></p></div>", 51.514893, -0.079315],
+        ["<div class='text-center'><h5><strong>collection point 3</stron></h5><p>Street A, number 3<br> <small>Phone number:111111333</small></p></div>", 51.531941, -0.106017],
+        ["<div class='text-center'><h5><strong>collection point 4</stron></h5><p>Street A, number 4<br> <small>Phone number:111111444</small></p></div>", 51.495966, -0.142222],
+        ["<div class='text-center'><h5><strong>collection point 5</stron></h5><p>Street A, number 5<br> <small>Phone number:111111555</small></p></div>", 51.460895, -0.139044],
+        ["<div class='text-center'><h5><strong>collection point 6</stron></h5><p>Street A, number 6<br> <small>Phone number:111111666</small></p></div>", 51.509089, -0.195225],
+        ["<div class='text-center'><h5><strong>collection point 7</stron></h5><p>Street A, number 7<br> <small>Phone number:111111777</small></p></div>", 51.494825, -0.099286],
+        ["<div class='text-center'><h5><strong>collection point 8</stron></h5><p>Street A, number 8<br> <small>Phone number:111111888</small></p></div>", 51.481321, -0.008609],
+        ["<div class='text-center'><h5><strong>collection point 9</stron></h5><p>Street A, number 9<br> <small>Phone number:111111999</small></p></div>", 51.519399, -0.135245],
+        ["<div class='text-center'><h5><strong>collection point 10</stron></h5><p>Street A, number 10<br> <small>Phone number:11122222</small></p></div>", 51.537523, -0.142408],
+        ["<div class='text-center'><h5><strong>collection point 11</stron></h5><p>Street A, number 11<br> <small>Phone number:11133333</small></p></div>", 51.581060, -0.030400],
+        ["<div class='text-center'><h5><strong>collection point 12</stron></h5><p>Street A, number 12<br> <small>Phone number:11144444</small></p></div>", 51.559858, -0.070964],
+        ["<div class='text-center'><h5><strong>collection point 13</stron></h5><p>Street A, number 13<br> <small>Phone number:11155555</small></p></div>", 51.484234, -0.175694],
+        ["<div class='text-center'><h5><strong>collection point 14</stron></h5><p>Street A, number 14<br> <small>Phone number:11166666</small></p></div>", 51.544971, -0.001872],
+        ["<div class='text-center'><h5><strong>collection point 15</stron></h5><p>Street A, number 15<br> <small>Phone number:11177777</small></p></div>", 51.548290, -0.293511],
+        ["<div class='text-center'><h5><strong>collection point 16</stron></h5><p>Street A, number 16<br> <small>Phone number:11188888</small></p></div>", 51.541358, -0.197119],
+
+
+    ];
+
+
+    for (var i = 0; i < markers.length; i++) {
+        marker = new L.marker([markers[i][1], markers[i][2]])
+            .bindPopup(markers[i][0])
+            .addTo(map);
+    }
+</script>
 
 {% endblock%}
