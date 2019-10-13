@@ -194,8 +194,8 @@
                             <form class="text-center fav-form" method="POST"
                                 action={% url 'join_waiting_list' book.id %}>
                                 {% csrf_token %}
-                                <button type="submit" class="btn btn-warning">
-                                    <h5 class="text-center">Join the waiting list</h5>
+                                <button type="submit">
+                                    <h5 class="btn btn-warning">Join the waiting list</h5>
                                 </button>
                             </form>
                             {% endif %}
@@ -285,8 +285,8 @@
                             <form class="text-center fav-form" method="POST"
                                 action={% url 'join_waiting_list' book.id %}>
                                 {% csrf_token %}
-                                <button type="submit" class="btn btn-warning">
-                                    <h5 class="text-center">Join the waiting list</h5>
+                                <button type="submit">
+                                    <h5 class="text-center btn btn-warning">Join the waiting list</h5>
                                 </button>
                             </form>
                             {% endif %}
