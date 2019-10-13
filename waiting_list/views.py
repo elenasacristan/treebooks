@@ -30,3 +30,16 @@ def join_waiting_list(request, pk):
     
 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
+# @login_required
+# def remove_waiting_list(request):
+
+#     WaitingList.objects.filter(your_turn=True).delete()
+
+#     for wl_list in wl_to_remove:
+#         book = wl_list.wl_book
+#         user = wl_list.wl_user
+#         wl_list = 
+
+#     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
