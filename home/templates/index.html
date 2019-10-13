@@ -62,7 +62,7 @@
 
     <div class="container-fluid index">
         <div class="row">
-            <div class="col text-center">
+            <div class="col-11 text-center">
                 {% if user.is_authenticated %}
                 <h2>Hi <span class="text-capitalize text-success">{{user}}</span>, with TreeBooks you can...</h2>
                 {% else %}
@@ -73,15 +73,15 @@
 
 
         <div class="row justify-content-between text-center">
-            <div class="col-sm-12 col-md-5 col-lg-3 shape shadow1 mx-auto">
+            <div class="col-11 col-md-5 col-lg-3 shape shadow1 mx-auto">
                 <img src={% static 'images/project/book.png' %}>
                 <h3>Discover new books</h3>
             </div>
-            <div class="col-sm-12 col-md-5 col-lg-3 shape shadow2 mx-auto">
+            <div class="col-11 col-md-5 col-lg-3 shape shadow2 mx-auto">
                 <img src={% static 'images/project/tree.png' %}>
                 <h3>Help to save the planet</h3>
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-3 shape shadow3 mx-auto">
+            <div class="col-11 col-md-5 col-lg-3 shape shadow3 mx-auto">
                 <img src={% static 'images/project/money.png' %}>
                 <h3>Save money</h3>
             </div>

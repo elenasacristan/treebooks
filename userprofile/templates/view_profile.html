@@ -22,7 +22,6 @@
                 <div class="row first-row align-items-center">
                     <div class="col-sm-12 col-lg-5 text-center profile-section">
                         <img class="rounded-circle" src="{{ MEDIA_URL }}{{ user_profile.profile.profile_img }}">
-                        <img>
                     </div>
                     <div class="col-sm-12 col-lg-7 profile-section">
 
@@ -36,12 +35,14 @@
                         <h3>Membership details</h3>
                         <div class="row">
                             <dt class="col-xs-12 col-sm-7">Member since:</dt>
-                            <dd class="col-xs-12 col-sm-5">{{user_profile.date_joined}}</dd>
+                            <dd class="col-xs-12 col-sm-5">{{user_profile.date_joined|date:"s M, Y"}}</dd>
 
                         </div>
+
+                        {% if current_books %}
                         <hr>
                         <h5>Currently reading</h5>
-                        <div class="row">
+                        <div class="row currently">
 
                             {% for book_current in current_books %}
                             <dt class="col-12">{{ book_current }} <small>(Return by:
@@ -51,6 +52,7 @@
 
                             {% endfor %}
                         </div>
+                        {% endif %}
 
                     </div>
                 </div>
@@ -183,8 +185,9 @@
             </div>
             <div class="modal-body">
 
-                {% if user.users %}
+                {% if user.users.all %}
                 {% for current_user in user.users.all %}
+                {% if current_user.wl_book.title%}
                 <div class="favourite-read-link row justify-content-center align-items-center">
                     <div class="col-3">
                         <img width="50" src="{{ MEDIA_URL }}{{ current_user.wl_book.book_img }}">
@@ -194,10 +197,15 @@
                         <a href="{% url 'view_waiting_lists' current_user.wl_book.id %}"> - See waiting list</a>
                     </div>
                 </div>
+                {% else %}
+                <p class="alert alert-info" role="alert">You are not in waiting list for any book</p>
+                {% endif %}
+
                 {% endfor %}
                 {% else %}
                 <p class="alert alert-info" role="alert">You are not in waiting list for any book</p>
                 {% endif %}
+
 
             </div>
             <div class="modal-footer">
