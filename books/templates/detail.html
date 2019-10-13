@@ -112,7 +112,108 @@
                     </div>
                 </div>
                 <hr>
-                {% if user.is_authenticated and book.available %}
+
+
+
+                <!-- user registered and book available -->
+                {% if user.is_authenticated and book.available%}
+
+                <!-- if there is waiting list -->
+                {% if waiting_list_users %}
+
+                {% for users_waiting in waiting_list_users%}
+                {% if forloop.first %}
+                {% for next in users_waiting.wl_user.all%}
+                <!-- if the current user is the next in the list -->
+                {% if next == user %}
+                <div class="container price-section text-center">
+                    <div class="row justify-content-center">
+
+                        <div class="col-10 col-sm-5 available">
+                            <h4>AVAILABLE</h4>
+                        </div>
+                        <div class="col-10 col-sm-6 ">
+                            <var class="price h3 float-sm-right">
+                                <span class="currency">£</span><span class="num">{{ book.price_day }}<small>/per
+                                        day</small></span>
+                            </var>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="container add-days"> -->
+                <div class="container">
+
+                    <div class="row justify-content-center align-items-start">
+                        <div class="col-10 col-md-7">
+                            <p>Select the number of days that you want to rent the book for:<br>
+                                <small>*The minimun number of days to rent any book is 10.</small>
+                            </p>
+
+
+                        </div>
+                        <div class="col-10 col-md-4">
+                            <form class="justify-content-center" method="post" action="{% url 'add_to_cart' book.id %}">
+                                {% csrf_token %}
+                                <div class="input-group">
+                                    <input name="days" type="number" min="10" max="999" class="form-control" value="10"
+                                        required>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary" type="submit">Add to cart</button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                {% else %}
+
+
+
+                <div class="container waiting-section last-row">
+                    <div class="row justify-content-center">
+                        <div class="col-8">
+
+                            {% if waiting_list %}
+                            {% for wl in waiting_list %}
+
+                            {% for userinlist in wl.wl_user.all %}
+                            {% if userinlist == user %}
+
+                            <h4 class="empty-cart text-center alert alert-info" role="alert">You are in the waiting list
+                            </h4>
+
+                            {% endif%}
+                            {% endfor %}
+                            {% endfor %}
+
+                            {% else %}
+                            <form class="text-center fav-form" method="POST"
+                                action={% url 'join_waiting_list' book.id %}>
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-warning">
+                                    <h5 class="text-center">Join the waiting list</h5>
+                                </button>
+                            </form>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+                {% endfor%}
+
+                <!-- if there is not waiting list -->
+                {% else %}
+
 
                 <div class="container price-section text-center">
                     <div class="row justify-content-center">
@@ -155,7 +256,13 @@
                     </div>
                 </div>
 
+
+
+                {% endif %}
+
+
                 {% elif user.is_authenticated and not book.available %}
+
 
                 <div class="container waiting-section last-row">
                     <div class="row justify-content-center">
@@ -169,13 +276,7 @@
 
                             <h4 class="empty-cart text-center alert alert-info" role="alert">You are in the waiting list
                             </h4>
-                            <!-- {% else %}
-                            <form class="fav-form" method="POST" action={% url 'join_waiting_list' book.id %}>
-                                {% csrf_token %}
-                                <button type="submit" class="btn btn-warning text-center ">
-                                    <h5 class="btn btn-warning">Join the waiting list</h5>
-                                </button>
-                            </form> -->
+
                             {% endif%}
                             {% endfor %}
                             {% endfor %}
@@ -195,14 +296,9 @@
 
 
 
-
-
-
-
-
-
-
                 {% else %}
+
+
                 <div class="row detail-register justify-content-center">
                     <div class="col-5">
 
@@ -211,6 +307,7 @@
 
                     </div>
                 </div>
+
                 {% endif %}
 
                 {% if reviews %}
