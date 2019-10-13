@@ -58,8 +58,8 @@
 
             <section class="top-header">
                 <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-auto ml-auto">
+                    <div class="row justify-content-center justify-content-md-end">
+                        <div class="col-10 text-center text-md-right">
                             <ul>
                                 <li>
                                     <form method="GET" id="search-form" action="{% url 'do_search' %}">
@@ -87,27 +87,27 @@
 
             <!-- https://www.codeply.com/go/qhaBrcWp3v -->
 
-            <nav class="navbar navbar-expand-sm flex-nowrap">
-                <button class="navbar-toggler mr-2 " type="button" data-toggle="collapse" data-target="#navbar5">
-                    <span class="navbar-toggler-icon "></span>
-                </button>
+            <nav class="navbar navbar-expand-md">
                 <span class="navbar-brand w-100 ">
-
                     <a href="{% url 'index' %}">
                         <img class="logo" src="{% static 'images/project/logotext.png' %}">
                     </a>
                 </span>
+                <button class="navbar-toggler w-100 " type="button" data-toggle="collapse" data-target="#navbar5">
+                    <span class="navbar-toggler-icon float-right"></span>
+                </button>
+
 
                 <div class="navbar-collapse collapse w-100 justify-content-center" id="navbar5">
-                    <ul class="navbar-nav mx-auto">
+                    <ul class="navbar-nav mx-auto text-center">
                         {% if user.is_authenticated %}
-                        <li class="nav-item d-block d-sm-none">
+                        <li class="nav-item d-block d-md-none">
                             <a class="nav-link" href="{% url 'view_cart' %}">Your cart - {{books_count}} books</span>
                             </a></li>
-                        <li class="nav-item d-block d-sm-none">
+                        <li class="nav-item d-block d-md-none">
                             <a class="nav-link" href="{% url 'logout' %}">log out</a></li>
                         {% else %}
-                        <li class="nav-item d-block d-sm-none">
+                        <li class="nav-item d-block d-md-none">
                             <a class="nav-link" href="{% url 'login' %}">log in</a></li>
                         {% endif %}
                         <li class="nav-item active">
