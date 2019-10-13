@@ -6,6 +6,7 @@ from .models import OrderLineItem
 from django.conf import settings
 from django.utils import timezone
 from books.models import Book
+from waiting_list.models import WaitingList
 from userprofile.models import UserProfile
 import stripe
 
@@ -55,12 +56,16 @@ def checkout(request):
                 messages.error(request, "You have succesfully paid")
                 '''save book in list of read books'''
                 profile = UserProfile.objects.get(user = request.user)
+
                 for id, days in cart.items():
                     book = get_object_or_404(Book, pk=id)
                     profile.read_books.add(book)
                     book.return_date = order.date + timezone.timedelta(days=days)
                     book.available = False
                     book.save()
+                    waiting_list = WaitingList.objects.get(wl_book__id=book.id, wl_user=request.user)
+                    if waiting_list:
+                        waiting_list.delete()
 
                 request.session['cart'] = {}
                 return redirect(reverse('view_all_books'))
