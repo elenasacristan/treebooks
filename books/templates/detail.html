@@ -169,20 +169,19 @@
 
                             <h4 class="empty-cart text-center alert alert-info" role="alert">You are in the waiting list
                             </h4>
-                            {% else %}
-                            <form class="text-right fav-form" method="POST"
-                                action={% url 'join_waiting_list' book.id %}>
+                            <!-- {% else %}
+                            <form class="fav-form" method="POST" action={% url 'join_waiting_list' book.id %}>
                                 {% csrf_token %}
-                                <button type="submit" class="btn btn-warning">
-                                    <h5 class="text-center">Join the waiting list</h5>
+                                <button type="submit" class="btn btn-warning text-center ">
+                                    <h5 class="btn btn-warning">Join the waiting list</h5>
                                 </button>
-                            </form>
+                            </form> -->
                             {% endif%}
                             {% endfor %}
                             {% endfor %}
 
                             {% else %}
-                            <form class="text-right fav-form" method="POST"
+                            <form class="text-center fav-form" method="POST"
                                 action={% url 'join_waiting_list' book.id %}>
                                 {% csrf_token %}
                                 <button type="submit" class="btn btn-warning">

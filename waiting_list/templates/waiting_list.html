@@ -8,18 +8,29 @@
 
 {% block content %}
 
-<!-- https://stackoverflow.com/questions/3829758/can-i-access-attributes-of-the-first-object-in-a-list-in-django-templates -->
+<div class='bg-login-register container-fluid waiting_list'>
+    <div class="h-100 d-flex row justify-content-center align-items-center">
+        <div class="col-xs-10 about">
+            {% with waiting_list|first as first_waiting_list %}
+            <h2 class="heading-form text-center"><small>waiting list for</small><br>{{ first_waiting_list.wl_book }}
+            </h2>
+            {% endwith %}
 
-{% with waiting_list|first as first_waiting_list %}
-{{ first_waiting_list.wl_book }}
-{% endwith %}
+            <div class="login-register login-f  mx-auto">
+                <!-- https://stackoverflow.com/questions/3829758/can-i-access-attributes-of-the-first-object-in-a-list-in-django-templates -->
 
+                <ol>
+                    {% for list in waiting_list %}
 
-<br><br>
-{% for list in waiting_list %}
-{% for waiting_user in list.wl_user.all %}
-{{ waiting_user }}<br>
-{% endfor %}
-{% endfor %}
+                    {% for waiting_user in list.wl_user.all %}
+                    <li>{{ waiting_user }}</li>
+                    {% endfor %}
 
-{% endblock %}
+                    {% endfor %}
+                </ol>
+                {% endblock %}
+
+            </div>
+        </div>
+    </div>
+</div>
