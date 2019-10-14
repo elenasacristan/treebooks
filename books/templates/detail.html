@@ -121,9 +121,9 @@
                 <!-- if there is waiting list -->
                 {% if waiting_list_users %}
 
-                {% for users_waiting in waiting_list_users%}
+                {% for users_waiting in waiting_list_users %}
                 {% if forloop.first %}
-                {% for next in users_waiting.wl_user.all%}
+                {% for next in users_waiting.wl_user.all %}
                 <!-- if the current user is the next in the list -->
                 {% if next == user %}
                 <div class="container price-section text-center">
@@ -166,12 +166,7 @@
 
                     </div>
                 </div>
-
-
-
                 {% else %}
-
-
 
                 <div class="container waiting-section last-row">
                     <div class="row justify-content-center">
@@ -203,10 +198,8 @@
                     </div>
                 </div>
 
-
-
-
                 {% endif %}
+
                 {% endfor %}
                 {% endif %}
                 {% endfor%}
