@@ -14,7 +14,6 @@
     <div class="row">
         <div class="cart card container mx-auto">
 
-
             {% if total != 0 %}
             <div class="row row-header justify-content-between text-center d-none d-sm-flex">
                 <div class="col-6 col-xl-6 text-left">Book</div>
@@ -97,7 +96,7 @@
 
             <div class="row justify-content-center justify-content-md-end checkout-row text-center text-md-right">
                 <div class="col-10">
-                    <a class="btn btn-warning" href='#'>Find more books</a>
+                    <a class="btn btn-warning" href='{% url 'view_all_books' %}'>Find more books</a>
 
                     {% if total != 0 %}
                     <a class="btn btn-success" href='{% url 'checkout' %}'>Checkout</a>
