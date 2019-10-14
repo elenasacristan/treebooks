@@ -35,7 +35,7 @@
                         <h3>Membership details</h3>
                         <div class="row">
                             <dt class="col-xs-12 col-sm-7">Member since:</dt>
-                            <dd class="col-xs-12 col-sm-5">{{user_profile.date_joined|date:"s M, Y"}}</dd>
+                            <dd class="col-xs-12 col-sm-5">{{user_profile.date_joined|date:"d M, Y"}}</dd>
 
                         </div>
 
@@ -46,7 +46,7 @@
 
                             {% for book_current in current_books %}
                             <dt class="col-12">{{ book_current }} <small>(Return by:
-                                    {{ book_current.return_date }})</small></dt>
+                                    {{ book_current.return_date|date:"d M, Y" }})</small></dt>
 
                             <br><br>
 
