@@ -19,6 +19,8 @@ class ReviewBook(models.Model):
     review_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
     review_author = models.ForeignKey(User, related_name="review_author")
     reviewed_book = models.ForeignKey(Book, default='')
+    percentage_score =models.IntegerField(default=0)
+
     
     def __str__(self):
         return "{0} - {1}, {2}".format(self.score, self.review_title, self.review_author)  

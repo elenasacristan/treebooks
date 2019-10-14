@@ -58,8 +58,6 @@
                             {% else %}
                             <a href="#">Join waiting list</a>{% endif %}</div>
                     </div> <!-- rating-wrap.// -->
-
-
                 </figcaption>
                 <div class="bottom-wrap text-left">
                     <a href="{% url 'detail' book.id %}" class="btn btn-sm btn-primary float-right">
@@ -78,9 +76,16 @@
         {% endif %}
 
         <!-- </li> -->
+
+
         {% endfor %}
     </div>
 </div>
+
+{% empty %}
+
+<h4 class="empty-cart text-center alert alert-info" role="alert">We didn't find any book.</h4>
+
 {% endfor %}
 
 

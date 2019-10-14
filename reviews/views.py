@@ -24,13 +24,15 @@ def add_review(request, pk):
              review.review_author = request.user
              review.reviewed_book = book
              review.save()
+             review.percentage_score = ((review.score)*100)/5
+             review.save()
+
 
              book.total_number_reviews += 1
              book.total_ratings += review.score
              book.rating = book.total_ratings / book.total_number_reviews
              book.percentage_rating = (book.rating * 100)/5
              book.save()
-             
              return redirect(reverse('view_profile'))
     
     else:

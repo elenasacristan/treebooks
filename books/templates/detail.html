@@ -314,7 +314,24 @@
                                 <img src="{{ MEDIA_URL }}{{review.review_author.profile.profile_img}}"
                                     alt="user profile image" width="60">
                                 <div class="media-body">
-                                    <h5 class="mt-0"> {{ review.review_title }}</h5>
+
+
+                                    <div class="rating-wrap text-right">
+                                        <ul class="rating-stars">
+                                            <li style="width:{{review.percentage_score}}%" class="stars-active">
+                                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </li>
+                                        </ul>
+                                        <h5 class="mt-0 text-left"> {{ review.review_title }}</h5>
+                                    </div> <!-- rating-wrap.// -->
+
                                     {{ review.comment }}
                                     <p class="text-right"><small>- {{ review.review_author }} -
                                             {{ review.review_date|date:"d M, Y" }}</small></p>
