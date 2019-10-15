@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .forms import ContactUsForm
+from .models import TotalRaised
 from django.utils import timezone
 from django.contrib import auth, messages
 
@@ -8,20 +9,17 @@ from django.contrib import auth, messages
 # Create your views here.
 
 def index(request):
-    '''Return the home page'''
     return render(request, 'index.html')
 
 def about(request):
-    '''Return the home page'''
     return render(request, 'about.html')
 
 def donate(request):
-    '''Return the home page'''
     return render(request, 'donate.html')
 
 def projects(request):
-    '''Return the home page'''
-    return render(request, 'projects.html')
+    raised = get_object_or_404(TotalRaised, pk=1)
+    return render(request, 'projects.html', {'raised':raised})
     
 def contact(request):
     '''Return the home page'''

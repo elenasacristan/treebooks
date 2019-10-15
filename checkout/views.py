@@ -8,6 +8,7 @@ from django.utils import timezone
 from books.models import Book
 from waiting_list.models import WaitingList
 from userprofile.models import UserProfile
+from home.models import TotalRaised
 import stripe
 
 # Create your views here.
@@ -31,9 +32,10 @@ def checkout(request):
         
             cart = request.session.get('cart',{})
             total = 0
+            deposit = 5
             for id, days in cart.items():
                 book = get_object_or_404(Book, pk=id)
-                total += days * book.price_day
+                total += (days * book.price_day) + deposit
                 order_line_item = OrderLineItem(
                     order = order,
                     book = book,
@@ -54,8 +56,27 @@ def checkout(request):
             # timedelta - https://stackoverflow.com/questions/27491248/django-default-timezone-now-delta
             if customer.paid:
                 messages.error(request, "You have succesfully paid")
+               
+                cart = request.session.get('cart',{})
+                total_raised = 0
+                books_count = 0
+
+                for id, days in cart.items():
+                    book = get_object_or_404(Book, pk=id)
+                    total_raised += days * book.price_day
+                    books_count += 1
+
+                
+                '''add payment to total money raised
+                and increment number of books rented'''
+                raised = get_object_or_404(TotalRaised, id=1)
+                raised.money_raised += total_raised
+                raised.number_books += books_count
+                raised.save()
+
                 '''save book in list of read books'''
                 profile = UserProfile.objects.get(user = request.user)
+               
 
                 for id, days in cart.items():
                     book = get_object_or_404(Book, pk=id)
@@ -63,7 +84,7 @@ def checkout(request):
                     book.return_date = order.date + timezone.timedelta(days=days)
                     book.available = False
                     book.save()
-                    waiting_list = WaitingList.objects.get(wl_book__id=book.id, wl_user=request.user)
+                    waiting_list =  WaitingList.objects.filter(wl_book__id=book.id, wl_user=request.user).exists()
                     if waiting_list:
                         waiting_list.delete()
 
