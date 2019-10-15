@@ -57,8 +57,7 @@
 
             </div>
             <div class="col-6 col-sm-2 text-center">
-                <a href="{% url 'remove_from_cart' book_item.id %}">{{ book_item.book.store }}</a>
-
+                {{ book_item.book.store }}
             </div>
         </div>
         <hr>
@@ -70,15 +69,51 @@
         {% else %}
 
 
-        <div class="row row-header justify-content-end text-success">
-            <div class="col-6 text-right">
-                <h3>Total: £{{ total }}</h3>
+        <div class="row row-header justify-content-center justify-content-sm-end ">
+
+            <div class="col-6 col-sm-5 col-md-4 text-right">
+                <h5>Rent:</h5>
+            </div>
+            <div class="col-6 col-sm-3 col-md-2 text-right">
+                <h5>£{{ total_raised }}</h5>
             </div>
         </div>
 
+
+        <div class="row row-header total-price justify-content-center justify-content-sm-end ">
+
+            <div class="col-6 col-sm-5 col-md-4 text-right">
+                <h5>Deposit:</h5>
+                <p>({{ books_count }} books x £5)</p>
+            </div>
+            <div class="col-6 col-sm-3 col-md-2 text-right">
+                <h5>£{{ deposit }}</h5>
+
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <p class="text-left text-info">*The £5 deposit per book will be refund when the book
+                    is returned</p>
+            </div>
+        </div>
+        <div class="row row-header justify-content-center justify-content-sm-end text-success">
+
+            <div class="col-6 col-sm-5 col-md-4 text-right">
+                <h3>Total:</h3>
+            </div>
+            <div class="col-6 col-sm-3 col-md-2 text-right">
+                <h3>£{{ total }}</h3>
+            </div>
+        </div>
+
+
+
+
         {% endif %}
 
-        <h3>Payment details</h3>
+        <h3 class="payment-details text-center">Payment details</h3>
         <hr>
         <div class="row justify-content-center payment-wrapper">
 
