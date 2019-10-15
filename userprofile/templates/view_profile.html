@@ -36,6 +36,13 @@
                         <div class="row">
                             <dt class="col-xs-12 col-sm-7">Member since:</dt>
                             <dd class="col-xs-12 col-sm-5">{{user_profile.date_joined|date:"d M, Y"}}</dd>
+                            <dt class="col-xs-12 col-sm-7">Subscribed to Newsletter:</dt>
+                            {% if user_profile.profile.subscribe %}
+                            <dd class="col-xs-12 col-sm-5">Yes</dd>
+                            {% else %}
+                            <dd class="col-xs-12 col-sm-5">No</dd>
+                            {% endif %}
+
 
                         </div>
 

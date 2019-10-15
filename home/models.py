@@ -3,6 +3,21 @@ from datetime import datetime
 
 # Create your models here.
 
+class Projects(models.Model):
+    name = models.CharField(max_length=50, default='')
+    target = models.IntegerField(default=0)
+    image = models.ImageField(upload_to='images')
+
+    def __str__(self):
+        return "{0} - {1}".format(self.name, self.target)
+
+
+class TotalRaised(models.Model):
+    money_raised = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.money_raised
+
 
 class ContactUs(models.Model):
     
