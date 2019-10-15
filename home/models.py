@@ -4,12 +4,15 @@ from datetime import datetime
 # Create your models here.
 
 class Projects(models.Model):
-    name = models.CharField(max_length=50, default='')
+    name = models.CharField(max_length=250, default='')
     target = models.IntegerField(default=0)
     image = models.ImageField(upload_to='images')
 
     def __str__(self):
-        return "{0} - {1}".format(self.name, self.target)
+        return "{0} - £{1}".format(self.name, self.target)
+    
+    class Meta:
+        verbose_name_plural = "Projects"
 
 
 class TotalRaised(models.Model):  

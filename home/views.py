@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .forms import ContactUsForm
-from .models import TotalRaised
+from .models import TotalRaised, Projects
 from django.utils import timezone
 from django.contrib import auth, messages
 
@@ -19,7 +19,8 @@ def donate(request):
 
 def projects(request):
     raised = get_object_or_404(TotalRaised, pk=1)
-    return render(request, 'projects.html', {'raised':raised})
+    projects = Projects.objects.all()
+    return render(request, 'projects.html', {'raised':raised, 'projects':projects})
     
 def contact(request):
     '''Return the home page'''

@@ -17,30 +17,32 @@
                     from donations and we have raised <strong>£{{raised.money_raised}}</strong> renting books.</p>
 
 
-                <h4>Right now we are raising money for these two projects:</h4>
+                <h4>Right now we are raising money for these projects:</h4>
+                {% for project in projects %}
                 <ul>
+                    {% if forloop.counter0|divisibleby:2 %}
                     <li class="row align-items-center justify-content-center">
                         <div class="col-12 col-md-6 text-md-center">
-                            <a target="_blank" href="https://onetreeplanted.org/pages/yulaenergy">Amazon
-                                Reforestation Project
-                                - Peru</a>
-                            <p>target: £1000</p>
+                            <a target="_blank" href="https://onetreeplanted.org/pages/yulaenergy">{{ project.name }}</a>
+                            <p>£{{ project.target }}</p>
                         </div>
-                        <img class="col-12 col-md-6" src="{% static 'images/project/reforestation3.jpg' %}">
+                        <img class="col-12 col-md-6" src="{{ MEDIA_URL }}{{ project.image }}">
                     </li>
+                    {% else %}
                     <hr>
                     <li class="row align-items-center justify-content-center">
-                        <img class="order-2 order-md-1 col-12 col-md-6"
-                            src="{% static 'images/project/reforestation1.jpg' %}">
+                        <img class="order-2 order-md-1 col-12 col-md-6" src="{{ MEDIA_URL }}{{ project.image }}">
                         <div class="order-1 order-md-2 col-12 col-md-6 text-md-center">
 
-                            <a target="_blank" href="https://tree-nation.com/projects/copaiba-brazil/updates">Copaíba,
-                                Brazil</a>
-                            <p>target: £2000</p>
+                            <a target="_blank"
+                                href="https://tree-nation.com/projects/copaiba-brazil/updates">{{ project.name }}</a>
+                            <p>£{{ project.target }}</p>
                         </div>
                     </li>
+                    {% endif %}
 
                 </ul>
+                {% endfor %}
             </div>
         </div>
     </div>
