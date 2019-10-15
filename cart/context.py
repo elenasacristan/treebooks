@@ -15,17 +15,25 @@ def cart_content(request):
     cart = request.session.get('cart',{})
     cart_books = []
     total = 0
+    total_raised = 0
     books_count = 0
     book_price = 0
+    deposit = 0
+
 
     for id, days in cart.items():
         book = get_object_or_404(Book, pk=id)
         book_price = days * book.price_day
+        total_raised += book_price
         total += book_price
         books_count += 1
+        deposit = 5 * books_count
         cart_books.append({'id':id, 'book_price':book_price, 'days':days, 'book':book})
     
-    return {'cart_books':cart_books, 'total':total, 'books_count':books_count}
+    total_raised = total
+    total += deposit
+
+    return {'cart_books':cart_books, 'total':total, 'books_count':books_count, 'deposit':deposit, 'total_raised':total_raised}
     
 
 

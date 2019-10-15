@@ -80,14 +80,40 @@
 
 
             <div class="row row-header justify-content-center justify-content-sm-end ">
-                <div class="col-12 col-md-3  text-center text-sm-right">
 
-                    <h6 class="text-center"><b>{{ books_count }}</b> items in cart.</h6>
+                <div class="col-6 col-sm-5 col-md-4 text-right">
+                    <h5>Rent:</h5>
                 </div>
-                <div class="col-6 col-md-2 text-right">
+                <div class="col-6 col-sm-3 col-md-2 text-right">
+                    <h5>£{{ total_raised }}</h5>
+                </div>
+            </div>
+
+
+            <div class="row row-header total-price justify-content-center justify-content-sm-end ">
+
+                <div class="col-6 col-sm-5 col-md-4 text-right">
+                    <h5>Deposit:</h5>
+                    <p>({{ books_count }} books x £5)</p>
+                </div>
+                <div class="col-6 col-sm-3 col-md-2 text-right">
+                    <h5>£{{ deposit }}</h5>
+
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <p class="text-left text-success">*The £5 deposit per book will be refund when the book
+                        is returned</p>
+                </div>
+            </div>
+            <div class="row row-header justify-content-center justify-content-sm-end ">
+
+                <div class="col-6 col-sm-5 col-md-4 text-right">
                     <h3>Total:</h3>
                 </div>
-                <div class="col-6 col-md-2">
+                <div class="col-6 col-sm-3 col-md-2 text-right">
                     <h3>£{{ total }}</h3>
                 </div>
             </div>
