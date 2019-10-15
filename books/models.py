@@ -56,7 +56,6 @@ class Book(models.Model):
     price_day = models.DecimalField(decimal_places=2, max_digits=3)
     pages = models.IntegerField(default=0)
     available = models.BooleanField(default=True)
-    current_reader = models.ForeignKey(User, null=True, blank=True)
     return_date = models.DateField(default=datetime.now)
 
 
