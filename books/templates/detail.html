@@ -37,7 +37,10 @@
                                             </li>
                                         </ul>
                                         <div class="label-rating"><strong>{{ book.rating }}</strong> </div>
-                                        <div><a href="#reviews_section">See reviews</a></div>
+                                        {% if user.is_authenticated %}
+                                        <div><a href="#reviews_section">({{book.total_number_reviews}}) See reviews</a>
+                                            {% endif %}
+                                        </div>
                                     </div> <!-- rating-wrap.// -->
                                 </div>
                             </div>
@@ -104,7 +107,7 @@
                     </div>
                     <div class="col-sm-12 col-md-5 shape shadow2">
                         <img src={% static 'images/project/timer.png' %}>
-                        <h3>Avg: {{ book.avg_days }} days </h3>
+                        <h3>{{ book.pages }} pages</h3>
                     </div>
                     <div class="col-sm-12 col-md-5 shape shadow3">
                         <img src={% static 'images/project/book.png' %}>

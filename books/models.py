@@ -55,8 +55,6 @@ class Book(models.Model):
     store = models.CharField(max_length=15, choices=STORE_CHOICES)
     price_day = models.DecimalField(decimal_places=2, max_digits=3)
     pages = models.IntegerField(default=0)
-    avg_days = models.IntegerField(default=0)
-    language_book = models.CharField(max_length=20, default='')
     available = models.BooleanField(default=True)
     current_reader = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     return_date = models.DateField(default=datetime.now)
