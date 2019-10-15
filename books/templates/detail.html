@@ -39,8 +39,9 @@
                                         <div class="label-rating"><strong>{{ book.rating }}</strong> </div>
                                         {% if user.is_authenticated %}
                                         <div><a href="#reviews_section">({{book.total_number_reviews}}) See reviews</a>
-                                            {% endif %}
                                         </div>
+                                        {% endif %}
+
                                     </div> <!-- rating-wrap.// -->
                                 </div>
                             </div>

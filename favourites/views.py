@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from userprofile.models import UserProfile
 from books.models import Book
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
+
 
 
 # Create your views here.
@@ -13,7 +15,9 @@ remove it from favourites.
 If the book is not saved as favourite then
 save it as favourite
 '''
+
 # https://stackoverflow.com/questions/12758786/redirect-return-to-same-previous-page-in-django/12758859
+@login_required
 def add_remove_favourites(request, id):
     book = get_object_or_404(Book,pk=id)
 
