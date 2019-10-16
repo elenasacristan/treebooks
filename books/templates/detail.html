@@ -9,7 +9,7 @@
 
 {% block content %}
 
-<div class="container-fluid detail-profile-wrapper">
+<div class="container-fluid detail-profile-wrapper bg-login-register">
     <div class="row">
         <div class="col content-area">
             <div class="container detail-profile mx-auto">
@@ -61,9 +61,9 @@
                                         {% csrf_token %}
                                         <button type="submit">
                                             {% if book in user.profile.favourites.all %}
-                                            <h2 class="favorited text-right"><i class="fa fa-heart"></i></h2>
+                                            <h3 class="favorited text-right"><i class="fa fa-heart"></i></h3>
                                             {% else %}
-                                            <h2 class="favorite text-right"><i class="fa fa-heart"></i></h2>
+                                            <h3 class="favorite text-right"><i class="fa fa-heart"></i></h3>
                                             {% endif %}
                                         </button>
                                     </form>
