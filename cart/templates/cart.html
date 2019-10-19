@@ -122,10 +122,10 @@
 
             <div class="row justify-content-center justify-content-md-end checkout-row text-center text-md-right">
                 <div class="col-10">
-                    <a class="btn btn-warning" href='{% url 'view_all_books' %}'>Find more books</a>
+                    <a class="btn btn-warning buttons_all" href='{% url 'view_all_books' %}'>Keep looking</a>
 
                     {% if total != 0 %}
-                    <a class="btn btn-success" href='{% url 'checkout' %}'>Checkout</a>
+                    <a class="btn btn-success buttons_all" href='{% url 'checkout' %}'>Checkout</a>
                     {% endif %}
 
 

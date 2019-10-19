@@ -24,7 +24,8 @@
 
                         <div class="carousel-caption d-md-block mx-auto">
                             <p>Rent a book today.</p>
-                            <a class='btn btn-warning' href={% url 'view_all_books' %}>See our collection</a>
+                            <a class='btn btn-warning buttons_all' href={% url 'view_all_books' %}>See our
+                                collection</a>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -32,7 +33,7 @@
                         <div class="carousel-caption d-md-block">
                             <p>In the last 2 years we have raised money to contribute to the reforestation
                                 of 5 national parks.</p>
-                            <a class='btn btn-warning' href={% url 'projects' %}>Find out more</a>
+                            <a class='btn btn-warning buttons_all' href={% url 'projects' %}>Find out more</a>
 
                         </div>
                     </div>
@@ -41,7 +42,7 @@
                         <div class="carousel-caption d-md-block">
                             <p>Get in touch with us to organise a collection. By donating your books you are
                                 helping to save more trees.</p>
-                            <a class='btn btn-warning' href={% url 'donate' %}>Donate Book</a>
+                            <a class='btn btn-warning buttons_all' href={% url 'donate' %}>Donate Book</a>
 
                         </div>
                     </div>
@@ -89,7 +90,7 @@
         {% if not user.is_authenticated %}
         <div class="row text-center">
             <div class="col">
-                <a class="btn btn-success text-center" href="{% url 'registration' %}">Register</a>
+                <a class="btn btn-warning text-center buttons_all" href="{% url 'registration' %}">Register</a>
             </div>
         </div>
         {% endif %}

@@ -194,7 +194,7 @@
                                 action={% url 'join_waiting_list' book.id %}>
                                 {% csrf_token %}
                                 <button type="submit">
-                                    <h5 class="btn btn-warning">Join the waiting list</h5>
+                                    <h5 class="btn btn-warning buttons_all">Join the waiting list</h5>
                                 </button>
                             </form>
                             {% endif %}
@@ -299,7 +299,7 @@
                 <div class="row detail-register justify-content-center text-center">
                     <div class="col-11">
 
-                        <a class="btn btn-warning" href="{% url 'registration' %}">
+                        <a class="btn btn-warning buttons_all" href="{% url 'registration' %}">
                             Register to rent this book</a>
 
                     </div>
