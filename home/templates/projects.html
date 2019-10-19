@@ -8,7 +8,7 @@
 
 
 <div class='container-fluid projects'>
-    <div class="h-100 d-flex row justify-content-center align-items-center">
+    <div class="h-100 d-flex row justify-content-center align-items-center about-projects-donate">
         <div class="col-xs-10 about">
             <h2 class="headers_all text-center">Our projects</h2>
             <div class="login-register wrapper1  mx-auto">
@@ -17,14 +17,15 @@
                     from donations and we have raised <strong>£{{raised.money_raised}}</strong> renting books.</p>
 
 
-                <h4>Right now we are raising money for these projects:</h4>
+                <p>Right now we are raising money for these projects:</p>
                 {% for project in projects %}
                 <ul>
                     {% if forloop.counter0|divisibleby:2 %}
                     <li class="row align-items-center justify-content-center">
                         <div class="col-12 col-md-6 text-md-center">
-                            <a target="_blank" href="https://onetreeplanted.org/pages/yulaenergy">{{ project.name }}</a>
-                            <p>£{{ project.target }}</p>
+                            <h5><a class="text-success" target="_blank"
+                                    href="https://onetreeplanted.org/pages/yulaenergy">{{ project.name }}</a></h5>
+                            <h4>£{{ project.target }}</h4>
                         </div>
                         <img class="col-12 col-md-6" src="{{ MEDIA_URL }}{{ project.image }}">
                     </li>
@@ -34,9 +35,10 @@
                         <img class="order-2 order-md-1 col-12 col-md-6" src="{{ MEDIA_URL }}{{ project.image }}">
                         <div class="order-1 order-md-2 col-12 col-md-6 text-md-center">
 
-                            <a target="_blank"
-                                href="https://tree-nation.com/projects/copaiba-brazil/updates">{{ project.name }}</a>
-                            <p>£{{ project.target }}</p>
+                            <h5><a class="text-success" target="_blank"
+                                    href="https://tree-nation.com/projects/copaiba-brazil/updates">{{ project.name }}</a>
+                            </h5>
+                            <h4>£{{ project.target }}</h4>
                         </div>
                     </li>
                     {% endif %}

@@ -62,11 +62,10 @@
                         <div>{% if book.available %}
                             <span class="text-success text-uppercase font-weight-bold">Available</span>
                             {% else %}
-                            <form class="text-center fav-form" method="POST"
-                                action={% url 'join_waiting_list' book.id %}>
+                            <form class="text-center" method="POST" action={% url 'join_waiting_list' book.id %}>
                                 {% csrf_token %}
-                                <button type="submit">
-                                    <h5 class="text-center text-primary">Join the waiting list</h5>
+                                <button type="submit" class="text-center text-primary">
+                                    Join the waiting list
                                 </button>
                             </form>
 
