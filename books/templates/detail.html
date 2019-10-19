@@ -343,8 +343,11 @@
                                         </ul>
                                         <h5 class="mt-0 text-left"> {{ review.review_title }}</h5>
                                     </div> <!-- rating-wrap.// -->
+                                    <blockquote>
+                                        <i class="fa fa-quote-left" aria-hidden="true"></i>{{ review.comment }}<i
+                                            class="fa fa-quote-right" aria-hidden="true"></i>
+                                    </blockquote>
 
-                                    {{ review.comment }}
                                     <p class="text-right"><small>- {{ review.review_author }} -
                                             {{ review.review_date|date:"d M, Y" }}</small></p>
                                 </div>
