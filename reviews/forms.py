@@ -5,6 +5,11 @@ from django.core.exceptions import ValidationError
 
 class ReviewForm(forms.ModelForm):
 
+    review_title = forms.CharField(
+        widget=forms.TextInput(attrs={'placeholder': 'Review title'}))
+    comment = forms.CharField( widget=forms.Textarea(attrs={'placeholder': 'Leave your review in this box'}))
+
+
     class Meta:
         model = ReviewBook
         fields = ('review_title', 'comment', 'score')

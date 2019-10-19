@@ -13,8 +13,8 @@
 
     <div class="col-xs-6 text-center">
         <div class="circle-shape">
-            <h2 class="heading-form headers_all text-center">Log in</h2>
-            <form class="login-register login-f  mx-auto text-center" method="POST">
+            <h2 class="headers_all text-center">Log in</h2>
+            <form class="login-register wrapper1  mx-auto text-center" method="POST">
                 {% csrf_token %}
                 {{ login_form | as_bootstrap}}
                 <button type="submit" class="btn">Login</button>
