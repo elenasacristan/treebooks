@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Book,Category,Author
+from .models import Book,Category,Author, StoreBook
 
 # Register your models here.
 
@@ -9,4 +9,5 @@ admin.site.register(Category)
 
 admin.site.register(Author)
 
+admin.site.register(StoreBook)
 

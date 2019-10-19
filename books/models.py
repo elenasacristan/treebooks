@@ -27,21 +27,29 @@ class Author(models.Model):
     def __str__(self):
         return self.name
 
+class StoreBook(models.Model):
+    name = models.CharField(max_length=15)
+    street = models.CharField(max_length=15)
+    map_store = models.URLField(max_length=400, default='')
+
+    def __str__(self):
+        return self.name
 
 class Book(models.Model):
     FORMAT_CHOICES = (
             ('Hardcover', 'Hardcover'),
             ('Paperback', 'Paperback'),
         )
-    STORE_CHOICES = (
-                ('Store1', 'Store1'),
-                ('Store2', 'Store2'),
-            )
+    # STORE_CHOICES = (
+    #             ('Store1', 'Store1'),
+    #             ('Store2', 'Store2'),
+    #         )
 
     title = models.CharField(max_length=50, default='')
 
     author = models.ForeignKey(Author, on_delete=models.CASCADE,blank=True, default='')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    store = models.ForeignKey(StoreBook, on_delete=models.CASCADE)
 
     total_number_reviews = models.IntegerField(default=0)
     total_ratings = models.IntegerField(default=0)
@@ -52,7 +60,7 @@ class Book(models.Model):
     publication_date = models.DateField(default=datetime.now)
     summary = models.TextField()
     format_book = models.CharField(max_length=15, choices=FORMAT_CHOICES)
-    store = models.CharField(max_length=15, choices=STORE_CHOICES)
+    # store = models.CharField(max_length=15, choices=STORE_CHOICES)
     price_day = models.DecimalField(decimal_places=2, max_digits=3)
     pages = models.IntegerField(default=0)
     available = models.BooleanField(default=True)
