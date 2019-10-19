@@ -23,6 +23,7 @@
         {% for book in books %}
         {% if category.name == book.category.name %}
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 book-columns">
+
             <figure class="card card-product">
 
 
@@ -37,9 +38,12 @@
                     </button>
                 </form>
 
+                <a href="{% url 'detail' book.id %}">
 
-                <h5 class="title"> {{ book.title }}</h5>
+                    <h5 class="title"> {{ book.title }}</h5>
+                </a>
                 <div class="img-wrap"><img src="{{ MEDIA_URL }}{{ book.book_img }}"></div>
+
                 <figcaption class="info-wrap">
                     <div class="label-rating"><strong>{{book.rating}}</strong></div>
                     <div class="rating-wrap">
@@ -86,6 +90,7 @@
                     </div> <!-- price-wrap.// -->
                 </div> <!-- bottom-wrap.// -->
             </figure>
+
         </div> <!-- col // -->
         {% endif %}
 
