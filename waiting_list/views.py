@@ -21,25 +21,21 @@ def join_waiting_list(request, pk):
 
     if request.method == 'POST':
         user = request.user
-        waiting_list = WaitingList.objects.create(
-            wl_book = add_wl_book,
-            date_joined = timezone.now(),
-        )      
-        waiting_list.wl_user.add(user)
-        waiting_list.save() 
-    
+        user_already_in_list = WaitingList.objects.filter(wl_user=user, wl_book=add_wl_book)
 
+        if user_already_in_list:
+            messages.success(request, 'Your name is already in the waiting list')
+        
+        else:
+            waiting_list = WaitingList.objects.create(
+                wl_book = add_wl_book,
+                date_joined = timezone.now(),
+            )      
+            waiting_list.wl_user.add(user)
+            waiting_list.save() 
+            messages.success(request, 'You have been added to the waiting list')
+
+    
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
-# @login_required
-# def remove_waiting_list(request):
-
-#     WaitingList.objects.filter(your_turn=True).delete()
-
-#     for wl_list in wl_to_remove:
-#         book = wl_list.wl_book
-#         user = wl_list.wl_user
-#         wl_list = 
-
-#     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

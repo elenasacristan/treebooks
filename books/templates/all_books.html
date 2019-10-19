@@ -22,7 +22,7 @@
     <div class="row categories-row mx-auto">
         {% for book in books %}
         {% if category.name == book.category.name %}
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 book-columns">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 book-columns">
             <figure class="card card-product">
 
 
@@ -41,7 +41,9 @@
                 <h5 class="title"> {{ book.title }}</h5>
                 <div class="img-wrap"><img src="{{ MEDIA_URL }}{{ book.book_img }}"></div>
                 <figcaption class="info-wrap">
+                    <div class="label-rating"><strong>{{book.rating}}</strong></div>
                     <div class="rating-wrap">
+
                         <ul class="rating-stars">
                             <li style="width:{{book.percentage_rating}}%" class="stars-active">
                                 <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
@@ -52,11 +54,22 @@
                                     class="fa fa-star"></i><i class="fa fa-star"></i>
                             </li>
                         </ul>
-                        <div class="label-rating"><strong>{{book.rating}}</strong></div>
+
                         <div>{% if book.available %}
                             <span class="text-success text-uppercase font-weight-bold">Available</span>
                             {% else %}
-                            <a href="#">Join waiting list</a>{% endif %}</div>
+                            <form class="text-center fav-form" method="POST"
+                                action={% url 'join_waiting_list' book.id %}>
+                                {% csrf_token %}
+                                <button type="submit">
+                                    <h5 class="text-center text-primary">Join the waiting list</h5>
+                                </button>
+                            </form>
+
+
+
+                            {% endif %}
+                        </div>
                     </div> <!-- rating-wrap.// -->
                 </figcaption>
                 <div class="bottom-wrap text-left">
@@ -68,7 +81,8 @@
                         {% endif %}
                     </a>
                     <div class="price-wrap h5">
-                        <span class="price-new">{{ book.price_day }}<small>/day</small></span>
+                        <h5> <span class="price-new">{{ book.price_day }}<small>/day</small></span>
+                        </h5>
                     </div> <!-- price-wrap.// -->
                 </div> <!-- bottom-wrap.// -->
             </figure>
