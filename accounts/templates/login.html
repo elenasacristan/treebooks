@@ -8,20 +8,21 @@
 
 {% block content %}
 
-<div class='bg-login-register d-flex align-items-center justify-content-center'>
-    <div class="d-flex row text-center wrapper-content">
-        <div class="col-xs-6">
-            <div class="circle-shape">
-                <h2 class="heading-form">Log in</h2>
-                <form class="login-register login-f  mx-auto" method="POST">
-                    {% csrf_token %}
-                    {{ login_form | as_bootstrap}}
-                    <button type="submit" class="btn">Login</button>
-                    <p>New user? create your account <a href="{% url 'registration' %}">here</a></p>
-                    <p><a href="{% url 'password_reset' %}">I forgot my password</a></p>
-                </form>
-            </div>
+<!-- <div class='bg-login-register d-flex align-items-center justify-content-center'> -->
+<div class='d-flex align-items-center justify-content-center'>
+
+    <div class="col-xs-6 text-center">
+        <div class="circle-shape">
+            <h2 class="heading-form headers_all text-center">Log in</h2>
+            <form class="login-register login-f  mx-auto text-center" method="POST">
+                {% csrf_token %}
+                {{ login_form | as_bootstrap}}
+                <button type="submit" class="btn">Login</button>
+                <p>New user? create your account <a href="{% url 'registration' %}">here</a></p>
+                <p><a href="{% url 'password_reset' %}">I forgot my password</a></p>
+            </form>
         </div>
     </div>
+</div>
 </div>
 {% endblock%}

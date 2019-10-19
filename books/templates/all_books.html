@@ -80,15 +80,14 @@
 
         {% endfor %}
     </div>
+
+    {% empty %}
+
+    <h4 class="empty-cart text-center alert alert-info" role="alert">We didn't find any book.</h4>
+
+    {% endfor %}
+
+
 </div>
-
-{% empty %}
-
-<h4 class="empty-cart text-center alert alert-info" role="alert">We didn't find any book.</h4>
-
-{% endfor %}
-
-
-
 
 {% endblock %}
