@@ -7,6 +7,8 @@ class Projects(models.Model):
     name = models.CharField(max_length=250, default='')
     target = models.IntegerField(default=0)
     image = models.ImageField(upload_to='images')
+    link_project = models.URLField(max_length=400, default='')
+
 
     def __str__(self):
         return "{0} - £{1}".format(self.name, self.target)

@@ -24,7 +24,7 @@
                     <li class="row align-items-center justify-content-center">
                         <div class="col-12 col-md-6 text-md-center">
                             <h5><a class="text-success" target="_blank"
-                                    href="https://onetreeplanted.org/pages/yulaenergy">{{ project.name }}</a></h5>
+                                    href="{{ project.link_project }}">{{ project.name }}</a></h5>
                             <h4>£{{ project.target }}</h4>
                         </div>
                         <img class="col-12 col-md-6" src="{{ MEDIA_URL }}{{ project.image }}">
@@ -36,7 +36,7 @@
                         <div class="order-1 order-md-2 col-12 col-md-6 text-md-center">
 
                             <h5><a class="text-success" target="_blank"
-                                    href="https://tree-nation.com/projects/copaiba-brazil/updates">{{ project.name }}</a>
+                                    href="{{ project.link_project }}">{{ project.name }}</a>
                             </h5>
                             <h4>£{{ project.target }}</h4>
                         </div>
