@@ -17,8 +17,8 @@ class ReviewBook(models.Model):
     comment = models.TextField()
     score = models.IntegerField(blank=True, choices=CHOICES)
     review_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
-    review_author = models.ForeignKey(User, related_name="review_author")
-    reviewed_book = models.ForeignKey(Book, default='')
+    review_author = models.ForeignKey(User, null=True, related_name="review_author", on_delete=models.SET_NULL)
+    reviewed_book = models.ForeignKey(Book, default='', on_delete=models.CASCADE)
     percentage_score =models.IntegerField(default=0)
 
     
