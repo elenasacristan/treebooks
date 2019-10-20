@@ -18,7 +18,7 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
-    order = models.ForeignKey(Order, null=True, on_delete=models.CASCADE)
+    order = models.ForeignKey(Order, null=False, default="", on_delete=models.CASCADE)
     book = models.ForeignKey(Book, null=True, on_delete=models.SET_NULL)
     days = models.IntegerField(blank=False)
 
