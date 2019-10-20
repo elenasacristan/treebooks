@@ -84,8 +84,9 @@ def checkout(request):
                     book.return_date = order.date + timezone.timedelta(days=days)
                     book.available = False
                     book.save()
-                    waiting_list =  WaitingList.objects.filter(wl_book__id=book.id, wl_user=request.user).exists()
-                    if waiting_list:
+                    waiting_list_exist =  WaitingList.objects.filter(wl_book__id=book.id, wl_user=request.user).exists()
+                    if waiting_list_exist:
+                        waiting_list =  WaitingList.objects.filter(wl_book__id=book.id, wl_user=request.user)
                         waiting_list.delete()
 
                 request.session['cart'] = {}
