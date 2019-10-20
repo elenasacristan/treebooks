@@ -14,15 +14,13 @@
     {% for category in categories %}
 
 
-    <h2 class="categories-headers headers_all">{{ category.name }}</h2>
-    <!-- < class="details text-center"> -->
+    <h2 class="headers_all">{{ category.name }}</h2>
     <hr>
 
-    <!-- <li style="list-style: none;"> -->
     <div class="row categories-row mx-auto">
         {% for book in books %}
         {% if category.name == book.category.name %}
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 book-columns">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
 
             <figure class="card card-product">
 
@@ -31,9 +29,9 @@
                     {% csrf_token %}
                     <button type="submit">
                         {% if book in user.profile.favourites.all %}
-                        <h2 class="favorited text-right"><i class="fa fa-heart"></i></h2>
+                        <h3 class="favorited text-right"><i class="fa fa-heart"></i></h3>
                         {% else %}
-                        <h2 class="favorite text-right"><i class="fa fa-heart"></i></h2>
+                        <h3 class="favorite text-right"><i class="fa fa-heart"></i></h3>
                         {% endif %}
                     </button>
                 </form>
@@ -59,34 +57,18 @@
                             </li>
                         </ul>
 
-
-
-
-
-
-
-
                     </div> <!-- rating-wrap.// -->
                 </figcaption>
                 <div class="bottom-wrap text-left">
-                    <a href="{% url 'detail' book.id %}" class="btn btn-sm btn-primary float-right">
-
-                        More
-
-                    </a>
-                    <div class="price-wrap h5">
+                    <a href="{% url 'detail' book.id %}" class="btn btn-sm btn-primary float-right">More</a>
+                    <div>
                         <h5> <span class="price-new">{{ book.price_day }}<small>/day</small></span>
                         </h5>
                     </div> <!-- price-wrap.// -->
                 </div> <!-- bottom-wrap.// -->
             </figure>
-
         </div> <!-- col // -->
         {% endif %}
-
-        <!-- </li> -->
-
-
         {% endfor %}
     </div>
 

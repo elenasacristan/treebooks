@@ -12,7 +12,7 @@
 
 <div class="container-fluid card-page cart">
     <div class="row">
-        <div class="card container mx-auto">
+        <div class="cart-checkout container mx-auto">
 
             {% if total != 0 %}
             <div class="row row-header justify-content-between text-center d-none d-sm-flex">
@@ -94,7 +94,7 @@
 
                 <div class="col-6 col-sm-5 col-md-4 text-right">
                     <h5>Deposit:</h5>
-                    <p>({{ books_count }} books x £5)</p>
+                    <p>({{ books_count }} book(s) x £5)</p>
                 </div>
                 <div class="col-6 col-sm-3 col-md-2 text-right">
                     <h5>£{{ deposit }}</h5>
