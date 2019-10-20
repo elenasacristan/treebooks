@@ -8,13 +8,12 @@
 
 {% block content %}
 
-<!-- <div class='bg-login-register d-flex align-items-center justify-content-center'> -->
 <div class='d-flex align-items-center justify-content-center'>
 
     <div class="col-xs-6 text-center">
         <div class="circle-shape">
             <h2 class="headers_all text-center">Log in</h2>
-            <form class="login-register wrapper1  mx-auto text-center" method="POST">
+            <form class="box-content wrapper1  mx-auto text-center" method="POST">
                 {% csrf_token %}
                 {{ login_form | as_bootstrap}}
                 <button type="submit" class="btn">Login</button>

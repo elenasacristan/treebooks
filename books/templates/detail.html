@@ -196,6 +196,7 @@
                                 {% csrf_token %}
                                 <button type="submit">
                                     <h5 class="text-center btn btn-warning buttons_all">Join the waiting list</h5>
+                                    <a href="{% url 'view_waiting_lists' book.id %}">(see the list)</a>
                                 </button>
                             </form>
 
@@ -289,6 +290,7 @@
                                 {% csrf_token %}
                                 <button type="submit">
                                     <h5 class="text-center btn btn-warning buttons_all">Join the waiting list</h5>
+                                    <a href="{% url 'view_waiting_lists' book.id %}">(see the list)</a>
                                 </button>
                             </form>
                             {% endif %}

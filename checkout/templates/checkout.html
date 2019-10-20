@@ -19,8 +19,9 @@
 {% block content %}
 
 
-<div class="row checkout bg-login-register">
-    <div class="cart card container mx-auto">
+<div class="row checkout">
+    <!-- <div class="cart container mx-auto"> -->
+    <div class="card container mx-auto">
 
         {% if total != 0 %}
         <div class="row row-header justify-content-between text-center d-none d-sm-flex">
@@ -66,6 +67,15 @@
         {% if total == 0 %}
 
         <h4 class="empty-cart text-center alert alert-info" role="alert">Your cart is empty</h4>
+
+        <div class="row justify-content-center justify-content-md-end checkout-row text-center text-md-right">
+            <div class="col-10">
+                <a class="btn btn-warning buttons_all" href='{% url 'view_all_books' %}'>Keep looking</a>
+            </div>
+        </div>
+
+
+
         {% else %}
 
 
@@ -113,6 +123,8 @@
 
         {% endif %}
 
+        {% if total != 0 %}
+
         <h3 class="payment-details text-center">Payment details</h3>
         <hr>
         <div class="row justify-content-center payment-wrapper">
@@ -140,7 +152,7 @@
                 </div>
             </form>
         </div>
-
+        {% endif %}
 
 
 

@@ -8,11 +8,10 @@
 
 {% block content %}
 <div class='d-flex align-items-center justify-content-center'>
-    <!-- <div class="d-flex row text-center wrapper-content"> -->
     <div class="col-xs-6 text-center">
         <div class="circle-shape">
             <h2 class="headers_all text-center">Register</h2>
-            <form class="login-register register-f  mx-auto text-center" method="POST" enctype="multipart/form-data">
+            <form class="box-content register-f  mx-auto text-center" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ registration_form | as_bootstrap }}
                 <button type="submit" class="btn">Register</button>
@@ -20,6 +19,5 @@
             </form>
         </div>
     </div>
-    <!-- </div> -->
 </div>
 {% endblock%}

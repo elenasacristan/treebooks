@@ -8,14 +8,13 @@
 
 {% block content %}
 
-<!-- <div class="contact-us"> -->
 <div class='d-flex align-items-center justify-content-center contact-us'>
     <div class="d-flex row text-center">
         <div class="col-xs-6">
             <div class="circle-shape">
                 <h2 class="headers_all">Contact us</h2>
 
-                <form class="login-register wrapper1  mx-auto" method="POST">
+                <form class="box-content   mx-auto" method="POST">
                     {% csrf_token %}
                     {{ contact_form | as_bootstrap}}
                     <button type="submit" class="btn">Submit</button>
@@ -24,9 +23,5 @@
         </div>
     </div>
 </div>
-<!-- </div> -->
-
-
-
 
 {% endblock%}
