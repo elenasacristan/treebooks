@@ -329,8 +329,14 @@
                         {% for review in reviews %}
                         <div class="col-11">
                             <div class="media">
+                                {% if review.review_author.profile.profile_img == None %}
+                                <img src="{% static 'images/project/default_profile.png' %}" alt="user profile image"
+                                    width="60">
+                                {% else%}
+
                                 <img src="{{ MEDIA_URL }}{{review.review_author.profile.profile_img}}"
                                     alt="user profile image" width="60">
+                                {%endif%}
                                 <div class="media-body">
 
 
@@ -354,7 +360,13 @@
                                             class="fa fa-quote-right" aria-hidden="true"></i>
                                     </blockquote>
 
-                                    <p class="text-right"><small>{{ review.review_author }} -
+                                    <p class="text-right"><small>
+                                            {% if review.review_author == None %}
+                                            Anonymous
+                                            {% else %}
+
+                                            {{ review.review_author }}
+                                            {% endif %} -
                                             {{ review.review_date|date:"d M, Y" }}</small></p>
                                 </div>
                             </div>

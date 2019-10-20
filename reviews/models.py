@@ -23,4 +23,7 @@ class ReviewBook(models.Model):
 
     
     def __str__(self):
-        return "{0} - {1}, {2}".format(self.score, self.review_title, self.review_author)  
+        return "{0} - {1}, {2}".format(self.score, self.reviewed_book.title, self.review_author)  
+    
+    class Meta:
+       ordering = ('reviewed_book','score',)
