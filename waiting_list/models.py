@@ -6,7 +6,7 @@ from django.utils import timezone
 # Create your models here.
 class WaitingList(models.Model):
     date_joined = models.DateTimeField(blank=True, null=True, default=timezone.now)
-    wl_book = models.OneToOneField(Book, related_name="related_book")
+    wl_book = models.OneToOneField(Book, related_name="related_book", on_delete=models.CASCADE)
     wl_user = models.ManyToManyField(User, related_name='users')
     
     def __str__(self):
