@@ -18,8 +18,8 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
-    order = models.ForeignKey(Order, null=False,, null=True, on_delete=models.SET_NULL)
-    book = models.ForeignKey(Book, null=False, null=True, on_delete=models.SET_NULL)
+    order = models.ForeignKey(Order, null=True, on_delete=models.CASCADE)
+    book = models.ForeignKey(Book, null=True, on_delete=models.SET_NULL)
     days = models.IntegerField(blank=False)
 
     def __str__(self):
