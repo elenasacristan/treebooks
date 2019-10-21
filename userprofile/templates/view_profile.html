@@ -160,9 +160,9 @@
                         <a href="{% url 'detail' read_book.id %}">{{ read_book.title }}</a>
 
                         {% if read_book.id in reviewed_books %}
-                        Already reviewed
+                        <p class="text-info"> Already reviewed</p>
                         {% else %}
-                        <p> <a href="{% url 'add_review' read_book.id %}">Leave a review</a></p>
+                        <p> <a class="text-success" href="{% url 'add_review' read_book.id %}">Leave a review</a></p>
                         {%endif%}
 
                     </div>
@@ -202,7 +202,8 @@
                     </div>
                     <div class="col-8">
                         <a href="{% url 'detail' current_user.wl_book.id %}">{{current_user.wl_book.title}}</a>
-                        <a href="{% url 'view_waiting_lists' current_user.wl_book.id %}"> - See waiting list</a>
+                        <a class="text-success" href="{% url 'view_waiting_lists' current_user.wl_book.id %}"> - See
+                            waiting list</a>
                     </div>
                 </div>
                 {% else %}

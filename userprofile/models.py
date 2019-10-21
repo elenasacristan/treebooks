@@ -21,8 +21,8 @@ class UserProfile(models.Model):
     telephone = models.CharField(max_length=20, null=True, blank=True)
     contact_by_phone = models.BooleanField(blank=True, default=False)
     contact_by_email = models.BooleanField(blank=True, default=False)
-    favourites = models.ManyToManyField(Book, related_name='favorited_by')
-    read_books = models.ManyToManyField(Book)
+    favourites = models.ManyToManyField(Book, related_name='favorited_by',blank=True)
+    read_books = models.ManyToManyField(Book, blank=True)
 
 
     def __str__(self):

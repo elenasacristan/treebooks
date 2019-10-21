@@ -47,14 +47,14 @@ class Book(models.Model):
 
     title = models.CharField(max_length=50, default='')
 
-    author = models.ForeignKey(Author, on_delete=models.CASCADE,blank=True, default='')
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     store = models.ForeignKey(StoreBook, on_delete=models.CASCADE)
 
     total_number_reviews = models.IntegerField(default=0)
     total_ratings = models.IntegerField(default=0)
     percentage_rating = models.IntegerField(default=0)
-    rating = models.DecimalField(decimal_places=2, max_digits=3, blank=True,null=True)
+    rating = models.DecimalField(decimal_places=2, max_digits=3, default=0.00)
     book_img = models.ImageField(upload_to='images', default="images/book.png")
     ISBN = models.CharField(max_length=13, default='')
     publication_date = models.DateField(default=datetime.now)

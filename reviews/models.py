@@ -13,9 +13,9 @@ class ReviewBook(models.Model):
 
     CHOICES = [(i,i) for i in range(0,6)]
 
-    review_title = models.CharField(max_length=35, null=True, blank=True)
-    comment = models.TextField()
-    score = models.IntegerField(blank=True, choices=CHOICES)
+    review_title = models.CharField(max_length=35, null=False, blank=False, default="")
+    comment = models.TextField(blank=False,default="")
+    score = models.IntegerField(blank=False, choices=CHOICES)
     review_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
     review_author = models.ForeignKey(User, null=True, related_name="review_author", on_delete=models.SET_NULL)
     reviewed_book = models.ForeignKey(Book, default='', on_delete=models.CASCADE)

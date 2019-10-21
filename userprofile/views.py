@@ -15,7 +15,7 @@ def view_profile(request):
     user_profile.save()
 
     reviewed_books = list(ReviewBook.objects.filter(review_author=request.user).values_list('reviewed_book',  flat=True))
-    current_books = user_profile.profile.read_books.filter(return_date__gt = timezone.now(), available = False)
+    current_books = user_profile.profile.read_books.filter(return_date__gt = timezone.now(), available = False).order_by('return_date')
     
     return render(request, 'view_profile.html', 
                 {'user_profile':user_profile, 
