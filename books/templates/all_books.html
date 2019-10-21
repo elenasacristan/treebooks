@@ -10,16 +10,16 @@
 {% block content %}
 
 <div class="container-fluid allbooks">
-
     {% for category in categories %}
-
 
     <h2 class="headers_all">{{ category.name }}</h2>
     <hr>
 
-    <div class="row categories-row mx-auto">
+    <div class="row categories-row mx-auto book-columns">
         {% for book in books %}
         {% if category.name == book.category.name %}
+
+
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
 
             <figure class="card card-product">

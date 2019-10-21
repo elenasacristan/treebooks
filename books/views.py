@@ -10,7 +10,7 @@ def view_all_books(request):
     This view will display all the books 
     sorted by publication date
     '''
-    books = Book.objects.all().order_by('-available','-rating')
+    books = Book.objects.all().order_by('-rating')
     categories = Category.objects.all()
     waiting_list = WaitingList.objects.all().order_by('date_joined')
     return render(request, 'all_books.html', {'books':books, 'categories':categories, 'waiting_list':waiting_list})

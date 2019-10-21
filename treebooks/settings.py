@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'favourites',
     'reviews',
     'waiting_list',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -175,3 +176,7 @@ In order to tell django that there is an extension of the User model
 '''
 AUTH_PROFILE_MODULE = 'userprofile.UserProfile'
 
+GRAPH_MODELS = {
+  'all_applications': True,
+  'group_models': True,
+}

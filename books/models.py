@@ -60,7 +60,6 @@ class Book(models.Model):
     publication_date = models.DateField(default=datetime.now)
     summary = models.TextField()
     format_book = models.CharField(max_length=15, choices=FORMAT_CHOICES)
-    # store = models.CharField(max_length=15, choices=STORE_CHOICES)
     price_day = models.DecimalField(decimal_places=2, max_digits=3)
     pages = models.IntegerField(default=0)
     available = models.BooleanField(default=True)
