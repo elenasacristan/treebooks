@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from .models import Book, Category
 from reviews.models import ReviewBook
 from waiting_list.models import WaitingList
+from django.http import HttpResponseRedirect
+
 
 # Create your views here.
 
@@ -31,3 +33,12 @@ def detail(request, pk):
                 'reviews':reviews,
                 'waiting_list':waiting_list,
                 'waiting_list_users':waiting_list_users})
+
+def return_book(request, pk):
+    book = get_object_or_404(Book,pk=pk)
+
+    if request.method == 'POST':
+        book.available=True
+        book.save()
+        
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

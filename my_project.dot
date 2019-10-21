@@ -1,6 +1,6 @@
 digraph model_graph {
   // Dotfile by Django-Extensions graph_models
-  // Created: 2019-10-21 01:01
+  // Created: 2019-10-21 23:16
   // Cli Options: -a
 
   fontname = "Roboto"
@@ -613,14 +613,6 @@ digraph model_graph {
     
     
       <TR><TD ALIGN="LEFT" BORDER="0">
-      <FONT COLOR="#7B7B7B" FACE="Roboto">answered</FONT>
-      </TD><TD ALIGN="LEFT">
-      <FONT COLOR="#7B7B7B" FACE="Roboto">BooleanField</FONT>
-      </TD></TR>
-    
-    
-    
-      <TR><TD ALIGN="LEFT" BORDER="0">
       <FONT FACE="Roboto">contact_date</FONT>
       </TD><TD ALIGN="LEFT">
       <FONT FACE="Roboto">DateField</FONT>
@@ -867,9 +859,9 @@ digraph model_graph {
     
     
       <TR><TD ALIGN="LEFT" BORDER="0">
-      <FONT COLOR="#7B7B7B" FACE="Roboto"><B>author</B></FONT>
+      <FONT FACE="Roboto"><B>author</B></FONT>
       </TD><TD ALIGN="LEFT">
-      <FONT COLOR="#7B7B7B" FACE="Roboto"><B>ForeignKey (id)</B></FONT>
+      <FONT FACE="Roboto"><B>ForeignKey (id)</B></FONT>
       </TD></TR>
     
     
@@ -955,9 +947,9 @@ digraph model_graph {
     
     
       <TR><TD ALIGN="LEFT" BORDER="0">
-      <FONT COLOR="#7B7B7B" FACE="Roboto">rating</FONT>
+      <FONT FACE="Roboto">rating</FONT>
       </TD><TD ALIGN="LEFT">
-      <FONT COLOR="#7B7B7B" FACE="Roboto">DecimalField</FONT>
+      <FONT FACE="Roboto">DecimalField</FONT>
       </TD></TR>
     
     
@@ -1221,17 +1213,17 @@ digraph model_graph {
     
     
       <TR><TD ALIGN="LEFT" BORDER="0">
-      <FONT COLOR="#7B7B7B" FACE="Roboto">review_title</FONT>
+      <FONT FACE="Roboto">review_title</FONT>
       </TD><TD ALIGN="LEFT">
-      <FONT COLOR="#7B7B7B" FACE="Roboto">CharField</FONT>
+      <FONT FACE="Roboto">CharField</FONT>
       </TD></TR>
     
     
     
       <TR><TD ALIGN="LEFT" BORDER="0">
-      <FONT COLOR="#7B7B7B" FACE="Roboto">score</FONT>
+      <FONT FACE="Roboto">score</FONT>
       </TD><TD ALIGN="LEFT">
-      <FONT COLOR="#7B7B7B" FACE="Roboto">IntegerField</FONT>
+      <FONT FACE="Roboto">IntegerField</FONT>
       </TD></TR>
     
     

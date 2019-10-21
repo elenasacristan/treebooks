@@ -11,3 +11,4 @@ media
 htmlcov
 .coverage
 books/templates/gridbt4.html
+my_project.dot

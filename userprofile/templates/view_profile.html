@@ -54,7 +54,21 @@
 
                             {% for book_current in current_books %}
                             <dt class="col-12">{{ book_current }} <small>(Return by:
-                                    {{ book_current.return_date|date:"d M, Y" }})</small></dt>
+                                    {{ book_current.return_date|date:"d M, Y" }})</small>
+
+                                <form method="POST" action={% url 'return_book' book_current.id %}>
+
+                                    {% csrf_token %}
+
+                                    <button class="btn btn-primary btn-sm" type="submit">
+
+                                        I've returned the book
+
+                                    </button>
+                                </form>
+                            </dt>
+
+
 
                             <br><br>
 
