@@ -56,14 +56,14 @@ class Book(models.Model):
     percentage_rating = models.IntegerField(default=0)
     rating = models.DecimalField(decimal_places=2, max_digits=3, default=0.00)
     book_img = models.ImageField(upload_to='images', default="images/book.png")
-    ISBN = models.CharField(max_length=13, default='')
+    ISBN = models.CharField(max_length=25, default='')
     publication_date = models.DateField(default=datetime.now)
     summary = models.TextField()
     format_book = models.CharField(max_length=15, choices=FORMAT_CHOICES)
     price_day = models.DecimalField(decimal_places=2, max_digits=3)
     pages = models.IntegerField(default=0)
     available = models.BooleanField(default=True)
-    return_date = models.DateField(default=datetime.now)
+    return_date = models.DateField(blank=True, null=True)
 
 
     def __str__(self):
