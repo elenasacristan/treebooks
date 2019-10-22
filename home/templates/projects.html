@@ -16,8 +16,9 @@
                     <strong>{{raised.number_books}}</strong> books
                     from donations and we have raised <strong>£{{raised.money_raised}}</strong> renting books.</p>
 
-
+                {% if projects %}
                 <p>Right now we are raising money for these projects:</p>
+                {% endif %}
                 {% for project in projects %}
                 <ul>
                     {% if forloop.counter0|divisibleby:2 %}
@@ -44,6 +45,10 @@
                     {% endif %}
 
                 </ul>
+                {% empty %}
+                <h4 class="text-center alert alert-info" role="alert">We are looking for new projects. Contact us if you
+                    have any project in mind!</h4>
+
                 {% endfor %}
             </div>
         </div>

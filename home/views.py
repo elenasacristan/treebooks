@@ -18,6 +18,8 @@ def donate(request):
     return render(request, 'donate.html')
 
 def projects(request):
+    totalraised, created = TotalRaised.objects.get_or_create(number_books=0, money_raised=0.00)
+
     raised = get_object_or_404(TotalRaised, pk=1)
     projects = Projects.objects.all()
     return render(request, 'projects.html', {'raised':raised, 'projects':projects})
