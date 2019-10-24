@@ -4,7 +4,7 @@ c=Client()
 
 # Create your tests here.
 class TestHomeViews(TestCase):
-    
+  
     def test_index_page(self):
         page = c.get("/")
         self.assertEqual(page.status_code, 200)
@@ -20,10 +20,10 @@ class TestHomeViews(TestCase):
         self.assertEqual(page.status_code, 200)
         self.assertTemplateUsed(page, "donate.html")    
     
-    # def test_projects_page(self):
-    #     page = c.get("/home/projects/1")
-    #     self.assertEqual(page.status_code, 200)
-    #     self.assertTemplateUsed(page, "projects.html")    
+    def test_projects_page(self):
+        page = c.get("/home/projects/")
+        self.assertEqual(page.status_code, 200)
+        self.assertTemplateUsed(page, "projects.html")    
 
     def test_contact_page(self):
         page = c.get("/home/contact/")
