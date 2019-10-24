@@ -51,7 +51,7 @@ class TestBookViews(TestCase):
         store=test_store,
         price_day=0.05,           
         pages=200,
-        available=True,
+        available=False,
         return_date='2019-01-01')
 
     
@@ -64,6 +64,11 @@ class TestBookViews(TestCase):
         page = c.get("/books/{0}/".format(self.book.id))
         self.assertEqual(page.status_code, 200)
         self.assertTemplateUsed(page, "detail.html")
+
+    def test_book_becomes_available_when_return_book_is_clicked(self):
+        response = c.post('/books/return/{0}/'.format(self.book.id))
+        self.assertFalse(self.book.available)
+
 
 
 
