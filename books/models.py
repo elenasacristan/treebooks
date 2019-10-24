@@ -40,11 +40,6 @@ class Book(models.Model):
             ('Hardcover', 'Hardcover'),
             ('Paperback', 'Paperback'),
         )
-    # STORE_CHOICES = (
-    #             ('Store1', 'Store1'),
-    #             ('Store2', 'Store2'),
-    #         )
-
     title = models.CharField(max_length=50, default='')
 
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
