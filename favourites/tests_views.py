@@ -97,7 +97,7 @@ class TestHomeViews(TestCase):
     
  
     def test_favourites_cannot_be_used_by_not_authenticated_user(self):
-        page = c.logout()      
+        c.logout()      
         page = c.post('/favourites/addremove/{0}'.format(self.book.id), follow=True)
         self.assertEqual(page.status_code, 200)
         self.assertRedirects(page, '/accounts/login/?next=/favourites/addremove/{0}'.format(self.book.id))

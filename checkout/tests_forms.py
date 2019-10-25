@@ -3,19 +3,6 @@ from .forms import MakePaymentForm, OrderForm
 
 class TestCheckoutForms(TestCase):
 
-    '''set up the registration form to use in the test so we
-    don't have to repeat the setup in each test'''
-    # def setUp(self):
-    #     order_form = OrderForm({
-    #         'full_name':'name',
-    #         'phone_number':'111111', 
-    #         'country':'UK', 
-    #         'postcode':'SE11', 
-    #         'town_or_city':'London', 
-    #         'street_address1':'street',
-    #         'street_address2':'street2',  
-    #         'county':'London'})
-
     def test_order_form_is_valid_with_all_the_fields_filled(self):
         order_form = OrderForm({
             'full_name':'name',
