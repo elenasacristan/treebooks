@@ -16,6 +16,11 @@ class TestAccountsViews(TestCase):
             'username':'username', 
             'password1':'12345abcds', 
             'password2':'12345abcds'})
+
+    def test_home_page(self):
+        page = c.get("/")
+        self.assertEqual(page.status_code, 200)
+        self.assertTemplateUsed(page, "index.html")
     
     def test_login_page(self):
         page = c.get("/accounts/login/")
