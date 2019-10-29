@@ -76,13 +76,13 @@ class TestWaitingListsViews(TestCase):
         self.waitinglist = WaitingList.objects.create(
             wl_book = self.book
         )
-
+  
         self.waitinglist.save()
-        self.waitinglist.wl_user.add(self.user)
-        
-
-
-    
+        self.waitinglist.wl_user.add(self.user)      
+  
+  
+  
+  
     def test_view_waiting_list(self):
         page = c.get("/waiting_list/{0}/".format(self.waitinglist.id))
         self.assertEqual(page.status_code, 200)
