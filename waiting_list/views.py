@@ -27,10 +27,10 @@ def join_waiting_list(request, pk):
             messages.success(request, 'Your name is already in the waiting list')
         
         else:
-            waiting_list = WaitingList.objects.create(
-                wl_book = add_wl_book,
-                date_joined = timezone.now(),
-            )      
+            waiting_list, created = WaitingList.objects.get_or_create(
+                wl_book = add_wl_book
+            )
+            waiting_list = get_object_or_404(WaitingList, wl_book = add_wl_book)
             waiting_list.wl_user.add(user)
             waiting_list.save() 
             messages.success(request, 'You have been added to the waiting list')
