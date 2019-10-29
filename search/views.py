@@ -6,6 +6,6 @@ from django.db.models import Q
 
 def do_search(request):
     categories = Category.objects.filter(Q(book__title__icontains = request.GET['q']) | Q(book__author__name__icontains = request.GET['q'])).distinct()
-    books = Book.objects.filter(Q(title__icontains = request.GET['q']) | Q(author__name__icontains = request.GET['q']))
+    books = Book.objects.filter(Q(title__icontains = request.GET['q']) | Q(author__name__icontains = request.GET['q'])).order_by('-rating')
     return render(request, 'all_books.html', {'books':books, 'categories':categories})
     
