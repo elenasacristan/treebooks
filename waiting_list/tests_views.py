@@ -82,7 +82,6 @@ class TestWaitingListsViews(TestCase):
   
   
   
-  
     def test_view_waiting_list(self):
         page = c.get("/waiting_list/{0}/".format(self.waitinglist.id))
         self.assertEqual(page.status_code, 200)
