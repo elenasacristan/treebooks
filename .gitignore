@@ -5,9 +5,7 @@ env.py
 *.sqlite3
 __pycache__
 *.pyc
-static/
 links.txt
-media/
 htmlcov
 .coverage
 books/templates/gridbt4.html
