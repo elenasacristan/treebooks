@@ -120,19 +120,20 @@
                 <hr>
 
 
+                {% if user.is_authenticated and book.available %}
 
-                <!-- user registered and book available -->
-                {% if user.is_authenticated and book.available%}
+                <!-- if there are users in the waiting list -->
+                {% if count_users > 0%}
 
-                <!-- if there is waiting list -->
-                {% if waiting_list_users %}
+                {% for user_list in users_in_list %}
+                <!-- if the current user is in the waiting list -->
+                {% if user.id in users_in_list %}
 
-                {% for users_waiting in waiting_list_users %}
-                <!-- for the first user in the waiting list -->
+                {% if user_list == user.id %}
                 {% if forloop.first %}
-                {% for next in users_waiting.wl_user.all %}
-                <!-- if the current user is the next in the list -->
-                {% if next == user %}
+
+
+
                 <div class="container price-section text-center">
                     <div class="row justify-content-center">
 
@@ -173,51 +174,42 @@
 
                     </div>
                 </div>
-                {% else %}
+
+                {% else%}
 
                 <div class="container waiting-section last-row">
                     <div class="row justify-content-center">
                         <div class="col-8">
 
-                            {% if waiting_list %}
-                            {% for wl in waiting_list %}
-
-                            {% for userinlist in wl.wl_user.all %}
-                            {% if userinlist == user %}
-
-                            <h4 class="empty-cart text-center alert alert-info" role="alert">You are in the waiting list
+                            <h4 class="empty-cart text-center alert alert-info" role="alert">You are already in the
+                                waiting list
                                 <a href="{% url 'view_waiting_lists' book.id %}">(see the list)</a>
                             </h4>
-
-                            {% endif%}
-                            {% endfor %}
-                            {% endfor %}
-
-                            {% else %}
-                            <form class="text-center fav-form" method="POST"
-                                action={% url 'join_waiting_list' book.id %}>
-                                {% csrf_token %}
-                                <button type="submit">
-                                    <h5 class="text-center btn btn-warning buttons_all">Join the waiting list</h5>
-                                    <a href="{% url 'view_waiting_lists' book.id %}">(see the list)</a>
-                                </button>
-                            </form>
-
-                            {% endif %}
                         </div>
                     </div>
                 </div>
 
                 {% endif %}
-
-                {% endfor %}
                 {% endif %}
-                {% endfor%}
 
-                <!-- if there is not waiting list -->
+                {% endif %}
+                {% endfor %}
+
+                {% if user.id not in users_in_list %}
+
+
+                <form class="text-center" method="POST" action={% url 'join_waiting_list' book.id %}>
+                    {% csrf_token %}
+                    <button type="submit">
+                        <h5 class="text-center btn btn-warning buttons_all">Join the waiting list</h5>
+                        <a href="{% url 'view_waiting_lists' book.id %}">(see the list)</a>
+                    </button>
+                </form>
+
+
+                {% endif %}
+
                 {% else %}
-
-
                 <div class="container price-section text-center">
                     <div class="row justify-content-center">
 
@@ -258,53 +250,57 @@
 
                     </div>
                 </div>
-
-
-
                 {% endif %}
 
-
+                <!-- authenticated but book not available -->
                 {% elif user.is_authenticated and not book.available %}
 
+                {% if count_users > 0%}
 
+                {% for user_list in users_in_list %}
+                {% if user.id in users_in_list %}
+
+                {% if user_list == user.id %}
                 <div class="container waiting-section last-row">
                     <div class="row justify-content-center">
                         <div class="col-8">
 
-                            {% if waiting_list %}
-
-                            {% for wl in waiting_list %}
-
-                            {% for userinlist in wl.wl_user.all %}
-                            {% if userinlist == user %}
-
-
-                            <h4 class="empty-cart text-center alert alert-info" role="alert">You are in the waiting list
-                                <a href="{% url 'view_waiting_lists' book.id %}" target="_blank">(see the list)</a>
+                            <h4 class="empty-cart text-center alert alert-info" role="alert">You are already in the
+                                waiting list
+                                <a href="{% url 'view_waiting_lists' book.id %}">(see the list)</a>
                             </h4>
-
-                            {% endif%}
-                            {% endfor %}
-                            {% endfor %}
-
-                            {% else %}
-                            <form class="text-center fav-form" method="POST"
-                                action={% url 'join_waiting_list' book.id %}>
-                                {% csrf_token %}
-                                <button type="submit">
-                                    <h5 class="text-center btn btn-warning buttons_all">Join the waiting list</h5>
-                                    <a href="{% url 'view_waiting_lists' book.id %}">(see the list)</a>
-                                </button>
-                            </form>
-                            {% endif %}
                         </div>
                     </div>
                 </div>
+                {% endif %}
 
+                {% endif %}
+                {% endfor %}
 
+                {% if user.id not in users_in_list %}
+                <form class="text-center fav-form" method="POST" action={% url 'join_waiting_list' book.id %}>
+                    {% csrf_token %}
+                    <button type="submit">
+                        <h5 class="text-center btn btn-warning buttons_all">Join the waiting list</h5><br>
+                        <a href="{% url 'view_waiting_lists' book.id %}">(see the list)</a>
+                    </button>
+                </form>
+                {% endif %}
 
                 {% else %}
+                <form class="text-center fav-form" method="POST" action={% url 'join_waiting_list' book.id %}>
+                    {% csrf_token %}
+                    <button type="submit">
+                        <h5 class="text-center btn btn-warning buttons_all">Join the waiting list</h5>
+                    </button>
+                </form>
+                {% endif %}
 
+
+
+
+                <!-- if user is not authenticated -->
+                {% else %}
 
                 <div class="row detail-register justify-content-center text-center">
                     <div class="col-11">
@@ -317,9 +313,7 @@
 
                 {% endif %}
 
-
                 {% if user.is_authenticated %}
-
 
                 {% if reviews %}
                 <hr>

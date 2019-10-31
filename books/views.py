@@ -14,25 +14,24 @@ def view_all_books(request):
     '''
     books = Book.objects.all().order_by('-rating')
     categories = Category.objects.all()
-    waiting_list = WaitingList.objects.all().order_by('date_joined')
+    waiting_list = WaitingList.objects.all()
     return render(request, 'all_books.html', {'books':books, 'categories':categories, 'waiting_list':waiting_list})
 
 
 def detail(request, pk):
     book = get_object_or_404(Book,pk=pk)
     book.save()
+    
     reviews = ReviewBook.objects.filter(reviewed_book__id=pk).order_by('-review_date')
-    if request.user.is_authenticated:
-        waiting_list = WaitingList.objects.filter(wl_book__id=pk, wl_user=request.user)
-    else:
-        waiting_list = WaitingList()
-    waiting_list_users = WaitingList.objects.filter(wl_book__id=pk).order_by('date_joined')
-
+    
+    users_in_list = list( WaitingList.objects.filter( wl_book__id=pk).values_list('wl_user__id',  flat=True))
+    count_users= len(users_in_list)
+    
     return render(request, 'detail.html', 
                 {'book':book,
                 'reviews':reviews,
-                'waiting_list':waiting_list,
-                'waiting_list_users':waiting_list_users})
+                'users_in_list':users_in_list,
+                'count_users':count_users})
 
 def return_book(request, pk):
     book = get_object_or_404(Book,pk=pk)
