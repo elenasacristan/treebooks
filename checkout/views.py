@@ -8,6 +8,7 @@ from django.utils import timezone
 from books.models import Book
 from waiting_list.models import WaitingList
 from userprofile.models import UserProfile
+from django.contrib.auth.models import User
 from home.models import TotalRaised
 import stripe
 
@@ -77,17 +78,18 @@ def checkout(request):
                 '''save book in list of read books'''
                 profile = UserProfile.objects.get(user = request.user)
                
-
+               
                 for id, days in cart.items():
                     book = get_object_or_404(Book, pk=id)
                     profile.read_books.add(book)
                     book.return_date = order.date + timezone.timedelta(days=days)
                     book.available = False
                     book.save()
-                    waiting_list_exist =  WaitingList.objects.filter(wl_book__id=book.id, wl_user=request.user).exists()
+                    waiting_list_exist =  WaitingList.objects.filter(wl_book__id=book.id, wl_user__email=request.user.email).exists()
                     if waiting_list_exist:
-                        waiting_list =  WaitingList.objects.filter(wl_book__id=book.id, wl_user=request.user)
-                        waiting_list.delete()
+                        waiting_list =  WaitingList.objects.get(wl_book__id=book.id, wl_user__email=request.user.email)
+                        waiting_list.wl_user.remove(request.user)
+
 
                 request.session['cart'] = {}
                 return redirect(reverse('view_all_books'))
