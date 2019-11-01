@@ -15,7 +15,9 @@ def view_all_books(request):
     books = Book.objects.all().order_by('-rating')
     categories = Category.objects.all()
     waiting_list = WaitingList.objects.all()
-    return render(request, 'all_books.html', {'books':books, 'categories':categories, 'waiting_list':waiting_list})
+    waiting_list_books = list(WaitingList.objects.all().values_list('wl_book__id',  flat=True))
+
+    return render(request, 'all_books.html', {'books':books, 'categories':categories, 'waiting_list':waiting_list, 'waiting_list_books':waiting_list_books})
 
 
 def detail(request, pk):

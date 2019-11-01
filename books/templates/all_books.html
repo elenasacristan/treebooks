@@ -57,8 +57,52 @@
                             </li>
                         </ul>
 
+
                     </div> <!-- rating-wrap.// -->
+
                 </figcaption>
+
+                
+
+                {% if book.available and book.id in waiting_list_books %}
+                
+                <a href="{% url 'view_waiting_lists' book.id %}" class="text-info"><strong>check waiting list</strong></a>
+
+                {% for wl in waiting_list %}
+                <!-- '''si el libro tiene waiting list''' -->
+
+                    {% if book.id == wl.wl_book.id %}
+                
+                            {% for next in wl.wl_user.all %}
+
+                                {% if user.username == next.username %}
+                                    {% if forloop.first %}
+                                    <a href="{% url 'detail' book.id %}" class="badge badge-success"><strong>It's your turn!</strong></a>
+                                   
+                                    {% endif %}
+                                {% endif %}
+
+                            {% endfor %}
+
+                       
+                    {% endif %}
+
+                {% endfor %}
+
+                {% elif book.available and book.id not in waiting_list_books %}
+                <a href="{% url 'detail' book.id %}" class="text-success"><strong>AVAILABLE</strong></a>
+
+                
+                {% else %}
+
+                <a href="{% url 'view_waiting_lists' book.id %}" class="text-info"><strong>waiting list</strong></a>
+
+                
+                {% endif %}
+
+
+
+
                 <div class="bottom-wrap text-left">
                     <a href="{% url 'detail' book.id %}" class="btn btn-sm btn-primary float-right">More</a>
                     <div>

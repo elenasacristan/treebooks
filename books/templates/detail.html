@@ -196,17 +196,21 @@
                 {% endfor %}
 
                 {% if user.id not in users_in_list %}
+                <div class="container waiting-section last-row">
+                    <div class="row justify-content-center">
+                        <div class="col-8">
 
-
-                <form class="text-center" method="POST" action={% url 'join_waiting_list' book.id %}>
-                    {% csrf_token %}
-                    <button type="submit">
-                        <h5 class="text-center btn btn-warning buttons_all">Join the waiting list</h5>
-                        <a href="{% url 'view_waiting_lists' book.id %}">(see the list)</a>
-                    </button>
-                </form>
-
-
+                            <form class="text-center fav-form" method="POST"
+                                action={% url 'join_waiting_list' book.id %}>
+                                {% csrf_token %}
+                                <button type="submit">
+                                    <h5 class="text-center btn btn-warning buttons_all">Join the waiting list</h5>
+                                    <br><a href="{% url 'view_waiting_lists' book.id %}">(see the list)</a>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
                 {% endif %}
 
                 {% else %}
