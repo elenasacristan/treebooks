@@ -1,6 +1,6 @@
 digraph model_graph {
   // Dotfile by Django-Extensions graph_models
-  // Created: 2019-10-21 23:16
+  // Created: 2019-11-01 01:26
   // Cli Options: -a
 
   fontname = "Roboto"
@@ -955,9 +955,9 @@ digraph model_graph {
     
     
       <TR><TD ALIGN="LEFT" BORDER="0">
-      <FONT FACE="Roboto">return_date</FONT>
+      <FONT COLOR="#7B7B7B" FACE="Roboto">return_date</FONT>
       </TD><TD ALIGN="LEFT">
-      <FONT FACE="Roboto">DateField</FONT>
+      <FONT COLOR="#7B7B7B" FACE="Roboto">DateField</FONT>
       </TD></TR>
     
     
@@ -1264,14 +1264,6 @@ digraph model_graph {
       <FONT FACE="Roboto"><B>wl_book</B></FONT>
       </TD><TD ALIGN="LEFT">
       <FONT FACE="Roboto"><B>OneToOneField (id)</B></FONT>
-      </TD></TR>
-    
-    
-    
-      <TR><TD ALIGN="LEFT" BORDER="0">
-      <FONT COLOR="#7B7B7B" FACE="Roboto">date_joined</FONT>
-      </TD><TD ALIGN="LEFT">
-      <FONT COLOR="#7B7B7B" FACE="Roboto">DateTimeField</FONT>
       </TD></TR>
     
     
