@@ -149,7 +149,7 @@
                     </div>
                 </div>
                 <!-- <div class="container add-days"> -->
-                <div class="container">
+                <div class="container last-row">
 
                     <div class="row justify-content-center align-items-start">
                         <div class="col-10 col-md-7">
@@ -229,13 +229,12 @@
                     </div>
                 </div>
                 <!-- <div class="container add-days"> -->
-                <div class="container">
+                <div class="container last-row">
 
                     <div class="row justify-content-center align-items-start">
                         <div class="col-10 col-md-7">
                             <p>Select the number of days that you want to rent the book for:<br>
-                                <small>*The minimun number of days to rent any book is 10.</small>
-                            </p>
+                                pyt </p>
 
 
                         </div>
@@ -328,11 +327,11 @@
                         <div class="col-11">
                             <div class="media">
                                 {% if review.review_author.profile.profile_img == None %}
-                                <img src="{% static 'images/project/default_profile.png' %}" alt="user profile image"
+                                <img class="d-none d-sm-block" src="{% static 'images/project/default_profile.png' %}" alt="user profile image"
                                     width="60">
                                 {% else%}
 
-                                <img src="{{ MEDIA_URL }}{{review.review_author.profile.profile_img}}"
+                                <img class="d-none d-sm-block" src="{{ MEDIA_URL }}{{review.review_author.profile.profile_img}}"
                                     alt="user profile image" width="60">
                                 {%endif%}
                                 <div class="media-body">
