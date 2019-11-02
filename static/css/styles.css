@@ -283,7 +283,7 @@ a {
 .index .shape {
   height: 210px;
   max-width: 210px;
-  margin: 40px 60px;
+  margin: 80px 60px;
   background-color: white;
   border-radius: 50%;
 }
@@ -347,6 +347,7 @@ a {
 footer {
   background-color: #063622 !important;
   color: #ffffff;
+  height: 150px;
 }
 
 footer a {

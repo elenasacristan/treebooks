@@ -62,7 +62,6 @@ class TestWaitingListModels(TestCase):
 
     def test_can_create_review(self):
         waitinglist = WaitingList(
-            date_joined = '2000-01-01 00:00:00',
             wl_book = self.book
             )
 
