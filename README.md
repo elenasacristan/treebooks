@@ -38,47 +38,47 @@ Below you can see the mock-ups that I drew using [Adobe Fireworks](https://www.a
 
 login.html, registration.html, contact.html, review_form.html, password_reset_complete.html, password_reset_confirm.html, password_reset_done.html, password_reset_email.html, password_reset_form.html
 
-![many](/static/mockups/small_common_style.png)
+![many](/static/mockups/small_common_style1.png)
 
 ##### index.html
 
-![home](/static/mockups/home.png)
+![home](/static/mockups/home1.png)
 
 ##### about.html
 
-![about](/static/mockups/about.png)
+![about](/static/mockups/about1.png)
 
 ##### projects.html
 
-![projects](/static/mockups/projects.png)
+![projects](/static/mockups/projects1.png)
 
 ##### donate.html
 
-![donate](/static/mockups/donate.png)
+![donate](/static/mockups/donate1.png)
 
 ##### all_books.html
 
-![books](/static/mockups/books.png)
+![books](/static/mockups/books1.png)
 
 ##### detail.html
 
-![detail](/static/mockups/detail.png)
+![detail](/static/mockups/detail1.png)
 
 ##### view_profile.html
 
-![profile](/static/mockups/profile.png)
+![profile](/static/mockups/profile1.png)
 
 ##### edit_user_profile.html
 
-![edit profile](/static/mockups/edit_profile.png)
+![edit profile](/static/mockups/edit_profile1.png)
 
 ##### cart.html
 
-![cart](/static/mockups/cart.png)
+![cart](/static/mockups/cart1.png)
 
 ##### checkout.html
 
-![checkout](/static/mockups/checkout.png)
+![checkout](/static/mockups/checkout1.png)
 
 - The final design of the website included some additional functionalities (buttons, carousel, modals and messages) that I thought would be useful as I was working on it. I also changed slighly the styles (colours, transparency, shadows, borders) for others that I found more appropiate.
 
@@ -267,7 +267,7 @@ See below the satabase schema:
 
 ADD SCHEMA
 
-![database](/static/img/schema.jpg)
+![database](/static/db_schema/data_schema.png)
 
 #### Mock-up tool:
 
