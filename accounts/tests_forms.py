@@ -12,7 +12,6 @@ https://realpython.com/testing-in-django-part-1-best-practices-and-examples/
 
 class TestAccountsForms(TestCase):
 
-
     '''I set up the registration form to use in the tests so we
     don't have to repeat this setup in each test'''
     def setUp(self):
@@ -87,7 +86,7 @@ class TestAccountsForms(TestCase):
         self.assertEqual(form.errors['password2'],[u'Please confirm your password'])
 
 
-    def test_email_has to_be_unique_when_registering(self):
+    def test_email_has_to_be_unique_when_register(self):
         self.assertTrue(self.registration_form.is_valid())
         self.registration_form.save()
 
@@ -103,7 +102,7 @@ class TestAccountsForms(TestCase):
         self.assertEqual(form2.errors['email'],[u'Email address must be unique'])
 
 
-    def test_username_has to_be_unique_when_registering(self):
+    def test_username_has_to_be_unique_when_registering(self):
         self.assertTrue(self.registration_form.is_valid())
         self.registration_form.save()
 

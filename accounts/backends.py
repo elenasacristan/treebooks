@@ -9,9 +9,9 @@ class EmailAuth:
         and the verified password
         """
         try:
-             """ username is used because it is the
+            """ username is used because it is the
             name in the form
-             """
+            """
             user = User.objects.get(email=username)
 
             if user.check_password(password):

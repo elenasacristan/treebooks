@@ -15,7 +15,7 @@ c=Client()
 class TestAccountsViews(TestCase):
 
 
-     '''I set up the registration form to use in the tests so we
+    '''I set up the registration form to use in the tests so we
     don't have to repeat this setup in each test'''
     def setUp(self):
         self.registration_form = RegistrationForm({
@@ -25,7 +25,7 @@ class TestAccountsViews(TestCase):
             'username':'username', 
             'password1':'12345abcds', 
             'password2':'12345abcds'})
-
+    
 
     def test_home_page(self):
         page = c.get("/")
@@ -50,6 +50,7 @@ class TestAccountsViews(TestCase):
         
         login_ok = c.login(username="username", password="12345abcds")
         self.assertTrue(login_ok)
+
    
 
     def test_user_cannot_login_if_not_registered(self):
