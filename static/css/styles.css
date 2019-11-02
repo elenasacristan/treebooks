@@ -277,7 +277,7 @@ a {
 
 .index {
   background-color: #efeee5;
-  padding-bottom: 80px;
+  /* padding-bottom: 80px; */
 }
 
 .index .shape {
@@ -342,6 +342,11 @@ a {
   height: 250px;
 }
 
+.book-columns .badge-success {
+  width: 60%;
+  margin-bottom: 2px;
+}
+
 /* footer */
 
 footer {
@@ -400,7 +405,8 @@ footer .col-sm-5 a {
   width: 90%;
   background-color: white;
   padding: 25px;
-  /* margin: 0px 40px; */
+  margin: 100px 18px;
+  /* margin-bottom: 50px; */
   border-radius: 30px;
   box-shadow: 0px 0px 5px 3px rgba(252, 134, 0, 0.658);
 }
@@ -507,7 +513,7 @@ footer .col-sm-5 a {
     font-size: 4rem;
   }
   .circle-shape {
-    margin-top: 100px;
+    /* margin-top: 100px; */
     margin-bottom: 60px;
     width: 550px;
     height: 550px;
@@ -925,8 +931,20 @@ footer .col-sm-5 a {
   margin: 18px;
 }
 
-.view-profile .shape:hover, .detail-profile-wrapper .shape:hover {
+/* .view-profile .shape:hover, .detail-profile-wrapper .shape:hover {
   background-color: #e3f1ea;
+} */
+
+.view-profile .shadow1:hover, .detail-profile-wrapper .shadow1:hover {
+  background-color: #e3f1ea;
+}
+
+.view-profile .shadow2:hover, .detail-profile-wrapper .shadow2:hover {
+  background-color: #fff2d9;
+}
+
+.view-profile .shadow3:hover, .detail-profile-wrapper .shadow3:hover {
+  background-color: #e0f0ff;
 }
 
 .view-profile .shape h3 {
@@ -1155,8 +1173,12 @@ form label {
 .about .box-content {
   width: 80%;
   box-shadow: 0px 0px 5px 3px rgba(252, 134, 0, 0.658);
-  margin-top: 30px;
-  margin-bottom: 80px;
+  padding-bottom: 60px;
+}
+
+.about .box-content ul, .about .box-content p, .about .box-content h4 {
+  margin-right: 8px;
+  margin-left: 8px;
 }
 
 /* projects */
@@ -1192,14 +1214,14 @@ form label {
 
 .about-projects-donate .box-content {
   margin-top: -23px;
-  padding-top: 50px;
+  padding-top: 60px;
 }
 
 /* contact us */
 
-.circle-shape {
+/* .circle-shape {
   margin-top: 100px;
-}
+} */
 
 .contact-us p {
   margin: 0px 120px;
@@ -1226,7 +1248,7 @@ form label {
     margin-top: 50px;
   }
   .circle-shape {
-    margin-top: 150px;
+    margin-top: 100px;
   }
 }
 
