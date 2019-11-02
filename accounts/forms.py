@@ -3,15 +3,17 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 
+
 class LoginForm(forms.Form):
-    '''Form to be used to log users in'''
-    username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'username'}))
-    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'password'}))
+    '''Form used to log users in'''
+    username = forms.CharField(
+        widget=forms.TextInput(attrs={'placeholder': 'username'}))
+    password = forms.CharField(
+        widget=forms.PasswordInput(attrs={'placeholder': 'password'}))
 
 
 class RegistrationForm(UserCreationForm):
     '''Form used to register a new user'''
-    
     first_name = forms.CharField(
         widget=forms.TextInput(attrs={'placeholder': 'first_name'}))
     last_name = forms.CharField(
@@ -29,11 +31,14 @@ class RegistrationForm(UserCreationForm):
         widget=forms.PasswordInput(
             attrs={'placeholder': 'confirm password'}))
 
+
+    '''fields that will be displayed in the form'''
     class Meta:
         model = User
         fields = ['first_name','last_name', 'email', 'username', 'password1', 'password2']
 
 
+    '''validation of first_name'''
     def clean_first_name(self):
         first_name = self.cleaned_data.get('first_name')
         
@@ -42,6 +47,7 @@ class RegistrationForm(UserCreationForm):
         return first_name
 
 
+    '''validation of last_name'''
     def clean_last_name(self):
         last_name = self.cleaned_data.get('last_name')
         
@@ -50,11 +56,13 @@ class RegistrationForm(UserCreationForm):
         return last_name
 
 
+    '''validation of username'''
     def clean_username(self):
         username = self.cleaned_data.get('username')
         return username
 
 
+    '''validation of email'''
     def clean_email(self):
         email = self.cleaned_data.get('email')
         username = self.cleaned_data.get('username')
@@ -67,6 +75,8 @@ class RegistrationForm(UserCreationForm):
         
         return email
     
+
+    '''validation of passwords'''
     def clean_password2(self):
         password1 = self.cleaned_data.get('password1')
         password2 = self.cleaned_data.get('password2')
