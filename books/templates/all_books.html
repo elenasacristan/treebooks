@@ -4,127 +4,114 @@
 
 {% load staticfiles %}
 
-
 {% block title %}Books{% endblock %}
 
 {% block content %}
 
+<!-- I have used the product cards from http://bootstrap-ecommerce.com/ in order to start building the book cards and then I have
+ made some updates. The start rating is also from http://bootstrap-ecommerce.com/ but the score is calculated in the views -->
+
 <div class="container-fluid allbooks">
+
     {% for category in categories %}
 
-    <h2 class="headers_all">{{ category.name }}</h2>
-    <hr>
+        <h2 class="headers_all">{{ category.name }}</h2>
+        <hr>
+        <div class="row categories-row mx-auto book-columns">
 
-    <div class="row categories-row mx-auto book-columns">
-        {% for book in books %}
-        {% if category.name == book.category.name %}
+            {% for book in books %}
 
+                <!-- if the book belongs to the current category -->
+                {% if category.name == book.category.name %}
 
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <figure class="card card-product">
+                            
+                            <!-- form to add/remove books to the favourites list -->
+                            <form class="text-right fav-form" method="POST" action={% url 'add_remove_favourites' book.id %}>
+                                {% csrf_token %}
+                                <button type="submit">
+                                    <!-- check if the book is already a favourite -->
+                                    {% if book in user.profile.favourites.all %}
+                                    <h3 class="favorited text-right"><i class="fa fa-heart"></i></h3>
+                                    {% else %}
+                                    <h3 class="favorite text-right"><i class="fa fa-heart"></i></h3>
+                                    {% endif %}
+                                </button>
+                            </form>
 
-            <figure class="card card-product">
+                            <a href="{% url 'detail' book.id %}"><h5 class="title"> {{ book.title }}</h5></a>
+                            <div class="img-wrap"><img src="{{ MEDIA_URL }}{{ book.book_img }}"></div>
+                            <figcaption class="info-wrap">
+                                <div class="label-rating"><strong>{{book.rating}}</strong></div>
+                                <div class="rating-wrap">
+                                    <ul class="rating-stars">
+                                        <li style="width:{{book.percentage_rating}}%" class="stars-active">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </figcaption>
 
+                            <!-- status book message -->
+                            <!-- if the book becomes available and it has a waiting list -->
+                            {% if book.available and book.id in waiting_list_books %}
 
-                <form class="text-right fav-form" method="POST" action={% url 'add_remove_favourites' book.id %}>
-                    {% csrf_token %}
-                    <button type="submit">
-                        {% if book in user.profile.favourites.all %}
-                        <h3 class="favorited text-right"><i class="fa fa-heart"></i></h3>
-                        {% else %}
-                        <h3 class="favorite text-right"><i class="fa fa-heart"></i></h3>
-                        {% endif %}
-                    </button>
-                </form>
+                            <a href="{% url 'view_waiting_lists' book.id %}" class="text-info"><strong>check waiting list</strong></a>
+                                {% for wl in waiting_list %}
+                                    {% if book.id == wl.wl_book.id %}
+                                        {% for next in wl.wl_user.all %}
+                                            {% if user.username == next.username %}
+                                                <!-- check if the first user in the list is the current user -->
+                                                {% if forloop.first %}
+                                                <a href="{% url 'detail' book.id %}" class="mx-auto badge badge-success"><strong>It's your turn!</strong></a>
+                                                {% endif %}
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
 
-                <a href="{% url 'detail' book.id %}">
+                            <!-- if the book becomes available and there is not waiting list -->
+                            {% elif book.available and book.id not in waiting_list_books %}
+                            <a href="{% url 'detail' book.id %}" class="text-success"><strong>AVAILABLE</strong></a>
+                            
+                            <!-- book is not available -->
+                            {% else %}
+                            <a href="{% url 'view_waiting_lists' book.id %}" class="text-info"><strong>check waiting list</strong></a>
+                            {% endif %}
+                            <!-- status book message ends -->
 
-                    <h5 class="title"> {{ book.title }}</h5>
-                </a>
-                <div class="img-wrap"><img src="{{ MEDIA_URL }}{{ book.book_img }}"></div>
-
-                <figcaption class="info-wrap">
-                    <div class="label-rating"><strong>{{book.rating}}</strong></div>
-                    <div class="rating-wrap">
-
-                        <ul class="rating-stars">
-                            <li style="width:{{book.percentage_rating}}%" class="stars-active">
-                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                    class="fa fa-star"></i><i class="fa fa-star"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                    class="fa fa-star"></i><i class="fa fa-star"></i>
-                            </li>
-                        </ul>
-
-
-                    </div> <!-- rating-wrap.// -->
-
-                </figcaption>
-
-
-
-                {% if book.available and book.id in waiting_list_books %}
-
-                <a href="{% url 'view_waiting_lists' book.id %}" class="text-info"><strong>check waiting
-                        list</strong></a>
-
-                {% for wl in waiting_list %}
-                <!-- '''si el libro tiene waiting list''' -->
-
-                {% if book.id == wl.wl_book.id %}
-
-                {% for next in wl.wl_user.all %}
-
-                {% if user.username == next.username %}
-                {% if forloop.first %}
-                <a href="{% url 'detail' book.id %}" class="mx-auto badge badge-success"><strong>It's your
-                        turn!</strong></a>
-
+                            <div class="bottom-wrap text-left">
+                                <a href="{% url 'detail' book.id %}" class="btn btn-sm btn-primary float-right">More</a>
+                                <div>
+                                    <h5><span class="price-new">{{ book.price_day }}<small>/day</small></span></h5>
+                                </div>
+                            </div> 
+                        </figure>
+                    </div> 
+                
                 {% endif %}
-                {% endif %}
-
-                {% endfor %}
-
-
-                {% endif %}
-
-                {% endfor %}
-
-                {% elif book.available and book.id not in waiting_list_books %}
-                <a href="{% url 'detail' book.id %}" class="text-success"><strong>AVAILABLE</strong></a>
-
-
-                {% else %}
-
-                <a href="{% url 'view_waiting_lists' book.id %}" class="text-info"><strong>check waiting
-                        list</strong></a>
-
-
-                {% endif %}
-
-
-
-
-                <div class="bottom-wrap text-left">
-                    <a href="{% url 'detail' book.id %}" class="btn btn-sm btn-primary float-right">More</a>
-                    <div>
-                        <h5> <span class="price-new">{{ book.price_day }}<small>/day</small></span>
-                        </h5>
-                    </div> <!-- price-wrap.// -->
-                </div> <!-- bottom-wrap.// -->
-            </figure>
-        </div> <!-- col // -->
-        {% endif %}
-        {% endfor %}
-    </div>
+            
+            {% endfor %}
+        
+        </div>
 
     {% empty %}
-
+        
     <h4 class="text-center alert alert-info" role="alert">We didn't find any book.</h4>
 
     {% endfor %}
-
 
 </div>
 

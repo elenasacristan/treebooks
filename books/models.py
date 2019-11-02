@@ -2,10 +2,10 @@ from django.db import models
 from datetime import datetime
 from django.contrib.auth.models import User
 
-
 # Create your models here.
 
 class Category(models.Model):
+
     CATEGORIES_CHOICES = (
         ("Kid's Books", "Kid's Books"),
         ('Politics', 'Politics'),
@@ -13,11 +13,14 @@ class Category(models.Model):
         ('Novel', 'Novel'),
     )
     name = models.CharField(max_length=15, choices=CATEGORIES_CHOICES)
+    
+    # we use verbose plural so in the admin site the Model name displays correctly
     class Meta:
         verbose_name_plural = "Categories"
 
     def __str__(self):
         return self.name
+
 
 class Author(models.Model):
     
@@ -27,7 +30,9 @@ class Author(models.Model):
     def __str__(self):
         return self.name
 
+
 class StoreBook(models.Model):
+
     name = models.CharField(max_length=15)
     street = models.CharField(max_length=15)
     map_store = models.URLField(max_length=400, default='')
@@ -35,17 +40,20 @@ class StoreBook(models.Model):
     def __str__(self):
         return self.name
 
+'''
+The book model will have OnetoMany relationship with the 
+models Author, Category and StoreBook
+'''
 class Book(models.Model):
     FORMAT_CHOICES = (
             ('Hardcover', 'Hardcover'),
             ('Paperback', 'Paperback'),
         )
-    title = models.CharField(max_length=50, default='')
 
+    title = models.CharField(max_length=50, default='')
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     store = models.ForeignKey(StoreBook, on_delete=models.CASCADE)
-
     total_number_reviews = models.IntegerField(default=0)
     total_ratings = models.IntegerField(default=0)
     percentage_rating = models.IntegerField(default=0)
@@ -59,7 +67,6 @@ class Book(models.Model):
     pages = models.IntegerField(default=0)
     available = models.BooleanField(default=True)
     return_date = models.DateField(blank=True, null=True)
-
 
     def __str__(self):
         return self.title
