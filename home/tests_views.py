@@ -1,5 +1,10 @@
 from django.test import TestCase, Client
 
+"""
+I learn about Client in the following link 
+https://docs.djangoproject.com/en/1.11/topics/testing/tools/
+"""
+
 c=Client()
 
 # Create your tests here.

@@ -6,70 +6,84 @@
 
 {% block content %}
 
-
 <div class='container-fluid'>
     <div class="d-flex row justify-content-center align-items-center about-projects-donate">
         <div class="col-xs-10 about">
             <h2 class="headers_all text-center">About us</h2>
             <div class="box-content mx-auto">
-                <p>TreeBooks is a small charity founded in October 2018 and our mission is to raise money to help
-                    reforest
-                    our planet.</p>
-
-                <h4>How we do it?</h4>
-
-                <p>We collect second hand books that people donate and then we rent them for a small fee in order to
-                    raise
-                    money.
-                    The money collected is then used to help in <a href="{% url 'projects' %}">reforestation
-                        projects</a>.
+                <p>
+                    TreeBooks is a small charity founded in October 2018 and our mission is to raise money to help
+                    reforest our planet.
                 </p>
 
+                <h4>How we do it?</h4>
+                <p>
+                    We collect second hand books that people donate and then we rent them for a small fee in order to
+                    raise money. The money collected is then used to collaborate with
+                    <a href="{% url 'projects' %}">reforestation projects</a>.
+                </p>
 
-                <h4>Colaborate becoming a member!</h4>
+                <h4>Collaborate becoming a member!</h4>
                 <ul>
-                    <li>By becoming a member and reading second hand books you are reducing the number of trees that are
-                        cut to create new
-                        books.
+                    <li>
+                        By becoming a member and reading second hand books you are reducing the number of trees that are
+                        cut to create new books.
                     </li>
-
-                    <li>Our books are much cheaper than brand new books and the money you pay is used for a good cause.
+                    <li>
+                        Our books are much cheaper than brand new books and the money you pay is used for a good cause.
                     </li>
-
-                    <li>You can also <a href="{% url 'donate' %}">donate</a> your second hand books to help us
-                        growing the collection of books so we can offer more choice to our members. <a
-                            href="{% url 'donate' %}">(See our
-                            collection points)</a></li>
+                    <li>
+                        You can also <a href="{% url 'donate' %}">donate</a> your second hand books to help us
+                        growing the collection of books so we can offer more choice to our members.
+                        <a href="{% url 'donate' %}">(See our collection points)</a>
+                    </li>
                 </ul>
+
                 <h4>More benefits for our members...</h4>
                 <ul>
-                    <li>As a member you can see the book reviews given by other members.</li>
-                    <li>You can join the waiting list for books that are not available and you will be able
-                        to see what is your order in the waiting lists.</li>
-                    <li>You can save the books you like in your favourites list.</li>
-                    <li>And you can keep track of all the books you have read from TreeBooks.</li>
+                    <li>
+                        As a member you can see the book reviews given by other members.
+                    </li>
+                    <li>
+                        You can join the waiting list for books that are not available and you will be able
+                        to see what is your order in the waiting lists.
+                    </li>
+                    <li>
+                        You can save the books you like in your favourites list.
+                    </li>
+                    <li>
+                        And you can keep track of all the books you have read from TreeBooks.
+                    </li>
                 </ul>
-
 
                 <h4>How it works?</h4>
                 <ul>
-                    <li>As a member you can rent our books for the the number of days that you want. And the final rent
-                        price will be based on the number of days selected.</li>
-                    <li>Once the payment is done you can come to collect the books to our shop or we can organise a
-                        delivery (for an additional fee).</li>
-                    <li>The minimun time that we rent the books for is 10 days (but you can always return it earlier
-                        if you want).</li>
-                    <li>Once you have returned the book to our store you will need to go to your profile and click the
+                    <li>
+                        As a member you can rent our books for the the number of days that you want. And the final rent
+                        price will be based on the number of days selected.
+                    </li>
+                    <li>
+                        Once the payment is done you can come to collect the books to our shop or we can organise a
+                        delivery (for an additional fee).
+                    </li>
+                    <li>
+                        The minimun time that we rent the books for is 10 days (but you can always return it earlier
+                        if you want).
+                    </li>
+                    <li>
+                        Once you have returned the book to our store you will need to go to your profile and click the
                         button "I've returned the book" so it will appear as available inmediatly for other users who
-                        many want to read it.</li>
-                    <li>We know you will retun the book when it is due but we need to keep a £5 deposit per book just in
+                        many want to read it.
+                    </li>
+                    <li>
+                        We know you will retun the book when it is due but we need to keep a £5 deposit per book just in
                         case the book is not returned. The deposit will be rufunded once the book is
-                        returned.</li>
+                        returned.
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
-
 
 {% endblock%}

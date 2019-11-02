@@ -6,10 +6,9 @@
 
 {% block content %}
 
-<!-- carousel from bootstrap -->
+<!-- carousel from bootstrap 4 -->
 <div class="row-sm">
     <div class="col-md-12">
-
         <div class="bd-example">
             <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -19,9 +18,8 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-
-                        <img src="{% static 'images/project/slide1.jpg' %}" class="d-block img-fluid " alt="...">
-
+                        <img src="{% static 'images/project/slide1.jpg' %}" class="d-block img-fluid "
+                            alt="trees and book image">
                         <div class="carousel-caption d-md-block mx-auto">
                             <p>Rent a book today.</p>
                             <a class='btn btn-warning buttons_all' href={% url 'view_all_books' %}>See our
@@ -29,20 +27,19 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="{% static 'images/project/slide2b.jpg' %}" class="d-block img-fluid" alt="...">
+                        <img src="{% static 'images/project/slide2b.jpg' %}" class="d-block img-fluid"
+                            alt="reforestation project image">
                         <div class="carousel-caption d-md-block">
                             <p>See for what projects we are raising money for at the moment.</p>
                             <a class='btn btn-warning buttons_all' href={% url 'projects' %}>Find out more</a>
-
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="{% static 'images/project/slide.jpg' %}" class="d-block img-fluid" alt="...">
+                        <img src="{% static 'images/project/slide.jpg' %}" class="d-block img-fluid" alt="books image">
                         <div class="carousel-caption d-md-block">
                             <p>Donate your books to help save the planet. We have several collection points all over
                                 London.</p>
                             <a class='btn btn-warning buttons_all' href={% url 'donate' %}>Donate Book</a>
-
                         </div>
                     </div>
                 </div>
@@ -57,12 +54,10 @@
             </div>
         </div>
     </div>
-
-
-
     <div class="container-fluid index">
         <div class="row justify-content-center">
             <div class="col-11 text-center">
+                <!-- display different message depending on if the user is athenticated or not -->
                 {% if user.is_authenticated %}
                 <h2>Hi <span class="text-capitalize text-success">{{user}}</span>, with TreeBooks you can...</h2>
                 {% else %}
@@ -70,8 +65,6 @@
                 {% endif %}
             </div>
         </div>
-
-
         <div class="row justify-content-center text-center">
             <div class="col-11 col-md-5 col-lg-3 shape shadow1">
                 <img src={% static 'images/project/book.png' %}>
@@ -94,8 +87,5 @@
         </div>
         {% endif %}
     </div>
-
-
-
 
     {% endblock%}

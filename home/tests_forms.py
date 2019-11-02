@@ -12,12 +12,10 @@ class TestHomeForms(TestCase):
         self.assertFalse(form.is_valid())
         self.assertEqual(form.errors['email'],[u'This field is required.'])
 
-
     def test_form_cannot_be_submitted_without_content(self):
         form = ContactUsForm({'email':'email@email.com', 'content':''})
         self.assertFalse(form.is_valid())
         self.assertEqual(form.errors['content'],[u'This field is required.'])
-
 
     def test_email_field_needs_to_have_email_format(self):
         form = ContactUsForm({'email':'emailemail.com', 'content':''})

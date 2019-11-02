@@ -2,7 +2,7 @@ from django import forms
 from .models import ContactUs
 
 class ContactUsForm(forms.ModelForm):
-    '''Form to be used to log users in'''
+    '''Form used for users to contact the charity'''
     email = forms.CharField(
         widget=forms.TextInput(attrs={'placeholder': 'email'}))
 

@@ -6,21 +6,24 @@
 
 {% block content %}
 
-
 <div class='container-fluid projects'>
     <div class="h-100 d-flex row justify-content-center align-items-center about-projects-donate">
         <div class="col-xs-10 about">
             <h2 class="headers_all text-center">Our projects</h2>
             <div class="box-content  mx-auto">
-                <p>We have only been active since the 1st October of 2019 and since then we have collected
-                    <strong>{{raised.number_books}}</strong> books
-                    from donations and we have raised <strong>£{{raised.money_raised}}</strong> renting books.</p>
-
+                <p>
+                    We have only been active since the 1st October of 2019 and since then we have collected
+                    <strong>{{raised.number_books}}</strong> books from donations and we have raised
+                    <strong>£{{raised.money_raised}}</strong> renting books.
+                </p>
+                <!-- only show this message if there porject at the moment -->
                 {% if projects %}
                 <p>Right now we are raising money for these projects:</p>
                 {% endif %}
                 {% for project in projects %}
                 <ul>
+                    <!-- alternatively change image alignment by checking if loop counter is divisible by 2
+                    I found that in the following post https://stackoverflow.com/questions/8494209/modulus-in-django-template-->
                     {% if forloop.counter0|divisibleby:2 %}
                     <li class="row align-items-center justify-content-center">
                         <div class="col-12 col-md-6 text-md-center">
@@ -43,17 +46,15 @@
                         </div>
                     </li>
                     {% endif %}
-
                 </ul>
+                <!-- if there are not projects at the moment show and alert message -->
                 {% empty %}
                 <h4 class="text-center alert alert-info" role="alert">We are looking for new projects. Contact us if you
                     have any project in mind!</h4>
-
                 {% endfor %}
             </div>
         </div>
     </div>
 </div>
-
 
 {% endblock%}
