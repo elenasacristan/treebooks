@@ -32,49 +32,51 @@ TreeBooks is a charity so the aim of the website is to attract users who then wi
 
 ### mock-ups:
 
-Below you can see the mock-ups that I drew using [Pencil](https://pencil.evolus.vn/'https://pencil.evolus.vn/) and [Adobe Fireworks](https://www.adobe.com/products/fireworks.html).
+Below you can see the mock-ups that I drew using [Adobe Fireworks](https://www.adobe.com/products/fireworks.html).
 
-##### Design used for login.html, registration.html, Password reset password page ... write a review form , contact
+##### Common design used for:
+
+login.html, registration.html, contact.html, review_form.html, password_reset_complete.html, password_reset_confirm.html, password_reset_done.html, password_reset_email.html, password_reset_form.html
 
 ![many](/static/mockups/small_common_style.png)
 
-##### home.html
+##### index.html
 
 ![home](/static/mockups/home.png)
 
-##### about
+##### about.html
 
 ![about](/static/mockups/about.png)
 
-##### projects
+##### projects.html
 
 ![projects](/static/mockups/projects.png)
 
-##### donate
+##### donate.html
 
 ![donate](/static/mockups/donate.png)
 
-##### books
+##### all_books.html
 
 ![books](/static/mockups/books.png)
 
-##### detail
+##### detail.html
 
 ![detail](/static/mockups/detail.png)
 
-##### profile
+##### view_profile.html
 
 ![profile](/static/mockups/profile.png)
 
-##### edit profile
+##### edit_user_profile.html
 
 ![edit profile](/static/mockups/edit_profile.png)
 
-##### cart
+##### cart.html
 
 ![cart](/static/mockups/cart.png)
 
-##### checkout
+##### checkout.html
 
 ![checkout](/static/mockups/checkout.png)
 
