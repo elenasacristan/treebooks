@@ -78,7 +78,8 @@
 
                 {% if user.username == next.username %}
                 {% if forloop.first %}
-                <a href="{% url 'detail' book.id %}" class="badge badge-success"><strong>It's your turn!</strong></a>
+                <a href="{% url 'detail' book.id %}" class="mx-auto badge badge-success"><strong>It's your
+                        turn!</strong></a>
 
                 {% endif %}
                 {% endif %}
