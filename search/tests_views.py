@@ -1,10 +1,5 @@
 from django.test import TestCase, Client
 from books.models import Book, Author, Category, StoreBook
-from django.core.files.uploadedfile import SimpleUploadedFile
-from base64 import b64decode
-from django.core.files.base import ContentFile
-from django.core.files.uploadedfile import InMemoryUploadedFile
-from io import BytesIO
 
 c=Client()
 
