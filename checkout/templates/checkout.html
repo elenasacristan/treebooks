@@ -6,6 +6,7 @@
 
 {% block title %}Checkout{% endblock %}
 
+<!-- code needed to take stripe payment -->
 {% block head_js %}
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript">
@@ -16,151 +17,120 @@
 <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
 {% endblock %}
 
+
+<!-- I have used the cart example from http://bootstrap-ecommerce.com/ in 
+order to start building the cart and then I have made some updates -->
+
 {% block content %}
-
-
 <div class="row checkout">
-    <!-- <div class="cart container mx-auto"> -->
     <div class="cart-checkout container mx-auto">
 
+        <!-- if the cart is NOT empty show table headers-->
         {% if total != 0 %}
-        <div class="row row-header justify-content-between text-center d-none d-sm-flex">
-            <div class="col-6 col-xl-6 text-left">Book</div>
-            <div class="col-3 col-xl-3">Price</div>
-            <div class="col-2 col-xl-2">Collect at</div>
-        </div>
-        <hr class=" d-none d-sm-flex">
+            <div class="row row-header justify-content-between text-center d-none d-sm-flex">
+                <div class="col-6 col-xl-6 text-left">Book</div>
+                <div class="col-3 col-xl-3">Price</div>
+                <div class="col-2 col-xl-2">Collect at</div>
+            </div>
+            <hr class=" d-none d-sm-flex">
         {% endif %}
+
         {% for book_item in cart_books %}
-        <div class="row row-item justify-content-sm-between d-flex">
-            <div class="col-12 col-sm-6 text-left">
-
-                <figure class="media row">
-                    <div class="img-wrap col-xs-12"><img src="{{ MEDIA_URL }}{{ book_item.book.book_img }}"
-                            class="img-thumbnail img-sm">
-                    </div>
-                    <figcaption class="media-body col-xs-12">
-                        <h6 class="title text-truncate">{{ book_item.book.title }}</h6>
-                        <dl class="dlist-inline small">
-                            <dt>Price/day: </dt>
-                            <dd>£{{ book_item.book.price_day }}</dd>
-                            <br>
-                            <dt>N.days: </dt>
-                            <dd>{{ book_item.days }}</dd>
-                        </dl>
-                    </figcaption>
-                </figure>
-
+            <div class="row row-item justify-content-sm-between d-flex">
+                <div class="col-12 col-sm-6 text-left">
+                    <figure class="media row">
+                        <div class="img-wrap col-xs-12">
+                            <img src="{{ MEDIA_URL }}{{ book_item.book.book_img }}" class="img-thumbnail img-sm">
+                        </div>
+                        <figcaption class="media-body col-xs-12">
+                            <h6 class="title text-truncate">{{ book_item.book.title }}</h6>
+                            <dl class="dlist-inline small">
+                                <dt>Price/day: </dt>
+                                <dd>£{{ book_item.book.price_day }}</dd>
+                                <br>
+                                <dt>N.days: </dt>
+                                <dd>{{ book_item.days }}</dd>
+                            </dl>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-6 col-sm-4 text-center">
+                    £{{book_item.book_price}}
+                </div>
+                <div class="col-6 col-sm-2 text-center">
+                    {{ book_item.book.store }}
+                </div>
             </div>
-            <div class="col-6 col-sm-4 text-center">
-
-                £{{book_item.book_price}}
-
-            </div>
-            <div class="col-6 col-sm-2 text-center">
-                {{ book_item.book.store }}
-            </div>
-        </div>
-        <hr>
+            <hr>
         {% endfor %}
 
+        <!-- if the cart is empty-->
         {% if total == 0 %}
-
-        <h4 class="empty-cart text-center alert alert-info" role="alert">Your cart is empty</h4>
-
-        <div class="row justify-content-center justify-content-md-end checkout-row text-center text-md-right">
-            <div class="col-10">
-                <a class="btn btn-warning buttons_all" href='{% url 'view_all_books' %}'>Keep looking</a>
+            <h4 class="empty-cart text-center alert alert-info" role="alert">Your cart is empty</h4>
+            <div class="row justify-content-center justify-content-md-end checkout-row text-center text-md-right">
+                <div class="col-10">
+                    <a class="btn btn-warning buttons_all" href='{% url 'view_all_books' %}'>Keep looking</a>
+                </div>
             </div>
-        </div>
 
-
-
+        <!-- if the cart is NOT empty -->
         {% else %}
-
-
-        <div class="row row-header justify-content-center justify-content-sm-end ">
-
-            <div class="col-6 col-sm-5 col-md-4 text-right">
-                <h5>Rent:</h5>
+            <div class="row row-header justify-content-center justify-content-sm-end ">
+                <div class="col-6 col-sm-5 col-md-4 text-right">
+                    <h5>Rent:</h5>
+                </div>
+                <div class="col-6 col-sm-3 col-md-2 text-right">
+                    <h5>£{{ total_raised }}</h5>
+                </div>
             </div>
-            <div class="col-6 col-sm-3 col-md-2 text-right">
-                <h5>£{{ total_raised }}</h5>
+            <div class="row row-header total-price justify-content-center justify-content-sm-end ">
+                <div class="col-6 col-sm-5 col-md-4 text-right">
+                    <h5>Deposit:</h5>
+                    <p>({{ books_count }} books x £5)</p>
+                </div>
+                <div class="col-6 col-sm-3 col-md-2 text-right">
+                    <h5>£{{ deposit }}</h5>
+                </div>
             </div>
-        </div>
-
-
-        <div class="row row-header total-price justify-content-center justify-content-sm-end ">
-
-            <div class="col-6 col-sm-5 col-md-4 text-right">
-                <h5>Deposit:</h5>
-                <p>({{ books_count }} books x £5)</p>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <p class="text-left text-info">*The £5 deposit per book will be refund when the book is returned</p>
+                </div>
             </div>
-            <div class="col-6 col-sm-3 col-md-2 text-right">
-                <h5>£{{ deposit }}</h5>
-
+            <div class="row row-header justify-content-center justify-content-sm-end text-success">
+                <div class="col-6 col-sm-5 col-md-4 text-right">
+                    <h3>Total:</h3>
+                </div>
+                <div class="col-6 col-sm-3 col-md-2 text-right">
+                    <h3>£{{ total }}</h3>
+                </div>
             </div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col">
-                <p class="text-left text-info">*The £5 deposit per book will be refund when the book
-                    is returned</p>
-            </div>
-        </div>
-        <div class="row row-header justify-content-center justify-content-sm-end text-success">
-
-            <div class="col-6 col-sm-5 col-md-4 text-right">
-                <h3>Total:</h3>
-            </div>
-            <div class="col-6 col-sm-3 col-md-2 text-right">
-                <h3>£{{ total }}</h3>
-            </div>
-        </div>
-
-
-
-
         {% endif %}
 
+        <!-- if the cart is NOT empty show payment form-->
         {% if total != 0 %}
-
-        <h3 class="payment-details text-center">Payment details</h3>
-        <hr>
-        <div class="row justify-content-center payment-wrapper">
-
-            <form class="col-8" role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
-
-
-
-                <div id="credit-card-errors" style="display: none;">
-                    <div id="alert-message block-message error" id="stripe-error-message"></div>
-                </div>
-
-                <div class="form-group col-md-6">
-                    {{ order_form | as_bootstrap }}
-                </div>
-
-                <div class="form-group col-md-6">
-                    {{ payment_form | as_bootstrap }}
-                </div>
-
-                {% csrf_token %}
-                <div class="form-group col-md-3">
-                    <input class=" btn btn-primary buttons_all" id=" submit_payment_btn" name="commit" type="submit"
-                        value="Submit Payment">
-                </div>
-            </form>
-        </div>
+            <h3 class="payment-details text-center">Payment details</h3>
+            <hr>
+            <div class="row justify-content-center payment-wrapper">
+                <form class="col-8" role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
+                    <div id="credit-card-errors" style="display: none;">
+                        <div id="alert-message block-message error" id="stripe-error-message"></div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        {{ order_form | as_bootstrap }}
+                    </div>
+                    <div class="form-group col-md-6">
+                        {{ payment_form | as_bootstrap }}
+                    </div>
+                    {% csrf_token %}
+                    <div class="form-group col-md-3">
+                        <input class=" btn btn-primary buttons_all" id=" submit_payment_btn" name="commit" type="submit" value="Submit Payment">
+                    </div>
+                </form>
+            </div>
         {% endif %}
-
-
-
-
-
-
     </div>
-
 </div>
 
 
