@@ -2,12 +2,12 @@ from django.db import models
 from django.contrib.auth.models import User
 from books.models import Book
 from django.utils import timezone
-# from django.core.validators import MaxValueValidator, MinValueValidator
 
-
-
+'''
+The ReviewBook model will have OnetoMany relationship with the 
+models User and Book
+'''
 # Create your models here.
-
 
 class ReviewBook(models.Model):
 
@@ -19,8 +19,8 @@ class ReviewBook(models.Model):
     review_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
     review_author = models.ForeignKey(User, null=True, related_name="review_author", on_delete=models.SET_NULL)
     reviewed_book = models.ForeignKey(Book, default='', on_delete=models.CASCADE)
+    # this field is needed for the start rating
     percentage_score =models.IntegerField(default=0)
-
     
     def __str__(self):
         return "{0} - {1}, {2}".format(self.score, self.reviewed_book.title, self.review_author)  

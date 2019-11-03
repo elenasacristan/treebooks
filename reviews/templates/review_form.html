@@ -8,14 +8,11 @@
 
 {% block content %}
 
-
 <div class="d-flex row justify-content-center align-items-center text-center">
     <div class="col-xs-6">
         <div class="circle-shape">
             <h2 class="headers_all">Add review</h2>
-            <!-- <form class="review-form mx-auto" method="POST"> -->
             <form class="box-content review-form mx-auto" method="POST">
-
                 {% csrf_token %}
                 {{ review_form | as_bootstrap}}
                 <button type="submit" class="btn">Submit</button>
@@ -23,6 +20,5 @@
         </div>
     </div>
 </div>
-
 
 {% endblock%}
