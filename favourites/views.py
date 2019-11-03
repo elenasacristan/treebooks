@@ -5,18 +5,16 @@ from books.models import Book
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 
-
-
 # Create your views here.
 
 '''
-if the book is already saved as favourite then
-remove it from favourites.
-If the book is not saved as favourite then
-save it as favourite
+if the book is already saved as favourite then remove it from favourites.
+If the book is not saved as favourite then save it as favourite
 '''
 
-# https://stackoverflow.com/questions/12758786/redirect-return-to-same-previous-page-in-django/12758859
+'''
+@login_required so only authenticated users can have favourites list of books
+'''    
 @login_required
 def add_remove_favourites(request, id):
     book = get_object_or_404(Book,pk=id)
@@ -29,8 +27,9 @@ def add_remove_favourites(request, id):
             profile.favourites.remove(fav_book)
         else:
             profile.favourites.add(fav_book)
-    # print(request.get_full_path)
+
+    # I learned who to redirect to the current page in the following post
+    # https://stackoverflow.com/questions/12758786/redirect-return-to-same-previous-page-in-django/12758859        
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
-    # return render(request, 'detail.html', {'book':book})
 
