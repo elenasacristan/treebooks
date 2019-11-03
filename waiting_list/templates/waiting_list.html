@@ -4,41 +4,33 @@
 
 {% load staticfiles %}
 
-{% block title %}{{user}}'s Profile{% endblock %}
+{% block title %}Waiting list{% endblock %}
 
 {% block content %}
 
 <div class='container-fluid waiting_list'>
     <div class="d-flex row justify-content-center align-items-center">
         <div class="col-xs-10 about">
+            <!-- https://stackoverflow.com/questions/3829758/can-i-access-attributes-of-the-first-object-in-a-list-in-django-templates -->
             {% with waiting_list|first as first_waiting_list %}
-            {% if first_waiting_list.wl_book %}
-            <h2 class="headers_all text-center"><small>waiting list for</small><br>{{ first_waiting_list.wl_book }}
-            </h2>
-            {% else %}
-            <h2 class="headers_all text-center"><small>You could be next!</small> </h2>
-
-            {% endif %}
-
+                {% if first_waiting_list.wl_book %}
+                    <h2 class="headers_all text-center"><small>waiting list for</small><br>{{ first_waiting_list.wl_book.title}}</h2>
+                {% else %}
+                    <h2 class="headers_all text-center"><small>You could be next!</small> </h2>
+                {% endif %}
             {% endwith %}
 
             <div class="box-content wrapper1  mx-auto">
-                <!-- https://stackoverflow.com/questions/3829758/can-i-access-attributes-of-the-first-object-in-a-list-in-django-templates -->
-
                 <ol>
                     {% for list in waiting_list %}
-
-                    {% for waiting_user in list.wl_user.all %}
-                    <li>{{ waiting_user }}</li>
-                    {% endfor %}
-
+                        {% for waiting_user in list.wl_user.all %}
+                            <li>{{ waiting_user }}</li>
+                        {% endfor %}
                     {% empty %}
-                    <h4 class="empty-cart text-center alert alert-info" role="alert">There is no one waiting!</h4>
-
+                        <h4 class="empty-cart text-center alert alert-info" role="alert">There is no one waiting!</h4>
                     {% endfor %}
                 </ol>
                 {% endblock %}
-
             </div>
         </div>
     </div>
