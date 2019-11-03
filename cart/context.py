@@ -1,7 +1,6 @@
 from django.shortcuts import get_object_or_404
 from books.models import Book
 
-
 def cart_content(request):
     '''
     We will create a context that will be available to
@@ -20,7 +19,6 @@ def cart_content(request):
     book_price = 0
     deposit = 0
 
-
     for id, days in cart.items():
         book = get_object_or_404(Book, pk=id)
         book_price = days * book.price_day
@@ -30,7 +28,9 @@ def cart_content(request):
         deposit = 5 * books_count
         cart_books.append({'id':id, 'book_price':book_price, 'days':days, 'book':book})
     
+    # this will be the price paid to rent the books not including deposit
     total_raised = total
+    # this will be the total to pay including the deposit
     total += deposit
 
     return {'cart_books':cart_books, 'total':total, 'books_count':books_count, 'deposit':deposit, 'total_raised':total_raised}

@@ -4,31 +4,30 @@
 
 {% load staticfiles %}
 
-
 {% block title %}Cart{% endblock %}
 
 {% block content %}
 
-
-<div class="container-fluid card-page cart">
+<div class="container-fluid cart">
     <div class="row">
         <div class="cart-checkout container mx-auto">
 
+            <!-- if the cart is NOT empty show table headers-->
             {% if total != 0 %}
             <div class="row row-header justify-content-between text-center d-none d-sm-flex">
                 <div class="col-6 col-xl-6 text-left">Book</div>
                 <div class="col-3 col-xl-3">Number of days</div>
-                <div class="col-2 col-xl-2 text-right">Action</div>
+                <div class="col-2 col-xl-2 text-right">Remove?</div>
             </div>
             <hr class=" d-none d-sm-flex">
             {% endif %}
+
             {% for book_item in cart_books %}
             <div class="row row-item justify-content-sm-between d-flex">
                 <div class="col-12 col-sm-6 text-left">
-
                     <figure class="media row justify-content-start">
-                        <div class="img-wrap col-xs-12"><img src="{{ MEDIA_URL }}{{ book_item.book.book_img }}"
-                                class="img-thumbnail img-sm">
+                        <div class="img-wrap col-xs-12">
+                            <img src="{{ MEDIA_URL }}{{ book_item.book.book_img }}" class="img-thumbnail img-sm">
                         </div>
                         <figcaption class="media-body col-xs-12">
                             <h6 class="title text-truncate">{{ book_item.book.title }}</h6>
@@ -42,45 +41,35 @@
                             </dl>
                         </figcaption>
                     </figure>
-
                 </div>
                 <div class="col-6 col-sm-4">
-                    <form method="POST" class="form-inline row justify-content-center"
-                        action="{% url 'adjust_cart' book_item.id %}">
+                    <form method="POST" class="form-inline row justify-content-center" action="{% url 'adjust_cart' book_item.id %}">
                         {% csrf_token %}
                         <div class='col-12 col-md-6 form-group'>
                             <div class="input-group">
-
-                                <input name="days" type="number" min="10" max="365" class="form-control"
-                                    value="{{book_item.days}}">
-
+                                <input name="days" type="number" min="10" max="365" class="form-control" value="{{book_item.days}}">
                             </div>
                         </div>
-
                         <button type="submit" class="col-12 col-md-6 btn btn-primary btn-sm">
                             Amend
                         </button>
                     </form>
                     <p class="price-book m-2 text-muted text-center">£{{book_item.book_price}}</p>
-
                 </div>
                 <div class="col-6 col-sm-2 text-right align-self-center">
-                    <a href="{% url 'remove_from_cart' book_item.id %}" class="btn btn-outline-danger"><i
-                            class="fa fa-trash"></i></a>
-
+                    <a href="{% url 'remove_from_cart' book_item.id %}" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a>
                 </div>
             </div>
             <hr>
             {% endfor %}
 
+            <!-- if the cart is empty -->
             {% if total == 0 %}
-
             <h4 class="empty-cart text-center alert alert-info" role="alert">Your cart is empty</h4>
+            
+            <!-- if the cart is NOT empty -->
             {% else %}
-
-
             <div class="row row-header justify-content-center justify-content-sm-end ">
-
                 <div class="col-6 col-sm-5 col-md-4 text-right">
                     <h5>Rent:</h5>
                 </div>
@@ -88,28 +77,22 @@
                     <h5>£{{ total_raised }}</h5>
                 </div>
             </div>
-
-
             <div class="row row-header total-price justify-content-center justify-content-sm-end ">
-
                 <div class="col-6 col-sm-5 col-md-4 text-right">
                     <h5>Deposit:</h5>
                     <p>({{ books_count }} book(s) x £5)</p>
                 </div>
                 <div class="col-6 col-sm-3 col-md-2 text-right">
                     <h5>£{{ deposit }}</h5>
-
                 </div>
             </div>
             <hr>
             <div class="row">
                 <div class="col">
-                    <p class="text-left text-info">*The £5 deposit per book will be refund when the book
-                        is returned</p>
+                    <p class="text-left text-info">*The £5 deposit per book will be refund when the book is returned</p>
                 </div>
             </div>
             <div class="row row-header justify-content-center justify-content-sm-end text-success">
-
                 <div class="col-6 col-sm-5 col-md-4 text-right">
                     <h3>Total:</h3>
                 </div>
@@ -119,27 +102,19 @@
             </div>
 
             {% endif %}
-
             <div class="row justify-content-center justify-content-md-end checkout-row text-center text-md-right">
                 <div class="col-10">
                     <a class="btn btn-warning buttons_all" href='{% url 'view_all_books' %}'>Keep looking</a>
-
+                    
+                    <!-- only display checkout button if there are books in the cart -->
                     {% if total != 0 %}
                     <a class="btn btn-success buttons_all" href='{% url 'checkout' %}'>Checkout</a>
                     {% endif %}
 
-
                 </div>
-
             </div>
         </div>
-
     </div>
 </div>
-
-
-
-
-
 
 {% endblock%}
