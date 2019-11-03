@@ -6,9 +6,7 @@
 
 {% block title %}{{user}}'s Profile{% endblock %}
 
-
 {% block content %}
-
 
 <div class="container-fluid view-profile">
     <div class="row">
@@ -24,61 +22,41 @@
                         <img class="rounded-circle" src="{{ MEDIA_URL }}{{ user_profile.profile.profile_img }}">
                     </div>
                     <div class="col-sm-12 col-lg-7 profile-section">
-
                         <div class="row">
                             <div class="col edit-profile">
-                                <a class="btn btn-warning buttons_all"
-                                    href="{% url 'edit_user_profile' user_profile.id%}">Edit
-                                    profile</a>
+                                <a class="btn btn-warning buttons_all" href="{% url 'edit_user_profile' user_profile.id%}">Edit profile</a>
                             </div>
                         </div>
-
                         <h3>Membership details</h3>
                         <div class="row">
                             <dt class="col-xs-12 col-sm-7">Member since:</dt>
                             <dd class="col-xs-12 col-sm-5">{{user_profile.date_joined|date:"d M, Y"}}</dd>
                             <dt class="col-xs-12 col-sm-7">Subscribed to Newsletter:</dt>
                             {% if user_profile.profile.subscribe %}
-                            <dd class="col-xs-12 col-sm-5">Yes</dd>
+                                <dd class="col-xs-12 col-sm-5">Yes</dd>
                             {% else %}
-                            <dd class="col-xs-12 col-sm-5">No</dd>
+                                <dd class="col-xs-12 col-sm-5">No</dd>
                             {% endif %}
-
-
                         </div>
-
                         {% if current_books %}
-                        <hr>
-                        <h5>Currently reading</h5>
-                        <div class="row currently">
-
-                            {% for book_current in current_books %}
-                            <dt class="col-12">{{ book_current }} <small>(Return by:
-                                    {{ book_current.return_date|date:"d M, Y" }})</small>
-
-                                <form method="POST" action={% url 'return_book' book_current.id %}>
-
-                                    {% csrf_token %}
-
-                                    <button class="btn btn-primary btn-sm" type="submit">
-
-                                        I've returned the book
-
-                                    </button>
-                                </form>
-                            </dt>
-
-
-
-                            <br><br>
-
-                            {% endfor %}
-                        </div>
+                            <hr>
+                            <h5>Currently reading</h5>
+                            <div class="row currently">
+                                {% for book_current in current_books %}
+                                    <dt class="col-12">{{ book_current }} <small>(Return by:{{ book_current.return_date|date:"d M, Y" }})</small>
+                                        <!-- when the user click here the book will become available for all user if there is not 
+                                            waiting list or for the next user in the list if there is waiting lists -->
+                                        <form method="POST" action={% url 'return_book' book_current.id %}>
+                                            {% csrf_token %}
+                                            <button class="btn btn-primary btn-sm" type="submit">I've returned the book</button>
+                                        </form>
+                                    </dt>
+                                    <br><br>
+                                {% endfor %}
+                            </div>
                         {% endif %}
-
                     </div>
                 </div>
-
                 <hr>
                 <div class="row second-row">
                     <div class="col-sm-12 col-lg-5 profile-section">
@@ -93,7 +71,6 @@
                             <dt class="col-xs-12 col-sm-5 ">DOB:</dt>
                             <dd class="col-xs-12 col-sm-7">{{user_profile.profile.dob|date:"d M, Y" }}</dd>
                         </div>
-
                     </div>
                     <div class="col-sm-12 col-lg-7 profile-section">
                         <h3>Contact details</h3>
@@ -107,13 +84,13 @@
                             <dt class="col-xs-12 col-sm-5">Preferred method:</dt>
                             <dd class="col-xs-12 col-sm-7">
                                 {% if user_profile.profile.contact_by_email and user_profile.profile.contact_by_phone %}
-                                by email and Telephone
+                                    by email and telephone
                                 {% elif user_profile.profile.contact_by_email %}
-                                by email
+                                    by email
                                 {% elif user_profile.profile.contact_by_phone %}
-                                by telephone
+                                    by telephone
                                 {% else %}
-                                Not specified
+                                    Not specified
                                 {% endif %}</dd>
                         </div>
                     </div>
@@ -135,24 +112,15 @@
                         <img src={% static 'images/project/book.png' %}>
                         <h3>See your favourites</h3>
                     </div>
-
                 </div>
-
             </div>
         </div>
-
     </div>
-
 </div>
 
 
-
-
-
-
 <!-- Modal Books Read-->
-<div class="modal fade" id="modalBooksRead" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true">
+<div class="modal fade" id="modalBooksRead" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -163,27 +131,23 @@
             </div>
             <div class="modal-body">
                 {% if user_profile.profile.read_books.all %}
-
-
-                {% for read_book in user_profile.profile.read_books.all %}
-                <div class="favourite-read-link row justify-content-center align-items-center">
-                    <div class="col-3">
-                        <img width="50" src="{{ MEDIA_URL }}{{ read_book.book_img }}">
-                    </div>
-                    <div class="col-8">
-                        <a href="{% url 'detail' read_book.id %}">{{ read_book.title }}</a>
-
-                        {% if read_book.id in reviewed_books %}
-                        <p class="text-info"> Already reviewed</p>
-                        {% else %}
-                        <p> <a class="text-success" href="{% url 'add_review' read_book.id %}">Leave a review</a></p>
-                        {%endif%}
-
-                    </div>
-                </div>
-                {% endfor %}
+                    {% for read_book in user_profile.profile.read_books.all %}
+                        <div class="favourite-read-link row justify-content-center align-items-center">
+                            <div class="col-3">
+                                <img width="50" src="{{ MEDIA_URL }}{{ read_book.book_img }}">
+                            </div>
+                            <div class="col-8">
+                                <a href="{% url 'detail' read_book.id %}">{{ read_book.title }}</a>
+                                {% if read_book.id in reviewed_books %}
+                                    <p class="text-info"> Already reviewed</p>
+                                {% else %}
+                                    <p> <a class="text-success" href="{% url 'add_review' read_book.id %}">Leave a review</a></p>
+                                {%endif%}
+                            </div>
+                        </div>
+                    {% endfor %}
                 {% else %}
-                <p class="alert alert-info" role="alert">You haven't read any book yet</p>
+                    <p class="alert alert-info" role="alert">You haven't read any book yet</p>
                 {% endif %}
             </div>
             <div class="modal-footer">
@@ -195,8 +159,7 @@
 
 
 <!-- Modal Books Waiting List-->
-<div class="modal fade" id="modalBooksWaitingList" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true">
+<div class="modal fade" id="modalBooksWaitingList" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -206,30 +169,25 @@
                 </button>
             </div>
             <div class="modal-body">
-
                 {% if user.users.all %}
-                {% for current_user in user.users.all %}
-                {% if current_user.wl_book.title%}
-                <div class="favourite-read-link row justify-content-center align-items-center">
-                    <div class="col-3">
-                        <img width="50" src="{{ MEDIA_URL }}{{ current_user.wl_book.book_img }}">
-                    </div>
-                    <div class="col-8">
-                        <a href="{% url 'detail' current_user.wl_book.id %}">{{current_user.wl_book.title}}</a>
-                        <a class="text-success" href="{% url 'view_waiting_lists' current_user.wl_book.id %}"> - See
-                            waiting list</a>
-                    </div>
-                </div>
+                    {% for current_user in user.users.all %}
+                        {% if current_user.wl_book.title%}
+                            <div class="favourite-read-link row justify-content-center align-items-center">
+                                <div class="col-3">
+                                    <img width="50" src="{{ MEDIA_URL }}{{ current_user.wl_book.book_img }}">
+                                </div>
+                                <div class="col-8">
+                                    <a href="{% url 'detail' current_user.wl_book.id %}">{{current_user.wl_book.title}}</a>
+                                    <a class="text-success" href="{% url 'view_waiting_lists' current_user.wl_book.id %}"> - See waiting list</a>
+                                </div>
+                            </div>
+                        {% else %}
+                            <p class="alert alert-info" role="alert">You are not in waiting list for any book</p>
+                        {% endif %}
+                    {% endfor %}
                 {% else %}
-                <p class="alert alert-info" role="alert">You are not in waiting list for any book</p>
+                    <p class="alert alert-info" role="alert">You are not in waiting list for any book</p>
                 {% endif %}
-
-                {% endfor %}
-                {% else %}
-                <p class="alert alert-info" role="alert">You are not in waiting list for any book</p>
-                {% endif %}
-
-
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -239,11 +197,8 @@
 </div>
 
 
-
-
 <!-- Modal Favourites-->
-<div class="modal fade" id="modalBooksFavourites" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true">
+<div class="modal fade" id="modalBooksFavourites" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -254,21 +209,20 @@
             </div>
             <div class="modal-body">
                 {% if user_profile.profile.favourites.all%}
-
-                {% for favourite in user_profile.profile.favourites.all %}
-                <a href="{% url 'detail' favourite.id %}">
-                    <div class="favourite-read-link row justify-content-center align-items-center">
-                        <div class="col-4">
-                            <img width="50" src="{{ MEDIA_URL }}{{ favourite.book_img }}">
-                        </div>
-                        <div class="col-6">
-                            {{ favourite.title }}
-                        </div>
-                    </div>
-                </a>
-                {% endfor %}
+                    {% for favourite in user_profile.profile.favourites.all %}
+                        <a href="{% url 'detail' favourite.id %}">
+                            <div class="favourite-read-link row justify-content-center align-items-center">
+                                <div class="col-4">
+                                    <img width="50" src="{{ MEDIA_URL }}{{ favourite.book_img }}">
+                                </div>
+                                <div class="col-6">
+                                    {{ favourite.title }}
+                                </div>
+                            </div>
+                        </a>
+                    {% endfor %}
                 {% else %}
-                <p class="alert alert-info" role="alert">You haven't saved any book as favourite</p>
+                    <p class="alert alert-info" role="alert">You haven't saved any book as favourite</p>
                 {% endif %}
             </div>
             <div class="modal-footer">

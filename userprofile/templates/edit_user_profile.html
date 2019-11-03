@@ -4,15 +4,12 @@
 
 {% load staticfiles %}
 
-{% block title %}{{user}}'s Profile{% endblock %}
+{% block title %}Edit Profile{% endblock %}
 
 {% block content %}
 
-
-
 <div class="update-profile container-fluid">
     <div class="row">
-
         <div class="col content-area">
             <div class="container detail-profile mx-auto">
                 <div class="header-content row">
@@ -20,14 +17,12 @@
                         <h2 class="headers_all">Edit your profile</h2>
                     </div>
                 </div>
-
                 <div class="row last-row d-flex align-items-center">
                     <div class="col-sm-12 col-lg-5 text-center profile-section ">
-                        <div> <img class="rounded-circle" src="{{ MEDIA_URL }}{{ user.profile.profile_img }}">
+                        <div> 
+                            <img class="rounded-circle" src="{{ MEDIA_URL }}{{ user.profile.profile_img }}">
                         </div>
                     </div>
-
-
                     <div class="col-sm-12 col-lg-7 profile-section">
                         <form method="POST" enctype="multipart/form-data">
                             {% csrf_token %}
@@ -38,14 +33,9 @@
                         </form>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 </div>
-</div>
-
-
-
 
 {% endblock %}
