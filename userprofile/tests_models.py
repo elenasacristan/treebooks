@@ -2,6 +2,10 @@ from django.test import TestCase
 from .models import UserProfile
 from django.contrib.auth.models import User
 
+"""
+I learn about setUp in the following link
+https://realpython.com/testing-in-django-part-1-best-practices-and-examples/
+"""
 
 class TestUserReviewModels(TestCase):
 

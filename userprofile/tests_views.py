@@ -2,6 +2,13 @@ from django.test import TestCase, Client
 from .forms import UserProfileForm
 from accounts.forms import RegistrationForm
 
+"""
+I learn about Client, login, logout, testing redirects in the following link 
+https://docs.djangoproject.com/en/1.11/topics/testing/tools/
+
+I learn about setUp in the following link
+https://realpython.com/testing-in-django-part-1-best-practices-and-examples/
+"""
 
 c=Client()
 
@@ -13,11 +20,16 @@ class TestUserProfileViews(TestCase):
         try to access gets redirected to the login page'''
         page = c.get("/profile/")
         self.assertRedirects(page, '/accounts/login/?next=/profile/')     
-
            
     def test_view_profile_page_authenticated_users(self):
-        '''Test authenticated user get can see the profile page'''
-        user = RegistrationForm({"first_name":"first_name", "last_name":"last_name","username":"username", "email":"test@test.com", "password1":"qwer1234", "password2":"qwer1234"})
+        '''Test authenticated user can see the profile page'''
+        user = RegistrationForm(
+            {"first_name":"first_name", 
+            "last_name":"last_name",
+            "username":"username", 
+            "email":"test@test.com", 
+            "password1":"qwer1234", 
+            "password2":"qwer1234"})
         user.save()
             
         login_ok = c.login(username="username", password="qwer1234")
@@ -36,7 +48,13 @@ class TestUserProfileViews(TestCase):
     
     def test_edit_profile_page_authenticated_users(self):
         '''Test authenticated user get can see the profile page'''
-        user = RegistrationForm({"first_name":"first_name", "last_name":"last_name","username":"username", "email":"test@test.com", "password1":"qwer1234", "password2":"qwer1234"})
+        user = RegistrationForm({
+            "first_name":"first_name", 
+            "last_name":"last_name",
+            "username":"username", 
+            "email":"test@test.com", 
+            "password1":"qwer1234", 
+            "password2":"qwer1234"})
         user.save()
             
         login_ok = c.login(username="username", password="qwer1234")

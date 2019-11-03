@@ -1,10 +1,11 @@
-
-# https://www.tivix.com/blog/data-faking-in-django
-# https://docs.djangoproject.com/en/2.2/_modules/django/db/models/fields/
-
 from django.test import TestCase
 from .models import UserProfile
 from .forms import UserProfileForm
+
+"""
+I learn about setUp in the following link
+https://realpython.com/testing-in-django-part-1-best-practices-and-examples/
+"""
 
 class TestUserProfileForm(TestCase):
 
@@ -18,9 +19,6 @@ class TestUserProfileForm(TestCase):
             'contact_by_email' : False
         })
 
-           
-    # def test_form_is_valid(self):
-    #     self.assertTrue(self.profile_form.is_valid())
 
     def test_correct_label_in_date_field(self): 
         self.assertTrue(self.profile_form.fields['dob'].label == '<b>Date of Birth <small>(dd-mm-yyyy)</small>:</b>')

@@ -9,7 +9,6 @@ from books.models import Book
 
 # Create your models here.
 
-
 class UserProfile(models.Model):
 
     '''extending the user Model using a OneToOneField'''
@@ -24,7 +23,6 @@ class UserProfile(models.Model):
     favourites = models.ManyToManyField(Book, related_name='favorited_by',blank=True)
     read_books = models.ManyToManyField(Book, blank=True)
 
-
     def __str__(self):
         return self.user.username   
 
@@ -32,7 +30,7 @@ class UserProfile(models.Model):
 With the code below we are saying that the user has a profile property
 Whenever we pass a user object to this property it will trigger the UserProfile
 run through its objects and fire off the get or create method.
-And what this does is.. if this object is in the database get this object and
+What this does is if this object is in the database get this object and
 should return the user object and if it is not in the databse it should create one
 '''
 User.profile = property(lambda u: UserProfile.objects.get_or_create(user=u)[0]) 
