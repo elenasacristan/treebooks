@@ -15,7 +15,6 @@ class TestCheckoutForms(TestCase):
             'county':'London'})
         self.assertTrue(order_form.is_valid())
 
-
     def test_order_form_is_valid_if_all_fields_are_filled_apart_from_postcode(self):
         order_form = OrderForm({
             'full_name':'name',

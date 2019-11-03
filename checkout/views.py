@@ -67,7 +67,6 @@ def checkout(request):
                     total_raised += days * book.price_day
                     books_count += 1
 
-                
                 '''add payment to total money raised
                 and increment number of books rented'''
                 raised = get_object_or_404(TotalRaised, id=1)
@@ -75,22 +74,27 @@ def checkout(request):
                 raised.number_books += books_count
                 raised.save()
 
-                '''save book in list of read books'''
                 profile = UserProfile.objects.get(user = request.user)
-               
-               
+                              
                 for id, days in cart.items():
                     book = get_object_or_404(Book, pk=id)
+                    '''save book in list of read books'''
                     profile.read_books.add(book)
+                    '''update return date based on the number of days rented'''
                     book.return_date = order.date + timezone.timedelta(days=days)
+                    '''set status of book as not available'''
                     book.available = False
                     book.save()
+
+                    ''' If before renting the book the current user was in the 
+                    waiting list for the book once the payment is done remove 
+                    user from the waiting list'''
                     waiting_list_exist =  WaitingList.objects.filter(wl_book__id=book.id, wl_user__email=request.user.email).exists()
                     if waiting_list_exist:
                         waiting_list =  WaitingList.objects.get(wl_book__id=book.id, wl_user__email=request.user.email)
                         waiting_list.wl_user.remove(request.user)
 
-
+                # clear cart
                 request.session['cart'] = {}
                 return redirect(reverse('view_all_books'))
             
@@ -101,6 +105,7 @@ def checkout(request):
             print(payment_form.errors)
             messages.error(request, "We were unable to take a payment with that card!")
     
+    # if method is not POST
     else:
         payment_form = MakePaymentForm()
         order_form = OrderForm()
