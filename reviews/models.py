@@ -26,4 +26,4 @@ class ReviewBook(models.Model):
         return "{0} - {1}, {2}".format(self.score, self.reviewed_book.title, self.review_author)  
     
     class Meta:
-       ordering = ('reviewed_book','score',)
+       ordering = ('reviewed_book','-score',)
