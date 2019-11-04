@@ -1,14 +1,14 @@
 html, body {
   margin: 0px;
   padding: 0px;
-  background-color: #f5f5f5;
   height: 100%;
   display: flex;
   flex-direction: column;
+  font-family: "Dosis", sans-serif;
+  font-size: 1.2em;
 }
 
-/* Sticky Footer */
-
+/* Sticky Footer  https://dev.to/yas46/sticky-footer-with-flexbox-2128 */
 main {
   flex: 1 0 auto;
   background: url(../images/project/slide3.jpg) no-repeat center center fixed;
@@ -16,11 +16,6 @@ main {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
-
-body {
-  font-family: "Dosis", sans-serif;
-  font-size: 1.2em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -32,45 +27,13 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0px;
 }
 
+/* all links */
 a {
   color: #000000;
 }
 
-/* body background */
-
-.bg {
-  background-color: #e7ebe0 !important;
-}
-
-/* top header */
-
-.top-header {
-  background-color: rgba(255, 219, 142, 0.92);
-}
-
-.top-header ul {
-  padding: 0px;
-}
-
-.top-header a {
-  color: white;
-}
-
-.top-header ul li {
-  list-style: none;
-  display: inline-block;
-  margin-top: 10px;
-  margin-right: 15px;
-  color: #ffffff;
-  text-shadow: 1px 1px 1px #010801;
-  font-size: 20px;
-}
-
-/* page loader */
-
-/* https://smallenvelop.com/display-loading-icon-page-loads-completely/ */
-
-.no-js #loader {
+/* page loader code from https://smallenvelop.com/display-loading-icon-page-loads-completely/ */
+ .no-js #loader {
   display: none;
 }
 
@@ -90,13 +53,32 @@ a {
   z-index: 9999;
   background: url(../images/project/Preloader_8.gif) center no-repeat white;
 }
+/* END of page loader code */
 
-/* search */
+/* ******************************** TOP navbar - yellow ************************************ */
+.top-header {
+  background-color: rgba(255, 219, 142, 0.92);
+}
+.top-header ul {
+  padding: 0px;
+}
+.top-header a {
+  color: white;
+}
+.top-header ul li {
+  list-style: none;
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 15px;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px #010801;
+  font-size: 20px;
+}
 
+/* search box */
 #search-form {
   white-space: nowrap;
 }
-
 #search-form input {
   border: none;
   border-radius: 15px;
@@ -104,41 +86,40 @@ a {
   padding: 1px 15px;
   margin-left: 10px;
 }
-
 #search-form input {
   outline: none;
 }
-
 #search-form {
   display: inline;
 }
-
 #search-form button {
   background-color: transparent;
   border: none;
 }
-
 #search-form button i {
   color: white;
   text-shadow: 1px 1px 1px #010801;
   font-size: 20px;
 }
 
-/*badge cart*/
-
+/*badge next to cart icon*/
 .badge {
   margin-left: 5px;
   border-radius: 20px;
   font-size: 0.7em;
 }
 
-/* navbar */
+@media (min-width: 576px) {
+  #search-form input {
+    width: 300px;
+  }
+}
 
+/* ******************************** Navbar - WHITE ************************************ */
 .navbar {
   background-color: white;
   box-shadow: 2px 10px 16px -10px #777777;
 }
-
 .navbar-nav .nav-link {
   font-size: 1em;
   margin-left: 7px;
@@ -147,11 +128,9 @@ a {
   background-color: rgba(172, 215, 201, 0.2);
   border: 8px solid white;
 }
-
 .navbar-brand {
   position: relative;
 }
-
 .navbar-brand .logo {
   position: absolute;
   min-height: 80px;
@@ -159,21 +138,17 @@ a {
   overflow: visible;
   z-index: 2;
 }
-
 .navbar-toggler:not(:disabled):not(.disabled) {
   cursor: pointer;
   outline: none;
 }
-
+/* In the following link I learnt how to update the navabr-toggler for Bootstrap 4
+https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggler-color */
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
-@media (min-width: 576px) {
-  #search-form input {
-    width: 300px;
-  }
-}
+
 
 @media (min-width: 768px) and (max-width: 991px) {
   .navbar-brand .logo {
@@ -369,7 +344,7 @@ footer a:hover {
 
 footer i {
   padding: 30px 20px 30px 0px;
-  margin-left: 20px;
+  /* margin-left: 30px; */
   font-size: 40px;
 }
 
@@ -1278,8 +1253,6 @@ form label {
 }
 
 .waiting_list ol {
-  height: 400px;
-  overflow: auto;
   margin-left: 25px;
 }
 
