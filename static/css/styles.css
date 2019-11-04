@@ -4,6 +4,10 @@ html, body {
   height: 100%;
   display: flex;
   flex-direction: column;
+  
+}
+
+body{
   font-family: "Dosis", sans-serif;
   font-size: 1.2em;
 }
@@ -32,7 +36,7 @@ a {
   color: #000000;
 }
 
-/* page loader code from https://smallenvelop.com/display-loading-icon-page-loads-completely/ */
+/* ********************** page loader code from https://smallenvelop.com/display-loading-icon-page-loads-completely/ ***************** */
  .no-js #loader {
   display: none;
 }
@@ -53,18 +57,21 @@ a {
   z-index: 9999;
   background: url(../images/project/Preloader_8.gif) center no-repeat white;
 }
-/* END of page loader code */
+/* ************************************* END of page loader code *************************************************** */
 
 /* ******************************** TOP navbar - yellow ************************************ */
 .top-header {
   background-color: rgba(255, 219, 142, 0.92);
 }
+
 .top-header ul {
   padding: 0px;
 }
+
 .top-header a {
   color: white;
 }
+
 .top-header ul li {
   list-style: none;
   display: inline-block;
@@ -79,6 +86,7 @@ a {
 #search-form {
   white-space: nowrap;
 }
+
 #search-form input {
   border: none;
   border-radius: 15px;
@@ -86,16 +94,20 @@ a {
   padding: 1px 15px;
   margin-left: 10px;
 }
+
 #search-form input {
   outline: none;
 }
+
 #search-form {
   display: inline;
 }
+
 #search-form button {
   background-color: transparent;
   border: none;
 }
+
 #search-form button i {
   color: white;
   text-shadow: 1px 1px 1px #010801;
@@ -120,6 +132,7 @@ a {
   background-color: white;
   box-shadow: 2px 10px 16px -10px #777777;
 }
+
 .navbar-nav .nav-link {
   font-size: 1em;
   margin-left: 7px;
@@ -128,9 +141,11 @@ a {
   background-color: rgba(172, 215, 201, 0.2);
   border: 8px solid white;
 }
+
 .navbar-brand {
   position: relative;
 }
+
 .navbar-brand .logo {
   position: absolute;
   min-height: 80px;
@@ -138,17 +153,17 @@ a {
   overflow: visible;
   z-index: 2;
 }
+
 .navbar-toggler:not(:disabled):not(.disabled) {
   cursor: pointer;
   outline: none;
 }
+
 /* In the following link I learnt how to update the navabr-toggler for Bootstrap 4
 https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggler-color */
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
-
-
 
 @media (min-width: 768px) and (max-width: 991px) {
   .navbar-brand .logo {
@@ -172,14 +187,9 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
   }
 }
 
-/* main section */
-
-.section-main {
-  padding-top: 0px;
-}
+/* ************************************* home page ******************************* */
 
 /* carousel */
-
 .row-sm {
   margin-right: 0px;
   margin-left: 0px;
@@ -203,18 +213,17 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
 
 .carousel .btn {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 0.9em;
 }
 
 .carousel-caption {
-  font-size: 15px;
+  font-size: 1em;
   top: 50%;
   transform: translateY(-50%);
   color: white;
 }
 
 .carousel-caption p {
-  /* height: 90px; */
   overflow: auto;
   text-shadow: 0px 0px 15px #000000;
   font-weight: bold;
@@ -229,17 +238,12 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
 
 @media (min-width: 576px) and (max-width: 991px) {
   .carousel-caption {
-    font-size: 20px;
+    font-size: 1.4em;
   }
 }
-
 @media (min-width: 992px) {
   .carousel-caption {
-    font-size: 26px;
-    padding: 0px;
-  }
-  .carousel-caption p {
-    font-size: 1.3em;
+    font-size: 1.8em;
   }
   .carousel .btn {
     width: 200px;
@@ -248,11 +252,8 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
   }
 }
 
-/* index */
-
 .index {
   background-color: #efeee5;
-  /* padding-bottom: 80px; */
 }
 
 .index .shape {
@@ -278,7 +279,7 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
   margin-bottom: 70px;
   width: 90%;
   font-weight: bolder;
-  font-size: 1.9em;
+  font-size: 1.5em;
   color: white;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -306,7 +307,7 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
   box-shadow: 1px 3px 8px #07277e;
 }
 
-/* books */
+/* *********************************************** books *************************************************** */
 
 .details {
   display: inline-flex;
