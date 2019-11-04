@@ -5,13 +5,11 @@ from waiting_list.models import WaitingList
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 
-
 # Create your views here.
 
 def view_all_books(request):
     '''
-    This view will display all the books 
-    sorted by rating descending
+    This view will display all the books sorted by rating descending
     '''
     books = Book.objects.all().order_by('-rating')
     categories = Category.objects.all()
@@ -19,8 +17,12 @@ def view_all_books(request):
     # this code will give us a list of the book ids that have waiting list
     waiting_list_books = list(WaitingList.objects.all().values_list('wl_book__id',  flat=True))
 
-    return render(request, 'all_books.html', {'books':books, 'categories':categories, 'waiting_list':waiting_list, 'waiting_list_books':waiting_list_books})
-
+    return render(request, 'all_books.html', {
+        'books':books, 
+        'categories':categories, 
+        'waiting_list':waiting_list, 
+        'waiting_list_books':waiting_list_books
+        })
 
 def detail(request, pk):
     '''
@@ -30,6 +32,7 @@ def detail(request, pk):
     book = get_object_or_404(Book,pk=pk)
     book.save()
     
+    # The reviews will be sorted by date descending. Most recent at the top
     reviews = ReviewBook.objects.filter(reviewed_book__id=pk).order_by('-review_date')
     
     # this code will give us a list of users in the waiting list for that book
@@ -42,7 +45,6 @@ def detail(request, pk):
                 'reviews':reviews,
                 'users_in_list':users_in_list,
                 'count_users':count_users})
-
 
 '''
 @login_required so only authenticated user can return a book

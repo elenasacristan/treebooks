@@ -94,7 +94,7 @@
                                         <dd class="col-7">{{ book.publication_date }}</dd>
                                         
                                         <dt class="col-5">ISBN#</dt>
-                                        <dd class="col-7">{{ book.isbn }}</dd>
+                                        <dd class="col-7">{{ book.ISBN }}</dd>
                                     </dl>
                                 </div>
                             </div>
@@ -254,22 +254,37 @@
                         {% endfor %}
                         <!-- if the current user is not in the waiting list -->
                         {% if user.id not in users_in_list %}
-                        <form class="text-center fav-form" method="POST" action={% url 'join_waiting_list' book.id %}>
-                            {% csrf_token %}
-                            <button type="submit">
-                                <h5 class="text-center btn btn-warning buttons_all">Join the waiting list</h5><br>
-                                <a href="{% url 'view_waiting_lists' book.id %}">(see the list)</a>
-                            </button>
-                        </form>
+                            <div class="container waiting-section last-row">
+                                <div class="row justify-content-center">
+                                    <div class="col-8">
+                                        <form class="text-center fav-form" method="POST"
+                                            action={% url 'join_waiting_list' book.id %}>
+                                            {% csrf_token %}
+                                            <button type="submit">
+                                                <h5 class="text-center btn btn-warning buttons_all">Join the waiting list</h5>
+                                                <br><a href="{% url 'view_waiting_lists' book.id %}">(see the list)</a>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         {% endif %}
                     <!-- if there are not users in the waiting list -->
                     {% else %}
-                        <form class="text-center fav-form" method="POST" action={% url 'join_waiting_list' book.id %}>
-                            {% csrf_token %}
-                            <button type="submit">
-                                <h5 class="text-center btn btn-warning buttons_all">Join the waiting list</h5>
-                            </button>
-                        </form>
+
+                        <div class="container waiting-section last-row">
+                            <div class="row justify-content-center">
+                                <div class="col-8">
+                                    <form class="text-center fav-form" method="POST" action={% url 'join_waiting_list' book.id %}>
+                                        {% csrf_token %}
+                                        <button type="submit">
+                                            <h5 class="text-center btn btn-warning buttons_all">Join the waiting list</h5>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        
                     {% endif %}
                 <!-- if user is not authenticated -->
                 {% else %}
