@@ -54,10 +54,10 @@ order to start building the cart and then I have made some updates -->
                         </figcaption>
                     </figure>
                 </div>
-                <div class="col-6 col-sm-4 text-center">
-                    £{{book_item.book_price}}
+                <div class="col-6 col-sm-4 text-left text-sm-center text-info">
+                    <strong>£{{book_item.book_price}}</strong>
                 </div>
-                <div class="col-6 col-sm-2 text-center">
+                <div class="col-6 col-sm-2 text-right text-sm-center">
                     {{ book_item.book.store }}
                 </div>
             </div>
@@ -67,7 +67,7 @@ order to start building the cart and then I have made some updates -->
         <!-- if the cart is empty-->
         {% if total == 0 %}
             <h4 class="empty-cart text-center alert alert-info" role="alert">Your cart is empty</h4>
-            <div class="row justify-content-center justify-content-md-end checkout-row text-center text-md-right">
+            <div class="row justify-content-center justify-content-md-end button-row text-center text-md-right">
                 <div class="col-10">
                     <a class="btn btn-warning buttons_all" href='{% url 'view_all_books' %}'>Keep looking</a>
                 </div>

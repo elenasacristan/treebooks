@@ -57,7 +57,7 @@ start building the cart and then I have made some updates -->
                             Amend
                         </button>
                     </form>
-                    <p class="price-book m-2 text-muted text-center">£{{book_item.book_price}}</p>
+                    <p class="price m-2 text-center">£{{book_item.book_price}}</p>
                 </div>
                 <div class="col-6 col-sm-2 text-right align-self-center">
                     <a href="{% url 'remove_from_cart' book_item.id %}" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a>
@@ -105,7 +105,7 @@ start building the cart and then I have made some updates -->
             </div>
 
             {% endif %}
-            <div class="row justify-content-center justify-content-md-end checkout-row text-center text-md-right">
+            <div class="row justify-content-center justify-content-md-end button-row text-center text-md-right">
                 <div class="col-10">
                     <a class="btn btn-warning buttons_all" href='{% url 'view_all_books' %}'>Keep looking</a>
                     
