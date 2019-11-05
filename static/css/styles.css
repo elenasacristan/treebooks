@@ -313,12 +313,7 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
   height: 250px;
 }
 
-/* *********************************************** all_books.html *************************************************** */
 
-.book-columns .badge-success {
-  width: 60%;
-  margin-bottom: 2px;
-}
 
 /* **************************************************** footer all pages *************************************************** */
 
@@ -525,10 +520,16 @@ footer .col-sm-5 a {
   }
 }
 
-/* ***************************************************************** all books ********************************** /
 
-/* books horizontal scroll*/
+/* *********************************************** all_books.html *************************************************** */
 
+/* badge to indicate if is the user's turn to read the book */
+.book-columns .badge-success {
+  width: 60%;
+  margin-bottom: 2px;
+}
+
+/* background with transparency for all_books.html */
 .allbooks {
   background-color: #f2f3f2b3;
   margin-top: -50px;
@@ -550,20 +551,6 @@ footer .col-sm-5 a {
   margin-top: 40px;
   margin-bottom: -10px;
   margin-left: 7%;
-}
-
-/* .categories-headers {
-  margin-top: 60px;
-  margin-bottom: -10px;
-  margin-left: 7%;
-} */
-
-.categories-row {
-  display: flex;
-  overflow-x: scroll;
-  flex-wrap: nowrap;
-  width: 90%;
-  margin-bottom: 50px;
 }
 
 .card-product {
@@ -589,15 +576,23 @@ footer .col-sm-5 a {
   font-size: 1.3em;
 }
 
-/* custom scroll bar https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
+/* I learnt how to customise the scroll bar in the following tutorial
+https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
+
+/* books horizontal scroll*/
+.categories-row {
+  display: flex;
+  overflow-x: scroll;
+  flex-wrap: nowrap;
+  width: 90%;
+  margin-bottom: 50px;
+}
 
 .categories-row::-webkit-scrollbar {
   width: 200px;
   height: 15px;
   background-color: transparent;
 }
-
-/**  STYLE 1 */
 
 .categories-row::-webkit-scrollbar-thumb {
   border-radius: 50px;
@@ -618,7 +613,7 @@ footer .col-sm-5 a {
   border-radius: 15px;
 }
 
-/* detail */
+/* *********************************************** detail.html*************************** */
 
 @media (min-width: 1200px) {
   .container {
