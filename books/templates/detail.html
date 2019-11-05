@@ -80,7 +80,7 @@
                             <div class="row">
                                 <div class="col">
                                     <h3 class="title mb-3">
-                                        <a href='{{ book.author.url_wiki}}' target="_blank"><small>By</small>{{ book.author }}</a>
+                                        <a href='{{ book.author.url_wiki}}' target="_blank"><small>By</small> {{ book.author }}</a>
                                     </h3>
                                     <dl>
                                         <dt>Summary</dt>
@@ -271,7 +271,6 @@
                         {% endif %}
                     <!-- if there are not users in the waiting list -->
                     {% else %}
-
                         <div class="container waiting-section last-row">
                             <div class="row justify-content-center">
                                 <div class="col-8">
