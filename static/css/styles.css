@@ -132,8 +132,7 @@ a {
 }
 
 .navbar-nav .nav-link {
-  font-size: 1em;
-  margin-left: 7px;
+  /* font-size: 1em; */
   text-transform: uppercase;
   white-space: nowrap;
   background-color: rgba(172, 215, 201, 0.2);
@@ -182,10 +181,11 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
   .navbar-nav .nav-link {
     background-color: transparent;
     border: none;
+    margin-left: 10px;
   }
 }
 
-/* ************************************* home page ******************************* */
+/* ***************************** home page (index.html) ******************************** */
 
 /* carousel */
 .row-sm {
@@ -209,11 +209,6 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
   min-height: 100%;
 }
 
-.carousel .btn {
-  font-weight: bold;
-  font-size: 0.9em;
-}
-
 .carousel-caption {
   font-size: 1em;
   top: 50%;
@@ -227,6 +222,11 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
   font-weight: bold;
   background-color: #00010070;
   padding: 20px 8px;
+}
+
+.carousel .btn {
+  font-weight: bold;
+  font-size: 0.9em;
 }
 
 .carousel-control-prev-icon, .carousel-control-next-icon {
@@ -250,7 +250,6 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
     font-size: 0.7em;
   }
 }
-
 
 
 .index {
@@ -309,51 +308,7 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
 }
 
 
-
-
-
-/* **************************************************** footer all pages *************************************************** */
-
-footer {
-  background-color: #063622 !important;
-  color: #ffffff;
-  height: 150px;
-}
-
-footer a {
-  color: #ffffff;
-  font-size: 2em;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-}
-
-footer a:hover {
-  color: orange;
-}
-
-footer i {
-  padding: 30px 20px 30px 0px;
-  font-size: 40px; 
-}
-
-footer .col-sm-5 a {
-  font-family: "Lobster Two", cursive;
-}
-
-/* *********************************************  messages all pages ******************************************* */
-
-.messages {
-  background-color: rgb(173, 230, 204);
-  padding-bottom: 15px;
-  padding-top: 15px;
-  text-align: center;
-  font-size: 1.3em;
-  color: #000;
-  position: relative;
-}
-
-/* *********************************************  main headers ******************************************* */
+/* *********************************************  main headers all pages ******************************************* */
 .headers_all {
   font-family: "Lobster Two", cursive;
   font-weight: bolder;
@@ -363,7 +318,7 @@ footer .col-sm-5 a {
   text-shadow: 2px 3px 6px #034c14;
 }
 
-/* *********  wrapper common for login, registration, about, projects, donate, contact, review_form and password-reset pages *********  */
+/* ******  wrapper for login, registration, about, projects, donate, contact, review_form and pwd-reset pages *****  */
 .box-content {
   width: 250px;
   background-color: #ffffff;
@@ -373,6 +328,8 @@ footer .col-sm-5 a {
   box-shadow: 0px 0px 5px 3px rgba(252, 134, 0, 0.658);
   margin: -23px 0px 50px 0px;
 }
+
+/* *********************** styel forms: login, registration, pwd-reset pages, contact, review_form ******************** */
 
 .box-content label {
   display: none;
@@ -420,7 +377,7 @@ footer .col-sm-5 a {
   font-weight: bolder;
 }
 
-/* ************ password-reset pages ********************** */
+/* ************************************** password-reset pages ************************************** */
 
 .pwd-reset-sent h2 {
   margin-top: -70px;
@@ -490,8 +447,6 @@ footer .col-sm-5 a {
     font-size: 1.3em;
     color: white;
     background-color: transparent;
-    box-shadow: 0px 0px 0px 0px rgba(252, 134, 0, 0.658);
-    padding: 0px;
   }
   .pwd-reset-sent .btn-success {
     width: 150px;
@@ -1302,6 +1257,49 @@ form label {
 
 .btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning:not(:disabled):not(.disabled):active, .btn-warning:not(:disabled):not(.disabled).active, .show>.btn-warning.dropdown-toggle {
   color: #ffffff;
+}
+
+
+/* *********************************************  messages all pages ******************************************* */
+
+.messages {
+  background-color: rgb(173, 230, 204);
+  padding-bottom: 15px;
+  padding-top: 15px;
+  text-align: center;
+  font-size: 1.3em;
+  color: #000;
+  position: relative;
+}
+
+
+/* **************************************************** footer all pages *************************************************** */
+
+footer {
+  background-color: #063622 !important;
+  color: #ffffff;
+  height: 150px;
+}
+
+footer a {
+  color: #ffffff;
+  font-size: 2em;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+footer a:hover {
+  color: orange;
+}
+
+footer i {
+  padding: 30px 20px 30px 0px;
+  font-size: 40px; 
+}
+
+footer .col-sm-5 a {
+  font-family: "Lobster Two", cursive;
 }
 
 
