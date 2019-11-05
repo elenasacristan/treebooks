@@ -15,16 +15,12 @@ from django.http import HttpResponseRedirect
 '''
 @login_required
 def view_waiting_lists(request, pk):
-    waiting_list = WaitingList.objects.filter(wl_book__id = pk)
-
-    # this code will give us a list of users in the waiting list for that book
-    # users_in_list = list( WaitingList.objects.filter(wl_book__id=pk).values_list('wl_user__username',  flat=True))
-    # count_users = len(users_in_list)
-    return render (request, 'waiting_list.html',{
-        'waiting_list':waiting_list, 
-        # 'users_in_list':users_in_list, 
-        # 'count_users':count_users
-        })
+    add_wl_book = get_object_or_404(Book,pk=pk)
+    waiting_list, created = WaitingList.objects.get_or_create(
+            wl_book = add_wl_book
+            )
+    waiting_list = WaitingList.objects.filter(wl_book__id = pk)  
+    return render (request, 'waiting_list.html',{'waiting_list':waiting_list})
 
 
 '''
