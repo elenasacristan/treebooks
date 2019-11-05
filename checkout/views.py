@@ -69,7 +69,7 @@ def checkout(request):
 
                 '''add payment to total money raised
                 and increment number of books rented'''
-                raised = get_object_or_404(TotalRaised, id=8)
+                raised = get_object_or_404(TotalRaised, id=1)
                 raised.money_raised += total_raised
                 raised.number_books += books_count
                 raised.save()
