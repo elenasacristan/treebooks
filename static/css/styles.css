@@ -307,23 +307,20 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
   box-shadow: 1px 3px 8px #07277e;
 }
 
-/* *********************************************** books *************************************************** */
-
-.details {
-  display: inline-flex;
-  list-style: none;
-}
+/* *********************************************** detail.html *************************************************** */
 
 #modalStores .modal-body {
   height: 250px;
 }
+
+/* *********************************************** all_books.html *************************************************** */
 
 .book-columns .badge-success {
   width: 60%;
   margin-bottom: 2px;
 }
 
-/* footer */
+/* **************************************************** footer all pages *************************************************** */
 
 footer {
   background-color: #063622 !important;
@@ -345,15 +342,14 @@ footer a:hover {
 
 footer i {
   padding: 30px 20px 30px 0px;
-  /* margin-left: 30px; */
-  font-size: 40px;
+  font-size: 40px; 
 }
 
 footer .col-sm-5 a {
   font-family: "Lobster Two", cursive;
 }
 
-/* errors */
+/* *********************************************  messages all pages ******************************************* */
 
 .messages {
   background-color: rgb(173, 230, 204);
@@ -365,34 +361,7 @@ footer .col-sm-5 a {
   position: relative;
 }
 
-/* login and register */
-
-.box-content {
-  width: 250px;
-  background-color: #ffffff;
-  padding: 25px;
-  padding-top: 50px;
-  border-radius: 30px;
-  box-shadow: 0px 0px 5px 3px rgba(252, 134, 0, 0.658);
-  margin: -23px 0px 50px 0px;
-}
-
-.pwd-reset-sent {
-  width: 90%;
-  background-color: white;
-  padding: 25px;
-  margin: 100px 18px;
-  /* margin-bottom: 50px; */
-  border-radius: 30px;
-  box-shadow: 0px 0px 5px 3px rgba(252, 134, 0, 0.658);
-}
-
-/* remove? */
-
-.wrapper-content {
-  margin: -50px 0px 60px 0px;
-}
-
+/* *********************************************  main headers ******************************************* */
 .headers_all {
   font-family: "Lobster Two", cursive;
   font-weight: bolder;
@@ -402,8 +371,15 @@ footer .col-sm-5 a {
   text-shadow: 2px 3px 6px #034c14;
 }
 
-.pwd-reset-sent h2 {
-  margin-top: -70px;
+/* *********  wrapper common for login, registration, about, projects, donate, contact, review_form and password-reset pages *********  */
+.box-content {
+  width: 250px;
+  background-color: #ffffff;
+  padding: 25px;
+  padding-top: 50px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 5px 3px rgba(252, 134, 0, 0.658);
+  margin: -23px 0px 50px 0px;
 }
 
 .box-content label {
@@ -452,6 +428,21 @@ footer .col-sm-5 a {
   font-weight: bolder;
 }
 
+/* ************ password-reset pages ********************** */
+
+.pwd-reset-sent h2 {
+  margin-top: -70px;
+}
+
+.pwd-reset-sent {
+  width: 90%;
+  background-color: white;
+  padding: 25px;
+  margin: 100px 18px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 5px 3px rgba(252, 134, 0, 0.658);
+}
+
 .password-reset label, .pwd-reset-conf label {
   display: block;
   color: #0f870f;
@@ -468,6 +459,8 @@ footer .col-sm-5 a {
   width: 300px;
 }
 
+/* *********  for login, registration, about, projects, donate, contact, review_form and password-reset pages *********  */
+
 @media (min-width: 576px) {
   .box-content {
     width: 350px;
@@ -478,18 +471,11 @@ footer .col-sm-5 a {
 }
 
 @media (min-width: 1200px) {
-  .wrapper-content {
-    margin: 0px;
-  }
-  .wrapper-content-all {
-    margin: 70px 0px 60px 0px;
-  }
   .headers_all {
     margin-top: -110px;
     font-size: 4rem;
   }
   .circle-shape {
-    /* margin-top: 100px; */
     margin-bottom: 60px;
     width: 550px;
     height: 550px;
@@ -509,7 +495,7 @@ footer .col-sm-5 a {
   }
   .pwd-reset-sent p {
     margin-top: 120px;
-    font-size: 23px;
+    font-size: 1.3em;
     color: white;
     background-color: transparent;
     box-shadow: 0px 0px 0px 0px rgba(252, 134, 0, 0.658);
@@ -539,7 +525,7 @@ footer .col-sm-5 a {
   }
 }
 
-/* all books */
+/* ***************************************************************** all books ********************************** /
 
 /* books horizontal scroll*/
 
@@ -1310,3 +1296,4 @@ form label {
 .error-msg {
   color: red;
 }
+
