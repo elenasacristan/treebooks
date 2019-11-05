@@ -658,6 +658,7 @@ https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
   padding-right: 2px;
 }
 
+/* header background common for detail and profile section */
 .detail-profile .header-content {
   background-color: #62a48b91;
   color: white;
@@ -670,8 +671,13 @@ https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
   margin-bottom: 40px;
 }
 
-.rent-section {
+/* .rent-section {
   margin-top: 40px;
+} */
+
+.price {
+  font-size: 2.2em;
+  color: #ff6100;
 }
 
 .available h4 {
@@ -684,11 +690,7 @@ https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
   margin-top: 5px;
 }
 
-.price {
-  font-size: 2.2em;
-  color: #ff6100;
-}
-
+/********************************* CONTINUE HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ********************************/
 @media (min-width: 992px) {
   .available {
     margin-left: 40px;
@@ -698,6 +700,8 @@ https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
   }
 }
 
+
+/* buttons common to most pages */
 .buttons_all {
   color: white;
   border-radius: 25px;
@@ -709,6 +713,7 @@ https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
 .btn-warning {
   background-color: #ff7431;
 }
+
 
 @media (min-width: 992px) {
   .carousel .btn {

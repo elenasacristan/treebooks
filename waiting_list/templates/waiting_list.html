@@ -10,10 +10,11 @@
 
 <div class='container-fluid waiting_list'>
     <div class="d-flex row justify-content-center align-items-center">
-        <div class="col-xs-10 about">
+        <div class="col-xs-10">
             <!-- https://stackoverflow.com/questions/3829758/can-i-access-attributes-of-the-first-object-in-a-list-in-django-templates -->
             {% with waiting_list|first as first_waiting_list %}
-                {% if first_waiting_list.wl_book %}
+                <!-- if there are users in the waiting list -->
+                {% if first_waiting_list.wl_user.all %}
                     <h2 class="headers_all text-center"><small>waiting list for</small><br>{{ first_waiting_list.wl_book.title}}</h2>
                 {% else %}
                     <h2 class="headers_all text-center"><small>You could be next!</small> </h2>
@@ -22,16 +23,30 @@
 
             <div class="box-content wrapper1  mx-auto">
                 <ol>
-                    {% for list in waiting_list %}
-                        {% for waiting_user in list.wl_user.all %}
-                            <li>{{ waiting_user }}</li>
-                        {% endfor %}
-                    {% empty %}
-                        <h4 class="empty-cart text-center alert alert-info" role="alert">There is no one waiting!</h4>
-                    {% endfor %}
+                    {% with waiting_list|first as first_waiting_list %}
+                        <!-- if there are users in the waiting list -->
+                        {% if first_waiting_list.wl_user.all %}
+                            {% for waiting_user in first_waiting_list.wl_user.all %}
+                                <li>{{ waiting_user }}</li>
+                            {% endfor %}
+                        {% else %}
+                            <h4 class="empty-cart text-center alert alert-info" role="alert">There is no one waiting!</h4>
+                        {% endif %}
+                    {% endwith %}
                 </ol>
-                {% endblock %}
+
+                {% with waiting_list|first as first_waiting_list %}
+                    <div class="row justify-content-center text-center">
+                        <div class="col-10">
+                            <a class="btn" href='{% url 'view_all_books' %}'>Keep looking</a>
+                            <a class="btn" href='{% url 'detail' first_waiting_list.wl_book.id %}'>Go to book</a>
+                        </div>
+                    </div>
+                {% endwith %}
+
             </div>
         </div>
     </div>
 </div>
+
+{% endblock %}

@@ -7,29 +7,29 @@ from django.core.exceptions import ValidationError
 class LoginForm(forms.Form):
     '''Form used to log users in'''
     username = forms.CharField(
-        widget=forms.TextInput(attrs={'placeholder': 'username or email'}))
+        widget=forms.TextInput(attrs={'placeholder': 'Username or email'}))
     password = forms.CharField(
-        widget=forms.PasswordInput(attrs={'placeholder': 'password'}))
+        widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
 
 
 class RegistrationForm(UserCreationForm):
     '''Form used to register a new user'''
     first_name = forms.CharField(
-        widget=forms.TextInput(attrs={'placeholder': 'first_name'}))
+        widget=forms.TextInput(attrs={'placeholder': 'First name'}))
     last_name = forms.CharField(
-        widget=forms.TextInput(attrs={'placeholder': 'last_name'}))
+        widget=forms.TextInput(attrs={'placeholder': 'Last name'}))
     username = forms.CharField(
-        widget=forms.TextInput(attrs={'placeholder': 'username'}))
+        widget=forms.TextInput(attrs={'placeholder': 'Username'}))
     email = forms.CharField(
-        widget=forms.TextInput(attrs={'placeholder': 'email'}))
+        widget=forms.TextInput(attrs={'placeholder': 'Email'}))
     password1 = forms.CharField(
         label="Password", 
         widget=forms.PasswordInput(
-            attrs={'placeholder': 'password'}))
+            attrs={'placeholder': 'Password'}))
     password2 = forms.CharField(
         label="Confirm the password", 
         widget=forms.PasswordInput(
-            attrs={'placeholder': 'confirm password'}))
+            attrs={'placeholder': 'Confirm password'}))
 
 
     '''fields that will be displayed in the form'''
