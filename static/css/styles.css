@@ -777,6 +777,16 @@ fav-form button:active {
   width: 100%;
 }
 
+.waiting-section button {
+  background-color: transparent;
+  border: none;
+}
+
+.waiting-section button:focus,
+.waiting-section button:active {
+  outline: none;
+}
+
 .price-section h5 {
   margin-top: 15px;
 }
