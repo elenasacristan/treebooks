@@ -588,6 +588,7 @@ https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
   top: 0px;
 }
 
+/* icon in all_books.html */
 .categories-row .favorite .fa,
 .categories-row .favorited .fa {
   font-size: 0.8em;
@@ -617,7 +618,6 @@ fav-form button:active {
 
 .favorite .fa,
 .favorited .fa {
-  font-weight: 0 !important;
   font-size: 1.8em;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -1057,7 +1057,6 @@ form label {
 
 .projects img {
   width: 50%;
-  background-color: #ffffff;
   box-shadow: 1px 1px 8px #757070;
   padding: 0px;
 }
