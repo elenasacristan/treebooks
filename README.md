@@ -6,12 +6,12 @@ TreeBooks is a charity that aims to raise money to plant trees by renting second
 
 In order to be able to rent books the users need to register. Only registered users will be able to rent books, read reviews, join waiting list for a book, keep track of the books read and save the books that they like in a favourites list.
 
-The users who are not registered will see in the landing page the main reasons why they should register. Users not register can't rent books but can see the listing with all the books and the details page. In the register page they won't be able to see the reviews but they will be able to see the average ratings for each book and the main details about the books.
+The users who are not registered will see in the landing page the main reasons why they should register. Users not registered can't rent books but they can see the listing with all the books and the details page. In the details page they won't be able to see the reviews but they will be able to see the average ratings for each book and the main details about the books.
 
 Also registered and not registered users can donate books to the charity. If they want to donate they can see in the donate.html page the map with the collection points where they can drop their books to help the charity to grow the collection of books to offer.
 
-All users can also read how the website works by reading the about.html page  
-All users will also have access to the projects page where they can see how much money has been raised by the charity until now and what projects is the charity going to donate the money raised.
+All users can also read how the website works by reading the about.html page. 
+All users will also have access to the projects page where they can see how much money has been raised by the charity until now, how many books have been rented and to what projects is the charity going to donate the money raised.
 
 The users can search for a specific book or author by typing on the search box.
 
@@ -26,7 +26,7 @@ http://treebooks.herokuapp.com
 
 ## UX
 
-This website is targeting people who likes reading books but at the same time is concerned about how many trees are cut to create new books. They will want to use the website because reading second hand books they are stopping more trees being cut and because the money paid to rent the books will be used in reforestation projects.
+This website is targeting people who likes reading books but at the same time have concerns about how many trees are cut to create new books. They will want to use the website because reading second hand books they are stopping more trees being cut and because the money paid to rent the books will be used in reforestation projects.
 
 TreeBooks is a charity so the aim of the website is to attract users who then will rent books from them. They also want to grow the collection of books by getting people to donate second hand books.
 
@@ -102,7 +102,11 @@ As a member I want to feel that I'm helping to save the planet by not buying new
 
 As a member I want to be able to add my name to a waiting list if the book that I want to read is not available
 
-As a member I want to be able to see my place in the waiting lists.
+As a member I want to be able to see my position in the waiting lists.
+
+As a member I want to see a notification when my turn to read the book has been reached. 
+
+As a user I'd like to know what books are available and which ones have waiting lists. 
 
 As a member I want to be able to save books as favourites.
 
@@ -112,17 +116,22 @@ As a member I want to be able to review the books that I have read.
 
 As a member I want to be able to add books to the shopping cart and then pay all of them at once.
 
+As a member I want to be able to update the number of days to rent the book from the cart page. 
+
+As a member I want to be able to remove books from the cart if I change my mind about the book. 
+
+As a member I want to see in my profile when is the return date for the books that I'm currently reading. 
+
 As a user (member or not) I want to be able to see all the books in TreeBooks and their details.
 
 As a user(member or not) I want to be able to search for a book or author by typing on the search box.
 
 As a member I want to be able to see the reviews given by other members.
 
-As a user I'd like to know where should I bring the second hand books that I want to donate.
-
 As a member I want to be able to register to the monthly newsletter.
 
 As a member I want to be able to edit my profile details and add a profile image.
+
 
 ## Features
 
@@ -130,21 +139,21 @@ As a member I want to be able to edit my profile details and add a profile image
 
 Registration form allow users to become members
 
-The login form allows register member to login and access all the features of authenticated users. The user will be able to login using the username and also using the email instead of the username. (place holder update username / email)!!!!!!!!!!
+The login form allows registerer members to login and access all the features of authenticated users. The user will be able to log in using the username and also using the email instead of the username. (place holder update username / email)!!!!!!!!!!
 
-The users can reset the password if they forgot the original password using the reset password link on the login.html
+The users can reset the password if they forgot the original password using the reset password link on the login.html page. 
 
 ### books app
 
 View-all-books. Hyml
 
-Display all the books present on the website. The books are displayed by category and they are sorted by availability first and then by the review score.
+Display all the books present on the website. The books are displayed by category and they are sorted in descending order by the review score
 
-In this view the user only will see the name of the book, the rating score and the availability. If they want to know more about the book or rent it they need to click on the more button.
+In this view the user only will see the name of the book, the rating score and the availability. If they want to know more about the book or rent it they need to click on the 'more' button.
 
 Detail. Html
 
-In this page the user can see all the details about the book. title, author (by clicking on the author name they will get redirected to the Wikipedia url for that author), sinopsys, date it was published, number of pages, book type (hardcover or paperback), number of pages, store where the book has to be collected from, ISBN number.
+In this page the user can see all the details about the book. These details are the title, the author (by clicking on the author name they will get redirected to the Wikipedia url for that author), the summary, the date it was published, the number of pages, the type of book (hardcover or paperback), the number of pages, the store where the book has to be collected from and the ISBN number.
 
 Then in this page if the book is available and the user is authenticated then the user can select the number of days that wants to rent the book for (the minimum number of days will be 10 and it has been set as the default value) and add it to the shopping cart.
 
@@ -154,22 +163,25 @@ If the user is not authenticated he/she will see a button to register in case th
 
 ### view profile
 
-The user case see his/hers personal and membership details by clicking on the profile tab in the navigation bar.
+The user can see his/hers personal and membership details by clicking on the profile tab in the navigation bar.
 
 The profile will display the following information about the user:
 
 - profile image
 - membership details (date that the user registered and if they are subscribed to the newsletter)
 - currently reading: a list with the books that the user is renting at the moment including the date that they need to be returned.
+Once the return date is reached the books will be remove from the user profile. OR ADD MESSAGE IN RED SAYING. YOU RETURN DATE HAS PASSED PLEASE CONTACT US.
+- Also if the user wants to return the book before the due date then he/she can click the button 'I have returned the book' once the book has been returned and that way the book will become available for everyone or if there is waiting list it will become available for the next user in the waiting list. 
+
 - personal details (name, email, telephone and date of birth)
 - contact preferences  
   At the bottom the user can access the list of books read, the list of books he/she is in the waiting list for and the list of favourites.
 
 In the list of read books the user will have the option to leave a review for the books that have rented. Only will be able to add a review once per book.
 
-In the list of books in waiting list the user will have the option to se the waiting lists for each book so he/she can see what is the order.
+In the list of books in waiting list the user will have the option to see the waiting lists for each book so he/she can see what is the order.
 
-Treebooks will contact the next user in the contact list as soon as the book is returned by the previous user. The the next user in the waiting list can proceed to rent the book online. Only the next user in the waiting list will have the option to rent the books for the rest of the users the book will not be available.
+Treebooks will contact the next user in the contact list as soon as the book is returned by the previous user. Also the user will see a notification saying 'it's your turn' on the book listing. Then the next user in the waiting list can proceed to rent the book online. Only the next user in the waiting list will have the option to rent the books for the rest of the users the book will not be available.
 
 ADD message after joint waiting list saying.. You have joined the waiting list we will contact you when you reach your turn
 
@@ -193,43 +205,52 @@ If the user is already registered the they won't see the register button and ins
 
 ### about. Html
 
-This page will explain the aim of the website and how it works. It will have redirects to other areas of the website (projects. HTML and donate. HTML)
+This page explains the aim of the website and how it works. It has redirects to other areas of the website (projects. HTML and donate. HTML)
 
 ### projects. Hntl
 
-In this page the user can see the total monye raised by the charity since they starting raising money and they also can see the number of times books have been rented.
+In this page the user can see the total money raised by the charity since the charity started raising money and the user also can see the number of times books have been rented.
 
-Also they user will see what are the projects that the charity is trying to raised money for and what is the target.
+Also they user will see what are the projects that the charity is trying to raised money for and what is the target for each.
 
 ### donate.
 
-In this page any user (registered or not) who wants to collaborate with the charity can see the collection points available where they can bring their second hand books that they wish to donate.
+If the users (registered or not) would like to collaborate with the charity by donating books, in this page they can see a map with the collections points where they can drop their books. 
 
 ### Cart
 
-This page will display the book ls that they user have added to the shopping cart and will giv ethe user the option to update the number of days selected or to remove the book.
+This page will display the books that the user have added to the shopping cart and will give the user the option to update the number of days selected or remove the books.
 
-THEN it will display the total to pay. A £5 deposit by book will be added to the total price and that deposit will be refunded once the book is returned.
+Then it will display the total to pay. A £5 deposit by book will be added to the total price and that deposit will be refunded once the book is returned.
 
-Once the user is iin the checkout page he/she can decide if they want to proceed to the payment or keep looking got more books.
+The user will have the option to proceed to the payment by clicking the 'checkout' button or continue searching for other books by clicking the button 'keep looking' .
 
 ### Checkout
 
-In the checkout page the user will see the details of the books that he/she is going to rent an dthe total to pay.
+In the checkout page the user will see the details of the books that he/she is going to rent and the total to pay.
 
 Then they will need to fill out the payment form in order to rent the book.
 
-Once the payment has gone through a success message will be display and then the user can go to specified store where the book belongs and collected.
+Once the payment has gone through a success message will be display and then the user can go to the specified store where the book belongs and collect it.
 
-If there is any error with the payment the user will see an error message //CHANGE COLOR TO DANGER !!
+If there is any error with the payment the user will see an error message. 
 
 ### Other features available from all pages
 
 ### search
 
+This app will allow the user to search for a book based on the title name or author name. 
+
+The search box is displayed at he
+
 ### contact us
 
+In the footer there is a link to the contact Us page. In this page the user can fill out the form in order to send an message to the charity. 
+
 ### nav bar
+ The navbar will be available from all the pages in the website. 
+I have used LINk
+
 
 ### social links
 
@@ -538,25 +559,3 @@ http://XXXX.herokuapp.com
 * As always the slack community has been very helpful when I had any question.
 
 - I'm also really thankful to the Tutors who help me understanding how to set up environmental variables in vscode.
-
-<!--stackedit_data:
-
-eyJoaXN0b3J5IjpbOTAyMjA3MDAsLTg5MzA0MzMxMiwxNTgzMD
-
-kzMTE0LDE4NDE3Mzc4NTMsMzQ1NDQ3MTkzLC0xODczMDc3MzM3
-
-XX0=
-
--->
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNDI1MTYwNzYsMjA3MjA0MTU4MiwtMT
-M1OTcwNDE1MywtOTk2NjMzOTQ1LC05OTg2MjIwNTMsODIwMzYw
-MjgzLC0xOTQyMTY3ODAsODg5MDU5MDYzLDg2NTQ4OTM0NiwxOT
-A2MTUyNjgyLC03ODYwMDU5MTksOTAyMjA3MDAsLTg5MzA0MzMx
-MiwxNTgzMDkzMTE0LDE4NDE3Mzc4NTMsMzQ1NDQ3MTkzLC0xOD
-czMDc3MzM3XX0=
--->
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbOTA3MTQzNzkyLC0xMjE0Mzk1MjgsLTE2MD
-Q3NTQ0MTBdfQ==
--->
