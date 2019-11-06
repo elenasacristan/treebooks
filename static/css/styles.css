@@ -1,12 +1,13 @@
-html, body {
+html,
+body {
   margin: 0px;
   padding: 0px;
   height: 100%;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
-body{
+body {
   font-family: "Dosis", sans-serif;
   font-size: 1.2em;
 }
@@ -21,11 +22,25 @@ main {
   background-size: cover;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: bolder;
 }
 
-.row, .col, .col-auto, .ml-auto, .container-fluid, .container, .col-md-12, .section-main, .bg, .padding-top-sm {
+.row,
+.col,
+.col-auto,
+.ml-auto,
+.container-fluid,
+.container,
+.col-md-12,
+.section-main,
+.bg,
+.padding-top-sm {
   margin: 0px;
   padding: 0px;
 }
@@ -36,7 +51,7 @@ a {
 }
 
 /* ********************** page loader code from https://smallenvelop.com/display-loading-icon-page-loads-completely/ ***************** */
- .no-js #loader {
+.no-js #loader {
   display: none;
 }
 
@@ -193,7 +208,7 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
   margin-left: 0px;
 }
 
-.row-sm>[class^="col"] {
+.row-sm > [class^="col"] {
   padding-right: 0px;
   padding-left: 0px;
 }
@@ -229,7 +244,8 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
   font-size: 0.9em;
 }
 
-.carousel-control-prev-icon, .carousel-control-next-icon {
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
   width: 60px;
   height: 60px;
 }
@@ -250,7 +266,6 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
     font-size: 0.7em;
   }
 }
-
 
 .index {
   background-color: #efeee5;
@@ -306,7 +321,6 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
 .shadow3 {
   box-shadow: 1px 3px 8px #07277e;
 }
-
 
 /* *********************************************  main headers all pages ******************************************* */
 .headers_all {
@@ -392,7 +406,8 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
   box-shadow: 0px 0px 5px 3px rgba(252, 134, 0, 0.658);
 }
 
-.password-reset label, .pwd-reset-conf label {
+.password-reset label,
+.pwd-reset-conf label {
   display: block;
   color: #0f870f;
   font-size: 1.2em;
@@ -472,7 +487,6 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
   }
 }
 
-
 /* *********************************************** all_books.html *************************************************** */
 
 /* badge to indicate if is the user's turn to read the book */
@@ -507,13 +521,12 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
 
 .card-product {
   padding: 15px;
-  border-radius: 30px;
+  border-radius: 20px;
   box-shadow: 3px 3px 5px #563900;
   margin-top: 10px;
   margin-bottom: 30px;
   max-height: 400px;
   text-align: center;
-  min-width: 200px;
   position: relative;
 }
 
@@ -521,9 +534,6 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
   min-height: 50px;
   font-size: 1.3em;
 }
-
-
-
 
 /* I learnt how to customise the scroll bar in the following tutorial
 https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
@@ -571,27 +581,28 @@ https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
   margin-bottom: -30px;
 }
 
-/* positioning icon on all_books.html */
+/* positioning favourites icon on all_books.html */
 .allbooks .fav-form {
   position: absolute;
   right: 8px;
   top: 0px;
 }
 
-.categories-row .favorite .fa, .categories-row .favorited .fa {
+.categories-row .favorite .fa,
+.categories-row .favorited .fa {
   font-size: 0.8em;
   margin-top: -5px;
 }
 
-
-/* favourites form styles all_books and detail pages */
+/* favourites form styles - all_books and detail pages */
 
 .fav-form button {
   background-color: transparent;
   border: none;
 }
 
-.fav-form button:focus, fav-form button:active {
+.fav-form button:focus,
+fav-form button:active {
   outline: none;
 }
 
@@ -599,11 +610,13 @@ https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
   color: rgb(224, 222, 216);
 }
 
-.favorite, .favorited {
+.favorite,
+.favorited {
   float: right;
 }
 
-.favorite .fa, .favorited .fa {
+.favorite .fa,
+.favorited .fa {
   font-weight: 0 !important;
   font-size: 1.8em;
   -webkit-transition: all 0.3s ease-in-out;
@@ -637,10 +650,26 @@ https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
   padding: 0px 45px;
 }
 
-.detail-profile .first-column, .detail-profile .second-column {
+.detail-profile .first-column,
+.detail-profile .second-column {
   margin-top: 40px;
 }
 
+.available h4 {
+  color: white;
+  background-color: #62a48b;
+  border-radius: 30px;
+  width: 100%;
+  font-size: 1.5em;
+  padding: 6px 10px;
+  margin-top: 5px;
+}
+
+.price-section {
+  margin-bottom: 40px;
+}
+
+/* start rating  */
 .rating-stars i {
   font-size: 20px;
 }
@@ -654,10 +683,12 @@ https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
   background-color: transparent;
 }
 
-.rating-wrap button:hover, .rating-wrap button:active {
+.rating-wrap button:hover,
+.rating-wrap button:active {
   outline: none;
 }
 
+/* reviews section */
 #reviews_section h3 {
   margin-bottom: 50px;
 }
@@ -710,9 +741,6 @@ https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
   text-shadow: 1px 1px #000000;
 }
 
-
-
-
 #reviews_section small {
   color: green;
   font-weight: bold;
@@ -721,26 +749,7 @@ https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
   padding-right: 2px;
 }
 
-
-
-
-.price-section {
-  margin-bottom: 40px;
-}
-
-
-
-.available h4 {
-  color: white;
-  background-color: #62a48b;
-  border-radius: 30px;
-  width: 100%;
-  font-size: 1.5em;
-  padding: 6px 10px;
-  margin-top: 5px;
-}
-
-/* header background common for detail and profile section */
+/* header background common for detail and view_profile and edit_user_profile pages */
 .detail-profile .header-content {
   background-color: #62a48b91;
   color: white;
@@ -748,7 +757,6 @@ https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
 }
-
 
 @media (min-width: 992px) {
   .available {
@@ -765,22 +773,7 @@ https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
   }
 }
 
-
-/* buttons common to most pages */
-.buttons_all {
-  color: white;
-  border-radius: 25px;
-  font-size: 1.1em;
-  padding: 6px 20px;
-  border: none;
-}
-
-.btn-warning {
-  background-color: #ff7431;
-}
-
 .waiting-section h5 {
-  color: white;
   width: 100%;
 }
 
@@ -823,13 +816,16 @@ https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
   margin-top: 15px;
 }
 
-
-.add-days, .detail-register, .waiting-section, .last-row {
+.add-days,
+.detail-register,
+.waiting-section,
+.last-row {
   padding-bottom: 45px;
 }
 
 /* ****** detail ****** */
-.detail-register, .waiting-section {
+.detail-register,
+.waiting-section {
   padding-top: 15px;
 }
 
@@ -842,7 +838,8 @@ https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
   width: 280px;
 }
 
-.add-days button, .add-days a {
+.add-days button,
+.add-days a {
   width: 130px;
 }
 
@@ -882,12 +879,9 @@ https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
   }
 }
 
+/* ******************************** view_profile.html  *********************************** */
 
-
-
-
-/* profile page */
-
+/* image in view_profile.html and edit_user_profile.html */
 .rounded-circle {
   height: auto;
   width: 200px;
@@ -900,15 +894,18 @@ https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
   margin: 18px;
 }
 
-.view-profile .shadow1:hover, .detail-profile-wrapper .shadow1:hover {
+.view-profile .shadow1:hover,
+.detail-profile-wrapper .shadow1:hover {
   background-color: #e3f1ea;
 }
 
-.view-profile .shadow2:hover, .detail-profile-wrapper .shadow2:hover {
+.view-profile .shadow2:hover,
+.detail-profile-wrapper .shadow2:hover {
   background-color: #fff2d9;
 }
 
-.view-profile .shadow3:hover, .detail-profile-wrapper .shadow3:hover {
+.view-profile .shadow3:hover,
+.detail-profile-wrapper .shadow3:hover {
   background-color: #e0f0ff;
 }
 
@@ -922,7 +919,8 @@ https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
   padding-right: 50px;
 }
 
-.profile-section h3, .profile-section h5 {
+.profile-section h3,
+.profile-section h5 {
   color: rgb(2, 133, 67);
   margin-bottom: 25px;
 }
@@ -940,7 +938,6 @@ https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
   margin-bottom: 25px;
 }
 
-
 .favourite-read-link {
   background-color: rgb(242, 242, 242);
   margin: 5px;
@@ -955,6 +952,7 @@ https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
   height: 400px;
   overflow: auto;
 }
+
 .edit-profile {
   text-align: center;
 }
@@ -972,10 +970,7 @@ https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
   }
 }
 
-/* ******************************** edit profile ********************** */
-
-
-/* update profile */
+/* *************************************** edit profile **************************** */
 
 .update-profile input {
   margin-bottom: 20px;
@@ -985,8 +980,7 @@ form label {
   color: green;
 }
 
-
-/* ****************************  review_form.html ************************* */
+/* ***********************************  review_form.html ************************* */
 
 .review-form {
   height: 400px;
@@ -999,7 +993,8 @@ form label {
   margin: 0px auto;
 }
 
-.review-form input, .review-form textarea {
+.review-form input,
+.review-form textarea {
   margin-bottom: 15px;
 }
 
@@ -1024,8 +1019,7 @@ form label {
   }
 }
 
-
-/* about, projects and donate pages */
+/* ***************** about.html, projects.html and donate.html *************************** */
 
 .about-projects-donate h4 {
   margin: 25px 0px;
@@ -1039,18 +1033,18 @@ form label {
   padding-bottom: 60px;
 }
 
-.about-projects-donate .box-content ul, .about-projects-donate .box-content p, .about-projects-donate .box-content h4 {
+.about-projects-donate .box-content ul,
+.about-projects-donate .box-content p,
+.about-projects-donate .box-content h4 {
   margin-right: 8px;
   margin-left: 8px;
 }
-
 
 .about-projects-donate h2 {
   margin-top: 40px;
 }
 
-
-/* ****************************************** projects ********************** */
+/* ********************************* projects.html *************************** */
 
 .projects ul {
   margin: 0px;
@@ -1070,18 +1064,16 @@ form label {
 
 @media (min-width: 576px) {
   .projects img {
-        border: 20px solid #ffffff;
-    
+    border: 20px solid #ffffff;
   }
 }
 
-.projects a, .projects p {
+.projects a,
+.projects p {
   font-size: 1.3em;
 }
 
-
-
-/* ******************************************** contact us ******************************* */
+/* ************************************ contact.html ******************************* */
 
 .contact-us p {
   margin: 0px 120px;
@@ -1112,7 +1104,7 @@ form label {
   }
 }
 
-/* ************************************ donate*********************************** */
+/* ************************************ donate.html ********************************** */
 
 #map {
   width: 100%;
@@ -1120,7 +1112,7 @@ form label {
   border: 6px solid white;
 }
 
-/* ************************************ waiting_list page *********************************** */
+/* ********************************* waiting_list page ******************************* */
 
 .waiting_list h2 {
   margin-top: 60px;
@@ -1152,11 +1144,9 @@ form label {
   }
 }
 
+/* ***** price styles for  all_books.html, detail.html, cart.html and checkout.html ***** */
 
-
-/* *******************  all_books, detail, cart and checkout ************************** */
-
-.price{
+.price {
   color: #ff6100;
   font-weight: bold;
   font-size: 0.9em;
@@ -1172,14 +1162,14 @@ form label {
 
 /* ************************ cart and checkout ******************************** */
 
-
 /* background for checkout and cart pages */
-.checkout .cart-checkout, .cart .cart-checkout {
+.checkout .cart-checkout,
+.cart .cart-checkout {
   padding: 20px 40px 30px 40px;
   margin-top: 40px;
+  margin-bottom: 40px;
   background-color: #fffffff5;
   border-radius: 25px;
-  
 }
 
 .form-group {
@@ -1201,7 +1191,7 @@ form label {
   width: 100%;
 }
 
-.checkout figure{
+.checkout figure {
   margin-bottom: 20px;
 }
 
@@ -1213,21 +1203,8 @@ form label {
   margin-top: 20px;
 }
 
-@media (min-width: 576px) {
-  .cart-checkout .input-group {
-    margin-top: 0px;
-  }
-  .cart-checkout .button-row .btn {
-    margin: 0px;
-  }
-}
-
 .payment-details {
   margin-top: 60px;
-}
-
-.checkout .cart-checkout, .cart .cart-checkout {
-  margin-bottom: 100px;
 }
 
 .checkout form {
@@ -1238,7 +1215,8 @@ form label {
   margin-top: 30px;
 }
 
-.cart-checkout h3, .cart-checkout h5 {
+.cart-checkout h3,
+.cart-checkout h5 {
   white-space: nowrap;
 }
 
@@ -1247,6 +1225,12 @@ form label {
 }
 
 @media (min-width: 576px) {
+  .cart-checkout .input-group {
+    margin-top: 0px;
+  }
+  .cart-checkout .button-row .btn {
+    margin: 0px;
+  }
   .payment-wrapper {
     margin-left: 60px;
   }
@@ -1254,24 +1238,6 @@ form label {
     width: 80%;
   }
 }
-
-.btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning:not(:disabled):not(.disabled):active, .btn-warning:not(:disabled):not(.disabled).active, .show>.btn-warning.dropdown-toggle {
-  color: #ffffff;
-}
-
-
-/* *********************************************  messages all pages ******************************************* */
-
-.messages {
-  background-color: rgb(173, 230, 204);
-  padding-bottom: 15px;
-  padding-top: 15px;
-  text-align: center;
-  font-size: 1.3em;
-  color: #000;
-  position: relative;
-}
-
 
 /* **************************************************** footer all pages *************************************************** */
 
@@ -1295,16 +1261,48 @@ footer a:hover {
 
 footer i {
   padding: 30px 20px 30px 0px;
-  font-size: 40px; 
+  font-size: 40px;
 }
 
 footer .col-sm-5 a {
   font-family: "Lobster Two", cursive;
 }
 
+/* *********************************** buttons common to most pages ********************************** */
+.buttons_all {
+  color: white;
+  border-radius: 25px;
+  font-size: 1.1em;
+  padding: 6px 20px;
+  border: none;
+}
+
+.btn-warning {
+  background-color: #ff7431;
+}
+
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:active,
+.btn-warning:not(:disabled):not(.disabled):active,
+.btn-warning:not(:disabled):not(.disabled).active,
+.show > .btn-warning.dropdown-toggle {
+  color: #ffffff;
+}
+
+/* *********************************************  messages all pages ******************************************* */
+
+.messages {
+  background-color: rgb(173, 230, 204);
+  padding-bottom: 15px;
+  padding-top: 15px;
+  text-align: center;
+  font-size: 1.3em;
+  color: #000;
+  position: relative;
+}
 
 /* validation error messages */
 .error-msg {
   color: red;
 }
-
