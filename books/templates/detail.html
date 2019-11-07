@@ -45,9 +45,9 @@
                                         <div class="label-rating"><strong>{{ book.rating }}</strong> </div>
                                         <!-- only authenticated user can read reviews -->
                                         {% if user.is_authenticated %}
-                                        <div>
-                                            <a href="#reviews_section">({{book.total_number_reviews}})See reviews</a>
-                                        </div>
+                                            <div>
+                                                <a href="#reviews_section">({{book.total_number_reviews}})See reviews</a>
+                                            </div>
                                         {% endif %}
                                     </div>
                                 </div>
@@ -69,9 +69,9 @@
                                         {% csrf_token %}
                                         <button type="submit">
                                             {% if book in user.profile.favourites.all %}
-                                            <h3 class="favorited text-right"><i class="fa fa-heart"></i></h3>
+                                                <h3 class="favorited text-right"><i class="fa fa-heart"></i></h3>
                                             {% else %}
-                                            <h3 class="favorite text-right"><i class="fa fa-heart"></i></h3>
+                                                <h3 class="favorite text-right"><i class="fa fa-heart"></i></h3>
                                             {% endif %}
                                         </button>
                                     </form>
@@ -120,234 +120,234 @@
 
                 <!-- if the user is authenticted and the book is available -->
                 {% if user.is_authenticated and book.available %}
-                <!-- if there are users in the waiting list -->
-                {% if count_users > 0%}
-                {% for user_list in users_in_list %}
-                <!-- if the current user is in the waiting list -->
-                {% if user.id in users_in_list %}
-                {% if user_list == user.id %}
-                <!-- check if the first user in the list is the current user -->
-                {% if forloop.first %}
-                <div class="container price-section text-center">
-                    <div class="row justify-content-center">
-                        <div class="col-10 col-sm-5 available">
-                            <h4>AVAILABLE</h4>
-                        </div>
-                        <div class="col-10 col-sm-6 ">
-                            <var class="price h3 float-sm-right">
-                                <span class="currency">£</span><span class="num">{{ book.price_day }}<small>/per day</small></span>
-                            </var>
-                        </div>
-                    </div>
-                </div>
-                <div class="container add-days">
-                    <div class="row justify-content-center align-items-start">
-                        <div class="col-10 col-md-7">
-                            <p>
-                                Select the number of days that you want to rent the book for:<br>
-                                <small>*The minimun number of days to rent any book is 10.</small>
-                            </p>
-                        </div>
-                        <div class="col-10 col-md-4">
-                            <form class="justify-content-center" method="post" action="{% url 'add_to_cart' book.id %}">
-                                {% csrf_token %}
-                                <div class="input-group">
-                                    <input name="days" type="number" min="10" max="999" class="form-control" value="10"
-                                        required>
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-primary" type="submit">Add to cart</button>
-                                    </span>
+                    <!-- if there are users in the waiting list -->
+                    {% if count_users > 0%}
+                        {% for user_list in users_in_list %}
+                        <!-- if the current user is in the waiting list -->
+                            {% if user.id in users_in_list %}
+                                {% if user_list == user.id %}
+                                <!-- check if the first user in the list is the current user -->
+                                    {% if forloop.first %}
+                                        <div class="container price-section text-center">
+                                            <div class="row justify-content-center">
+                                                <div class="col-10 col-sm-5 available">
+                                                    <h4>AVAILABLE</h4>
+                                                </div>
+                                                <div class="col-10 col-sm-6 ">
+                                                    <var class="price h3 float-sm-right">
+                                                        <span class="currency">£</span><span class="num">{{ book.price_day }}<small>/per day</small></span>
+                                                    </var>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="container add-days">
+                                            <div class="row justify-content-center align-items-start">
+                                                <div class="col-10 col-md-7">
+                                                    <p>
+                                                        Select the number of days that you want to rent the book for:<br>
+                                                        <small>*The minimun number of days to rent any book is 10.</small>
+                                                    </p>
+                                                </div>
+                                                <div class="col-10 col-md-4">
+                                                    <form class="justify-content-center" method="post" action="{% url 'add_to_cart' book.id %}">
+                                                        {% csrf_token %}
+                                                        <div class="input-group">
+                                                            <input name="days" type="number" min="10" max="999" class="form-control" value="10"
+                                                                required>
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-primary" type="submit">Add to cart</button>
+                                                            </span>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <!-- user is in the list but is not the first one -->
+                                    {% else%}
+                                        <div class="container waiting-section">
+                                            <div class="row justify-content-center">
+                                                <div class="col-8">
+                                                    <h4 class="empty-cart text-center alert alert-info" role="alert">You are already in the waiting list
+                                                        <a href="{% url 'view_waiting_lists' book.id %}">(see the list)</a>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                        <!-- if the current user is not in the waiting list -->
+                        {% if user.id not in users_in_list %}
+                            <div class="container waiting-section">
+                                <div class="row justify-content-center">
+                                    <div class="col-8">
+                                        <form class="text-center" method="POST" action={% url 'join_waiting_list' book.id %}>
+                                            {% csrf_token %}
+                                            <button type="submit">
+                                                <h5 class="text-center btn btn-warning buttons_all">Join the waiting list</h5>
+                                                <br><a href="{% url 'view_waiting_lists' book.id %}">(see the list)</a>
+                                            </button>
+                                        </form>
+                                    </div>
                                 </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <!-- user is in the list but is not the first one -->
-                {% else%}
-                <div class="container waiting-section">
-                    <div class="row justify-content-center">
-                        <div class="col-8">
-                            <h4 class="empty-cart text-center alert alert-info" role="alert">You are already in the waiting list
-                                <a href="{% url 'view_waiting_lists' book.id %}">(see the list)</a>
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-                {% endif %}
-                {% endif %}
-                {% endif %}
-                {% endfor %}
-                <!-- if the current user is not in the waiting list -->
-                {% if user.id not in users_in_list %}
-                <div class="container waiting-section">
-                    <div class="row justify-content-center">
-                        <div class="col-8">
-                            <form class="text-center" method="POST" action={% url 'join_waiting_list' book.id %}>
-                                {% csrf_token %}
-                                <button type="submit">
-                                    <h5 class="text-center btn btn-warning buttons_all">Join the waiting list</h5>
-                                    <br><a href="{% url 'view_waiting_lists' book.id %}">(see the list)</a>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                {% endif %}
-                <!-- if there are not users in the waiting list -->
-                {% else %}
-                <div class="container price-section text-center">
-                    <div class="row justify-content-center">
-                        <div class="col-10 col-sm-5 available">
-                            <h4>AVAILABLE</h4>
-                        </div>
-                        <div class="col-10 col-sm-6 ">
-                            <var class="price h3 float-sm-right">
-                                <span class="currency">£</span><span class="num">{{ book.price_day }}<small>/per day</small></span>
-                            </var>
-                        </div>
-                    </div>
-                </div>
-                <div class="container add-days">
-                    <div class="row justify-content-center align-items-start">
-                        <div class="col-10 col-md-7">
-                            <p>
-                                Select the number of days that you want to rent the book for:<br>
-                                <small>*The minimun number of days to rent any book is 10.</small>
-                            </p>
-                        </div>
-                        <div class="col-10 col-md-4">
-                            <form class="justify-content-center" method="post" action="{% url 'add_to_cart' book.id %}">
-                                {% csrf_token %}
-                                <div class="input-group">
-                                    <input name="days" type="number" min="10" max="999" class="form-control" value="10"
-                                        required>
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-primary" type="submit">Add to cart</button>
-                                    </span>
+                            </div>
+                        {% endif %}
+                    <!-- if there are not users in the waiting list -->
+                    {% else %}
+                        <div class="container price-section text-center">
+                            <div class="row justify-content-center">
+                                <div class="col-10 col-sm-5 available">
+                                    <h4>AVAILABLE</h4>
                                 </div>
-                            </form>
+                                <div class="col-10 col-sm-6 ">
+                                    <var class="price h3 float-sm-right">
+                                        <span class="currency">£</span><span class="num">{{ book.price_day }}<small>/per day</small></span>
+                                    </var>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                {% endif %}
+                        <div class="container add-days">
+                            <div class="row justify-content-center align-items-start">
+                                <div class="col-10 col-md-7">
+                                    <p>
+                                        Select the number of days that you want to rent the book for:<br>
+                                        <small>*The minimun number of days to rent any book is 10.</small>
+                                    </p>
+                                </div>
+                                <div class="col-10 col-md-4">
+                                    <form class="justify-content-center" method="post" action="{% url 'add_to_cart' book.id %}">
+                                        {% csrf_token %}
+                                        <div class="input-group">
+                                            <input name="days" type="number" min="10" max="999" class="form-control" value="10"
+                                                required>
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-primary" type="submit">Add to cart</button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
                 <!-- user authenticated but book not available -->
                 {% elif user.is_authenticated and not book.available %}
-                <!-- if there are users in the waiting list -->
-                {% if count_users > 0%}
-                {% for user_list in users_in_list %}
-                <!-- if the current user is in the waiting list -->
-                {% if user.id in users_in_list %}
-                {% if user_list == user.id %}
-                <div class="container waiting-section">
-                    <div class="row justify-content-center">
-                        <div class="col-8">
-                            <h4 class="empty-cart text-center alert alert-info" role="alert">You are already in the waiting list
-                                <a href="{% url 'view_waiting_lists' book.id %}">(see the list)</a>
-                            </h4>
+                    <!-- if there are users in the waiting list -->
+                    {% if count_users > 0%}
+                        {% for user_list in users_in_list %}
+                        <!-- if the current user is in the waiting list -->
+                            {% if user.id in users_in_list %}
+                                {% if user_list == user.id %}
+                                    <div class="container waiting-section">
+                                        <div class="row justify-content-center">
+                                            <div class="col-8">
+                                                <h4 class="empty-cart text-center alert alert-info" role="alert">You are already in the waiting list
+                                                    <a href="{% url 'view_waiting_lists' book.id %}">(see the list)</a>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                        <!-- if the current user is not in the waiting list -->
+                        {% if user.id not in users_in_list %}
+                            <div class="container waiting-section">
+                                <div class="row justify-content-center">
+                                    <div class="col-8">
+                                        <form class="text-center" method="POST" action={% url 'join_waiting_list' book.id %}>
+                                            {% csrf_token %}
+                                            <button type="submit">
+                                                <h5 class="text-center btn btn-warning buttons_all">Join the waiting list</h5>
+                                                <br><a href="{% url 'view_waiting_lists' book.id %}">(see the list)</a>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    <!-- if there are not users in the waiting list -->
+                    {% else %}
+                        <div class="container waiting-section">
+                            <div class="row justify-content-center">
+                                <div class="col-8">
+                                    <form class="text-center" method="POST" action={% url 'join_waiting_list' book.id %}>
+                                        {% csrf_token %}
+                                        <button type="submit">
+                                            <h5 class="text-center btn btn-warning buttons_all">Join the waiting list</h5>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                {% endif %}
-                {% endif %}
-                {% endfor %}
-                <!-- if the current user is not in the waiting list -->
-                {% if user.id not in users_in_list %}
-                <div class="container waiting-section">
-                    <div class="row justify-content-center">
-                        <div class="col-8">
-                            <form class="text-center" method="POST" action={% url 'join_waiting_list' book.id %}>
-                                {% csrf_token %}
-                                <button type="submit">
-                                    <h5 class="text-center btn btn-warning buttons_all">Join the waiting list</h5>
-                                    <br><a href="{% url 'view_waiting_lists' book.id %}">(see the list)</a>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                {% endif %}
-                <!-- if there are not users in the waiting list -->
-                {% else %}
-                <div class="container waiting-section">
-                    <div class="row justify-content-center">
-                        <div class="col-8">
-                            <form class="text-center" method="POST" action={% url 'join_waiting_list' book.id %}>
-                                {% csrf_token %}
-                                <button type="submit">
-                                    <h5 class="text-center btn btn-warning buttons_all">Join the waiting list</h5>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
 
-                {% endif %}
+                    {% endif %}
                 <!-- if user is not authenticated -->
                 {% else %}
-                <div class="row detail-register justify-content-center text-center">
-                    <div class="col-11">
-                        <a class="btn btn-warning buttons_all" href="{% url 'registration' %}">Register to rent this book</a>
+                    <div class="row detail-register justify-content-center text-center">
+                        <div class="col-11">
+                            <a class="btn btn-warning buttons_all" href="{% url 'registration' %}">Register to rent this book</a>
+                        </div>
                     </div>
-                </div>
                 {% endif %}
 
                 <!-- only authenticated will see this section -->
                 {% if user.is_authenticated %}
-                {% if reviews %}
-                <hr>
-                <div id="reviews_section">
-                    <h3 class="text-center">Reviews</h3>
-                    <div class="row justify-content-center">
-                        {% for review in reviews %}
-                        <div class="col-11">
-                            <div class="media">
-                                <!-- if no image replace with default -->
-                                {% if review.review_author.profile.profile_img == None %}
-                                <img class="d-none d-sm-block" src="{% static 'images/project/default_profile.png' %}" alt="user profile image" width="60">
-                                {% else %}
-                                <img class="d-none d-sm-block" src="{{ MEDIA_URL }}{{review.review_author.profile.profile_img}}" alt="user profile image" width="60">
-                                {% endif %}
-                                <div class="media-body">
-                                    <div class="rating-wrap text-right">
-                                        <ul class="rating-stars">
-                                            <li style="width:{{review.percentage_score}}%" class="stars-active">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </li>
-                                        </ul>
-                                        <h5 class="mt-0 text-left"> {{ review.review_title }}</h5>
-                                    </div>
-                                    <blockquote>
-                                        <i class="fa fa-quote-left" aria-hidden="true"></i>{{ review.comment }}<i class="fa fa-quote-right" aria-hidden="true"></i>
-                                    </blockquote>
-                                    <p class="text-right">
-                                        <small>
-                                            <!-- if no author replace with Anonymous-->
-                                            {% if review.review_author == None %}
-                                            Anonymous
+                    {% if reviews %}
+                        <hr>
+                        <div id="reviews_section">
+                            <h3 class="text-center">Reviews</h3>
+                            <div class="row justify-content-center">
+                                {% for review in reviews %}
+                                    <div class="col-11">
+                                        <div class="media">
+                                            <!-- if no image replace with default -->
+                                            {% if review.review_author.profile.profile_img == None %}
+                                                <img class="d-none d-sm-block" src="{% static 'images/project/default_profile.png' %}" alt="user profile image" width="60">
                                             {% else %}
-                                            {{ review.review_author }}
-                                            {% endif %} -
-                                            {{ review.review_date|date:"d M, Y" }}
-                                        </small>
-                                    </p>
-                                </div>
+                                                <img class="d-none d-sm-block" src="{{ MEDIA_URL }}{{review.review_author.profile.profile_img}}" alt="user profile image" width="60">
+                                            {% endif %}
+                                            <div class="media-body">
+                                                <div class="rating-wrap text-right">
+                                                    <ul class="rating-stars">
+                                                        <li style="width:{{review.percentage_score}}%" class="stars-active">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                        </li>
+                                                    </ul>
+                                                    <h5 class="mt-0 text-left"> {{ review.review_title }}</h5>
+                                                </div>
+                                                <blockquote>
+                                                    <i class="fa fa-quote-left" aria-hidden="true"></i>{{ review.comment }}<i class="fa fa-quote-right" aria-hidden="true"></i>
+                                                </blockquote>
+                                                <p class="text-right">
+                                                    <small>
+                                                        <!-- if no author replace with Anonymous-->
+                                                        {% if review.review_author == None %}
+                                                            Anonymous
+                                                        {% else %}
+                                                            {{ review.review_author }}
+                                                        {% endif %} -
+                                                            {{ review.review_date|date:"d M, Y" }}
+                                                    </small>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
                             </div>
                         </div>
-                        {% endfor %}
-                    </div>
-                </div>
-                {% endif %}
+                    {% endif %}
                 {% endif %}
             </div>
         </div>
