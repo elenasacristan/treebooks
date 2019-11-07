@@ -414,9 +414,7 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
 }
 
 .pwd-reset-conf ul {
-  list-style: none;
-  text-align: left;
-  font-size: 0.7em;
+  display: none;
 }
 
 .pwd-reset-conf .box-content {
@@ -428,6 +426,7 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
 @media (min-width: 576px) {
   .box-content {
     width: 350px;
+    
   }
   .pwd-reset-conf .box-content {
     width: 450px;
@@ -454,7 +453,6 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
     margin-top: 40px;
   }
   .box-content {
-    box-shadow: 0px 0px 0px 0px rgba(252, 134, 0, 0.658);
     padding: 25px;
   }
   .pwd-reset-sent p {
@@ -473,6 +471,7 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
   }
   .pwd-reset-conf .box-content {
     width: 350px;
+    margin-top: 80px;
   }
   .pwd-reset-conf h2 {
     margin-top: -170px;
@@ -484,6 +483,9 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
   }
   .pwd-reset-sent .btn {
     margin-top: 50px;
+  }
+  .password-reset{
+    margin-top: 130px;
   }
 }
 
