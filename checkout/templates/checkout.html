@@ -27,7 +27,7 @@ order to start building the cart and then I have made some updates -->
 
         <!-- if the cart is NOT empty show table headers-->
         {% if total != 0 %}
-            <div class="row row-header justify-content-between text-center d-none d-sm-flex">
+            <div class="row justify-content-between text-center d-none d-sm-flex">
                 <div class="col-6 col-xl-6 text-left">Book</div>
                 <div class="col-3 col-xl-3">Price</div>
                 <div class="col-2 col-xl-2">Collect at</div>
@@ -75,7 +75,7 @@ order to start building the cart and then I have made some updates -->
 
         <!-- if the cart is NOT empty -->
         {% else %}
-            <div class="row row-header justify-content-center justify-content-sm-end ">
+            <div class="row justify-content-center justify-content-sm-end ">
                 <div class="col-6 col-sm-5 col-md-4 text-right">
                     <h5>Rent:</h5>
                 </div>
@@ -83,7 +83,7 @@ order to start building the cart and then I have made some updates -->
                     <h5>£{{ total_raised }}</h5>
                 </div>
             </div>
-            <div class="row row-header total-price justify-content-center justify-content-sm-end ">
+            <div class="row justify-content-center justify-content-sm-end ">
                 <div class="col-6 col-sm-5 col-md-4 text-right">
                     <h5>Deposit:</h5>
                     <p>({{ books_count }} books x £5)</p>
@@ -98,7 +98,7 @@ order to start building the cart and then I have made some updates -->
                     <p class="text-left text-info">*The £5 deposit per book will be refund when the book is returned</p>
                 </div>
             </div>
-            <div class="row row-header justify-content-center justify-content-sm-end text-success">
+            <div class="row justify-content-center justify-content-sm-end text-success">
                 <div class="col-6 col-sm-5 col-md-4 text-right">
                     <h3>Total:</h3>
                 </div>
