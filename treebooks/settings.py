@@ -11,8 +11,14 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+
+#dj_database_url allow us to connect to a database URL
 import dj_database_url
 
+'''
+My mentor Guido advise me to use the code below in order to import
+the env file in development but not in production
+'''
 try:
     import env
 except ImportError:
@@ -37,8 +43,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = False
 
+# will be True in development and False in production
 DEBUG = development
 
 ALLOWED_HOSTS = ["127.0.0.1"]
@@ -46,6 +52,13 @@ ALLOWED_HOSTS = ["127.0.0.1"]
 
 # Application definition
 
+'''
+All the apps in the project are included in INSTALLED_APPS
+And I've also included the following:
+django_extensions - in order to use graph_models to create the db schema
+storages - in  order to use AWS S3 to host the media and static files
+django_forms_bootstrap - in order to apply bootstrap styles to the forms
+'''
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -83,15 +96,20 @@ ROOT_URLCONF = 'treebooks.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        # Specify that all the folders called 'templates' contain templates
         'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
+            # context_processors are availables everywhere in the website
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # we add the media context processor because 
+                # we are going to have media(images) in the project
                 'django.template.context_processors.media',
+                # we add the context that we have created in context.py(cart app)
                 'cart.context.cart_content',
             ],
         },
@@ -104,28 +122,37 @@ WSGI_APPLICATION = 'treebooks.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+# REMOVE ONCE READY TO DEPLOY
+if "DATABASE_URL" in os.environ:
+        DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
-
-# if "DATABASE_URL" in os.environ:
-#     DATABASES = {
-#     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-#     }
-# else:
-#     print('Database URL not found. Using SQLite instead')
+# # in development
+# if development==True:
 #     DATABASES = {
 #         'default': {
 #             'ENGINE': 'django.db.backends.sqlite3',
 #             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #         }
 #     }
+# # in production
+# else:
+#     if "DATABASE_URL" in os.environ:
+          # production database (Postgress)
+#         DATABASES = {
+#         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+#         }
+#     else:
+#         print('Database URL not found. Using SQLite instead')
+#         DATABASES = {
+#             'default': {
+#                 'ENGINE': 'django.db.backends.sqlite3',
+#                 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#             }
+#         }
 
 
 # Password validation
@@ -146,8 +173,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Syntax needed in order to be able to sign in using the email address
-# instead of using the username
+'''
+Syntax needed in order to be able to sign in using 
+the email address instead of using the username
+'''
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'accounts.backends.EmailAuth'
@@ -171,40 +200,54 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-AWS_S3_OBJECT_PARAMETERS = {
-    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-    'CacheControl': 'max-age=94608000'
-}
+# in development we keep the files locally
+if development==True:
+    
+    # we need a static root. All static files will be in the static directory
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-AWS_STORAGE_BUCKET_NAME = 'tree-books'
-AWS_S3_REGION_NAME  = 'eu-west-3'
-AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
-AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+    # we need a media root. All media will be in the media directory
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+# in production we use AWS S3 to host the media and static files
+else:
+    # variables and keys needed in order to set up the connection with AWS S3
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000'
+    }
 
-STATICFILES_LOCATION = 'static'
-STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    AWS_STORAGE_BUCKET_NAME = 'tree-books'
+    AWS_S3_REGION_NAME  = 'eu-west-3'
+    AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
+    AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+    AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
-MEDIAFILES_LOCATION = 'media'
-DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    STATICFILES_LOCATION = 'static'
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+
+    MEDIAFILES_LOCATION = 'media'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    MEDIA_URL = '/media/'
 
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
 
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
-'''
-These are the codes needed to used Stripe to take payments
-'''
+# These are the variables needed to use Stripe to take payments
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 
 
+#These are the variables needed to send email to reset the password
 DEFAULT_FROM_EMAIL = os.environ.get("EMAIL_ADDRESS")
 SERVER_EMAIL = os.environ.get("EMAIL_ADDRESS")
 
@@ -213,12 +256,21 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = os.environ.get("EMAIL_ADDRESS")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
 EMAIL_PORT = 587
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
 '''
 In order to tell django that there is an extension of the User model
-'''
+I followed the steps in the following tutorial
+https://www.youtube.com/watch?v=qLRxkStiaUg '''
+
 AUTH_PROFILE_MODULE = 'userprofile.UserProfile'
 
+'''
+GRAPH_MODELS is needed in order to create the data base schemas
+tutorial -> https://django-extensions.readthedocs.io/en/latest/graph_models.html
+tool to conver from .dot file to png -> https://dreampuf.github.io/GraphvizOnline/
+
+'''
 GRAPH_MODELS = {
   'all_applications': True,
   'group_models': True,
