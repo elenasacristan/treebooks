@@ -3,11 +3,8 @@ from books.models import Book
 
 def cart_content(request):
     '''
-    We will create a context that will be available to
-    all pages
-    '''
-
-    '''
+    We will create a context that will be available to all pages
+   
     We will request the cart if there is one or a 
     blank dictionary if there is none
     '''
