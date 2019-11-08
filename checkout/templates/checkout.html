@@ -47,7 +47,8 @@ order to start building the cart and then I have made some updates -->
                             <dl class="dlist-inline small">
                                 <dt>Price/day: </dt>
                                 <dd>£{{ book_item.book.price_day }}</dd>
-                                <br>
+                            </dl>
+                            <dl class="dlist-inline small">
                                 <dt>N.days: </dt>
                                 <dd>{{ book_item.days }}</dd>
                             </dl>
@@ -66,7 +67,7 @@ order to start building the cart and then I have made some updates -->
 
         <!-- if the cart is empty-->
         {% if total == 0 %}
-            <h4 class="empty-cart text-center alert alert-info" role="alert">Your cart is empty</h4>
+            <h4 class="empty-cart text-center alert alert-info">Your cart is empty</h4>
             <div class="row justify-content-center justify-content-md-end button-row text-center text-md-right">
                 <div class="col-10">
                     <a class="btn btn-warning buttons_all" href='{% url 'view_all_books' %}'>Keep looking</a>
@@ -113,9 +114,9 @@ order to start building the cart and then I have made some updates -->
             <h3 class="payment-details text-center">Payment details</h3>
             <hr>
             <div class="row justify-content-center payment-wrapper">
-                <form class="col-8" role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
+                <form class="col-8" method="post" id="payment-form" action="{% url 'checkout' %}">
                     <div id="credit-card-errors" style="display: none;">
-                        <div id="alert-message block-message error" id="stripe-error-message"></div>
+                        <div class="alert-message block-message error" id="stripe-error-message"></div>
                     </div>
                     <div class="form-group col-md-6">
                         {{ order_form | as_bootstrap }}
@@ -125,34 +126,12 @@ order to start building the cart and then I have made some updates -->
                     </div>
                     {% csrf_token %}
                     <div class="form-group col-md-3">
-                        <input class=" btn btn-primary buttons_all" id=" submit_payment_btn" name="commit" type="submit" value="Submit Payment">
+                        <input class="btn btn-primary buttons_all" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
                     </div>
                 </form>
             </div>
         {% endif %}
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 {% endblock %}
