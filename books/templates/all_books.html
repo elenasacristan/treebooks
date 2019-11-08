@@ -25,7 +25,7 @@
                 {% if category.name == book.category.name %}
 
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                        <figure class="card card-product">
+                        <div class="card card-product">
                             
                             <!-- form to add/remove books to the favourites list -->
                             <form class="text-right fav-form" method="POST" action={% url 'add_remove_favourites' book.id %}>
@@ -33,16 +33,16 @@
                                 <button type="submit">
                                     <!-- check if the book is already a favourite -->
                                     {% if book in user.profile.favourites.all %}
-                                        <h3 class="favorited text-right"><i class="fa fa-heart"></i></h3>
+                                        <span class="favorited text-right"><i class="fa fa-heart"></i></span>
                                     {% else %}
-                                        <h3 class="favorite text-right"><i class="fa fa-heart"></i></h3>
+                                        <span class="favorite text-right"><i class="fa fa-heart"></i></span>
                                     {% endif %}
                                 </button>
                             </form>
 
                             <a href="{% url 'detail' book.id %}"><h5 class="title"> {{ book.title }}</h5></a>
-                            <div class="img-wrap"><img src="{{ MEDIA_URL }}{{ book.book_img }}"></div>
-                            <figcaption class="info-wrap">
+                            <div class="img-wrap"><img src="{{ MEDIA_URL }}{{ book.book_img }}" alt="book cover image"></div>
+                            <div class="info-wrap">
                                 <div class="label-rating"><strong>{{book.rating}}</strong></div>
                                 <div class="rating-wrap">
                                     <ul class="rating-stars">
@@ -62,7 +62,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </figcaption>
+                            </div>
 
                             <!-- status book message -->
                             <!-- if the book becomes available and it has a waiting list -->
@@ -98,7 +98,7 @@
                                     <h5><span class="price">{{ book.price_day }}<small>/day</small></span></h5>
                                 </div>
                             </div> 
-                        </figure>
+                        </div>
                     </div> 
                 
                 {% endif %}
@@ -109,7 +109,7 @@
 
     {% empty %}
         
-    <h4 class="text-center alert alert-info" role="alert">We didn't find any book.</h4>
+    <h4 class="text-center alert alert-info text-center mx-auto">We didn't find any book.</h4>
 
     {% endfor %}
 

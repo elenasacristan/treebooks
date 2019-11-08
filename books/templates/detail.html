@@ -54,7 +54,7 @@
                             </div>
                             <div class="row">
                                 <div class="col text-center">
-                                    <div> <img class="img-fluid" src="{{ MEDIA_URL }}{{ book.book_img }}"></div>
+                                    <div> <img class="img-fluid" src="{{ MEDIA_URL }}{{ book.book_img }}" alt="book cover image"></div>
                                 </div>
                             </div>
                         </div>
@@ -69,9 +69,9 @@
                                         {% csrf_token %}
                                         <button type="submit">
                                             {% if book in user.profile.favourites.all %}
-                                                <h3 class="favorited text-right"><i class="fa fa-heart"></i></h3>
+                                                <span class="favorited text-right"><i class="fa fa-heart"></i></span>
                                             {% else %}
-                                                <h3 class="favorite text-right"><i class="fa fa-heart"></i></h3>
+                                                <span class="favorite text-right"><i class="fa fa-heart"></i></span>
                                             {% endif %}
                                         </button>
                                     </form>
@@ -103,15 +103,15 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-sm-12 col-md-5 shape shadow1" data-toggle="modal" data-target="#modalStores">
-                        <img src={% static 'images/project/store.png' %}>
+                        <img src={% static 'images/project/store.png' %} alt="store icon">
                         <h3>{{ book.store }}</h3>
                     </div>
                     <div class="col-sm-12 col-md-5 shape shadow2">
-                        <img src={% static 'images/project/timer.png' %}>
+                        <img src={% static 'images/project/timer.png' %} alt="timer icon">
                         <h3>{{ book.pages }} pages</h3>
                     </div>
                     <div class="col-sm-12 col-md-5 shape shadow3">
-                        <img src={% static 'images/project/book.png' %}>
+                        <img src={% static 'images/project/book.png' %} alt="book icon">
                         <h3>{{ book.format_book}}</h3>
                     </div>
                 </div>
@@ -167,7 +167,7 @@
                                         <div class="container waiting-section">
                                             <div class="row justify-content-center">
                                                 <div class="col-8">
-                                                    <h4 class="empty-cart text-center alert alert-info" role="alert">You are already in the waiting list
+                                                    <h4 class="empty-cart text-center alert alert-info">You are already in the waiting list
                                                         <a href="{% url 'view_waiting_lists' book.id %}">(see the list)</a>
                                                     </h4>
                                                 </div>
@@ -185,9 +185,9 @@
                                         <form class="text-center" method="POST" action={% url 'join_waiting_list' book.id %}>
                                             {% csrf_token %}
                                             <button type="submit">
-                                                <h5 class="text-center btn btn-warning buttons_all">Join the waiting list</h5>
-                                                <br><a href="{% url 'view_waiting_lists' book.id %}">(see the list)</a>
+                                                <span class="text-center btn btn-warning buttons_all">Join the waiting list</span>
                                             </button>
+                                            <br><a href="{% url 'view_waiting_lists' book.id %}">(see the list)</a>
                                         </form>
                                     </div>
                                 </div>
@@ -241,7 +241,7 @@
                                     <div class="container waiting-section">
                                         <div class="row justify-content-center">
                                             <div class="col-8">
-                                                <h4 class="empty-cart text-center alert alert-info" role="alert">You are already in the waiting list
+                                                <h4 class="empty-cart text-center alert alert-info">You are already in the waiting list
                                                     <a href="{% url 'view_waiting_lists' book.id %}">(see the list)</a>
                                                 </h4>
                                             </div>
@@ -258,9 +258,9 @@
                                         <form class="text-center" method="POST" action={% url 'join_waiting_list' book.id %}>
                                             {% csrf_token %}
                                             <button type="submit">
-                                                <h5 class="text-center btn btn-warning buttons_all">Join the waiting list</h5>
-                                                <br><a href="{% url 'view_waiting_lists' book.id %}">(see the list)</a>
+                                                <span class="text-center btn btn-warning buttons_all">Join the waiting list</span>
                                             </button>
+                                            <br><a href="{% url 'view_waiting_lists' book.id %}">(see the list)</a>
                                         </form>
                                     </div>
                                 </div>
@@ -274,7 +274,7 @@
                                     <form class="text-center" method="POST" action={% url 'join_waiting_list' book.id %}>
                                         {% csrf_token %}
                                         <button type="submit">
-                                            <h5 class="text-center btn btn-warning buttons_all">Join the waiting list</h5>
+                                            <span class="text-center btn btn-warning buttons_all">Join the waiting list</span>
                                         </button>
                                     </form>
                                 </div>
@@ -355,19 +355,19 @@
 </div>
 
 <!-- Modal Stores-->
-<div class="modal fade" id="modalStores" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+<div class="modal fade" id="modalStores" tabindex="-1" role="dialog" aria-labelledby="ModalTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content text-center">
             <div class="modal-header">
-                <h5 class="modal-title " id="exampleModalLongTitle">Collect & Return at {{book.store.name}}</h5>
+                <h5 class="modal-title " id="ModalTitle">Collect & Return at {{book.store.name}}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <b>{{ book.store.street }}</b>, London<br><br>
-                <iframe src="{{book.store.map_store}}" width="250" height="150" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                <iframe src="{{book.store.map_store}}" width="250" height="150" style="border:0;" allowfullscreen=""></iframe>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
