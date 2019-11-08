@@ -19,16 +19,16 @@
                 </div>
                 <div class="row first-row align-items-center">
                     <div class="col-sm-12 col-lg-5 text-center profile-section">
-                        <img class="rounded-circle" src="{{ MEDIA_URL }}{{ user_profile.profile.profile_img }}">
+                        <img class="rounded-circle" src="{{ MEDIA_URL }}{{ user_profile.profile.profile_img }}" alt="profile image">
                     </div>
                     <div class="col-sm-12 col-lg-7 profile-section">
                         <div class="row">
                             <div class="col edit-profile">
-                                <a class="btn btn-warning buttons_all" href="{% url 'edit_user_profile' user_profile.id%}">Edit profile</a>
+                                <a class="btn btn-warning buttons_all" href="{% url 'edit_user_profile' user_profile.id %}">Edit profile</a>
                             </div>
                         </div>
                         <h3>Membership details</h3>
-                        <div class="row">
+                        <dl class="row">
                             <dt class="col-xs-12 col-sm-7">Member since:</dt>
                             <dd class="col-xs-12 col-sm-5">{{user_profile.date_joined|date:"d M, Y"}}</dd>
                             <dt class="col-xs-12 col-sm-7">Subscribed to Newsletter:</dt>
@@ -37,7 +37,7 @@
                             {% else %}
                                 <dd class="col-xs-12 col-sm-5">No</dd>
                             {% endif %}
-                        </div>
+                        </dl>
                         {% if current_books %}
                             <hr>
                             <h5>Currently reading</h5>
@@ -61,7 +61,7 @@
                 <div class="row second-row">
                     <div class="col-sm-12 col-lg-5 profile-section">
                         <h3>Personal details</h3>
-                        <div class="row">
+                        <dl class="row">
                             <dt class="col-xs-12 col-sm-5">First Name:</dt>
                             <dd class="col-xs-12 col-sm-7 text-capitalize">{{user_profile.first_name}}</dd>
 
@@ -70,11 +70,11 @@
 
                             <dt class="col-xs-12 col-sm-5 ">DOB:</dt>
                             <dd class="col-xs-12 col-sm-7">{{user_profile.profile.dob|date:"d M, Y" }}</dd>
-                        </div>
+                        </dl>
                     </div>
                     <div class="col-sm-12 col-lg-7 profile-section">
                         <h3>Contact details</h3>
-                        <div class="row">
+                        <dl class="row">
                             <dt class="col-xs-12 col-sm-5 ">Email:</dt>
                             <dd class="col-xs-12 col-sm-7 ">{{user_profile.email}}</dd>
 
@@ -92,21 +92,21 @@
                                 {% else %}
                                     Not specified
                                 {% endif %}</dd>
-                        </div>
+                        </dl>
                     </div>
                 </div>
                 <hr>
                 <div class="row last-row justify-content-center">
                     <div class=" col-sm-12 col-md-4 col-lg-3 shape shadow1" data-toggle="modal" data-target="#modalBooksRead">
-                        <img src={% static 'images/project/store.png' %}>
-                        <h3>See the books you read</h3></a>
+                        <img src={% static 'images/project/book.png' %} alt="book icon">
+                        <h3>See the books you read</h3>
                     </div>
                     <div class=" col-sm-12 col-md-4 col-lg-3 shape shadow2" data-toggle="modal" data-target="#modalBooksWaitingList">
-                        <img src={% static 'images/project/timer.png' %}>
+                        <img src={% static 'images/project/timer.png' %} alt="timer icon">
                         <h3>See the waiting lists</h3>
                     </div>
                     <div class="col-sm-12 col-md-4 col-lg-3 shape shadow3" data-toggle="modal" data-target="#modalBooksFavourites">
-                        <img src={% static 'images/project/book.png' %}>
+                        <img src={% static 'images/project/heart1.jpg' %} alt="heart emoticon">
                         <h3>See your favourites</h3>
                     </div>
                 </div>
@@ -117,11 +117,11 @@
 
 
 <!-- Modal Books Read-->
-<div class="modal fade" id="modalBooksRead" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modalBooksRead" tabindex="-1" role="dialog" aria-labelledby="ModalTitle0" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Books you have read</h5>
+                <h5 class="modal-title" id="ModalTitle0">Books you have read</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -131,7 +131,7 @@
                     {% for read_book in user_profile.profile.read_books.all %}
                         <div class="favourite-read-link row justify-content-center align-items-center">
                             <div class="col-3">
-                                <img width="50" src="{{ MEDIA_URL }}{{ read_book.book_img }}">
+                                <img width="50" src="{{ MEDIA_URL }}{{ read_book.book_img }}" alt="book cover image">
                             </div>
                             <div class="col-8">
                                 <a href="{% url 'detail' read_book.id %}">{{ read_book.title }}</a>
@@ -156,11 +156,11 @@
 
 
 <!-- Modal Books Waiting List-->
-<div class="modal fade" id="modalBooksWaitingList" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modalBooksWaitingList" tabindex="-1" role="dialog" aria-labelledby="ModalTitle1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Books you are waiting for</h5>
+                <h5 class="modal-title" id="ModalTitle1">Books you are waiting for</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -171,7 +171,7 @@
                         {% if current_user.wl_book.title%}
                             <div class="favourite-read-link row justify-content-center align-items-center">
                                 <div class="col-3">
-                                    <img width="50" src="{{ MEDIA_URL }}{{ current_user.wl_book.book_img }}">
+                                    <img width="50" src="{{ MEDIA_URL }}{{ current_user.wl_book.book_img }}" alt="book cover image">
                                 </div>
                                 <div class="col-8">
                                     <a href="{% url 'detail' current_user.wl_book.id %}">{{current_user.wl_book.title}}</a>
@@ -195,11 +195,11 @@
 
 
 <!-- Modal Favourites-->
-<div class="modal fade" id="modalBooksFavourites" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modalBooksFavourites" tabindex="-1" role="dialog" aria-labelledby="ModalTitle2" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">These are your favourites</h5>
+                <h5 class="modal-title" id="ModalTitle2">These are your favourites</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -210,7 +210,7 @@
                         <a href="{% url 'detail' favourite.id %}">
                             <div class="favourite-read-link row justify-content-center align-items-center">
                                 <div class="col-4">
-                                    <img width="50" src="{{ MEDIA_URL }}{{ favourite.book_img }}">
+                                    <img width="50" src="{{ MEDIA_URL }}{{ favourite.book_img }}" alt="book cover image">
                                 </div>
                                 <div class="col-6">
                                     {{ favourite.title }}
