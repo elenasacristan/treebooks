@@ -29,20 +29,18 @@
                         {% if forloop.counter0|divisibleby:2 %}
                             <li class="row align-items-center justify-content-center">
                                 <div class="col-12 col-md-6 text-md-center">
-                                    <h5><a class="text-success" target="_blank"
-                                            href="{{ project.link_project }}">{{ project.name }}</a></h5>
+                                    <h5><a class="text-success" target="_blank" href="{{ project.link_project }}">{{ project.name }}</a></h5>
                                     <h4>£{{ project.target }}</h4>
                                 </div>
                                 <img class="col-12 col-md-6" src="{{ MEDIA_URL }}{{ project.image }}">
                             </li>
                         {% else %}
-                            <hr>
                             <li class="row align-items-center justify-content-center">
                                 <img class="order-2 order-md-1 col-12 col-md-6" src="{{ MEDIA_URL }}{{ project.image }}">
                                 <div class="order-1 order-md-2 col-12 col-md-6 text-md-center">
 
-                                    <h5><a class="text-success" target="_blank"
-                                            href="{{ project.link_project }}">{{ project.name }}</a>
+                                    <h5>
+                                        <a class="text-success" target="_blank" href="{{ project.link_project }}">{{ project.name }}</a>
                                     </h5>
                                     <h4>£{{ project.target }}</h4>
                                 </div>
@@ -51,7 +49,7 @@
                     </ul>
                 <!-- if there are not projects at the moment show and alert message -->
                 {% empty %}
-                    <h4 class="text-center alert alert-info" role="alert">We are looking for new projects. Contact us if you have any project in mind!</h4>
+                    <h4 class="text-center alert alert-info">We are looking for new projects. Contact us if you have any project in mind!</h4>
                 {% endfor %}
             </div>
         </div>
