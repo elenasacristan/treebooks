@@ -1,5 +1,7 @@
 from django.test import TestCase, Client
 from .models import Book, Author, Category, StoreBook
+from accounts.forms import RegistrationForm
+
 
 """
 I learn about Client in the following link 
@@ -16,6 +18,16 @@ class TestBookViews(TestCase):
 
 
     def setUp(self):
+        self.registration_form = RegistrationForm({
+            'first_name':'first_name',
+            'last_name':'last_name', 
+            'email':'email@test.es', 
+            'username':'username', 
+            'password1':'12345abcds', 
+            'password2':'12345abcds'})  
+        self.registration_form.save()   
+        login_ok = c.login(username="username", password="12345abcds")
+
         test_category = Category.objects.create(name='Novel')
         test_store = StoreBook.objects.create(name='Store name', street='street name', map_store='www.test.com' )
         test_author = Author.objects.create(name='Name author')
@@ -35,7 +47,7 @@ class TestBookViews(TestCase):
         price_day=0.05,           
         pages=200,
         available=False,
-        return_date='2019-01-01')
+        return_date='2020-01-01')
 
     
     def test_all_books_page(self):
