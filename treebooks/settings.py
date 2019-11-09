@@ -58,6 +58,8 @@ And I've also included the following:
 django_extensions - in order to use graph_models to create the db schema
 storages - in  order to use AWS S3 to host the media and static files
 django_forms_bootstrap - in order to apply bootstrap styles to the forms
+django_template_check - in order to check for basic syntax errors in templates 
+https://pypi.org/project/django-template-check/
 '''
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -79,6 +81,7 @@ INSTALLED_APPS = [
     'waiting_list',
     'django_extensions',
     'storages',
+    'django_template_check',
 ]
 
 MIDDLEWARE = [
@@ -123,36 +126,36 @@ WSGI_APPLICATION = 'treebooks.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 # REMOVE ONCE READY TO DEPLOY
-if "DATABASE_URL" in os.environ:
-        DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-        }
-
-
-
-# # in development
-# if development==True:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
-#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#         }
-#     }
-# # in production
-# else:
-#     if "DATABASE_URL" in os.environ:
-          # production database (Postgress)
+# if "DATABASE_URL" in os.environ:
 #         DATABASES = {
 #         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 #         }
-#     else:
-#         print('Database URL not found. Using SQLite instead')
-#         DATABASES = {
-#             'default': {
-#                 'ENGINE': 'django.db.backends.sqlite3',
-#                 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#             }
-#         }
+
+
+
+# in development
+if development==True:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+# in production
+else:
+    if "DATABASE_URL" in os.environ:
+          production database (Postgress)
+        DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+    else:
+        print('Database URL not found. Using SQLite instead')
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            }
+        }
 
 
 # Password validation
