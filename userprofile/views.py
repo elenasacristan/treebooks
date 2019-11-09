@@ -26,12 +26,20 @@ def view_profile(request):
     under currently reading on the profile section
     """
     current_books = user_profile.profile.current_books.filter(
-        return_date__gt = timezone.now(), available = False).order_by('return_date')
+        return_date__gte = timezone.now(), available = False).order_by('return_date')
+    """
+    This books should have been returned
+    """
+    late_books = user_profile.profile.current_books.filter(
+        return_date__lt = timezone.now(), available = False)
+
+    
     
     return render(request, 'view_profile.html', 
                 {'user_profile':user_profile, 
                 'current_books':current_books,
-                'reviewed_books':reviewed_books})
+                'reviewed_books':reviewed_books,
+                'late_books':late_books})
 
 '''
 @login_required so only authenticated users can edit the profile section

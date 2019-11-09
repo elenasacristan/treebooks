@@ -956,7 +956,12 @@ fav-form button:active {
   overflow: auto;
 }
 
-.currently dt {
+.currently p{
+  margin:0px;
+  font-size: 80%;
+}
+
+.currently div {
   margin-bottom: 25px;
 }
 

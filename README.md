@@ -10,7 +10,7 @@ The users who are not registered will see in the landing page the main reasons w
 
 Also registered and not registered users can donate books to the charity. If they want to donate they can see in the donate.html page the map with the collection points where they can drop their books to help the charity to grow the collection of books to offer.
 
-All users can also read how the website works by reading the about.html page. 
+All users can also read how the website works by reading the about.html page.
 All users will also have access to the projects page where they can see how much money has been raised by the charity until now, how many books have been rented and to what projects is the charity going to donate the money raised.
 
 The users can search for a specific book or author by typing on the search box.
@@ -21,7 +21,7 @@ The user will be able to follow TreeBooks on social media by clicking on the ico
 
 See below the link to the website:
 
-UPDATE!!  
+UPDATE!! 
 http://treebooks.herokuapp.com
 
 ## UX
@@ -38,47 +38,47 @@ Below you can see the mock-ups that I drew using [Adobe Fireworks](https://www.a
 
 login.html, registration.html, contact.html, review_form.html, password_reset_complete.html, password_reset_confirm.html, password_reset_done.html, password_reset_email.html, password_reset_form.html
 
-![many](/static/mockups/small_common_style1.png)
+![many](/documents/mockups/small_common_style1.png)
 
 ##### index.html
 
-![home](/static/mockups/home1.png)
+![home](/documents/mockups/home1.png)
 
 ##### about.html
 
-![about](/static/mockups/about1.png)
+![about](/documents/mockups/about1.png)
 
 ##### projects.html
 
-![projects](/static/mockups/projects1.png)
+![projects](/documents/mockups/projects1.png)
 
 ##### donate.html
 
-![donate](/static/mockups/donate1.png)
+![donate](/documents/mockups/donate1.png)
 
 ##### all_books.html
 
-![books](/static/mockups/books1.png)
+![books](/documents/mockups/books1.png)
 
 ##### detail.html
 
-![detail](/static/mockups/detail1.png)
+![detail](/documents/mockups/detail1.png)
 
 ##### view_profile.html
 
-![profile](/static/mockups/profile1.png)
+![profile](/documents/mockups/profile1.png)
 
 ##### edit_user_profile.html
 
-![edit profile](/static/mockups/edit_profile1.png)
+![edit profile](/documents/mockups/edit_profile1.png)
 
 ##### cart.html
 
-![cart](/static/mockups/cart1.png)
+![cart](/documents/mockups/cart1.png)
 
 ##### checkout.html
 
-![checkout](/static/mockups/checkout1.png)
+![checkout](/documents/mockups/checkout1.png)
 
 - The final design of the website included some additional functionalities (buttons, carousel, modals and messages) that I thought would be useful as I was working on it. I also changed slighly the styles (colours, transparency, shadows, borders) for others that I found more appropiate.
 
@@ -104,9 +104,9 @@ As a member I want to be able to add my name to a waiting list if the book that 
 
 As a member I want to be able to see my position in the waiting lists.
 
-As a member I want to see a notification when my turn to read the book has been reached. 
+As a member I want to see a notification when my turn to read the book has been reached.
 
-As a user I'd like to know what books are available and which ones have waiting lists. 
+As a user I'd like to know what books are available and which ones have waiting lists.
 
 As a member I want to be able to save books as favourites.
 
@@ -116,11 +116,11 @@ As a member I want to be able to review the books that I have read.
 
 As a member I want to be able to add books to the shopping cart and then pay all of them at once.
 
-As a member I want to be able to update the number of days to rent the book from the cart page. 
+As a member I want to be able to update the number of days to rent the book from the cart page.
 
-As a member I want to be able to remove books from the cart if I change my mind about the book. 
+As a member I want to be able to remove books from the cart if I change my mind about the book.
 
-As a member I want to see in my profile when is the return date for the books that I'm currently reading. 
+As a member I want to see in my profile when is the return date for the books that I'm currently reading.
 
 As a user (member or not) I want to be able to see all the books in TreeBooks and their details.
 
@@ -132,7 +132,6 @@ As a member I want to be able to register to the monthly newsletter.
 
 As a member I want to be able to edit my profile details and add a profile image.
 
-
 ## Features
 
 ### authentication and authorisation
@@ -141,7 +140,7 @@ Registration form allow users to become members
 
 The login form allows registerer members to login and access all the features of authenticated users. The user will be able to log in using the username and also using the email instead of the username. (place holder update username / email)!!!!!!!!!!
 
-The users can reset the password if they forgot the original password using the reset password link on the login.html page. 
+The users can reset the password if they forgot the original password using the reset password link on the login.html page.
 
 ### books app
 
@@ -171,25 +170,32 @@ The profile will display the following information about the user:
 - membership details (date that the user registered and if they are subscribed to the newsletter)
 - currently reading: a list with the books that the user is renting at the moment including the date that they need to be returned.
 Once the return date is reached the books will be remove from the user profile. OR ADD MESSAGE IN RED SAYING. YOU RETURN DATE HAS PASSED PLEASE CONTACT US.
-- Also if the user wants to return the book before the due date then he/she can click the button 'I have returned the book' once the book has been returned and that way the book will become available for everyone or if there is waiting list it will become available for the next user in the waiting list. 
+- Also if the user wants to return the book before the due date then he/she can click the button 'I have returned the book' once the book has been returned and that way the book will become available for everyone or if there is waiting list it will become available for the next user in the waiting list.
 
 - personal details (name, email, telephone and date of birth)
-- contact preferences  
+- contact preferences 
   At the bottom the user can access the list of books read, the list of books he/she is in the waiting list for and the list of favourites.
+
+These three lists will be display in modal windows. The code used to create the modal comes from Bootstrap 4.
 
 In the list of read books the user will have the option to leave a review for the books that have rented. Only will be able to add a review once per book.
 
-In the list of books in waiting list the user will have the option to see the waiting lists for each book so he/she can see what is the order.
+By clicking 'books in waiting list' the modal window will appear and the user will be able to see a list of books that he is waiting for with a link in each book to see the waiting list with the order od users waiting for that book.
 
-Treebooks will contact the next user in the contact list as soon as the book is returned by the previous user. Also the user will see a notification saying 'it's your turn' on the book listing. Then the next user in the waiting list can proceed to rent the book online. Only the next user in the waiting list will have the option to rent the books for the rest of the users the book will not be available.
+Treebooks will contact the next user in the contact list as soon as the book is returned by the previous user. Also the user will see a notification saying 'it's your turn' on the book listing. Then the next user in the waiting list can proceed to rent the book online. Only the next user in the waiting list will have the option to rent the book for the rest of the users the book will not be available.
 
-ADD message after joint waiting list saying.. You have joined the waiting list we will contact you when you reach your turn
+ADD message after joining waiting list saying.. You have joined the waiting list we will contact you when is your turn
 
 ....
 
 ### edit profile
 
 The users can edit their profile details by clicking on edit profile on the the View profile page.
+
+They will be able to add a profile picture, the date of birth, and the telephone.
+
+Then they can choose to opt in for the monthly newsletter and they can also select what is the preferred way to be contacted (phone, email or both)
+
 
 ### home app pages
 
@@ -215,7 +221,7 @@ Also they user will see what are the projects that the charity is trying to rais
 
 ### donate.
 
-If the users (registered or not) would like to collaborate with the charity by donating books, in this page they can see a map with the collections points where they can drop their books. 
+If the users (registered or not) would like to collaborate with the charity by donating books, in this page they can see a map with the collections points where they can drop their books.
 
 ### Cart
 
@@ -233,50 +239,45 @@ Then they will need to fill out the payment form in order to rent the book.
 
 Once the payment has gone through a success message will be display and then the user can go to the specified store where the book belongs and collect it.
 
-If there is any error with the payment the user will see an error message. 
+If there is any error with the payment the user will see an error message.
 
 ### Other features available from all pages
 
 ### search
 
-This app will allow the user to search for a book based on the title name or author name. 
+This app will allow the user to search for a book based on the title name or author name.
 
-The search box is displayed at he
+The search box is displayed at the top of the navbar and it is visible from all pages.
+
+The books that contain the word entered in the title or in the name of the author will be displayed and will be sorted by score descending.
 
 ### contact us
 
-In the footer there is a link to the contact Us page. In this page the user can fill out the form in order to send an message to the charity. 
+In the footer there is a link to the contact Us page. In this page the user can fill out the form in order to send an message to the charity.
 
 ### nav bar
- The navbar will be available from all the pages in the website. 
-I have used LINk
+The navbar will be available from all the pages in the website.
+In order to create the navbar I have used Bootstrap 4 and I have used the following link to help me align the elements inside.
 
+### Hamburger button
+The hamburger button from bootstrap 4 will appear on small screens and when is clicked with display the nav bar vertically and it will also include the login and cart options.
 
 ### social links
 
-- \***\*Navigation bar:\*\*** I have created the navigation bar using bootstrap 4 nav bar.
+. They appear on the page footer in every page on the website and by clicking on them the user will get re-directed to the media websites to follow TreeBooks. (since the website is fictitious they will be redirected to the login page for facebook or twitter).
 
-- \***\*Mobile Collapse Button:\*\*** The \***\*Mobile Collapse Button\*\*** will appear in smaller screens (tablets and mobiles) and by clicking on it, it will show the navigation bar as a sidebar.
+### Logo
+The logo will appear in the navigation bar for every section of the website and when clicked it will redirect the user to the home page (index.html).
 
-- \***\*Logo:\*\*** The logo will appear in the navigation bar for every section of the website and when clicked it will redirect the user to the home page (index.html).
 
-- \***\*Social media links:\*\*** They appear on the page footer in every page on the website and by clicking on them the user will get re-directed to the media websites to follow TreeBooks. (since the website is fictitious they will be redirected to the login page for facebook or twitter).
 
-.
 
-- \***\*Contact Us:\*\*** Provides the user with the contact form to get in touch with the charity.
-
-* **Search input box**: On the top left corner of the page the users can enter text to search for a specific book or author. .
-
-### In the index page
-
-- \***\*Carousel:\*\***
-
-- \***\*Modal:\*\*** When the user clicks on "delete button" the confirmation message will be displayed on a modal window and the recipe will only be removed if "YES" is selected. This modal has been taken from [Materialize](<[https://materializecss.com/](https://materializecss.com/)>).
 
 .
 
 ## Features Left to Implement
+
+If user is reading the book disable the option to join waiting list
 
 ## Technologies Used
 
@@ -288,15 +289,11 @@ See below the satabase schema:
 
 ADD SCHEMA
 
-![database](/static/db_schema/data_schema.png)
-
-#### Mock-up tool:
-
-- \***\*[XXXX:]()\*\*** I have used XXXX to create the mock-ups for the website.
+![database](/documents/db_schema/data_schema.png)
 
 #### Graphic Design software:
 
-- **\*\*\*\***[Adobe Fireworks:](https://www.adobe.com/products/fireworks.html)**\*\*\*\*** I have used Adobe Fireworks to edit the background images, to create the logo and to do some edits on the mock-ups.
+- **\*\*\*\***[Adobe Fireworks:](https://www.adobe.com/products/fireworks.html)**\*\*\*\*** I have used Adobe Fireworks to create the logo and the mock-ups.
 
 #### Languages:
 
@@ -314,9 +311,9 @@ ADD SCHEMA
 
 #### Libraries
 
-- **\*\*\*\***[jQuery](https://jquery.com/)**\*\*\*\*** It is needed for the [Materialize](<[https://materializecss.com/](https://materializecss.com/)>) JavaScript components to function.
+- **\*\*\*\***[jQuery](https://jquery.com/)**\*\*\*\***
 
-* **\*\*\*\***[FontAwesome:](https://fontawesome.com/ "https://fontawesome.com/")**\*\*\*\*** In some cases if FontAwesome icon was more appropriate I have also used FontAwesome.
+* **\*\*\*\***[FontAwesome:](https://fontawesome.com/ "https://fontawesome.com/")**\*\*\*\*** .
 
 * **\*\*\*\***[Google Fonts:](https://fonts.google.com/ "https://fonts.google.com/")**\*\*\*\*** I’ve used the fonts from Google Fonts to style the fonts in the website.
 
@@ -350,15 +347,20 @@ I have used Heroku in order to deploy the website.
 
 ### Features and responsiveness testing
 
-Click [here](https://github.com/elenasacristan/HolidaysYa/tree/master/assets/Documents/checkList.pdf) to see the checklist that I have used to test all the features in all the screen sizes.
+#### django tests
+
+I have run test for the models, forms and views in all apps where apply. See the coverage reports for each app below:
+
+ADD COVERAGE REPORTS IMAGES
+
+Click [here](https://github.com/xxxxxxxx/checkList.pdf) to see the checklist that I have used to test all the features in all the screen sizes.
 
 ### Additional testing
 
 #### Travis
+At the top of this Readme file you can see that the website pases the Travis test.
 
-#### django tests
-
-Explain the coverage testing
+The code that I was meant to be using in the Travis.yml file was not working and I found out that there was some issues when using python 3.7 and django 1.11.17. Finally I found out in Slack the code that was working well for my python and django versions.
 
 #### Dev Tools
 
@@ -366,12 +368,18 @@ I have also used development tools in Google Chrome to check how the website wou
 
 ### Problems and bugs:
 
-- \***\*many to many duplication issue in templates\*\***  
-  Fixed by using if for loop.first
+I have issues when iterating on fields with many to many relationships and in the end I could fix these problems by using (loop.first) and in other cases by using of list_values.
+
+When I changed from the local database to the Postgress database suddenly I started having errors when adding more than one user to the waiting list. This issue was very strange because in the local database was working fine. I ask the Tutors and they suggest to create a new link to a new postgrees database to see if this could solve the problem but it didn't.
+Finally I noticed that everytime I was adding a user to the waiting list I was also adding a book and that is why the book Id was duplicated.
+
+Current books if the book became available again it will appear on the profile fro the other users that have already finished the book
+
+This issue was fixed by using get or create. So a book will only be added if it didn't exist already.
 
 # GitHub repository
 
-1.  I've created a repository in GitHub called: “elenasacristan/xxxxx” [https://github.com/elenasacristan/CookBook.git](https://github.com/elenasacristan/xxxx.git)
+1.  I've created a repository in GitHub called: “elenasacristan/xxxxx” [https://github.com/elenasacristan/Xxxxx.git](https://github.com/elenasacristan/xxxx.git)
 
 2.  I've initialised git from the terminal using Git Bash:
 
@@ -415,12 +423,12 @@ CODE HERE
 
 6.  I have added 127.0.0.1?? To the list of allowed hosts.
 
-EXPLAIN ALL APPS  
-Send emails  
-Templates  
+EXPLAIN ALL APPS 
+Send emails 
+Templates 
 Login using email
 
-CART  
+CART 
 session
 
 7.  Then I have created for each app the files models.py, forms.py,views.py and urls.py.
@@ -473,7 +481,7 @@ A BIT DIFFERENT?
 
 11) Once the website has been fully tested and is working correctly the changes done to the staging app have been promoted to the Production app:
 
-[https://time2eat-cookbook.herokuapp.com/](https://time2eat-cookbook.herokuapp.com/)
+[https://xxxxxxx.herokuapp.com/](https://xxxxxx.herokuapp.com/)
 
 ### My repository
 
@@ -537,25 +545,29 @@ http://XXXX.herokuapp.com
 
 \***\*Tutorials\*\***
 
-- **Login / Register**:  
-  I watch the following tutorial to understand how to create the login/register functions.  
+- **Login / Register**: 
+  I watch the following tutorial to understand how to create the login/register functions. 
   [https://www.youtube.com/watch?v=vVx1737auSE](https://www.youtube.com/watch?v=vVx1737auSE)
 
-* \***\*Upload image\*\***  
-  I found information about how to upload images into mongodb using flask on the following video tutorial:  
+* \***\*Upload image\*\*** 
+  I found information about how to upload images into mongodb using flask on the following video tutorial: 
   [https://www.youtube.com/watch?v=DsgAuceHha4](https://www.youtube.com/watch?v=DsgAuceHha4)
 
-- \***\*Display image as soon as it is selected\*\***  
-  The following post help me to create the code in order to display the image as soon as it is selected using the input file.  
+- \***\*Display image as soon as it is selected\*\*** 
+  The following post help me to create the code in order to display the image as soon as it is selected using the input file. 
   [https://gist.github.com/zulhfreelancer/1a1b68062da349d6268f0aaa43991b99](https://gist.github.com/zulhfreelancer/1a1b68062da349d6268f0aaa43991b99)
 
-* \***\*Create interactive visualization using DC/JS Crossfilter\*\***  
-  I learn how to set up the connection between mongodb and DC/JS Crossfilter by following the tutorial in the link below:  
+* \***\*Create interactive visualization using DC/JS Crossfilter\*\*** 
+  I learn how to set up the connection between mongodb and DC/JS Crossfilter by following the tutorial in the link below: 
   http://adilmoujahid.com/posts/2015/01/interactive-data-visualization-d3-dc-python-mongodb/
 
-- \***\*Log out / clear cookies\*\***  
+- \***\*Log out / clear cookies\*\*** 
   In the link below I learnt about how to remove the cookies when the user logs out. https://www.tutorialspoint.com/flask/flask_sessions.htm
 
 * As always the slack community has been very helpful when I had any question.
 
 - I'm also really thankful to the Tutors who help me understanding how to set up environmental variables in vscode.
+
+
+
+

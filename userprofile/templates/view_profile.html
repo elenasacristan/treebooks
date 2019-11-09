@@ -42,17 +42,31 @@
                             <hr>
                             <h5>Currently reading</h5>
                             <div class="row currently">
+                                <!-- list of books that the user should have returned already -->
+                                {% for book_current in late_books %}
+                                    <div class="col-12"><span><strong>{{ book_current }}</strong></span><small class="text-danger"><strong> (The return date was: {{ book_current.return_date|date:"d M, Y" }})</strong></small>
+                                        <p><small class="text-danger">* Please return the book now. You may lose part or all of your deposit.</small></p>
+                                        <!-- when the user click here the book will become available for all user if there is not 
+                                            waiting list or for the next user in the list if there is waiting lists -->
+                                            <form method="POST" action={% url 'return_book' book_current.id %}>
+                                                    {% csrf_token %}
+                                                    <button class="btn btn-primary btn-sm" type="submit">I've returned the book</button>
+                                            </form>
+                                    </div>
+                                {% endfor %}
+
+                                <!-- list of books that the user is ready now and return date is still in the future-->
                                 {% for book_current in current_books %}
-                                    <dt class="col-12">{{ book_current }} <small>(Return by:{{ book_current.return_date|date:"d M, Y" }})</small>
+                                    <div class="col-12"><span><strong>{{ book_current }}</strong></span><small> (Return by:{{ book_current.return_date|date:"d M, Y" }})</small>
                                         <!-- when the user click here the book will become available for all user if there is not 
                                             waiting list or for the next user in the list if there is waiting lists -->
                                         <form method="POST" action={% url 'return_book' book_current.id %}>
                                             {% csrf_token %}
                                             <button class="btn btn-primary btn-sm" type="submit">I've returned the book</button>
                                         </form>
-                                    </dt>
-                                    <br><br>
-                                {% endfor %}
+                                    </div>
+                                {% endfor %}   
+
                             </div>
                         {% endif %}
                     </div>
