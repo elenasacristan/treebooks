@@ -590,11 +590,16 @@ https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
   top: 0px;
 }
 
+.allbooks .alert{
+  margin-top: 50px;
+  width: 80%;
+}
+
 /* icon in all_books.html */
 .categories-row .favorite .fa,
 .categories-row .favorited .fa {
-  font-size: 0.8em;
-  margin-top: -5px;
+  font-size: 1.4em;
+  margin-top: 7px;
 }
 
 /* favourites form styles - all_books and detail pages */
@@ -602,6 +607,11 @@ https://scotch.io/tutorials/customize-the-browsers-scrollbar-with-css  */
 .fav-form button {
   background-color: transparent;
   border: none;
+}
+
+.detail-profile-wrapper .favorite .fa,
+.detail-profile-wrapper .favorited .fa{
+  font-size: 2.4em;
 }
 
 .fav-form button:focus,
@@ -613,10 +623,10 @@ fav-form button:active {
   color: rgb(224, 222, 216);
 }
 
-.favorite,
+/* .favorite,
 .favorited {
   float: right;
-}
+} */
 
 .favorite .fa,
 .favorited .fa {
@@ -1144,7 +1154,12 @@ form label {
   margin-left: 25px;
 }
 
-.waiting_list h4 {
+.waiting_list .empty-list{
+  list-style-type: none;
+
+}
+
+.waiting_list li {
   margin-left: -30px;
   margin-right: 40px;
 }
@@ -1210,7 +1225,7 @@ form label {
   padding: 3px;
 }
 
-.empty-cart {
+.empty {
   margin-top: 20px;
 }
 
