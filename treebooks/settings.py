@@ -144,7 +144,7 @@ if development==True:
 # in production
 else:
     if "DATABASE_URL" in os.environ:
-        production database (Postgress)
+        # production database (Postgress)
         DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
         }
