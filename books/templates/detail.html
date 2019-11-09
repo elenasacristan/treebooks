@@ -121,7 +121,7 @@
                 <!-- if the user is authenticted and the book is available -->
                 {% if user.is_authenticated and book.available %}
                     <!-- if there are users in the waiting list -->
-                    {% if count_users > 0%}
+                    {% if users_in_list %}
                         {% for user_list in users_in_list %}
                         <!-- if the current user is in the waiting list -->
                             {% if user.id in users_in_list %}
@@ -233,7 +233,7 @@
                 <!-- user authenticated but book not available -->
                 {% elif user.is_authenticated and not book.available %}
                     <!-- if there are users in the waiting list -->
-                    {% if count_users > 0%}
+                    {% if users_in_list %}
                         {% for user_list in users_in_list %}
                         <!-- if the current user is in the waiting list -->
                             {% if user.id in users_in_list %}
@@ -251,7 +251,7 @@
                             {% endif %}
                         {% endfor %}
                         <!-- if the current user is not in the waiting list -->
-                        {% if user.id not in users_in_list %}
+                        {% if user.id not in users_in_list and book.id not in current_books_list %}
                             <div class="container waiting-section">
                                 <div class="row justify-content-center">
                                     <div class="col-8">
@@ -265,22 +265,39 @@
                                     </div>
                                 </div>
                             </div>
+                        {% elif user.id not in users_in_list and book.id in current_books_list %}
+                            <div class="container waiting-section">
+                                <div class="row justify-content-center">
+                                    <div class="col-8">
+                                            <h4 class="empty-cart text-center alert alert-info">you are reading this book</h4>
+                                    </div>
+                                </div>
+                            </div>
                         {% endif %}
                     <!-- if there are not users in the waiting list -->
                     {% else %}
-                        <div class="container waiting-section">
-                            <div class="row justify-content-center">
-                                <div class="col-8">
-                                    <form class="text-center" method="POST" action={% url 'join_waiting_list' book.id %}>
-                                        {% csrf_token %}
-                                        <button type="submit">
-                                            <span class="text-center btn btn-warning buttons_all">Join the waiting list</span>
-                                        </button>
-                                    </form>
+                            {% if book.id in current_books_list %}
+                                <div class="container waiting-section">
+                                    <div class="row justify-content-center">
+                                        <div class="col-8">
+                                                <h4 class="empty-cart text-center alert alert-info">you are reading this book</h4>
+                                        </div>
+                                    </div>
+                                </div>                            
+                            {% else %}
+                                <div class="container waiting-section">
+                                    <div class="row justify-content-center">
+                                        <div class="col-8">
+                                            <form class="text-center" method="POST" action={% url 'join_waiting_list' book.id %}>
+                                                {% csrf_token %}
+                                                <button type="submit">
+                                                    <span class="text-center btn btn-warning buttons_all">Join the waiting list</span>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-
+                            {% endif %}
                     {% endif %}
                 <!-- if user is not authenticated -->
                 {% else %}

@@ -80,6 +80,8 @@ def checkout(request):
                     book = get_object_or_404(Book, pk=id)
                     '''save book in list of read books'''
                     profile.read_books.add(book)
+                    '''save book in list of current_books'''
+                    profile.current_books.add(book)
                     '''update return date based on the number of days rented'''
                     book.return_date = order.date + timezone.timedelta(days=days)
                     '''set status of book as not available'''

@@ -25,7 +25,7 @@ def view_profile(request):
     if the book return_date is in the future we will display the book 
     under currently reading on the profile section
     """
-    current_books = user_profile.profile.read_books.filter(
+    current_books = user_profile.profile.current_books.filter(
         return_date__gt = timezone.now(), available = False).order_by('return_date')
     
     return render(request, 'view_profile.html', 

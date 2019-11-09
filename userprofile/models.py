@@ -22,6 +22,7 @@ class UserProfile(models.Model):
     contact_by_email = models.BooleanField(blank=True, default=False)
     favourites = models.ManyToManyField(Book, related_name='favorited_by',blank=True)
     read_books = models.ManyToManyField(Book, blank=True)
+    current_books = models.ManyToManyField(Book, related_name='currently', blank=True)
 
     def __str__(self):
         return self.user.username   

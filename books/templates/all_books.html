@@ -65,10 +65,21 @@
                             </div>
 
                             <!-- status book message -->
+
                             <!-- if the book becomes available and it has a waiting list -->
                             {% if book.available and book.id in waiting_list_books %}
+                                
+                                {% for wl in waiting_list %}
+                                    {% if book.id == wl.wl_book.id %}
+                                        {% for next in wl.wl_user.all %}
+                                        <!-- if there are users in the waiting list -->
+                                            {% if forloop.first %}
+                                                <a href="{% url 'view_waiting_lists' book.id %}" class="text-info"><strong>check waiting list</strong></a>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
 
-                            <a href="{% url 'view_waiting_lists' book.id %}" class="text-info"><strong>check waiting list</strong></a>
                                 {% for wl in waiting_list %}
                                     {% if book.id == wl.wl_book.id %}
                                         {% for next in wl.wl_user.all %}
@@ -78,6 +89,9 @@
                                                     <a href="{% url 'detail' book.id %}" class="mx-auto badge badge-success"><strong>It's your turn!</strong></a>
                                                 {% endif %}
                                             {% endif %}
+                                        <!-- if there are not users in the waiting list -->
+                                        {% empty %}
+                                            <a href="{% url 'detail' book.id %}" class="text-success"><strong>AVAILABLE</strong></a>
                                         {% endfor %}
                                     {% endif %}
                                 {% endfor %}
@@ -85,8 +99,8 @@
                             <!-- if the book becomes available and there is not waiting list -->
                             {% elif book.available and book.id not in waiting_list_books %}
                                 <a href="{% url 'detail' book.id %}" class="text-success"><strong>AVAILABLE</strong></a>
-                            
-                            <!-- book is not available -->
+                            {% elif book.id in current_books_list %}
+                                <h6 class="text-primary"><strong>your are reading this book</strong></h6>
                             {% else %}
                                 <a href="{% url 'view_waiting_lists' book.id %}" class="text-info"><strong>check waiting list</strong></a>
                             {% endif %}
