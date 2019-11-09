@@ -57,6 +57,6 @@ def return_book(request, pk):
         book.available=True
         book.save()
     
-    # I learned who to redirect to the current page in the following post
+    # I learned how to redirect to the current page in the following post
     # https://stackoverflow.com/questions/12758786/redirect-return-to-same-previous-page-in-django/12758859
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

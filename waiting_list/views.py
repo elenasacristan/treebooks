@@ -51,7 +51,7 @@ def join_waiting_list(request, pk):
             waiting_list.save() 
             messages.success(request, 'You have been added to the waiting list')
     
-    # I learned who to redirect to the current page in the following post
+    # I learned how to redirect to the current page in the following post
     # https://stackoverflow.com/questions/12758786/redirect-return-to-same-previous-page-in-django/12758859 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
