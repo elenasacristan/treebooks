@@ -1,15 +1,18 @@
-<!-- {% extends 'base.html' %}
+{% extends 'base.html' %}
 
 {% load staticfiles %}
 
 {% block title %}404 - Page not found{% endblock %}
 
-{% block content %} -->
-<div class="bg-404">
-<div class="text-center" style="text-align:right;">
-    <h3 class="text-center">Page not found</h3>
+{% block content %}
 
-    <img src="{% static 'images/project/giphy.gif' %}" width='300'>
+<div class="container-fluid d-flex h-100 bg-404">
+    <div class="row justify-content-center align-self-center mx-auto">
+        <h3 class="text-center">Page not found</h3>
+    </div>
+    <div class="row justify-content-center align-self-center mx-auto">
+        <img src="{% static 'images/project/giphy.gif' %}" width='300'>
+    </div>
 </div>
-</div>
-<!-- {% endblock%} -->
+
+{% endblock%}
