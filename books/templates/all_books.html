@@ -43,7 +43,6 @@
                             <a href="{% url 'detail' book.id %}"><h5 class="title"> {{ book.title }}</h5></a>
                             <div class="img-wrap"><img src="{{ MEDIA_URL }}{{ book.book_img }}" alt="book cover image"></div>
                             <div class="info-wrap">
-                                <div class="label-rating"><strong>{{book.rating}}</strong></div>
                                 <div class="rating-wrap">
                                     <ul class="rating-stars">
                                         <li style="width:{{book.percentage_rating}}%" class="stars-active">
@@ -61,6 +60,7 @@
                                             <i class="fa fa-star"></i>
                                         </li>
                                     </ul>
+                                    <div class="label-rating"><strong>{{book.rating}}</strong></div>
                                 </div>
                             </div>
 

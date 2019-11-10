@@ -512,7 +512,7 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
 
 .card-product .info-wrap {
   padding: 0px;
-  min-height: 70px;
+  min-height: 20px;
 }
 
 .allbooks h2 {
@@ -691,7 +691,7 @@ fav-form button:active {
 }
 
 .rating-wrap {
-  margin-bottom: 40px;
+  padding: 10px 0px 20px 0px;
 }
 
 .rating-wrap button {
