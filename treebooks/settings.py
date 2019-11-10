@@ -48,7 +48,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = development
 
 # We need to add to allowed host the link to the app in Heroku
-ALLOWED_HOSTS = ["127.0.0.1", "https://treebooksproject.herokuapp.com/"]
+ALLOWED_HOSTS = ['127.0.0.1', 'treebooksproject.herokuapp.com']
 
 
 # Application definition
