@@ -100,7 +100,7 @@
                                 {% elif book.available and book.id not in waiting_list_books %}
                                     <a href="{% url 'detail' book.id %}" class="text-success"><strong>AVAILABLE</strong></a>
                                 {% elif book.id in current_books_list %}
-                                    <h6 class="text-primary"><strong>your are reading this book</strong></h6>
+                                    <h6 class="text-primary"><strong>you are reading this book</strong></h6>
                                 {% else %}
                                     <a href="{% url 'view_waiting_lists' book.id %}" class="text-info"><strong>check waiting list</strong></a>
                                 {% endif %}
