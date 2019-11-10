@@ -15,10 +15,13 @@ def view_all_books(request):
     '''
     This view will display all the books sorted by rating descending
     '''
-    user_profile = User.objects.get(email=request.user.email)
-    # list of books ids that the user is currently reading
-    current_books_list = list(user_profile.profile.current_books.filter(
-        return_date__gt = timezone.now(), available = False).values_list('id',  flat=True))
+    if request.user.is_authenticated:
+        user_profile = User.objects.get(email=request.user.email)
+        # list of books ids that the user is currently reading
+        current_books_list = list(user_profile.profile.current_books.filter(
+            return_date__gt = timezone.now(), available = False).values_list('id',  flat=True))
+    else:
+        current_books_list = []
     
     books = Book.objects.all().order_by('-rating')
     categories = Category.objects.all()
@@ -41,10 +44,13 @@ def detail(request, pk):
     This view will display the book details and the 
     reviews for that book sorted by review date descending
     '''
-    user_profile = User.objects.get(email=request.user.email)
-    # list of books that the user is currently reading
-    current_books_list = list(user_profile.profile.current_books.filter(
-        return_date__gt = timezone.now(), available = False).values_list('id',  flat=True))
+    if request.user.is_authenticated:
+        user_profile = User.objects.get(email=request.user.email)
+        # list of books that the user is currently reading
+        current_books_list = list(user_profile.profile.current_books.filter(
+            return_date__gt = timezone.now(), available = False).values_list('id',  flat=True))
+    else:
+        current_books_list = []
 
     book = get_object_or_404(Book,pk=pk)
     book.save()
