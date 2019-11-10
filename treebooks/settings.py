@@ -52,7 +52,6 @@ ALLOWED_HOSTS = ['127.0.0.1', 'treebooksproject.herokuapp.com']
 
 
 # Application definition
-
 '''
 All the apps in the project are included in INSTALLED_APPS
 And I've also included the following:
@@ -127,7 +126,6 @@ WSGI_APPLICATION = 'treebooks.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 
-
 # in development
 if development==True:
     DATABASES = {
@@ -200,7 +198,7 @@ USE_TZ = True
 
 # in development we keep the files locally
 if development==True:
-    
+
     # we need a static root. All static files will be in the static directory
     STATIC_URL = '/static/'
     STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
@@ -236,9 +234,7 @@ else:
 
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
     MEDIA_URL = '/media/'
-
-
-
+    
 
 # These are the variables needed to use Stripe to take payments
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
