@@ -386,7 +386,7 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
   font-size: 1.2rem;
 }
 
-.box-content p a, .box-content li a {
+.box-content p a, .box-content ul li a {
   color: #208f45;
   font-weight: bolder;
 }
