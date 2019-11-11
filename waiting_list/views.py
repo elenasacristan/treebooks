@@ -49,7 +49,7 @@ def join_waiting_list(request, pk):
             # add user to waiting list
             waiting_list.wl_user.add(user)
             waiting_list.save() 
-            messages.success(request, 'You have been added to the waiting list')
+            messages.success(request, 'You have joined the waiting list we will contact you when is your turn')
     
     # I learned how to redirect to the current page in the following post
     # https://stackoverflow.com/questions/12758786/redirect-return-to-same-previous-page-in-django/12758859 
