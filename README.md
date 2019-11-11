@@ -139,7 +139,7 @@ As a member I want to be able to follow TreeBooks in Social Media.
 
 The accounts app will allow users to register to become members of TreeBooks. The registered users will be able to access all the member features.
 
-The users will register using the registration form and then they will be able to log in by using the login form with their username and password or with the email and password.
+The users will register using the registration form. Registered users will be able to log in by using the login form with their username and password or with the email and password.
 
 The users can also reset the password if they forgot the original password using the reset password link on the login.html page.
 
@@ -218,7 +218,7 @@ This page explains the aim of the website and how it works. It has re-directs to
 
 ##### projects.html
 
-In this page the user can see how much money has been raised by the charity since the charity started and the user also can see rental since the beginning.
+In this page the user can see how much money has been raised by the charity since the charity started and the user also can see how many times books have been rented since the beginning.
 
 Also, the user will see what are the projects that the charity is trying to raise money for and what is the target for each.
 
@@ -245,7 +245,7 @@ The user will have the option to proceed to the payment by clicking the 'checkou
 
 ### Checkout
 
-#####chaeckout.html
+#####checkout.html
 
 In the checkout page the user will see the details of the books that he/she is going to rent and the total to pay.
 
@@ -253,7 +253,7 @@ Then they will need to fill out the payment form in order to rent the book(s).
 
 Once the payment has gone through a success message will be displayed and then the user can go to the specified store where the book belongs and collect it.
 
-If there is an error with the payment the user will see an error message.
+If there is an error with the payment the user will be notified with an error message.
 
 If the payment has been successful the following will happen:
  - The book(s) will be added to the list of read books and the list of current_books
@@ -281,7 +281,7 @@ At the bottom of the waiting list there will be two buttons. The "Keep looking" 
 ##### review_form.html
 
 Once the user has rented a book he/she can leave a review. 
-The users can see the books that they have read on their profile page and in the "See the books you read" section they can see all the books they have read and for each one they will have the option to leave a review. Once they have reviewed the book then they will see the message 'Already reviewed' under the book title.
+The users can see the books that they have read on their profile page by clicking on "See the books you read". For each book in this list the user will have the option to leave a review. Once they have reviewed the book then they will see the message 'Already reviewed' under the book title.
 
 The review_form.html page will display a form where the user can enter the title of the review, the comment and the score from 0 to 5.
 
@@ -291,18 +291,18 @@ Each review will display the individual star rating and then all the reviews wil
 
 ### Favourites app
 
-The user can add/remove the book that he/she wants to the list of favourites by clicking the heart icon on the pages all_books and detail.
+The user can add/remove the book that he/she wants to the list of favourites by clicking the heart icon on the pages all_books.html and detail.html.
 
 Then the user can see all the favourites books if he clicks on "See your favourites" on the user profile page.
 
 
 ### Search app
 
-This app will allow the user to search for a book based on the title name or author name.
+This app will allow the user to search for a book based on the book's title or author name.
 
 The search box is displayed at the top of the navbar and it is visible from all pages.
 
-The books that contain the word entered in the title or in the name of the author will be displayed and will be sorted by score descending.
+The books that contain the word entered in the search box either in the title or in the name of the author will be displayed and will be sorted descending by score.
 
 ### Other features available from all pages
 
@@ -311,57 +311,48 @@ The books that contain the word entered in the title or in the name of the autho
 
 
 
-### nav bar
+### navbar
 The navbar will be available from all the pages in the website.
 In order to create the navbar I have used Bootstrap 4 and I have used the following link to help me align the elements inside.
+https://www.codeply.com/go/qhaBrcWp3v
 
 ### Hamburger button
-The hamburger button from bootstrap 4 will appear on small screens and when is clicked with display the navbar vertically and it will also include the login and cart options.
+The hamburger button from bootstrap 4 will appear on small screens and when is clicked it will display the navbar vertically and it will also include the login and cart options.
 
 ### social links
-
-. They appear on the page footer in every page on the website and by clicking on them the user will get redirected to the media websites to follow TreeBooks. (since the website is fictitious they will be redirected to the login page for facebook or twitter).
+They appear on the page footer in every page on the website and by clicking on them the user will get redirected to the media websites to follow TreeBooks. (since the website is fictitious they will be redirected to the login page for Facebook or Twitter).
 
 ### Logo
 The logo will appear in the navigation bar for every section of the website and when clicked it will redirect the user to the home page (index.html).
 
-
-
-
-
-.
-
 ## Features Left to Implement
 
-If the book is not available then display the current reader on the details.html page.
+I would have like to include in the detail.html page the name of the user reading the book and how many days are left until the book will be available again for the next user in the waiting list of for all users. The reason why I didn't implement this feature is because I was running out of time and I needed to deliver the project soon.
 
 ## Technologies Used
 
 #### Database:
 
-- \***\*[Postgress]\*\***
-
-See below the database schema:
-
-ADD SCHEMA
+When working locally I have used the [SQLite](https://www.sqlite.org/index.html) database that comes with django but in production I'm using a [Postgres](https://www.postgresql.org/) database. See the schema below:
 
 ![database](/documents/db_schema/data_schema.png)
 
 #### Graphic Design software:
 
-- **\*\*\*\***[Adobe Fireworks:](https://www.adobe.com/products/fireworks.html)**\*\*\*\*** I have used Adobe Fireworks to create the logo and the mock-ups.
+- **[Adobe Fireworks:](https://www.adobe.com/products/fireworks.html)**
+I have used Adobe Fireworks to create the logo and the mock-ups.
 
 #### Languages:
 
-- \***\*HTML5:\*\*** Is the main language used to create the structure of the website.
+- **HTML5:** Is the main language used to create the structure of the website.
 
-- \***\*CSS3:\*\*** Is the language used to add styles to the HTML.
+- **CSS3:** Is the language used to add styles to the HTML.
 
-- **\*\*\*\***[JavaScript:](https://developer.mozilla.org/en-US/docs/Web/JavaScript)**\*\*\*\*** This is the language used to add interactivity to the website. It has been used to add the spinner while the pages load and in order TO AUTOSCROLL THE BOOKS WHEB HOVERING OVER
+- **[JavaScript:](https://developer.mozilla.org/en-US/docs/Web/JavaScript)** This is the language used to add interactivity to the website. It has been used to add the spinner while the pages load and in order TO AUTOSCROLL THE BOOKS WHEB HOVERING OVER
 
-- **\*\*\*\***[Python:](<[https://www.python.org/](https://www.python.org/)****>)\*\*\*\* The main logic of the website has been created using Python.
+- **[Python:](<[https://www.python.org/](https://www.python.org/)>)** The main logic of the website has been created using Python.
 
-- \***\*[Django:]()>)\*\*** I have used the django framework.
+- ***[Django:]())** I have used the django framework.
 
 #### Dependencies:
 
