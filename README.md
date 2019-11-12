@@ -2,7 +2,11 @@
 
 # TreeBooks! – Fourth milestone project
 
-TreeBooks is a charity that aims to raise money to plant trees by renting second-hand books.
+
+This is last milestone project for the Fullstack Web Developer course with Code Institute. 
+For this website I'm creating a fictitious charity called TreeBooks which aim is to raise money to plant trees by renting second-hand books.
+
+https://treebooksproject.herokuapp.com/
 
 To be able to rent books the users need to register. Only registered users will be able to rent books, read reviews, join the waiting list for a book, keep track of the books read and save the books that they like in a favourites list.
 
@@ -19,9 +23,6 @@ The users can contact the charity using the contact form in case they have any q
 
 The users will be able to follow TreeBooks on social media by clicking on the icons on the footer of the page.
 
-See below the link to the website:
-
-https://treebooksproject.herokuapp.com/
 
 ## UX
 
@@ -83,57 +84,57 @@ login.html, registration.html, contact.html, review_form.html, password_reset_co
 
 ### User stories
 
-As a charity owner, I want to get users to register to the website so I can rent books to them and I can raise money to plant new trees.
+- As a charity owner, I want to get users to register to the website so I can rent books to them and I can raise money to plant new trees.
 
-As a user (member or not) I want to be able to see what is the aim of the website.
+- As a user (member or not) I want to be able to see what is the aim of the website.
 
-As a user (member or not) I want to be able to see what projects is the charity planning to contribute to and how much money the charity has raised so far.
+- As a user (member or not) I want to be able to see what projects is the charity planning to contribute to and how much money the charity has raised so far.
 
-As a user (member or not) I want to be able to contact TreeBooks to send my comments and suggestions for new projects.
+- As a user (member or not) I want to be able to contact TreeBooks to send my comments and suggestions for new projects.
 
-As a user (member or not) I want to donate books and I want to know where are the collection points.
+- As a user (member or not) I want to donate books and I want to know where are the collection points.
 
-As a user I want to register to be able to rent books and contribute to reforestation projects
+- As a user I want to register to be able to rent books and contribute to reforestation projects
 
-As a user I want to register to be able to save money reading second-hand books instead of buying brand new books.
+- As a user I want to register to be able to save money reading second-hand books instead of buying brand new books.
 
-As a member I want to feel that I'm helping to save the planet by not buying new books and by renting second-hand books.
+- As a member I want to feel that I'm helping to save the planet by not buying new books and by renting second-hand books.
 
-As a member I want to be able to add my name to a waiting list if the book that I want to read is not available
+- As a member I want to be able to add my name to a waiting list if the book that I want to read is not available
 
-As a member I want to be able to see my position in the waiting lists.
+- As a member I want to be able to see my position in the waiting lists.
 
-As a member I want to see a notification when my turn to read the book has been reached.
+- As a member I want to see a notification when my turn to read the book has been reached.
 
-As a user I'd like to know what books are available and which ones have waiting lists.
+- As a user I'd like to know what books are available and which ones have waiting lists.
 
-As a member I want to be able to save books as favourites.
+- As a member I want to be able to save books as favourites.
 
-As a member I want to be able to see all the books that I have read since I started the membership.
+- As a member I want to be able to see all the books that I have read since I started the membership.
 
-As a member I want to be able to review the books that I have read.
+- As a member I want to be able to review the books that I have read.
 
-As a member I want to be able to add books to the shopping cart and then pay all of them at once.
+- As a member I want to be able to add books to the shopping cart and then pay all of them at once.
 
-As a member I want to be able to update the number of days to rent the book from the cart page.
+- As a member I want to be able to update the number of days to rent the book from the cart page.
 
-As a member I want to be able to remove books from the cart if I change my mind about the books.
+- As a member I want to be able to remove books from the cart if I change my mind about the books.
 
-As a member I want to see in my profile when is the return date for the books that I'm currently reading.
+- As a member I want to see in my profile when is the return date for the books that I'm currently reading.
 
-As a user (member or not) I want to be able to see all the books in TreeBooks and their details.
+- As a user (member or not) I want to be able to see all the books in TreeBooks and their details.
 
-As a user(member or not) I want to be able to search for a book or author by typing on the search box.
+- As a user(member or not) I want to be able to search for a book or author by typing on the search box.
 
-As a member I want to be able to see the reviews given by other members.
+- As a member I want to be able to see the reviews given by other members.
 
-As a member I want to be able to register to the monthly newsletter.
+- As a member I want to be able to register to the monthly newsletter.
 
-As a member I want to be able to edit my profile details and add a profile image.
+- As a member I want to be able to edit my profile details and add a profile image.
 
-As a member I want to be able to follow TreeBooks in Social Media.
+- As a member I want to be able to follow TreeBooks in Social Media.
 
-As charity owner want to notify the users in case they don't return the books on time.
+- As charity owner want to notify the users in case they don't return the books on time.
 
 ## Features
 
@@ -185,11 +186,11 @@ At the bottom, the user can access the list of books read since he/she became a 
 
 These three lists will be displayed in modal windows. The code used to create the modal comes from Bootstrap 4.
 
-In the list of books read the user will have the option to leave a review for the books that have rented. Only will be able to add one review per book.
+In the list of books read the user will have the option to leave a review for the books that have rented. 
 
 By clicking 'books in waiting list' the modal window will appear and the user will be able to see a list of books that he is waiting for with a link in each book to see the waiting list.
 
-Treebooks will contact the next user in the contact list as soon as the book is returned by the previous user. Also, the user will see a notification saying 'it's your turn' on the books listing. Then the next user in the waiting list can proceed to rent the book online. Only the next user in the waiting list will have the option to rent the book for the rest of the users the book will not be available.
+Treebooks will contact the next user in the contact list as soon as the book is returned by the previous user. Also, the user will see a notification saying 'it's your turn' on the books listing. Then the next user in the waiting list can proceed to rent the book online. Only the next user in the waiting list will have the option to rent the book, for the rest of the users the book will not be available.
 
 ##### edit_user_profile.html
 
@@ -203,7 +204,7 @@ Then they can choose to opt-in for the monthly newsletter and they can also sele
 
 ##### index.html
 
-This is the home page and the user will get redirected to this page when they click on the logo or the home tab on the navbar.
+This is the home page and the users will get redirected to this page when they click on the logo or the home tab on the navbar.
 
 This page has a carousel highlighting the main areas of the charity.
 
@@ -239,7 +240,7 @@ In the footer there is a link to the contact us page. In this page the user can 
 
 This page will display the books that the user have added to the shopping cart and will give the user the option to update the number of days selected or remove the books completely.
 
-Then it will display the total to pay. A £5 deposit by book will be added to the total price and that deposit will be refunded once the book is returned.
+Then it will display the total to pay. A £5 deposit per book will be added to the total price and that deposit will be refunded once the book is returned.
 
 The user will have the option to proceed to the payment by clicking the 'checkout' button or continue searching for other books by clicking the button 'keep looking'.
 
@@ -257,6 +258,7 @@ If there is an error with the payment the user will be notified with an error me
 
 If the payment has been successful the following will happen:
 - The book(s) will be added to the list of read books and the list of current_books
+- The return_date will be calculated buy adding the number of days that the user is renting the book for to the present date.
 - The book will become NOT available
 - The money paid for the book (not including the deposit) will be added to the total money raised for the charity
 - The number of books rented will be added to the number of books rented since the charity started.
@@ -271,7 +273,7 @@ Only authenticated users will be able to see or join waiting lists for books.
 This page will display the list of users waiting for a book in order.
 Number 1 will be the next user to read the book, number 2 the second and so on.
 
-If the waiting list is empty the header will say: "You could be next!" and then there will be an alert message saying "There is no one waiting!"
+If the waiting list is empty the header will say: "You could be next!" and also there will be an alert message saying "There is no one waiting!"
 
 At the bottom of the waiting list there will be two buttons. The "Keep looking" button will redirect the user to the all_books.html page and the "Go to Book" will redirect the user to the detail.html page for that book.
 
@@ -322,15 +324,21 @@ The logo will appear in the navigation bar for every section of the website and 
 
 ## Features Left to Implement
 
-I would have like to include in the detail.html page the name of the user reading the book and how many days are left until the book will be available again for the next user in the waiting list of for all users. The reason why I didn't implement this feature is because I was running out of time and I needed to deliver the project soon.
+I would have like to include in the detail.html page the name of the user reading the book and how many days are left until the book will be available again (for the next user in the waiting list of for all users). The reason why I didn't implement this feature is because I was running out of time and I needed to deliver the project soon.
 
 ## Technologies Used
 
 #### Database:
 
-When working locally I have used the [SQLite](https://www.sqlite.org/index.html) database that comes with Django but in production I'm using a [Postgres](https://www.postgresql.org/) database. See the schema below:
+When working locally I have used the [SQLite](https://www.sqlite.org/index.html) database that comes with Django but in production I'm using a [Postgres](https://www.postgresql.org/) database. 
+
+In order to get the Postgress database I created the Heroku app, then in the Resources tab I searched on the Add-ons search bar for Postgress and I selected the 'Hobby Dev' option. After this the DATABASE_URL was ready on the Config Vars in Heroku. 
+
+See database schema for the project below:
+
 
 ![database](/documents/db_schema/data_schema.png)
+
 
 #### Graphic Design software:
 
@@ -343,9 +351,14 @@ I have used Adobe Fireworks to create the logo and the mock-ups.
 
 - **CSS3:** Is the language used to add styles to the HTML.
 
-- **[JavaScript:](https://developer.mozilla.org/en-US/docs/Web/JavaScript)** This is the language used to add interactivity to the website. I have used it to add the auto-scroll effect when hovering over the list of book. Also has been used to display the spinner icon while the pages load and in order to show the map. Stripe also requires some code in Javascript
+- **[JavaScript:](https://developer.mozilla.org/en-US/docs/Web/JavaScript)** This is the language used to add interactivity to the website. I have also used it for the following:
+    - To add the auto-scroll effect when hovering over the list of books. 
+    - To display the spinner icon while the pages load.
+    - To show the collection points map. 
+    - Used for the integration with Stripe
 
-- **[Python:](<[https://www.python.org/](https://www.python.org/)** The main logic of the website has been created using Python.
+
+- **[Python:](https://www.python.org/)** The main logic of the website has been created using Python.
 
 - **[Django:](https://www.djangoproject.com/)** I have used Django framework to build the backend of the website.
 
@@ -427,6 +440,7 @@ The **gunicorn** package is needed to connect to Heroku.
 
 I have run tests for the models, forms and views in all apps where applicable.
 I have tried to automate the test for as much code as possible but I didn't reach the 100% coverage because in some cases the tests were quite complicated and in these cases I have chosen to test manually.
+I have manage to get a coverage of 86.6% on average.
 See the coverage reports for each app below.
 
 ##### accounts coverage report
@@ -490,7 +504,7 @@ I have issues when iterating on fields with ManyToMany relationships. In the end
 ##### IntergrityError - waiting list
 When I changed from the local database to the Postgress database suddenly if I added more than one user to the same waiting list I was getting the following error:
 
-"IntergrityError at/waiting_list/join/2/ duplicate key value violates unique constraint "waiting_list_waitinglist_wl_book_id_key"
+```IntergrityError at/waiting_list/join/2/ duplicate key value violates unique constraint "waiting_list_waitinglist_wl_book_id_key"```
 
 This was strange because locally I could add more than one user to the same waiting list without any error but changing to Postgress I was getting the error.
 The tutors suggested me to create a new link to a new Postgres database to see if this could solve the problem but it didn't.
@@ -500,9 +514,9 @@ This issue was fixed by using get or create. So a book will only be added if it 
 ##### Currently reading
 I also had an issue in the currently reading section. The original UserProfile model didn't have the field current_books when I first created it so instead I was displaying in this section the books included in the read_books field, but only the books where the return date was in the future. When the return date was in the past then the book would disappear from this section.
 
-Then I noticed that if another user buys the same book after, the return date for the book will be updated and then the book will appear again in the currently reading section for each user who has read that book in the past.
+Then I noticed that if another user bought the same book after, the return date for the book was updated and then the book was appearing again in the currently reading section for each user who had read that book in the past.
 
-The solution was to create a new field in the book model for the current_books that way the book will be added to current_books when the payment is done and will be removed from current_books when the book is returned so that way it won't be displayed again.
+The solution was to create a new field in the UserProfile model for the current_books that way the book will be added to current_books when the payment is done and will be removed from current_books when the book is returned so that way it won't be displayed again.
 
 # GitHub repository
 
@@ -824,31 +838,68 @@ https://treebooksproject.herokuapp.com/
 
 #### Content
 
-- \***\*Data:\*\*** The data for the recipes has been collected from https://en.wikibooks.org/wiki/Category:Recipes
+The books details and images have been taken from Wikipedia.
 
 #### Media
 
-##### background image login / register page
+All the images used in the websites have been obtained from Google images using the Advance Search and selecting “free to use, share or modify, even commercially”. See the links below:
 
-- The image used for the background image in the intro page was obtained from Google images using the Advance Search and selecting “free to use, share or modify, even commercially”. See link below:
+##### carousel images
 
 [https://www.maxpixel.net/Frying-Pan-Cooking-Food-Cook-Figure-Fried-3125716](https://www.maxpixel.net/Frying-Pan-Cooking-Food-Cook-Figure-Fried-3125716)
 
-##### recipes images
-
-- The recipes images have been obtained from Google images using the Advance Search and selecting “free to use, share or modify, even commercially”. See links below:
+##### user profile images for the test users
 
 [https://www.seriouseats.com/2015/05/pancakes-around-the-world.html](https://www.seriouseats.com/2015/05/pancakes-around-the-world.html)
 
+##### other images
+
+Project 1
+
+Project 2
+
+Emoticon for favourites
+
+Book icon in index. Html and detail. Html
+
+Tree icon in index. Html
+
+Timer icon used in index. Htnk and detail. Htnl
+
+
 ## Acknowledgements
 
-\***\*Templates\*\***
+**Templates**
 
-- I have used the following bootstrap login design to help me creating the login/register pages and then I have modified the colours and image.
+#####navbar
 
-[https://startbootstrap.com/snippets/sign-in-split/](https://startbootstrap.com/snippets/sign-in-split/)
+In order to create the navbar I have used the following link to help me with the alignment.
 
-\***\*Tutorials\*\***
+LINK
+
+##### ecommerce Xxxx template
+
+I have used the template Xxxx in order to start building the basic design for the all_book. HTML, the detail. HTML and the cart and the. I have customise it.
+
+**Tutorials**
+
+Userprofile
+
+Redirect to the same page
+
+List values
+
+Client
+
+Test
+
+Data schema
+
+Leaflet
+
+Hover ove4
+
+Spiner
 
 - **Login / Register**:
 I watch the following tutorial to understand how to create the login/register functions.
