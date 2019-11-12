@@ -239,7 +239,7 @@ This page will display the books that the user have added to the shopping cart a
 
 Then it will display the total to pay. A £5 deposit by book will be added to the total price and that deposit will be refunded once the book is returned.
 
-The user will have the option to proceed to the payment by clicking the 'checkout' button or continue searching for other books by clicking the button 'keep looking' .
+The user will have the option to proceed to the payment by clicking the 'checkout' button or continue searching for other books by clicking the button 'keep looking'.
 
 ### Checkout
 
@@ -306,7 +306,7 @@ The books that contain the word entered in the search box either in the title or
 
 
 ##### navbar
-The navbar will be available from all the pages in the website.
+The navbar will be available from all the pages on the website.
 In order to create the navbar I have used Bootstrap 4 and I have used the following link to help me align the elements inside.
 https://www.codeply.com/go/qhaBrcWp3v
 
@@ -327,7 +327,7 @@ I would have like to include in the detail.html page the name of the user readin
 
 #### Database:
 
-When working locally I have used the [SQLite](https://www.sqlite.org/index.html) database that comes with django but in production I'm using a [Postgres](https://www.postgresql.org/) database. See the schema below:
+When working locally I have used the [SQLite](https://www.sqlite.org/index.html) database that comes with Django but in production I'm using a [Postgres](https://www.postgresql.org/) database. See the schema below:
 
 ![database](/documents/db_schema/data_schema.png)
 
@@ -347,26 +347,26 @@ I have used it to add the auto-scroll effect when overnight over the list of boo
 
 - **[Python:](<[https://www.python.org/](https://www.python.org/)>)** The main logic of the website has been created using Python.
 
-- **[Django:](https://www.djangoproject.com/)** I have used Django framework in order to build the backend of the website.
+- **[Django:](https://www.djangoproject.com/)** I have used Django framework to build the backend of the website.
 
 #### Dependencies:
 
- Below is the list of the main packages that I had to install in order to create the project. These packages are listed in the requirements.txt file together with some other packages that have been installed automatically when installing the main packages.
+ Below is the list of the main packages that I had to install to create the project. These packages are listed in the requirements.txt file together with some other packages that have been installed automatically when installing the main packages.
 
 
 **Django** is the framework needed to create this project.
 
 ```Django==1.11.17```
 
-**django-forms-bootstrap** is needed in order to apply bootstrap styles to the django forms.
+**django-forms-bootstrap** is needed to apply bootstrap styles to the Django forms.
 
 ```django-forms-bootstrap==3.1.0```
 
 
-The **Pillow** package is needed in order to allow the upload of images.
+The **Pillow** package is needed to allow the upload of images.
 ```Pillow==6.1.0```
 
-The **stripe** package is needed in order to be able to take payments.
+The **stripe** package is needed to be able to take payments.
 
 ```stripe==2.37.1```
 
@@ -378,14 +378,14 @@ The **psycopg2** package is needed to connect to the Postgress URL.
 ```psycopg2==2.8.4```
 
 
-**boto3** and **django-storages** packages are needed in order to connect Django to S3 (AWS) that is where we are hosting our media and static files.
+**boto3** and **django-storages** packages are needed to connect Django to S3 (AWS) that is where we are hosting our media and static files.
 ```boto3==1.10.2```
 ```django-storages==1.7.2```
 
 The **coverage** package is not needed for the project to run but it is needed to create the coverage report when testing the app.
 ```coverage==4.5.4```
 
-**django-extensions** and **pydot** packages are needed in order to create the database schema.
+**django-extensions** and **pydot** packages are needed to create the database schema.
 
 ```django-extensions==2.2.5```
 ```pydot==1.4.1```
@@ -394,7 +394,7 @@ This **django-template-check** package makes it possible to easily check for bas
 
 ```django-template-check==0.3.1```
 
-The **gunicorn** package is needed in order to connect to Heroku.
+The **gunicorn** package is needed to connect to Heroku.
 ```gunicorn==20.0.0```
 
 
@@ -409,7 +409,7 @@ The **gunicorn** package is needed in order to connect to Heroku.
 
 * **[jQuery](https://jquery.com/)**: This library is needed for all the interactive elements in the website to work. 
 
-* **[FontAwesome:](https://fontawesome.com/ "https://fontawesome.com/")**: The font awesome icons have been used in different areas of the website (search, cart, log in, log our, social media and favourites icon)
+* **[FontAwesome:](https://fontawesome.com/ "https://fontawesome.com/")**: The font awesome icons have been used in different areas of the website (search, cart, login, log out, social media and favourites icon)
 
 * **[Google Fonts:](https://fonts.google.com/ "https://fonts.google.com/")** I’ve used the fonts from Google Fonts to style the fonts in the website.
 
@@ -418,10 +418,10 @@ The **gunicorn** package is needed in order to connect to Heroku.
 
 #### Version control system:
 
-**[Git:](https://git-scm.com/ "https://git-scm.com/")** I have used the version control system Git from the "Git Bash" terminal in order to track changes in the website and push them to GitHub.
+**[Git:](https://git-scm.com/ "https://git-scm.com/")** I have used the version control system Git from the "Git Bash" terminal to track changes in the website and push them to GitHub.
 
 #### Hosting service:
-- **[Heroku:](https://www.heroku.com/)** I have used Heroku in order to deploy the website.
+- **[Heroku:](https://www.heroku.com/)** I have used Heroku to deploy the website.
 
 ## Testing
 
@@ -438,7 +438,7 @@ The **gunicorn** package is needed in order to connect to Heroku.
 #### django tests
 
 I have run tests for the models, forms and views in all apps where applicable. 
-I have tried to automate the test for as much code as possible but I didn't reached the 100% coverage because in some cases the tests were really complicated and in these cases I have choosen to test manually.
+I have tried to automate the test for as much code as possible but I didn't reach the 100% coverage because in some cases the tests were quite complicated and in these cases I have chosen to test manually.
 See the coverage reports for each app below. 
 
 ##### accounts coverage report
@@ -488,7 +488,7 @@ Click [here](/documents/checkList.xlsx) to see the checklist that I have used to
 #### Travis
 At the top of this Readme file you can see that the website passes the Travis test.
 
-The code that I was meant to use in the Travis.yml file was not working and I found out that there were some issues when using python 3.7 and django 1.11.17. Finally, I found out in Slack the code that was working well for my python and django versions.
+The code that I was meant to use in the Travis.yml file was not working and I found out that there were some issues when using python 3.7 and Django 1.11.17. Finally, I found out in Slack the code that was working well for my python and Django versions.
 
 #### Dev Tools
 
@@ -497,20 +497,20 @@ I have also used development tools in Google Chrome to check how the website wou
 ### Problems and bugs:
 
 **iterating on fields with ManyToMany relationships**
-I have issues when iterating on fields with many to many relationships. In the end, I could fix these problems by using ({% if forloop.first %}) and in other cases by using of values_list.
+I have issues when iterating on fields with many to many relationships. In the end, I could fix these problems by using ({% if forloop.first %}) and in other cases by using values_list.
 
 **IntergrityError - waiting list**
-When I changed from the local database to the Postgress database suddendly if I added more than one user to the same waiting list I was getting the following error:
-    "IntergrityError at/waiting_list/join/2/ duplicate key value violates unique constraint "waiting_list_waitinglist_wl_book_id_key" 
+When I changed from the local database to the Postgress database suddenly if I added more than one user to the same waiting list I was getting the following error:
+ "IntergrityError at/waiting_list/join/2/ duplicate key value violates unique constraint "waiting_list_waitinglist_wl_book_id_key" 
 
 This was strange because locally I could add more than one user to the same waiting list without any error but changing to Postgress I was getting the error.
 The tutors suggested me to create a new link to a new Postgres database to see if this could solve the problem but it didn't.
-Finally I noticed that every time I was adding a user to the waiting list I was also adding a book and that is why the book Id was since the book already existed in the waiting list.
+Finally, I noticed that every time I was adding a user to the waiting list I was also adding a book and that is why the book Id was since the book already existed in the waiting list.
 This issue was fixed by using get or create. So a book will only be added if it didn't exist already
 
 **Currently reading**
-I also had an issue in the currently reading section. The original UserProfile model didn't have the field current_books when I first created it so instead I was displaying in this section the books included in the read_books field, but only the books where the return date was in the future. When the return_date was in the pass then the book would dissappear from this section. 
-Then I noticed that if another user buy the same book after, the return_date for the book will be updated and then the book will appear again in the currently reading section for each user who has read that book in the past.
+I also had an issue in the currently reading section. The original UserProfile model didn't have the field current_books when I first created it so instead I was displaying in this section the books included in the read_books field, but only the books where the return date was in the future. When the return_date was in the past then the book would disappear from this section. 
+Then I noticed that if another user buys the same book after, the return_date for the book will be updated and then the book will appear again in the currently reading section for each user who has read that book in the past.
 The solution was to create a new field in the book model for the current_books that way when the book is returned the book will be removed from the current_books and won't be displayed again when other user reads the same book.
 
 
@@ -548,38 +548,38 @@ The solution was to create a new field in the book model for the current_books t
 
 `python -m venv .venv`
 
-2. I've Installed django
+2. I've Installed Django
 
 `pip install django==1.11.17`
 
 3. I've added "127.0.0.1" to the list of ALLOWED HOSTS in the settings.py
 
 4. I have created a env.py that will keep the variables that I need to keep secret and they shouldn't be pushed to Github. 
-    - SECRET_KEY 
-    - ENVIRONMENT
-    - EMAIL_ADDRESS
-    - EMAIL_PASSWORD 
-    - STRIPE_PUBLISHABLE
-    - STRIPE_SECRET
-    - DATABASE_URL
-    - AWS_ACCESS_KEY_ID
-    - AWS_SECRET_ACCESS_KEY
+ - SECRET_KEY 
+ - ENVIRONMENT
+ - EMAIL_ADDRESS
+ - EMAIL_PASSWORD 
+ - STRIPE_PUBLISHABLE
+ - STRIPE_SECRET
+ - DATABASE_URL
+ - AWS_ACCESS_KEY_ID
+ - AWS_SECRET_ACCESS_KEY
 
 5. In the settings.py I have added the following syntax in order to run different code depending on if the project is in development or production mode.
 
 ```
 try:
-    import env
+ import env
 except ImportError:
-    pass
-    
+ pass
+ 
 
 ENVIRONMENT = os.environ.get('ENVIRONMENT')
 
 if ENVIRONMENT=='DEV':
-    development = True
+ development = True
 else:
-    development = False
+ development = False
 ```
 
 ```
@@ -592,7 +592,7 @@ DEBUG = development
 python manage.py startapp APP
 
 
-7. Everytime an app has been added to the project I have also added the app name to the list of INSTALLED APPS in the settings.py file.
+7. Every time an app has been added to the project I have also added the app name to the list of INSTALLED APPS in the settings.py file.
 
 
 8. I have created a superuser in order to be able to log into the Django Admin site:
@@ -617,27 +617,27 @@ and after I have migrated in order to create the tables in the database:
 
 ```pip install django-forms-bootstrap```
 
-12. I have also installed Pillow in order to be ablet to upload images
+12. I have also installed Pillow to be able to upload images
 
 ```pip install Pillow```
 
 13. Since we have several templates folders we need to specify in the settings that all the directories called 'templates' contain templates. We do this in the TEMPLATES section
 
 ```
-        'DIRS': [os.path.join(BASE_DIR,'templates')]
+ 'DIRS': [os.path.join(BASE_DIR,'templates')]
 ```
 
-14. Also in the templates section we need to add the media context processor because we wil have media in the project and we need a media ROOT:
+14. Also in the templates section we need to add the media context processor because we will have media in the project and we need a media ROOT:
 
 ```
-                'django.template.context_processors.media'
+ 'django.template.context_processors.media'
 ```
 
-15. The books that are in the cart won't be saved in the database instead they will be stored in the session while the user is logged in and in order to ensure that the cart contents are available from every page in the website we need to create a context.
-We will create the context.py in  the cart app and then that context will be included in the list of contexts inside the TEMPLATES section in the settings.py
+15. The books that are in the cart won't be saved in the database instead they will be stored in the session while the user is logged in. To ensure that the cart contents are available from every page on the website we need to create a context.
+We will create the context.py in the cart app and then that context will be included in the list of contexts inside the TEMPLATES section in the settings.py
 
 ```
-                'cart.context.cart_content'
+ 'cart.context.cart_content'
 ```
 
 16. Since we are going to take payments using Stripe we will need to install Stripe
@@ -649,9 +649,9 @@ We will create the context.py in  the cart app and then that context will be inc
 17. Then I have added the Postgress database (link saved in the env.py) and in order to be able to connect to the database URL I have installed dj-database-url
 
 ```pip install dj-database-url```
-        
-*  I will also need to import dj-database-url in the settings.py file
-    
+ 
+* I will also need to import dj-database-url in the settings.py file
+ 
 
 18. Since the database is Postgres I also had to install the psycopg2 package.
 
@@ -662,11 +662,11 @@ We will create the context.py in  the cart app and then that context will be inc
 
 ```
 DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-        }
+ 'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+ }
 ```
 
-21. Then we will need to migrate to create the tables in the new database (we don't need to makemigrations if we haven't make changes to the models)
+21. Then we will need to migrate to create the tables in the new database (we don't need to makemigrations if we haven't made changes to the models)
 
 ```python manage.py migrate```
 
@@ -681,129 +681,129 @@ DATABASES = {
 ```
 # in development
 if development==True:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
+ DATABASES = {
+ 'default': {
+ 'ENGINE': 'django.db.backends.sqlite3',
+ 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+ }
+ }
 # in production
 else:
-    if "DATABASE_URL" in os.environ:
-        # production database (Postgress)
-        DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-        }
-    else:
-        print('Database URL not found. Using SQLite instead')
-        DATABASES = {
-            'default': {
-                'ENGINE': 'django.db.backends.sqlite3',
-                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-            }
-        }
+ if "DATABASE_URL" in os.environ:
+ # production database (Postgress)
+ DATABASES = {
+ 'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+ }
+ else:
+ print('Database URL not found. Using SQLite instead')
+ DATABASES = {
+ 'default': {
+ 'ENGINE': 'django.db.backends.sqlite3',
+ 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+ }
+ }
 ```
 
-24. Then in [AWS](https://aws.amazon.com/) S3 we will configure our buckets in order to host the static and media files there.
+24. Then in [AWS](https://aws.amazon.com/) S3 we will configure our buckets to host the static and media files there.
 
-25. In order to use S3 we will need to install django-storages and boto3 and we will also have to add storages to INSTALLED_APPS
+25. To use S3 we will need to install django-storages and boto3 and we will also have to add storages to INSTALLED_APPS
 
 ```pip install django-storages```
 ```pip install boto3```
 
 ``` 
 INSTALLED_APPS = [
-    .....
-    'storages',
-    .....
+ .....
+ 'storages',
+ .....
 ] 
 ```
 
 26. We will need to create a custom_storages.py file in order to specify the locations for Media and Static.
 
 class StaticStorage(S3Boto3Storage):
-    location = settings.STATICFILES_LOCATION
+ location = settings.STATICFILES_LOCATION
 
 class MediaStorage(S3Boto3Storage):
-    location = settings.MEDIAFILES_LOCATION
+ location = settings.MEDIAFILES_LOCATION
 
 
 26. After this we will have to update the settings.py as follows:
 
 ```
-    # variables and keys needed in order to set up the connection with AWS S3
-    AWS_S3_OBJECT_PARAMETERS = {
-        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-        'CacheControl': 'max-age=94608000'
-    }
+ # variables and keys needed in order to set up the connection with AWS S3
+ AWS_S3_OBJECT_PARAMETERS = {
+ 'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+ 'CacheControl': 'max-age=94608000'
+ }
 
-    AWS_STORAGE_BUCKET_NAME = 'tree-books'
-    AWS_S3_REGION_NAME  = 'eu-west-3'
-    AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
-    AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+ AWS_STORAGE_BUCKET_NAME = 'tree-books'
+ AWS_S3_REGION_NAME = 'eu-west-3'
+ AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
+ AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 
-    AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
-    STATICFILES_LOCATION = 'static'
-    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+ STATICFILES_LOCATION = 'static'
+ STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
-    STATIC_URL = '/static/'
-    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+ STATIC_URL = '/static/'
+ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 
-    MEDIAFILES_LOCATION = 'media'
-    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+ MEDIAFILES_LOCATION = 'media'
+ DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-    MEDIA_URL = '/media/'
+ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+ MEDIA_URL = '/media/'
 ```
 
-27. Then we will run the following command in order to collect send the files to S3:
+27. Then we will run the following command to collect send the files to S3:
 
 ```
 python manage.py collectstatic
 ```
 
-26. Finally we can add additional syntax to the settings.py to use different code for the static and media storage depending on if we are in development or in production
+26. Finally, we can add additional syntax to the settings.py to use different code for the static and media storage depending on if we are in development or production
 
 ```
 # in development we keep the files locally
 if development==True:
 
-    # we need a static root. All static files will be in the static directory
-    STATIC_URL = '/static/'
-    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+ # we need a static root. All static files will be in the static directory
+ STATIC_URL = '/static/'
+ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-    # we need a media root. All media will be in the media directory
-    MEDIA_URL = '/media/'
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+ # we need a media root. All media will be in the media directory
+ MEDIA_URL = '/media/'
+ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # in production we use AWS S3 to host the media and static files
 else:
-    # variables and keys needed in order to set up the connection with AWS S3
-    AWS_S3_OBJECT_PARAMETERS = {
-        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-        'CacheControl': 'max-age=94608000'
-    }
+ # variables and keys needed in order to set up the connection with AWS S3
+ AWS_S3_OBJECT_PARAMETERS = {
+ 'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+ 'CacheControl': 'max-age=94608000'
+ }
 
-    AWS_STORAGE_BUCKET_NAME = 'tree-books'
-    AWS_S3_REGION_NAME  = 'eu-west-3'
-    AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
-    AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+ AWS_STORAGE_BUCKET_NAME = 'tree-books'
+ AWS_S3_REGION_NAME = 'eu-west-3'
+ AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
+ AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 
-    AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
-    STATICFILES_LOCATION = 'static'
-    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+ STATICFILES_LOCATION = 'static'
+ STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
-    STATIC_URL = '/static/'
-    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+ STATIC_URL = '/static/'
+ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 
-    MEDIAFILES_LOCATION = 'media'
-    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+ MEDIAFILES_LOCATION = 'media'
+ DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-    MEDIA_URL = '/media/'
+ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+ MEDIA_URL = '/media/'
 ```
 
 ### Deployment
@@ -814,25 +814,25 @@ Once the website is working correctly I have deployed to Heroku following these 
 
 2. In the settings (Config Vars) I have added all the environmental variables that were included in the env.py apart from 'ENVIRONMENT'
 
-3. Then I went back to vscode and I installed gunicorn. This is required to connnect to Heroku
+3. Then I went back to vscode and I installed gunicorn. This is required to connect to Heroku
 ```pip install gunicorn```
 
 4. I also updated the requirements.txt
 ```pip freeze > requirements.txt```
 
-5. I created the Procfile (in order to tell Heroku what type of app is getting)
+5. I created the Procfile (to tell Heroku what type of app is getting)
 
 ```web: gunicorn treebooks.wsgi:application```
 
-6. Then I added to the Config Vars DISABLE_COLLECTSTATIC = 1 in order to tell Heroku not to try to collect Static files.
+6. Then I added to the Config Vars DISABLE_COLLECTSTATIC = 1 to tell Heroku not to try to collect Static files.
 
-7. After this we need to add the heroku app address to the ALLOWED_HOST section in settings.py
+7. After this we need to add the Heroku app address to the ALLOWED_HOST section in settings.py
 
 8. Then we will push the changes to GitHub
 
-9. In Heroku in the deploy section we will connect to our Github repository and deploy branch.
+9. In Heroku in the deploy section, we will connect to our Github repository and deploy branch.
 
-10. After checking that evrything is working correctly we can 'Enable Automatic Deploys and that way when we push code to GitHub it will automatically deploy the porject in Heroku
+10. After checking that everything is working correctly we can 'Enable Automatic Deploys and that way when we push code to GitHub it will automatically deploy the project in Heroku
 
 
 ### My repository
