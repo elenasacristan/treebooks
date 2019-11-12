@@ -6,18 +6,18 @@ TreeBooks is a charity that aims to raise money to plant trees by renting second
 
 To be able to rent books the users need to register. Only registered users will be able to rent books, read reviews, join the waiting list for a book, keep track of the books read and save the books that they like in a favourites list.
 
-The users who are not registered will see in the landing page the main reasons why they should register. Users not registered can't rent books but they can see the listing with all the books and the details page. In the details page, they won't be able to see the reviews but they will be able to see the average ratings for each book and the main details about the books.
+The users who are not registered will see in the landing page the main reasons why they should register. 
+Users not registered can't rent books but they can see the listing with all the books and the details page. In the details page, they won't be able to see the reviews but they will be able to see the average ratings for each book and the main details about the books.
 
 Also registered and not registered users can donate books to the charity. If they want to donate they can see in the donate.html page the map with the collection points where they can drop their books to help the charity to grow the collection of books to offer.
 
-All users can also read how the website works by reading the about.html page.
-All users will also have access to the projects page where they can see how much money has been raised by the charity until now, how many books have been rented and to what projects is the charity going to donate the money raised.
+All users can also read how the website works by reading the about.html page and have access to the projects page where they can see how much money has been raised by the charity until now, how many books have been rented and to what projects is the charity going to donate the money raised.
 
 The users can search for a specific book or author by typing on the search box.
 
 The users can contact the charity using the contact form in case they have any questions or projects in mind.
 
-The user will be able to follow TreeBooks on social media by clicking on the icons on the footer of the page.
+The users will be able to follow TreeBooks on social media by clicking on the icons on the footer of the page.
 
 See below the link to the website:
 
@@ -79,7 +79,7 @@ login.html, registration.html, contact.html, review_form.html, password_reset_co
 
 ![checkout](/documents/mockups/checkout1.png)
 
-- The final design of the website included some additional functionalities (buttons, carousel, modals and messages) that I thought would be useful as I was working on it. I also changed slightly the styles (colours, transparency, shadows, borders) for others that I found more appropriate.
+- The final design of the website included some additional functionalities (buttons, carousel, modals and messages) that I thought would be useful as I was working on it. I also changed slightly the styles (colours, transparency, shadows, borders) for others that I found nicer.
 
 ### User stories
 
@@ -133,6 +133,8 @@ As a member I want to be able to edit my profile details and add a profile image
 
 As a member I want to be able to follow TreeBooks in Social Media.
 
+As charity owner want to notify the users in case they don't return the books on time.
+
 ## Features
 
 ### Accounts app
@@ -145,7 +147,7 @@ The users can also reset the password if they forgot the original password using
 
 ### books app
 
-#####view-all-books.html
+##### view-all-books.html
 
 Display all the books present on the website. The books are displayed by category and they are sorted in descending order by the review score.
 
@@ -154,7 +156,7 @@ If the user is authenticated then he/she will also be able to see a message abou
 By clicking on the book title, the 'AVAILABLE' text or the 'It's your turn' badge the user will also be redirected to the detail page.
 If the user clicks on 'check waiting list' then it will be re-directed to the waiting list for that book.
 
-#####detail.html
+##### detail.html
 
 In this page the user can see all the details about the book. These details are the title, the author (by clicking on the author name they will get redirected to the Wikipedia URL for that author), the summary, the category, the date it was published, the ISBN number for the book, the store where the book has to be collected from, the number of pages and the type of book (hardcover or paperback).
 
@@ -233,7 +235,7 @@ In the footer there is a link to the contact us page. In this page the user can 
 
 ### Cart app
 
-#####cart.html
+##### cart.html
 
 This page will display the books that the user have added to the shopping cart and will give the user the option to update the number of days selected or remove the books completely.
 
@@ -243,7 +245,7 @@ The user will have the option to proceed to the payment by clicking the 'checkou
 
 ### Checkout
 
-#####checkout.html
+##### checkout.html
 
 In the checkout page the user will see the details of the books that he/she is going to rent and the total to pay.
 
@@ -304,7 +306,6 @@ The books that contain the word entered in the search box either in the title or
 
 
 
-
 ##### navbar
 The navbar will be available from all the pages on the website.
 In order to create the navbar I have used Bootstrap 4 and I have used the following link to help me align the elements inside.
@@ -342,26 +343,23 @@ I have used Adobe Fireworks to create the logo and the mock-ups.
 
 - **CSS3:** Is the language used to add styles to the HTML.
 
-- **[JavaScript:](https://developer.mozilla.org/en-US/docs/Web/JavaScript)** This is the language used to add interactivity to the website. 
-I have used it to add the auto-scroll effect when overnight over the list of book. Also has been used to display the spinner icon while the pages load.
+- **[JavaScript:](https://developer.mozilla.org/en-US/docs/Web/JavaScript)** This is the language used to add interactivity to the website. I have used it to add the auto-scroll effect when hovering over the list of book. Also has been used to display the spinner icon while the pages load and in order to show the map. Stripe also requires some code in Javascript
 
-- **[Python:](<[https://www.python.org/](https://www.python.org/)>)** The main logic of the website has been created using Python.
+- **[Python:](<[https://www.python.org/](https://www.python.org/)** The main logic of the website has been created using Python.
 
 - **[Django:](https://www.djangoproject.com/)** I have used Django framework to build the backend of the website.
 
 #### Dependencies:
 
- Below is the list of the main packages that I had to install to create the project. These packages are listed in the requirements.txt file together with some other packages that have been installed automatically when installing the main packages.
+Below is the list of the main packages that I had to install to create the project. These packages are listed in the requirements.txt file together with some other packages that have been installed automatically when installing the main packages.
 
-
-**Django** is the framework needed to create this project.
+**Django** is the framework user to create this project.
 
 ```Django==1.11.17```
 
 **django-forms-bootstrap** is needed to apply bootstrap styles to the Django forms.
 
 ```django-forms-bootstrap==3.1.0```
-
 
 The **Pillow** package is needed to allow the upload of images.
 ```Pillow==6.1.0```
@@ -370,15 +368,14 @@ The **stripe** package is needed to be able to take payments.
 
 ```stripe==2.37.1```
 
-The **dj-database-url** package is the package needed in order to connect to a database URL. 
+The **dj-database-url** package is the package needed in order to connect to a database URL.
 ```dj-database-url==0.5.0```
 
 The **psycopg2** package is needed to connect to the Postgress URL.
 
 ```psycopg2==2.8.4```
 
-
-**boto3** and **django-storages** packages are needed to connect Django to S3 (AWS) that is where we are hosting our media and static files.
+**boto3** and **django-storages** packages are needed to connect Django to S3 (AWS) that is where the media and static files are hosted.
 ```boto3==1.10.2```
 ```django-storages==1.7.2```
 
@@ -390,7 +387,7 @@ The **coverage** package is not needed for the project to run but it is needed t
 ```django-extensions==2.2.5```
 ```pydot==1.4.1```
 
-This **django-template-check** package makes it possible to easily check for basic syntax errors in all loaded Django templates. 
+This **django-template-check** package makes it possible to easily check for basic syntax errors in all loaded Django templates.
 
 ```django-template-check==0.3.1```
 
@@ -398,18 +395,11 @@ The **gunicorn** package is needed to connect to Heroku.
 ```gunicorn==20.0.0```
 
 
-
-
-
-
-
-
-
 #### Libraries
 
-* **[jQuery](https://jquery.com/)**: This library is needed for all the interactive elements in the website to work. 
+* **[jQuery](https://jquery.com/)**: This library is needed for all the interactive elements in the website to work.
 
-* **[FontAwesome:](https://fontawesome.com/ "https://fontawesome.com/")**: The font awesome icons have been used in different areas of the website (search, cart, login, log out, social media and favourites icon)
+* **[FontAwesome:](https://fontawesome.com/ "https://fontawesome.com/")**: The font awesome icons have been used in different areas of the website (search, cart, login, log out, social media and favourites icons)
 
 * **[Google Fonts:](https://fonts.google.com/ "https://fonts.google.com/")** I’ve used the fonts from Google Fonts to style the fonts in the website.
 
@@ -433,13 +423,11 @@ The **gunicorn** package is needed to connect to Heroku.
 
 - **JavaScript:** I have used https://jshint.com/ in order to check the JavaScript code.
 
-### Features and responsiveness testing
+### django tests
 
-#### django tests
-
-I have run tests for the models, forms and views in all apps where applicable. 
+I have run tests for the models, forms and views in all apps where applicable.
 I have tried to automate the test for as much code as possible but I didn't reach the 100% coverage because in some cases the tests were quite complicated and in these cases I have chosen to test manually.
-See the coverage reports for each app below. 
+See the coverage reports for each app below.
 
 ##### accounts coverage report
 
@@ -494,25 +482,27 @@ The code that I was meant to use in the Travis.yml file was not working and I fo
 
 I have also used development tools in Google Chrome to check how the website would look on different devices (portrait and landscape mode). In addition to that testing, I have also asked friends and family to have a look at the website to let me know if everything looks fine on their browsers and devices.
 
-### Problems and bugs:
+## Problems and bugs:
 
-**iterating on fields with ManyToMany relationships**
-I have issues when iterating on fields with many to many relationships. In the end, I could fix these problems by using ({% if forloop.first %}) and in other cases by using values_list.
+##### iterating on fields with ManyToMany relationships
+I have issues when iterating on fields with ManyToMany relationships. In the end, I could fix these problems by using "if forloop.first" in the templates and in other cases by using values_list in the views.
 
-**IntergrityError - waiting list**
+##### IntergrityError - waiting list
 When I changed from the local database to the Postgress database suddenly if I added more than one user to the same waiting list I was getting the following error:
- "IntergrityError at/waiting_list/join/2/ duplicate key value violates unique constraint "waiting_list_waitinglist_wl_book_id_key" 
+
+"IntergrityError at/waiting_list/join/2/ duplicate key value violates unique constraint "waiting_list_waitinglist_wl_book_id_key"
 
 This was strange because locally I could add more than one user to the same waiting list without any error but changing to Postgress I was getting the error.
 The tutors suggested me to create a new link to a new Postgres database to see if this could solve the problem but it didn't.
-Finally, I noticed that every time I was adding a user to the waiting list I was also adding a book and that is why the book Id was since the book already existed in the waiting list.
+Finally, I noticed that every time I was adding a user to the waiting list I was also adding a book and that is why the book Id was duplicated since the book already existed in the waiting list.
 This issue was fixed by using get or create. So a book will only be added if it didn't exist already
 
-**Currently reading**
-I also had an issue in the currently reading section. The original UserProfile model didn't have the field current_books when I first created it so instead I was displaying in this section the books included in the read_books field, but only the books where the return date was in the future. When the return_date was in the past then the book would disappear from this section. 
-Then I noticed that if another user buys the same book after, the return_date for the book will be updated and then the book will appear again in the currently reading section for each user who has read that book in the past.
-The solution was to create a new field in the book model for the current_books that way when the book is returned the book will be removed from the current_books and won't be displayed again when other user reads the same book.
+##### Currently reading
+I also had an issue in the currently reading section. The original UserProfile model didn't have the field current_books when I first created it so instead I was displaying in this section the books included in the read_books field, but only the books where the return date was in the future. When the return date was in the past then the book would disappear from this section.
 
+Then I noticed that if another user buys the same book after, the return date for the book will be updated and then the book will appear again in the currently reading section for each user who has read that book in the past.
+
+The solution was to create a new field in the book model for the current_books that way the book will be added to current_books when the payment is done and will be removed from current_books when the book is returned so that way it won't be displayed again.
 
 # GitHub repository
 
@@ -554,32 +544,30 @@ The solution was to create a new field in the book model for the current_books t
 
 3. I've added "127.0.0.1" to the list of ALLOWED HOSTS in the settings.py
 
-4. I have created a env.py that will keep the variables that I need to keep secret and they shouldn't be pushed to Github. 
- - SECRET_KEY 
- - ENVIRONMENT
- - EMAIL_ADDRESS
- - EMAIL_PASSWORD 
- - STRIPE_PUBLISHABLE
- - STRIPE_SECRET
- - DATABASE_URL
- - AWS_ACCESS_KEY_ID
- - AWS_SECRET_ACCESS_KEY
+4. I have created a env.py that will keep the variables that I need to keep secret and they shouldn't be pushed to Github.
+- SECRET_KEY
+- ENVIRONMENT
+- EMAIL_ADDRESS
+- EMAIL_PASSWORD
+- STRIPE_PUBLISHABLE
+- STRIPE_SECRET
+- DATABASE_URL
+- AWS_ACCESS_KEY_ID
+- AWS_SECRET_ACCESS_KEY
 
 5. In the settings.py I have added the following syntax in order to run different code depending on if the project is in development or production mode.
 
 ```
 try:
- import env
+import env
 except ImportError:
- pass
- 
-
+pass
 ENVIRONMENT = os.environ.get('ENVIRONMENT')
 
 if ENVIRONMENT=='DEV':
- development = True
+development = True
 else:
- development = False
+development = False
 ```
 
 ```
@@ -591,53 +579,48 @@ DEBUG = development
 
 python manage.py startapp APP
 
-
 7. Every time an app has been added to the project I have also added the app name to the list of INSTALLED APPS in the settings.py file.
-
 
 8. I have created a superuser in order to be able to log into the Django Admin site:
 
 ```python manage.py createsuperuser```
 
-
 9. I have started the server by runing:
 
 ```python manage.py runserver```
 
-
-10. If the app has models then I have created the migration files: 
+10. If the app has models then I have created the migration files:
 ```python manage.py makemigrations```
 
 and after I have migrated in order to create the tables in the database:
 
 ```python manage.py migrate```
 
-
 11. Since my apps have forms that I want to style with bootstrap I have installed django-forms-bootstrap
 
 ```pip install django-forms-bootstrap```
 
-12. I have also installed Pillow to be able to upload images
+12. I have also installed Pillow to alow the upload of images
 
 ```pip install Pillow```
 
 13. Since we have several templates folders we need to specify in the settings that all the directories called 'templates' contain templates. We do this in the TEMPLATES section
 
 ```
- 'DIRS': [os.path.join(BASE_DIR,'templates')]
+'DIRS': [os.path.join(BASE_DIR,'templates')]
 ```
 
 14. Also in the templates section we need to add the media context processor because we will have media in the project and we need a media ROOT:
 
 ```
- 'django.template.context_processors.media'
+'django.template.context_processors.media'
 ```
 
 15. The books that are in the cart won't be saved in the database instead they will be stored in the session while the user is logged in. To ensure that the cart contents are available from every page on the website we need to create a context.
 We will create the context.py in the cart app and then that context will be included in the list of contexts inside the TEMPLATES section in the settings.py
 
 ```
- 'cart.context.cart_content'
+'cart.context.cart_content'
 ```
 
 16. Since we are going to take payments using Stripe we will need to install Stripe
@@ -645,63 +628,57 @@ We will create the context.py in the cart app and then that context will be incl
 ```pip install stripe```
 
 
-
 17. Then I have added the Postgress database (link saved in the env.py) and in order to be able to connect to the database URL I have installed dj-database-url
 
 ```pip install dj-database-url```
- 
-* I will also need to import dj-database-url in the settings.py file
- 
 
+* I will also need to import dj-database-url in the settings.py file
 18. Since the database is Postgres I also had to install the psycopg2 package.
 
 ```pip install psycopg2```
 
-
-20. In order to test the production database we will comment out the code referring to the SQLite database and we will add the following code:
+20. In order to test using the production database we will comment out the code referring to the SQLite local database and we will add the following code:
 
 ```
 DATABASES = {
- 'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
- }
+'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+}
 ```
 
 21. Then we will need to migrate to create the tables in the new database (we don't need to makemigrations if we haven't made changes to the models)
 
 ```python manage.py migrate```
 
-
 22. And since it is a new database we will also need to create a superuser
 
 ```python manage.py createsuperuser```
 
-
-23. The we can can update the database section code in order to use a different database depending if we are in production or development:
+23. Then we can can update the database section code in order to use a different database depending if we are in production or development:
 
 ```
 # in development
 if development==True:
- DATABASES = {
- 'default': {
- 'ENGINE': 'django.db.backends.sqlite3',
- 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
- }
- }
+DATABASES = {
+'default': {
+'ENGINE': 'django.db.backends.sqlite3',
+'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+}
+}
 # in production
 else:
- if "DATABASE_URL" in os.environ:
- # production database (Postgress)
- DATABASES = {
- 'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
- }
- else:
- print('Database URL not found. Using SQLite instead')
- DATABASES = {
- 'default': {
- 'ENGINE': 'django.db.backends.sqlite3',
- 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
- }
- }
+if "DATABASE_URL" in os.environ:
+# production database (Postgress)
+DATABASES = {
+'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+}
+else:
+print('Database URL not found. Using SQLite instead')
+DATABASES = {
+'default': {
+'ENGINE': 'django.db.backends.sqlite3',
+'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+}
+}
 ```
 
 24. Then in [AWS](https://aws.amazon.com/) S3 we will configure our buckets to host the static and media files there.
@@ -711,53 +688,54 @@ else:
 ```pip install django-storages```
 ```pip install boto3```
 
-``` 
+```
 INSTALLED_APPS = [
- .....
- 'storages',
- .....
-] 
+.....
+'storages',
+.....
+]
 ```
 
 26. We will need to create a custom_storages.py file in order to specify the locations for Media and Static.
 
+```
 class StaticStorage(S3Boto3Storage):
- location = settings.STATICFILES_LOCATION
+location = settings.STATICFILES_LOCATION
 
 class MediaStorage(S3Boto3Storage):
- location = settings.MEDIAFILES_LOCATION
-
+location = settings.MEDIAFILES_LOCATION
+```
 
 26. After this we will have to update the settings.py as follows:
 
 ```
- # variables and keys needed in order to set up the connection with AWS S3
- AWS_S3_OBJECT_PARAMETERS = {
- 'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
- 'CacheControl': 'max-age=94608000'
- }
+# variables and keys needed in order to set up the connection with AWS S3
+AWS_S3_OBJECT_PARAMETERS = {
+'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+'CacheControl': 'max-age=94608000'
+}
 
- AWS_STORAGE_BUCKET_NAME = 'tree-books'
- AWS_S3_REGION_NAME = 'eu-west-3'
- AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
- AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = 'tree-books'
+AWS_S3_REGION_NAME = 'eu-west-3'
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 
- AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
- STATICFILES_LOCATION = 'static'
- STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+STATICFILES_LOCATION = 'static'
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
- STATIC_URL = '/static/'
- STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 
- MEDIAFILES_LOCATION = 'media'
- DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+MEDIAFILES_LOCATION = 'media'
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
- MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
- MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 ```
 
-27. Then we will run the following command to collect send the files to S3:
+27. Then we will run the following command to send the files to S3:
 
 ```
 python manage.py collectstatic
@@ -769,41 +747,41 @@ python manage.py collectstatic
 # in development we keep the files locally
 if development==True:
 
- # we need a static root. All static files will be in the static directory
- STATIC_URL = '/static/'
- STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
- STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# we need a static root. All static files will be in the static directory
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
- # we need a media root. All media will be in the media directory
- MEDIA_URL = '/media/'
- MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# we need a media root. All media will be in the media directory
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # in production we use AWS S3 to host the media and static files
 else:
- # variables and keys needed in order to set up the connection with AWS S3
- AWS_S3_OBJECT_PARAMETERS = {
- 'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
- 'CacheControl': 'max-age=94608000'
- }
+# variables and keys needed in order to set up the connection with AWS S3
+AWS_S3_OBJECT_PARAMETERS = {
+'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+'CacheControl': 'max-age=94608000'
+}
 
- AWS_STORAGE_BUCKET_NAME = 'tree-books'
- AWS_S3_REGION_NAME = 'eu-west-3'
- AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
- AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = 'tree-books'
+AWS_S3_REGION_NAME = 'eu-west-3'
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 
- AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
- STATICFILES_LOCATION = 'static'
- STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+STATICFILES_LOCATION = 'static'
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
- STATIC_URL = '/static/'
- STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 
- MEDIAFILES_LOCATION = 'media'
- DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+MEDIAFILES_LOCATION = 'media'
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
- MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
- MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 ```
 
 ### Deployment
@@ -830,15 +808,13 @@ Once the website is working correctly I have deployed to Heroku following these 
 
 8. Then we will push the changes to GitHub
 
-9. In Heroku in the deploy section, we will connect to our Github repository and deploy branch.
+9. In Heroku in the deploy section, we will connect to our Github repository and deploy the branch.
 
 10. After checking that everything is working correctly we can 'Enable Automatic Deploys and that way when we push code to GitHub it will automatically deploy the project in Heroku
-
 
 ### My repository
 
 https://github.com/elenasacristan/treebooks
-
 
 ### My deployed app
 
@@ -863,7 +839,6 @@ https://treebooksproject.herokuapp.com/
 - The recipes images have been obtained from Google images using the Advance Search and selecting “free to use, share or modify, even commercially”. See links below:
 
 [https://www.seriouseats.com/2015/05/pancakes-around-the-world.html](https://www.seriouseats.com/2015/05/pancakes-around-the-world.html)
-
 
 ## Acknowledgements
 
