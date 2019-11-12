@@ -160,7 +160,7 @@ In this page the user can see all the details about the book. These details are 
 
 In this page if the book is available and the user is authenticated then the user can select the number of days that wants to rent the book for (the minimum number of days will be 10 and it has been set as the default value) and add it to the shopping cart.
 
-If the book is not available and the user is authenticated then the user can join the waiting list. 
+If the book is not available and the user is authenticated then the user can join the waiting list.
 if the user is already in the waiting list then he/she will see the message 'You are already in the waiting list' and a link to the waiting list so they can see in what position they are.
 
 If the user is not authenticated he/she will see a button to register because only authenticated users can rent books or join the waiting lists.
@@ -178,8 +178,8 @@ If the user doesn't return the book on time a warning message will be displayed 
 - Also if the user wants to return the book before the due date then he/she can click the button 'I have returned the book' once the book has been returned and that way the book will become available for everyone or if there is waiting list it will become available for the next user in the waiting list.
 
 - personal details (first name, last name, date of birth, email, telephone and preferred contact method)
-- contact preferences 
- At the bottom, the user can access the list of books read since he/she became a member, the list of books he/she is in the waiting lists for and the list of favourites books.
+- contact preferences
+At the bottom, the user can access the list of books read since he/she became a member, the list of books he/she is in the waiting lists for and the list of favourites books.
 
 These three lists will be displayed in modal windows. The code used to create the modal comes from Bootstrap 4.
 
@@ -189,7 +189,6 @@ By clicking 'books in waiting list' the modal window will appear and the user wi
 
 Treebooks will contact the next user in the contact list as soon as the book is returned by the previous user. Also, the user will see a notification saying 'it's your turn' on the books listing. Then the next user in the waiting list can proceed to rent the book online. Only the next user in the waiting list will have the option to rent the book for the rest of the users the book will not be available.
 
-
 ##### edit_user_profile.html
 
 The users can edit their profile details by clicking on edit profile on the profile page.
@@ -197,7 +196,6 @@ The users can edit their profile details by clicking on edit profile on the prof
 They will be able to add and edit the profile picture, the date of birth, and the telephone.
 
 Then they can choose to opt-in for the monthly newsletter and they can also select what is the preferred way to be contacted (phone, email or both)
-
 
 ### Home app
 
@@ -207,7 +205,7 @@ This is the home page and the user will get redirected to this page when they cl
 
 This page has a carousel highlighting the main areas of the charity.
 
-At the bottom the users can see the main benefits of being a member. 
+At the bottom the users can see the main benefits of being a member.
 The users that are not authenticated will see the message 'Become a member and you will...' and also they will see the button register so they can become members.
 
 If the user is authenticated then he/she won't see the register button and the header will have the message saying 'Hi USERNAME, with TreeBooks you can...'
@@ -256,11 +254,11 @@ Once the payment has gone through a success message will be displayed and then t
 If there is an error with the payment the user will be notified with an error message.
 
 If the payment has been successful the following will happen:
- - The book(s) will be added to the list of read books and the list of current_books
- - The book will become NOT available
- - The money paid for the book (not including the deposit) will be added to the total money raised for the charity
- - The number of books rented will be added to the number of books rented since the charity started.
- - If the user was in a waiting list for the books that he/she is renting then his/her name will be removed from the waiting list.
+- The book(s) will be added to the list of read books and the list of current_books
+- The book will become NOT available
+- The money paid for the book (not including the deposit) will be added to the total money raised for the charity
+- The number of books rented will be added to the number of books rented since the charity started.
+- If the user was in a waiting list for the books that he/she is renting then his/her name will be removed from the waiting list.
 
 ### Waiting_list app
 
@@ -275,12 +273,11 @@ If the waiting list is empty the header will say: "You could be next!" and then 
 
 At the bottom of the waiting list there will be two buttons. The "Keep looking" button will redirect the user to the all_books.html page and the "Go to Book" will redirect the user to the detail.html page for that book.
 
-
 ### Reviews app
 
 ##### review_form.html
 
-Once the user has rented a book he/she can leave a review. 
+Once the user has rented a book he/she can leave a review.
 The users can see the books that they have read on their profile page by clicking on "See the books you read". For each book in this list the user will have the option to leave a review. Once they have reviewed the book then they will see the message 'Already reviewed' under the book title.
 
 The review_form.html page will display a form where the user can enter the title of the review, the comment and the score from 0 to 5.
@@ -288,13 +285,11 @@ The review_form.html page will display a form where the user can enter the title
 Then the review will be added to the detail.html page for that book.
 Each review will display the individual star rating and then all the reviews will be taken into account to calculate the mean score for that book (and that average start rating and score will be displayed on the top left side of the details page)
 
-
 ### Favourites app
 
 The user can add/remove the book that he/she wants to the list of favourites by clicking the heart icon on the pages all_books.html and detail.html.
 
 Then the user can see all the favourites books if he clicks on "See your favourites" on the user profile page.
-
 
 ### Search app
 
@@ -310,19 +305,18 @@ The books that contain the word entered in the search box either in the title or
 
 
 
-
-### navbar
+##### navbar
 The navbar will be available from all the pages in the website.
 In order to create the navbar I have used Bootstrap 4 and I have used the following link to help me align the elements inside.
 https://www.codeply.com/go/qhaBrcWp3v
 
-### Hamburger button
+##### Hamburger button
 The hamburger button from bootstrap 4 will appear on small screens and when is clicked it will display the navbar vertically and it will also include the login and cart options.
 
-### social links
+##### social links
 They appear on the page footer in every page on the website and by clicking on them the user will get redirected to the media websites to follow TreeBooks. (since the website is fictitious they will be redirected to the login page for Facebook or Twitter).
 
-### Logo
+##### Logo
 The logo will appear in the navigation bar for every section of the website and when clicked it will redirect the user to the home page (index.html).
 
 ## Features Left to Implement
@@ -348,105 +342,144 @@ I have used Adobe Fireworks to create the logo and the mock-ups.
 
 - **CSS3:** Is the language used to add styles to the HTML.
 
-- **[JavaScript:](https://developer.mozilla.org/en-US/docs/Web/JavaScript)** This is the language used to add interactivity to the website. It has been used to add the spinner while the pages load and in order TO AUTOSCROLL THE BOOKS WHEB HOVERING OVER
+- **[JavaScript:](https://developer.mozilla.org/en-US/docs/Web/JavaScript)** This is the language used to add interactivity to the website. 
+I have used it to add the auto-scroll effect when overnight over the list of book. Also has been used to display the spinner icon while the pages load.
 
 - **[Python:](<[https://www.python.org/](https://www.python.org/)>)** The main logic of the website has been created using Python.
 
-- ***[Django:]())** I have used the django framework.
+- **[Django:](https://www.djangoproject.com/)** I have used Django framework in order to build the backend of the website.
 
 #### Dependencies:
 
+ Below is the list of the main packages that I had to install in order to create the project. These packages are listed in the requirements.txt file together with some other packages that have been installed automatically when installing the main packages.
+
+
+**Django** is the framework needed to create this project.
+
+```Django==1.11.17```
+
+**django-forms-bootstrap** is needed in order to apply bootstrap styles to the django forms.
+
+```django-forms-bootstrap==3.1.0```
+
+
+The **Pillow** package is needed in order to allow the upload of images.
+```Pillow==6.1.0```
+
+The **stripe** package is needed in order to be able to take payments.
+
+```stripe==2.37.1```
+
+The **dj-database-url** package is the package needed in order to connect to a database URL. 
+```dj-database-url==0.5.0```
+
+The **psycopg2** package is needed to connect to the Postgress URL.
+
+```psycopg2==2.8.4```
+
+
+**boto3** and **django-storages** packages are needed in order to connect Django to S3 (AWS) that is where we are hosting our media and static files.
+```boto3==1.10.2```
+```django-storages==1.7.2```
+
+The **coverage** package is not needed for the project to run but it is needed to create the coverage report when testing the app.
+```coverage==4.5.4```
+
+**django-extensions** and **pydot** packages are needed in order to create the database schema.
+
+```django-extensions==2.2.5```
+```pydot==1.4.1```
+
+This **django-template-check** package makes it possible to easily check for basic syntax errors in all loaded Django templates. 
+
+```django-template-check==0.3.1```
+
+The **gunicorn** package is needed in order to connect to Heroku.
+```gunicorn==20.0.0```
+
+
+
+
+
+
+
+
+
 #### Libraries
 
-- **\*\*\*\***[jQuery](https://jquery.com/)**\*\*\*\***
+* **[jQuery](https://jquery.com/)**: This library is needed for all the interactive elements in the website to work. 
 
-* **\*\*\*\***[FontAwesome:](https://fontawesome.com/ "https://fontawesome.com/")**\*\*\*\*** .
+* **[FontAwesome:](https://fontawesome.com/ "https://fontawesome.com/")**: The font awesome icons have been used in different areas of the website (search, cart, log in, log our, social media and favourites icon)
 
-* **\*\*\*\***[Google Fonts:](https://fonts.google.com/ "https://fonts.google.com/")**\*\*\*\*** I’ve used the fonts from Google Fonts to style the fonts in the website.
+* **[Google Fonts:](https://fonts.google.com/ "https://fonts.google.com/")** I’ve used the fonts from Google Fonts to style the fonts in the website.
 
 #### Development environment:
-
-- **\*\*\*\***[VisualStudio:](https://visualstudio.microsoft.com/)**\*\*\*\***
-
-I have used Visual Studio to develop the app.
+**[VisualStudio:](https://visualstudio.microsoft.com/)** I have used Visual Studio to develop the app.
 
 #### Version control system:
 
-- **\*\*\*\***[Git:](https://git-scm.com/ "https://git-scm.com/")**\*\*\*\***
-
-I have used the version control system Git from the "Git Bash" terminal in order to track changes in the website and push them to GitHub.
+**[Git:](https://git-scm.com/ "https://git-scm.com/")** I have used the version control system Git from the "Git Bash" terminal in order to track changes in the website and push them to GitHub.
 
 #### Hosting service:
-
-- **\*\*\*\***[Heroku:](<[https://www.heroku.com/](https://www.heroku.com/)****>)\*\*\*\*
-
-I have used Heroku in order to deploy the website.
+- **[Heroku:](https://www.heroku.com/)** I have used Heroku in order to deploy the website.
 
 ## Testing
 
 ### Validation
 
-- \***\*HTML:\*\*** I have used https://validator.w3.org/ in order to validate the HTML code.
+- **HTML:** I have used https://validator.w3.org/ in order to validate the HTML code.
 
-- \***\*CSS:\*\*** I have used https://jigsaw.w3.org/css-validator/ in order to validate the CSS code.
+- **CSS:** I have used https://jigsaw.w3.org/css-validator/ in order to validate the CSS code.
 
-- \***\*JavaScript:\*\*** I have used https://jshint.com/ in order to check the JavaScript code.
+- **JavaScript:** I have used https://jshint.com/ in order to check the JavaScript code.
 
 ### Features and responsiveness testing
 
 #### django tests
 
-I have run tests for the models, forms and views in all apps where applicable. See the coverage reports for each app below:
+I have run tests for the models, forms and views in all apps where applicable. 
+I have tried to automate the test for as much code as possible but I didn't reached the 100% coverage because in some cases the tests were really complicated and in these cases I have choosen to test manually.
+See the coverage reports for each app below. 
 
 ##### accounts coverage report
 
 ![home](/documents/coverage/accounts.png)
 
-
 ##### books coverage report
 
 ![home](/documents/coverage/books.png)
-
 
 ##### cart coverage report
 
 ![home](/documents/coverage/cart.png)
 
-
 ##### checkout coverage report
 
 ![home](/documents/coverage/checkout.png)
-
 
 ##### favourites coverage report
 
 ![home](/documents/coverage/favourites.png)
 
-
 ##### home coverage report
 
 ![home](/documents/coverage/home.png)
-
 
 ##### reviews coverage report
 
 ![home](/documents/coverage/reviews.png)
 
-
 ##### search coverage report
 
 ![home](/documents/coverage/search.png)
-
 
 ##### userprofile coverage report
 
 ![home](/documents/coverage/userprofile.png)
 
-
 ##### waiting_list coverage report
 
 ![home](/documents/coverage/waiting_list.png)
-
 
 Click [here](/documents/checkList.xlsx) to see the checklist that I have used to test all the features in all the screen sizes.
 
@@ -463,24 +496,33 @@ I have also used development tools in Google Chrome to check how the website wou
 
 ### Problems and bugs:
 
-I have issues when iterating on fields with many to many relationships and in the end, I could fix these problems by using (loop.first) and in other cases by using of list_values.
+**iterating on fields with ManyToMany relationships**
+I have issues when iterating on fields with many to many relationships. In the end, I could fix these problems by using ({% if forloop.first %}) and in other cases by using of values_list.
 
-When I changed from the local database to the Postgress database suddenly I started having errors when adding more than one user to the waiting list. This issue was very strange because in the local database was working fine. I ask the Tutors and they suggest to create a new link to a new postgrees database to see if this could solve the problem but it didn't.
-Finally I noticed that every time I was adding a user to the waiting list I was also adding a book and that is why the book Id was duplicated.
+**IntergrityError - waiting list**
+When I changed from the local database to the Postgress database suddendly if I added more than one user to the same waiting list I was getting the following error:
+    "IntergrityError at/waiting_list/join/2/ duplicate key value violates unique constraint "waiting_list_waitinglist_wl_book_id_key" 
 
-Current books if the book became available again it will appear on the profile fro the other users that have already finished the book
+This was strange because locally I could add more than one user to the same waiting list without any error but changing to Postgress I was getting the error.
+The tutors suggested me to create a new link to a new Postgres database to see if this could solve the problem but it didn't.
+Finally I noticed that every time I was adding a user to the waiting list I was also adding a book and that is why the book Id was since the book already existed in the waiting list.
+This issue was fixed by using get or create. So a book will only be added if it didn't exist already
 
-This issue was fixed by using get or create. So a book will only be added if it didn't exist already.
+**Currently reading**
+I also had an issue in the currently reading section. The original UserProfile model didn't have the field current_books when I first created it so instead I was displaying in this section the books included in the read_books field, but only the books where the return date was in the future. When the return_date was in the pass then the book would dissappear from this section. 
+Then I noticed that if another user buy the same book after, the return_date for the book will be updated and then the book will appear again in the currently reading section for each user who has read that book in the past.
+The solution was to create a new field in the book model for the current_books that way when the book is returned the book will be removed from the current_books and won't be displayed again when other user reads the same book.
+
 
 # GitHub repository
 
-1. I've created a repository in GitHub called: “elenasacristan/xxxxx” [https://github.com/elenasacristan/Xxxxx.git](https://github.com/elenasacristan/xxxx.git)
+1. I've created a repository in GitHub called: “elenasacristan/treebooks” [https://github.com/elenasacristan/treebooks.git](https://github.com/elenasacristan/treebooks.git)
 
 2. I've initialised git from the terminal using Git Bash:
 
 `git init`
 
-3. I have created a .gitignore file and I have added the files and folder that don't need to be commited (i.e. '.venv' folder)
+3. I have created a .gitignore file and I have added the files and folders that won't need to push to GitHub (i.e. '*.sqlite3','env.py','.vscode/','.venv/', __pycache__, *.pyc)
 
 4. I've added the files that I was working on to the Staging area by using:
 
@@ -492,7 +534,7 @@ This issue was fixed by using get or create. So a book will only be added if it 
 
 6. I copied from GitHub the following path and I ran it in the Git Bash terminal in order to indicate where my remote repository is:
 
-`git remote add origin git@github.com:elenasacristan/xxzxx.git`
+`git remote add origin git@github.com:elenasacristan/treebooks.git`
 
 `git push -u origin master`
 
@@ -508,83 +550,299 @@ This issue was fixed by using get or create. So a book will only be added if it 
 
 2. I've Installed django
 
-`CODE HERE
+`pip install django==1.11.17`
 
-4. Then I've created my app by running the following code (where appname will be replaced by the name of each of my apps)
+3. I've added "127.0.0.1" to the list of ALLOWED HOSTS in the settings.py
 
-CODE HERE
+4. I have created a env.py that will keep the variables that I need to keep secret and they shouldn't be pushed to Github. 
+    - SECRET_KEY 
+    - ENVIRONMENT
+    - EMAIL_ADDRESS
+    - EMAIL_PASSWORD 
+    - STRIPE_PUBLISHABLE
+    - STRIPE_SECRET
+    - DATABASE_URL
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY
 
-5. I have added each app in the project to the list of INSTALLED APPs
+5. In the settings.py I have added the following syntax in order to run different code depending on if the project is in development or production mode.
 
-6. I have added 127.0.0.1?? To the list of allowed hosts.
+```
+try:
+    import env
+except ImportError:
+    pass
+    
 
-EXPLAIN ALL APPS 
-Send emails 
-Templates 
-Login using email
+ENVIRONMENT = os.environ.get('ENVIRONMENT')
 
-CART 
-session
+if ENVIRONMENT=='DEV':
+    development = True
+else:
+    development = False
+```
 
-7. Then I have created for each app the files models.py, forms.py,views.py and urls.py.
+```
+# will be True in development and False in production
+DEBUG = development
+```
 
-SEE MODELS SHEMA HERE.. LINK
+6. Then I have created the apps in the project by running the following command where APP would be the name of each app:
 
-After creating or updating any of model.py files I have always makemigrations and migrate using the following code.
+python manage.py startapp APP
 
-ADD CODE HERE
 
-8. I have also created the admin.py in order to add the model to the admin site.
+7. Everytime an app has been added to the project I have also added the app name to the list of INSTALLED APPS in the settings.py file.
 
-9. In order to manage image files I have installed pillow
 
-10. I have created a env.py file and I have saved on it all my keys and password.. INDICATE ALL THTA IS SAVED HERE
+8. I have created a superuser in order to be able to log into the Django Admin site:
 
-11. Then this file has been added to the .gitignore to avoid uploading it into Github
+```python manage.py createsuperuser```
 
-12. Then in the settings file I have used the following code so depending on if I'm working on development mode or production the DEBUG will be set to True or False respectively.
 
-### Static files hosting AWS
+9. I have started the server by runing:
+
+```python manage.py runserver```
+
+
+10. If the app has models then I have created the migration files: 
+```python manage.py makemigrations```
+
+and after I have migrated in order to create the tables in the database:
+
+```python manage.py migrate```
+
+
+11. Since my apps have forms that I want to style with bootstrap I have installed django-forms-bootstrap
+
+```pip install django-forms-bootstrap```
+
+12. I have also installed Pillow in order to be ablet to upload images
+
+```pip install Pillow```
+
+13. Since we have several templates folders we need to specify in the settings that all the directories called 'templates' contain templates. We do this in the TEMPLATES section
+
+```
+        'DIRS': [os.path.join(BASE_DIR,'templates')]
+```
+
+14. Also in the templates section we need to add the media context processor because we wil have media in the project and we need a media ROOT:
+
+```
+                'django.template.context_processors.media'
+```
+
+15. The books that are in the cart won't be saved in the database instead they will be stored in the session while the user is logged in and in order to ensure that the cart contents are available from every page in the website we need to create a context.
+We will create the context.py in  the cart app and then that context will be included in the list of contexts inside the TEMPLATES section in the settings.py
+
+```
+                'cart.context.cart_content'
+```
+
+16. Since we are going to take payments using Stripe we will need to install Stripe
+
+```pip install stripe```
+
+
+
+17. Then I have added the Postgress database (link saved in the env.py) and in order to be able to connect to the database URL I have installed dj-database-url
+
+```pip install dj-database-url```
+        
+*  I will also need to import dj-database-url in the settings.py file
+    
+
+18. Since the database is Postgres I also had to install the psycopg2 package.
+
+```pip install psycopg2```
+
+
+20. In order to test the production database we will comment out the code referring to the SQLite database and we will add the following code:
+
+```
+DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+```
+
+21. Then we will need to migrate to create the tables in the new database (we don't need to makemigrations if we haven't make changes to the models)
+
+```python manage.py migrate```
+
+
+22. And since it is a new database we will also need to create a superuser
+
+```python manage.py createsuperuser```
+
+
+23. The we can can update the database section code in order to use a different database depending if we are in production or development:
+
+```
+# in development
+if development==True:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+# in production
+else:
+    if "DATABASE_URL" in os.environ:
+        # production database (Postgress)
+        DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+    else:
+        print('Database URL not found. Using SQLite instead')
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            }
+        }
+```
+
+24. Then in [AWS](https://aws.amazon.com/) S3 we will configure our buckets in order to host the static and media files there.
+
+25. In order to use S3 we will need to install django-storages and boto3 and we will also have to add storages to INSTALLED_APPS
+
+```pip install django-storages```
+```pip install boto3```
+
+``` 
+INSTALLED_APPS = [
+    .....
+    'storages',
+    .....
+] 
+```
+
+26. We will need to create a custom_storages.py file in order to specify the locations for Media and Static.
+
+class StaticStorage(S3Boto3Storage):
+    location = settings.STATICFILES_LOCATION
+
+class MediaStorage(S3Boto3Storage):
+    location = settings.MEDIAFILES_LOCATION
+
+
+26. After this we will have to update the settings.py as follows:
+
+```
+    # variables and keys needed in order to set up the connection with AWS S3
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000'
+    }
+
+    AWS_STORAGE_BUCKET_NAME = 'tree-books'
+    AWS_S3_REGION_NAME  = 'eu-west-3'
+    AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
+    AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+
+    AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+    STATICFILES_LOCATION = 'static'
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+
+    MEDIAFILES_LOCATION = 'media'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    MEDIA_URL = '/media/'
+```
+
+27. Then we will run the following command in order to collect send the files to S3:
+
+```
+python manage.py collectstatic
+```
+
+26. Finally we can add additional syntax to the settings.py to use different code for the static and media storage depending on if we are in development or in production
+
+```
+# in development we keep the files locally
+if development==True:
+
+    # we need a static root. All static files will be in the static directory
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+    # we need a media root. All media will be in the media directory
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# in production we use AWS S3 to host the media and static files
+else:
+    # variables and keys needed in order to set up the connection with AWS S3
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000'
+    }
+
+    AWS_STORAGE_BUCKET_NAME = 'tree-books'
+    AWS_S3_REGION_NAME  = 'eu-west-3'
+    AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
+    AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+
+    AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+    STATICFILES_LOCATION = 'static'
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+
+    MEDIAFILES_LOCATION = 'media'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    MEDIA_URL = '/media/'
+```
 
 ### Deployment
 
-I have used Heroku to deploy the website. In order to do that I have followed the steps below:
+Once the website is working correctly I have deployed to Heroku following these steps:
 
-1. I've changed the settings to Debug=False ("FLASK_DEBUG": "0")
+1. I have created an app (I already created an app before in order to get the Postgress URL link)
 
-2) I've added the env.py file to the gitignore file.
+2. In the settings (Config Vars) I have added all the environmental variables that were included in the env.py apart from 'ENVIRONMENT'
 
-3) I've created an app in Heroku
+3. Then I went back to vscode and I installed gunicorn. This is required to connnect to Heroku
+```pip install gunicorn```
 
-5. In the settings (Config Vars) I've added my environmental variables for the SECRET_KEY, POSTGRESS LINKS.. ETC
+4. I also updated the requirements.txt
+```pip freeze > requirements.txt```
 
-6) From the command line in vs code I have created a requirements.txt file with the following command:
+5. I created the Procfile (in order to tell Heroku what type of app is getting)
 
-`python -m pip freeze > requirements.txt`
+```web: gunicorn treebooks.wsgi:application```
 
-7. From the command line in vs code I have created the Procfile with the following command:
+6. Then I added to the Config Vars DISABLE_COLLECTSTATIC = 1 in order to tell Heroku not to try to collect Static files.
 
-A BIT DIFFERENT?
+7. After this we need to add the heroku app address to the ALLOWED_HOST section in settings.py
 
-`echo web: python app.py > Procfile`
+8. Then we will push the changes to GitHub
 
-8. Then I have pushed all the code to my GitHub repository
+9. In Heroku in the deploy section we will connect to our Github repository and deploy branch.
 
-9) After this \***\*I have linked my Heroku app with my GitHub repository\*\*** in order to be able to do "Continous delivery". I've learned how to link Heroku and GitHub with the following tutorial ([https://www.youtube.com/watch?v=\_tiecDrW6yY](https://www.youtube.com/watch?v=_tiecDrW6yY)).
+10. After checking that evrything is working correctly we can 'Enable Automatic Deploys and that way when we push code to GitHub it will automatically deploy the porject in Heroku
 
-10. Then I have created another app with the same Config Vars and I have created a pipeline where the first app will be the staging app and the second app will be the production app. When I push changes to GitHub I'll be able to see the changes on the Staging App but not in the Production app.
-
-11) Once the website has been fully tested and is working correctly the changes done to the staging app have been promoted to the Production app:
-
-[https://xxxxxxx.herokuapp.com/](https://xxxxxx.herokuapp.com/)
 
 ### My repository
 
-https://github.comelenasacristan/XXXX/
+https://github.com/elenasacristan/treebooks
+
 
 ### My deployed app
 
-http://XXXX.herokuapp.com
+https://treebooksproject.herokuapp.com/
 
 ## Credits
 
@@ -606,29 +864,6 @@ http://XXXX.herokuapp.com
 
 [https://www.seriouseats.com/2015/05/pancakes-around-the-world.html](https://www.seriouseats.com/2015/05/pancakes-around-the-world.html)
 
-[https://pixabay.com/photos/food-fish-chips-fish-and-chips-3687804/](https://pixabay.com/photos/food-fish-chips-fish-and-chips-3687804/)
-
-[https://pixabay.com/images/search/burger/](https://pixabay.com/images/search/burger/)
-
-[https://commons.wikimedia.org/wiki/File:Bolo_de_Mel.JPG](https://commons.wikimedia.org/wiki/File:Bolo_de_Mel.JPG)
-
-[https://www.flickr.com/photos/30478819@N08/35961379924](https://www.flickr.com/photos/30478819@N08/35961379924)
-
-[https://www.flickr.com/photos/146966953@N02/28879437404](https://www.flickr.com/photos/146966953@N02/28879437404)
-
-[https://www.flickr.com/photos/39908901@N06/8406293769](https://www.flickr.com/photos/39908901@N06/8406293769)
-
-[https://www.flickr.com/photos/jeffreyww/5063817774](https://www.flickr.com/photos/jeffreyww/5063817774)
-
-[https://www.flickr.com/photos/ellaolsson/30863436677](https://www.flickr.com/photos/ellaolsson/30863436677)
-
-[https://pxhere.com/en/photo/619505](https://pxhere.com/en/photo/619505)
-
-[https://pixabay.com/photos/iced-coffee-coffee-drink-2710815/](https://pixabay.com/photos/iced-coffee-coffee-drink-2710815/)
-
-[https://www.flickr.com/photos/30478819@N08/43801037610](https://www.flickr.com/photos/30478819@N08/43801037610)
-
-[https://pixabay.com/photos/salad-tuna-salad-article-nafut-1088411/](https://pixabay.com/photos/salad-tuna-salad-article-nafut-1088411/)
 
 ## Acknowledgements
 
@@ -640,24 +875,24 @@ http://XXXX.herokuapp.com
 
 \***\*Tutorials\*\***
 
-- **Login / Register**: 
- I watch the following tutorial to understand how to create the login/register functions. 
- [https://www.youtube.com/watch?v=vVx1737auSE](https://www.youtube.com/watch?v=vVx1737auSE)
+- **Login / Register**:
+I watch the following tutorial to understand how to create the login/register functions.
+[https://www.youtube.com/watch?v=vVx1737auSE](https://www.youtube.com/watch?v=vVx1737auSE)
 
-* \***\*Upload image\*\*** 
- I found information about how to upload images into mongodb using flask on the following video tutorial: 
- [https://www.youtube.com/watch?v=DsgAuceHha4](https://www.youtube.com/watch?v=DsgAuceHha4)
+* \***\*Upload image\*\***
+I found information about how to upload images into mongodb using flask on the following video tutorial:
+[https://www.youtube.com/watch?v=DsgAuceHha4](https://www.youtube.com/watch?v=DsgAuceHha4)
 
-- \***\*Display image as soon as it is selected\*\*** 
- The following post help me to create the code in order to display the image as soon as it is selected using the input file. 
- [https://gist.github.com/zulhfreelancer/1a1b68062da349d6268f0aaa43991b99](https://gist.github.com/zulhfreelancer/1a1b68062da349d6268f0aaa43991b99)
+- \***\*Display image as soon as it is selected\*\***
+The following post help me to create the code in order to display the image as soon as it is selected using the input file.
+[https://gist.github.com/zulhfreelancer/1a1b68062da349d6268f0aaa43991b99](https://gist.github.com/zulhfreelancer/1a1b68062da349d6268f0aaa43991b99)
 
-* \***\*Create interactive visualization using DC/JS Crossfilter\*\*** 
- I learn how to set up the connection between mongodb and DC/JS Crossfilter by following the tutorial in the link below: 
- http://adilmoujahid.com/posts/2015/01/interactive-data-visualization-d3-dc-python-mongodb/
+* \***\*Create interactive visualization using DC/JS Crossfilter\*\***
+I learn how to set up the connection between mongodb and DC/JS Crossfilter by following the tutorial in the link below:
+http://adilmoujahid.com/posts/2015/01/interactive-data-visualization-d3-dc-python-mongodb/
 
-- \***\*Log out / clear cookies\*\*** 
- In the link below I learnt about how to remove the cookies when the user logs out. https://www.tutorialspoint.com/flask/flask_sessions.htm
+- \***\*Log out / clear cookies\*\***
+In the link below I learnt about how to remove the cookies when the user logs out. https://www.tutorialspoint.com/flask/flask_sessions.htm
 
 * As always the slack community has been very helpful when I had any question.
 
