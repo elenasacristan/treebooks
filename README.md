@@ -188,7 +188,7 @@ These three lists will be displayed in modal windows. The code used to create th
 
 In the list of books read the user will have the option to leave a review for the books that have rented. 
 
-By clicking 'books in waiting list' the modal window will appear and the user will be able to see a list of books that he is waiting for with a link in each book to see the waiting list.
+By clicking 'Your waiting lists' the modal window will appear and the user will be able to see a list of books that he/she is waiting for with a link in each book to see the waiting list.
 
 Treebooks will contact the next user in the contact list as soon as the book is returned by the previous user. Also, the user will see a notification saying 'it's your turn' on the books listing. Then the next user in the waiting list can proceed to rent the book online. Only the next user in the waiting list will have the option to rent the book, for the rest of the users the book will not be available.
 
@@ -282,7 +282,7 @@ At the bottom of the waiting list there will be two buttons. The "Keep looking" 
 ##### review_form.html
 
 Once the user has rented a book he/she can leave a review.
-The users can see the books that they have read on their profile page by clicking on "See the books you read". For each book in this list the user will have the option to leave a review. Once they have reviewed the book then they will see the message 'Already reviewed' under the book title.
+The users can see the books that they have read on their profile page by clicking on "The books you read". For each book in this list the user will have the option to leave a review. Once they have reviewed the book then they will see the message 'Already reviewed' under the book title.
 
 The review_form.html page will display a form where the user can enter the title of the review, the comment and the score from 0 to 5.
 
@@ -293,7 +293,7 @@ Each review will display the individual star rating and then all the reviews wil
 
 The user can add/remove the book that he/she wants to the list of favourites by clicking the heart icon on the pages all_books.html and detail.html.
 
-Then the user can see all the favourites books if he clicks on "See your favourites" on the user profile page.
+Then the user can see all the favourites books if he clicks on "Your favourites" on the user profile page.
 
 ### Search app
 
