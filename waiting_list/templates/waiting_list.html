@@ -15,7 +15,7 @@
             {% with waiting_list|first as first_waiting_list %}
                 <!-- if there are users in the waiting list -->
                 {% if first_waiting_list.wl_user.all %}
-                    <h2 class="headers_all text-center"><small>waiting list for</small><br>{{ first_waiting_list.wl_book.title}}</h2>
+                    <h2 class="headers_all text-center"><small>Waiting list for</small><br>{{ first_waiting_list.wl_book.title}}</h2>
                 {% else %}
                     <h2 class="headers_all text-center"><small>You could be next!</small> </h2>
                 {% endif %}

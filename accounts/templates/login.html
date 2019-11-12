@@ -16,7 +16,7 @@
                 {% csrf_token %}
                 {{ login_form | as_bootstrap}}
                 <button type="submit" class="btn">Login</button>
-                <p>New user? create your account <a href="{% url 'registration' %}">here</a></p>
+                <p>New user? Create your account <a href="{% url 'registration' %}">here</a></p>
                 <p><a href="{% url 'password_reset' %}">I forgot my password</a></p>
             </form>
         </div>

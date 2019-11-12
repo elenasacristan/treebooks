@@ -233,7 +233,7 @@ else:
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-    MEDIA_URL = '/media/'
+    MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
     
 
 # These are the variables needed to use Stripe to take payments
