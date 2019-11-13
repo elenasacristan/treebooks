@@ -34,7 +34,7 @@ https://treebooksproject.herokuapp.com/
 - [Technologies Used](#Technologies-Used)
 - [Testing](#Testing)
     - [Validation](#Validation)
-    - [django tests](#django-tests)
+    - [Django tests](#django-tests)
     - [Additional testing](#Additional-testing)
 
 - [Problems and bugs](#Problems-and-bugs)

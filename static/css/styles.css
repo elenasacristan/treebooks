@@ -681,6 +681,10 @@ fav-form button:active {
   margin-bottom: 40px;
 }
 
+.add-days .input-group{
+  width: 80%;
+}
+
 /* start rating  */
 .label-rating {
   margin-right: 0px;
@@ -780,6 +784,9 @@ fav-form button:active {
   }
   .price-section .price {
     margin-right: 40px;
+  }
+  .add-days .input-group{
+    width: 100%;
   }
 }
 
