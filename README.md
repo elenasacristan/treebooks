@@ -509,11 +509,11 @@ I also had an issue in the currently reading section. The original UserProfile m
 
 Then I noticed that if another user bought the same book after, the return date for the book was updated and then the book was appearing again in the currently reading section for each user who had read that book in the past.
 
-The solution was to create a new %eld in the book model for the current_books that way the book will be added to current_books when the payment is completed and will be removed from current_books when the book is returned so that way it won't be displayed again.
+The solution was to create a new field in the UserProfile model for the current_books that way the book will be added to current_books when the payment is completed and will be removed from current_books when the book is returned so that way it won't be displayed again.
 
 
 ##### Image upload
-When I deployed the project to Heroku I try to upload an image and it was not being displayed. I could see in S3 that the image was uploaded in S3 so that made me think that the issue was with the MEDIA_URL. Then by checking Slack I found the answer. I was using ``` MEDIA_URL = '/media/'``` but I should be using ```MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)``` instead. Once I updated the MEDIA_URL the images uploaded were displaying correctly.
+When I deployed the project to Heroku I tried to upload an image and it was not being displayed. I could see in S3 that the image was uploaded in S3 so that made me think that the issue was with the MEDIA_URL. Then by checking Slack I found the answer. I was using ``` MEDIA_URL = '/media/'``` but I should be using ```MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)``` instead. Once I updated the MEDIA_URL the images uploaded were displaying correctly.
 
 
 
@@ -572,15 +572,16 @@ When I deployed the project to Heroku I try to upload an image and it was not be
 
 ```
 try:
-import env
+    import env
 except ImportError:
-pass
+    pass
+
 ENVIRONMENT = os.environ.get('ENVIRONMENT')
 
 if ENVIRONMENT=='DEV':
-development = True
+    development = True
 else:
-development = False
+    evelopment = False
 ```
 
 ```
@@ -588,11 +589,12 @@ development = False
 DEBUG = development
 ```
 
-6. Then I have created the apps in the project by running the following command where APP would be the name of each app:
+6. Then I have created each apps in the project by running the following command where APP would be the name of each app:
 
 python manage.py startapp APP
 
 7. Every time an app has been added to the project I have also added the app name to the list of INSTALLED APPS in the settings.py file.
+
 
 8. I have created a superuser in order to be able to log into the Django Admin site:
 
@@ -602,7 +604,7 @@ python manage.py startapp APP
 
 ```python manage.py runserver```
 
-10. If the app has models then I have created the migration files:
+10. When the app has models then I have created the migration files:
 ```python manage.py makemigrations```
 
 and after I have migrated in order to create the tables in the database:
@@ -650,15 +652,15 @@ We will create the context.py in the cart app and then that context will be incl
 
 ```pip install psycopg2```
 
-20. In order to test using the production database we will comment out the code referring to the SQLite local database and we will add the following code:
+20. In order to test using the production database we will comment out the code referring to the SQLite local database and we will add the following code instead:
 
-```
+`
 DATABASES = {
 'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-}
-```
+} `
 
-21. Then we will need to migrate to create the tables in the new database (we don't need to makemigrations if we haven't made changes to the models)
+
+21. Then we will need to migrate to create the tables in the new database (we don't need to makemigrations again if we haven't made changes to the models)
 
 ```python manage.py migrate```
 
@@ -669,29 +671,30 @@ DATABASES = {
 23. Then we can can update the database section code in order to use a different database depending if we are in production or development:
 
 ```
-# in development
+ # in development
 if development==True:
-DATABASES = {
-'default': {
-'ENGINE': 'django.db.backends.sqlite3',
-'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    DATABASES = {
+        'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
-}
-# in production
+ #in production
 else:
-if "DATABASE_URL" in os.environ:
-# production database (Postgress)
-DATABASES = {
-'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-}
-else:
-print('Database URL not found. Using SQLite instead')
-DATABASES = {
-'default': {
-'ENGINE': 'django.db.backends.sqlite3',
-'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-}
-}
+    if "DATABASE_URL" in os.environ:
+        # production database (Postgress)
+        DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+    else:
+        print('Database URL not found. Using SQLite instead')
+        DATABASES = {
+        'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+        }
+        
 ```
 
 24. Then in [AWS](https://aws.amazon.com/) S3 we will configure our buckets to host the static and media files there.
@@ -705,7 +708,7 @@ DATABASES = {
 INSTALLED_APPS = [
 .....
 'storages',
-.....
+....
 ]
 ```
 
@@ -713,16 +716,16 @@ INSTALLED_APPS = [
 
 ```
 class StaticStorage(S3Boto3Storage):
-location = settings.STATICFILES_LOCATION
+    location = settings.STATICFILES_LOCATION
 
 class MediaStorage(S3Boto3Storage):
-location = settings.MEDIAFILES_LOCATION
+    location = settings.MEDIAFILES_LOCATION
 ```
 
 26. After this we will have to update the settings.py as follows:
 
 ```
-# variables and keys needed in order to set up the connection with AWS S3
+ # variables and keys needed in order to set up the connection with AWS S3
 AWS_S3_OBJECT_PARAMETERS = {
 'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
 'CacheControl': 'max-age=94608000'
@@ -745,61 +748,59 @@ MEDIAFILES_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 ```
 
 27. Then we will run the following command to send the files to S3:
 
-```
-python manage.py collectstatic
-```
+`python manage.py collectstatic`
 
 26. Finally, we can add additional syntax to the settings.py to use different code for the static and media storage depending on if we are in development or production
 
 ```
-# in development we keep the files locally
+ # in development we keep the files locally
 if development==True:
 
-# we need a static root. All static files will be in the static directory
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    # we need a static root. All static files will be in the static directory
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# we need a media root. All media will be in the media directory
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    # we need a media root. All media will be in the media directory
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# in production we use AWS S3 to host the media and static files
+ # in production we use AWS S3 to host the media and static files
 else:
-# variables and keys needed in order to set up the connection with AWS S3
-AWS_S3_OBJECT_PARAMETERS = {
-'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-'CacheControl': 'max-age=94608000'
-}
+    # variables and keys needed in order to set up the connection with AWS S3
+    AWS_S3_OBJECT_PARAMETERS = {
+    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+    'CacheControl': 'max-age=94608000'
+    }
 
-AWS_STORAGE_BUCKET_NAME = 'tree-books'
-AWS_S3_REGION_NAME = 'eu-west-3'
-AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
-AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+    AWS_STORAGE_BUCKET_NAME = 'tree-books'
+    AWS_S3_REGION_NAME = 'eu-west-3'
+    AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
+    AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+    AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
-STATICFILES_LOCATION = 'static'
-STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 
-MEDIAFILES_LOCATION = 'media'
-DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 ```
 
 ### Deployment
 
-Once the website is working correctly I have deployed to Heroku following these steps:
+Once the website is working correctly I have deployed to Heroku following the steps below:
 
 1. I have created an app (I already created an app before in order to get the Postgress URL link)
 
@@ -811,7 +812,7 @@ Once the website is working correctly I have deployed to Heroku following these 
 4. I also updated the requirements.txt
 ```pip freeze > requirements.txt```
 
-5. I created the Procfile (to tell Heroku what type of app is getting)
+5. I created the Procfile with the following code (to tell Heroku what type of app is getting):
 
 ```web: gunicorn treebooks.wsgi:application```
 
@@ -822,6 +823,8 @@ Once the website is working correctly I have deployed to Heroku following these 
 8. Then we will push the changes to GitHub
 
 9. In Heroku in the deploy section, we will connect to our Github repository and deploy the branch.
+
+10. Once the website has been deployed we will Restart all dynos from Heroku.
 
 10. After checking that everything is working correctly we can 'Enable Automatic Deploys and that way when we push code to GitHub it will automatically deploy the project in Heroku
 
@@ -842,6 +845,41 @@ The books details and images have been taken from Wikipedia.
 #### Media
 
 All the images used in the websites have been obtained from Google images using the Advance Search and selecting “free to use, share or modify, even commercially”. See the links below:
+
+
+book icon:
+https://www.netclipart.com/isee/wiiRR_note-clipart-book-biu-tng-cun-sch/
+
+heart icon:
+https://commons.wikimedia.org/wiki/File:Cora%C3%A7%C3%A3o-icone.png
+
+tree icon:
+https://www.needpix.com/photo/33327/tree-environment-save-heart-love-nature-landscape-natural-season
+
+store icon:
+https://pixabay.com/illustrations/store-icon-awning-exterior-shop-4433328/
+
+timer icon:
+https://www.needpix.com/photo/17782/hourglass-timer-sand-clock-countdown-deadline-minute-hour-passing
+
+carousel image book and trees:
+https://pxhere.com/es/photo/1456537
+
+reforestation slide:
+https://pxhere.com/es/photo/1385461
+
+libros carousel:
+https://pxhere.com/ko/photo/495483
+
+background image:
+https://pxhere.com/sk/photo/1556935
+
+
+sad gif for 404 page:
+https://gfycat.com/contentindelibleantbear-sad
+
+
+
 
 ##### carousel images
 
