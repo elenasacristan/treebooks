@@ -25,10 +25,10 @@ class UserProfileForm(forms.ModelForm):
         model = UserProfile
         fields = [
             'profile_img',
-            'subscribe',
             'dob',
             'telephone',
             'contact_by_phone',
-            'contact_by_email'
+            'contact_by_email',
+            'subscribe',
             ]
 

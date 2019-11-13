@@ -8,16 +8,16 @@ For this website I'm creating a fictitious charity called TreeBooks which aim is
 
 https://treebooksproject.herokuapp.com/
 
-To be able to rent books the users need to register. Only registered users will be able to rent books, read reviews, join the waiting list for a book, keep track of the books read and save the books that they like in a favourites list.
+To be able to rent books the user need to register. Once registered, users will be able to rent books, read reviews, join the waiting list for a book, keep track of the books they have read and save the books that they like in a favourites list.
 
 The users who are not registered will see in the landing page the main reasons why they should register. 
-Users not registered can't rent books but they can see the listing with all the books and the details page. In the details page, they won't be able to see the reviews but they will be able to see the average ratings for each book and the main details about the books.
+Unregistered users are unable to rent books but they can see the listing with all the books and the details page. In the book details page, they won't be able to see the reviews but they will be able to see the average ratings for each book and the main details about the books.
 
-Also registered and not registered users can donate books to the charity. If they want to donate they can see in the donate.html page the map with the collection points where they can drop their books to help the charity to grow the collection of books to offer.
+Registered and unregistered users can also donate books to the charity. If they want to donate they can see in the donate.html page the map with the collection points where they can drop their books to help the charity grow the collection of books it has to offer.
 
-All users can also read how the website works by reading the about.html page and have access to the projects page where they can see how much money has been raised by the charity until now, how many books have been rented and to what projects is the charity going to donate the money raised.
+All users can also read how the website works by reading the about.html page and have access to the projects page where they can see how much money has been raised by the charity to date, how many books have been rented and the projects the charityis going to donate the money raised.
 
-The users can search for a specific book or author by typing on the search box.
+The users can search for a speci%c book or author by typing within the search box.
 
 The users can contact the charity using the contact form in case they have any questions or projects in mind.
 
@@ -26,7 +26,7 @@ The users will be able to follow TreeBooks on social media by clicking on the ic
 
 ## UX
 
-This website is targeting people who like reading books but at the same time have concerns about how many trees are cut to create new books. They will want to use the website because reading second-hand books they are stopping more trees being cut and because the money paid to rent the books will be used in reforestation projects.
+This website is targeting people who like reading books but at the same time have concerns about how many trees are cut down to create paper for new books. They will want to use the website because by reading second-hand books they are stopping more trees being cut down and because the money paid to rent the bookswill be used in reforestation projects.
 
 TreeBooks is a charity so the website aims to attract users who then will rent books from them. They also want to grow the collection of books by getting people to donate their second-hand books.
 
@@ -80,21 +80,22 @@ login.html, registration.html, contact.html, review_form.html, password_reset_co
 
 ![checkout](/documents/mockups/checkout1.png)
 
-- The final design of the website included some additional functionalities (buttons, carousel, modals and messages) that I thought would be useful as I was working on it. I also changed slightly the styles (colours, transparency, shadows, borders) for others that I found nicer.
+- The %nal design of the website included some additional functionalities (buttons, carousel, modals and messages) that 
+I thought would be useful as I was working on it. I also slightly altered the styles (colours, transparency, shadows, borders) for others that I found nicer.
 
 ### User stories
 
-- As a charity owner, I want to get users to register to the website so I can rent books to them and I can raise money to plant new trees.
+- As a charity (TreeBooks), I want to get users to register to thewebsite so we can rent books to them and raise money to plant new trees.
 
 - As a user (member or not) I want to be able to see what is the aim of the website.
 
-- As a user (member or not) I want to be able to see what projects is the charity planning to contribute to and how much money the charity has raised so far.
+- As a user (member or not) I want to be able to see which projects the charity is planning to contribute to and how much money the charity has raised so far.
 
 - As a user (member or not) I want to be able to contact TreeBooks to send my comments and suggestions for new projects.
 
 - As a user (member or not) I want to donate books and I want to know where are the collection points.
 
-- As a user I want to register to be able to rent books and contribute to reforestation projects
+- As a user I want to register to be able to rent books and contribute to reforestation projects.
 
 - As a user I want to register to be able to save money reading second-hand books instead of buying brand new books.
 
@@ -104,27 +105,27 @@ login.html, registration.html, contact.html, review_form.html, password_reset_co
 
 - As a member I want to be able to see my position in the waiting lists.
 
-- As a member I want to see a notification when my turn to read the book has been reached.
+- As a member I want to see a noti%cation when it is my turn to hire the book.
 
-- As a user I'd like to know what books are available and which ones have waiting lists.
+- As a user I would like to know what books are available and which ones have existing waiting lists.
 
 - As a member I want to be able to save books as favourites.
 
-- As a member I want to be able to see all the books that I have read since I started the membership.
+- As a member I want to be able to see all the books that I have read since I started my membership.
 
 - As a member I want to be able to review the books that I have read.
 
-- As a member I want to be able to add books to the shopping cart and then pay all of them at once.
+- As a member I want to be able to add books to the shopping cart and then pay for all of them at once.
 
 - As a member I want to be able to update the number of days to rent the book from the cart page.
 
-- As a member I want to be able to remove books from the cart if I change my mind about the books.
+- As a member I want to be able to remove books from the cart if I change my mind about renting a book.
 
-- As a member I want to see in my profile when is the return date for the books that I'm currently reading.
+- As a member I want to see in my profile the return date for the books that I'm currently reading.
 
 - As a user (member or not) I want to be able to see all the books in TreeBooks and their details.
 
-- As a user(member or not) I want to be able to search for a book or author by typing on the search box.
+- As a user (member or not) I want to be able to search for a book or author by typing within the search box.
 
 - As a member I want to be able to see the reviews given by other members.
 
@@ -134,7 +135,7 @@ login.html, registration.html, contact.html, review_form.html, password_reset_co
 
 - As a member I want to be able to follow TreeBooks in Social Media.
 
-- As charity owner want to notify the users in case they don't return the books on time.
+- As a charity (TreeBooks), I want to notify the users in case they don't return the books on time.
 
 ## Features
 
@@ -142,7 +143,7 @@ login.html, registration.html, contact.html, review_form.html, password_reset_co
 
 The accounts app will allow users to register to become members of TreeBooks. The registered users will be able to access all the member features.
 
-The users will register using the registration form. Registered users will be able to log in by using the login form with their username and password or with the email and password.
+The users will register using the registration form. Registered users will be able to login by using the login form with their username andpassword or with their email and password.
 
 The users can also reset the password if they forgot the original password using the reset password link on the login.html page.
 
@@ -150,23 +151,19 @@ The users can also reset the password if they forgot the original password using
 
 ##### view-all-books.html
 
-Display all the books present on the website. The books are displayed by category and they are sorted in descending order by the review score.
+Displays all the books available on the website. The books are displayed by category and they are sorted in descending order by the review score.
 
-In this page the user only will see the name of the book, the star rating and the rating score. If they want to know more about the book or rent it they need to click on the 'more' button.
-If the user is authenticated then he/she will also be able to see a message about the status of the book ('available', 'check waiting list', 'It's your turn!' or 'you are reading this book'.
-By clicking on the book title, the 'AVAILABLE' text or the 'It's your turn' badge the user will also be redirected to the detail page.
-If the user clicks on 'check waiting list' then it will be re-directed to the waiting list for that book.
+In this page the user only will see the name of the book, the star rating and the rating score. If they want to know more about the book or rent it, they need to click on the 'more' button. If the user is authenticated then he/she will also be able to see a message about the status of the book ('available', 'check waiting list', 'It's your turn!' or 'you are reading this book'. By clicking on the book title, the 'AVAILABLE' text or the 'It's your turn' badge the user will also be redirected to the detail page. If the user clicks on 'check waiting list' then they will be re-directed to the waiting list for that book.
 
 ##### detail.html
 
-In this page the user can see all the details about the book. These details are the title, the author (by clicking on the author name they will get redirected to the Wikipedia URL for that author), the summary, the category, the date it was published, the ISBN number for the book, the store where the book has to be collected from, the number of pages and the type of book (hardcover or paperback).
+In this page the user can see all the details about the book. These details are the title, the author (by clicking on the author name they will get redirected to the Wikipedia URL for that author), the summary, the category, the date it was published, the ISBN number, the store where the book has to be collected from, the number of pages and the type of book (hardcover or paperback).
 
-In this page if the book is available and the user is authenticated then the user can select the number of days that wants to rent the book for (the minimum number of days will be 10 and it has been set as the default value) and add it to the shopping cart.
+In this page if the book is available and the user is authenticated then the user can select the number of days they want to rent the book for (the minimum number of days will be 10 and it has been set as the default value) and add the book to the shopping cart.
 
-If the book is not available and the user is authenticated then the user can join the waiting list.
-if the user is already in the waiting list then he/she will see the message 'You are already in the waiting list' and a link to the waiting list so they can see in what position they are.
+If the book is not available and the user is authenticated then the user can join the waiting list. if the user is already in the waiting list then he/she will see the message 'You are already in the waiting list'and a link to the waiting list so they can see in which position they are placed.
 
-If the user is not authenticated he/she will see a button to register because only authenticated users can rent books or join the waiting lists.
+If the user is not authenticated he/she will see a button to register because only authenticated users can rent books or join waiting lists.
 
 ##### view_profile.html
 
@@ -174,31 +171,31 @@ The users can see their personal and membership details by clicking on the profi
 
 The profile will display the following information about the user:
 
-- profile image (if the user doesn't upload an image there will be a default profile image displayed)
-- membership details (date that the user registered and if they are subscribed to the newsletter)
-- currently reading: a list with the books that the user is reading at the moment including the date that they need to be returned.
+- Profile image (if the user doesn't upload an image there will be a default profile image displayed)
+- Membership details (date that the user registered and if they are subscribed to the newsletter)
+- Currently reading: a list with the books that the user is reading at the moment including the date that they need to be returned.
 If the user doesn't return the book on time a warning message will be displayed on this section telling the user to return the book as soon as possible.
 - Also if the user wants to return the book before the due date then he/she can click the button 'I have returned the book' once the book has been returned and that way the book will become available for everyone or if there is waiting list it will become available for the next user in the waiting list.
 
-- personal details (first name, last name, date of birth, email, telephone and preferred contact method)
-- contact preferences
-At the bottom, the user can access the list of books read since he/she became a member, the list of books he/she is in the waiting lists for and the list of favourites books.
+- Personal details (first name, last name and date of birth).
+- Contact preferences (email, telephone and preferred method).
+At the bottom of the page, the user can access the list of books theyhave read since becoming a member, the list of books he/she is waiting for (via the waiting list) and their list of favourite books.
 
 These three lists will be displayed in modal windows. The code used to create the modal comes from Bootstrap 4.
 
-In the list of books read the user will have the option to leave a review for the books that have rented. 
+In the list of books read the user will have the option to leave a review for the books that have rented. They will only be able to add one review per book.
 
-By clicking 'Your waiting lists' the modal window will appear and the user will be able to see a list of books that he/she is waiting for with a link in each book to see the waiting list.
+By clicking 'books in waiting list' the modal window will appear and the user will be able to see a list of books that he/she is waiting for with a link in each book to see the waiting list.
 
-Treebooks will contact the next user in the contact list as soon as the book is returned by the previous user. Also, the user will see a notification saying 'it's your turn' on the books listing. Then the next user in the waiting list can proceed to rent the book online. Only the next user in the waiting list will have the option to rent the book, for the rest of the users the book will not be available.
+TreeBooks will contact the next user in the contact list as soon as the book is returned by the previous user. Also, the user will see a noti%cation saying 'it's your turn' on the books listing. Then the next user in the waiting list can proceed to rent the book online. Only thenext user in the waiting list will have the option to rent the book - for the rest of the website users the book will not be listed as available.
 
 ##### edit_user_profile.html
 
 The users can edit their profile details by clicking on edit profile on the profile page.
 
-They will be able to add and edit the profile picture, the date of birth, and the telephone.
+They will be able to add and edit the profile picture, date of birth, and telephone number.
 
-Then they can choose to opt-in for the monthly newsletter and they can also select what is the preferred way to be contacted (phone, email or both)
+They can also choose to opt-in for the monthly newsletter and they can also select their preferred way to be contacted (phone, email or both).
 
 ### Home app
 
@@ -209,7 +206,7 @@ This is the home page and the users will get redirected to this page when they c
 This page has a carousel highlighting the main areas of the charity.
 
 At the bottom the users can see the main benefits of being a member.
-The users that are not authenticated will see the message 'Become a member and you will...' and also they will see the button register so they can become members.
+The users that are not authenticated will see the message 'Become a member and you will...' and also they will see the button to register so they can become members.
 
 If the user is authenticated then he/she won't see the register button and the header will have the message saying 'Hi USERNAME, with TreeBooks you can...'
 
@@ -219,9 +216,9 @@ This page explains the aim of the website and how it works. It has re-directs to
 
 ##### projects.html
 
-In this page the user can see how much money has been raised by the charity since the charity started and the user also can see how many times books have been rented since the beginning.
+IIn this page the user can see how much money has been raised by the charity (since it was set-up) and the user also can see how manytimes books have been rented.
 
-Also, the user will see what are the projects that the charity is trying to raise money for and what is the target for each.
+Also, the user will see the projects TreeBooks is trying to raise money for and what is the target for each.
 
 By clicking on the project name the user will be redirected to the projects.
 * Note that the projects that I'm showing are two projects that I found randomly on the internet in order to have them as an example in the website but I'm not familiar with them.
@@ -238,7 +235,7 @@ In the footer there is a link to the contact us page. In this page the user can 
 
 ##### cart.html
 
-This page will display the books that the user have added to the shopping cart and will give the user the option to update the number of days selected or remove the books completely.
+This page will display the books that the user has added to the shopping cart and will give the user the option to update the number of days selected or remove the books completely.
 
 Then it will display the total to pay. A £5 deposit per book will be added to the total price and that deposit will be refunded once the book is returned.
 
@@ -252,14 +249,14 @@ In the checkout page the user will see the details of the books that he/she is g
 
 Then they will need to fill out the payment form in order to rent the book(s).
 
-Once the payment has gone through a success message will be displayed and then the user can go to the specified store where the book belongs and collect it.
+Once the payment has gone through a success message will be displayed and then the user can go to the speci%ed store where the book is located and collect it.
 
 If there is an error with the payment the user will be notified with an error message.
 
 If the payment has been successful the following will happen:
 - The book(s) will be added to the list of read books and the list of current_books
 - The return_date will be calculated buy adding the number of days that the user is renting the book for to the present date.
-- The book will become NOT available
+- The book will become NOT available to other users.
 - The money paid for the book (not including the deposit) will be added to the total money raised for the charity
 - The number of books rented will be added to the number of books rented since the charity started.
 - If the user was in a waiting list for the books that he/she is renting then his/her name will be removed from the waiting list.
@@ -270,8 +267,7 @@ If the payment has been successful the following will happen:
 
 Only authenticated users will be able to see or join waiting lists for books.
 
-This page will display the list of users waiting for a book in order.
-Number 1 will be the next user to read the book, number 2 the second and so on.
+This page will display the list of users waiting for a book which is already rented. Number 1 will be the next user to read the book, number 2 the second and so on.
 
 If the waiting list is empty the header will say: "You could be next!" and also there will be an alert message saying "There is no one waiting!"
 
@@ -286,22 +282,21 @@ The users can see the books that they have read on their profile page by clickin
 
 The review_form.html page will display a form where the user can enter the title of the review, the comment and the score from 0 to 5.
 
-Then the review will be added to the detail.html page for that book.
-Each review will display the individual star rating and then all the reviews will be taken into account to calculate the mean score for that book (and that average start rating and score will be displayed on the top left side of the details page)
+Then the review will be added to the detail.html page for that book. Each review will display the individual star rating and then all the reviews will be taken into account to calculate the mean score for that book (and that average star rating and score will be displayed on the top left side of the details page).
 
 ### Favourites app
 
-The user can add/remove the book that he/she wants to the list of favourites by clicking the heart icon on the pages all_books.html and detail.html.
+The user can add/remove the book that he/she wants to read via thelist of favourites – by clicking the heart icon on the pages all_books.html and detail.html.
 
-Then the user can see all the favourites books if he clicks on "Your favourites" on the user profile page.
+Then the user can see all the favourites books if he/she clicks on "See your favourites" on the user pro%le page.
 
 ### Search app
 
-This app will allow the user to search for a book based on the book's title or author name.
+This app will allow the user to search for a book based on the book'stitle or authors name.
 
 The search box is displayed at the top of the navbar and it is visible from all pages.
 
-The books that contain the word entered in the search box either in the title or in the name of the author will be displayed and will be sorted descending by score.
+The books that contain the word entered in the search box either in the title or authors name will be displayed and will be sorted descending by score.
 
 ### Other features available from all pages
 
@@ -317,14 +312,14 @@ https://www.codeply.com/go/qhaBrcWp3v
 The hamburger button from bootstrap 4 will appear on small screens and when is clicked it will display the navbar vertically and it will also include the login and cart options.
 
 ##### social links
-They appear on the page footer in every page on the website and by clicking on them the user will get redirected to the media websites to follow TreeBooks. (since the website is fictitious they will be redirected to the login page for Facebook or Twitter).
+They appear on the page footer on every page on the website and by clicking on them the user will get redirected to the media websites to follow TreeBooks (since the website is %ctitious they will be redirected to the login page for Facebook or Twitter).
 
 ##### Logo
 The logo will appear in the navigation bar for every section of the website and when clicked it will redirect the user to the home page (index.html).
 
 ## Features Left to Implement
 
-I would have like to include in the detail.html page the name of the user reading the book and how many days are left until the book will be available again (for the next user in the waiting list of for all users). The reason why I didn't implement this feature is because I was running out of time and I needed to deliver the project soon.
+I would have like to include in the detail.html page the name of the user reading the book and how many days are left until the book will be available again (for the next user in the waiting list of for all users). The reason why I didn't implement this feature is because I was running out of time and I needed to deliver the project.
 
 ## Technologies Used
 
@@ -388,7 +383,7 @@ The **psycopg2** package is needed to connect to the Postgress URL.
 
 ```psycopg2==2.8.4```
 
-**boto3** and **django-storages** packages are needed to connect Django to S3 (AWS) that is where the media and static files are hosted.
+**boto3** and **django-storages** packages are needed to connect Django to S3 (AWS) which is where the media and static files are hosted.
 ```boto3==1.10.2```
 ```django-storages==1.7.2```
 
@@ -441,6 +436,7 @@ The **gunicorn** package is needed to connect to Heroku.
 I have run tests for the models, forms and views in all apps where applicable.
 I have tried to automate the test for as much code as possible but I didn't reach the 100% coverage because in some cases the tests were quite complicated and in these cases I have chosen to test manually.
 I have manage to get a coverage of 86.6% on average.
+
 See the coverage reports for each app below.
 
 ##### accounts coverage report
@@ -499,24 +495,27 @@ I have also used development tools in Google Chrome to check how the website wou
 ## Problems and bugs:
 
 ##### iterating on fields with ManyToMany relationships
-I have issues when iterating on fields with ManyToMany relationships. In the end, I could fix these problems by using "if forloop.first" in the templates and in other cases by using values_list in the views.
+I had issues when iterating on %elds with ManyToMany relationships.In the end, I %xed these problems by using "if forloop.%rst" in the templates and in other cases by using values_list in the views.
 
 ##### IntergrityError - waiting list
 When I changed from the local database to the Postgress database suddenly if I added more than one user to the same waiting list I was getting the following error:
 
 ```IntergrityError at/waiting_list/join/2/ duplicate key value violates unique constraint "waiting_list_waitinglist_wl_book_id_key"```
 
-This was strange because locally I could add more than one user to the same waiting list without any error but changing to Postgress I was getting the error.
-The tutors suggested me to create a new link to a new Postgres database to see if this could solve the problem but it didn't.
-Finally, I noticed that every time I was adding a user to the waiting list I was also adding a book and that is why the book Id was duplicated since the book already existed in the waiting list.
-This issue was fixed by using get or create. So a book will only be added if it didn't exist already
+This was strange because locally I could add more than one user to the same waiting list without any error but changing to Postgress I was getting the error. The tutors suggested that I create a new link to a new Postgres database to see if this could solve the problem but it didn't. Finally, I noticed that every time I was adding a user to the waiting list I was also adding a book and that is why the book Id was duplicated – since the book already existed in the waiting list. This issue was %xed by using get or create. So a book will only be added if it didn't exist already
 
 ##### Currently reading
-I also had an issue in the currently reading section. The original UserProfile model didn't have the field current_books when I first created it so instead I was displaying in this section the books included in the read_books field, but only the books where the return date was in the future. When the return date was in the past then the book would disappear from this section.
+I also had an issue in the currently reading section. The original UserProfile model didn't have the field current_books when I first created it. Instead I was displaying the books included in the read_books field, but only the books where the return date was in the future. When the return date was in the past then the book would disappear from this section.
 
 Then I noticed that if another user bought the same book after, the return date for the book was updated and then the book was appearing again in the currently reading section for each user who had read that book in the past.
 
-The solution was to create a new field in the UserProfile model for the current_books that way the book will be added to current_books when the payment is done and will be removed from current_books when the book is returned so that way it won't be displayed again.
+The solution was to create a new %eld in the book model for the current_books that way the book will be added to current_books when the payment is completed and will be removed from current_books when the book is returned so that way it won't be displayed again.
+
+
+##### Image upload
+When I deployed the project to Heroku I try to upload an image and it was not being displayed. I could see in S3 that the image was uploaded in S3 so that made me think that the issue was with the MEDIA_URL. Then by checking Slack I found the answer. I was using ``` MEDIA_URL = '/media/'``` but I should be using ```MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)``` instead. Once I updated the MEDIA_URL the images uploaded were displaying correctly.
+
+
 
 # GitHub repository
 
