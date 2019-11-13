@@ -15,10 +15,19 @@ For this website I'm creating a fictitious charity called TreeBooks which aim is
 
 https://treebooksproject.herokuapp.com/
 
-### Index:
+### Table of content:
 
 - [Description](#Description)
 - [UX](#UX)
+- [Features](#Features)
+- [Features Left to Implement](#Features Left to Implement)
+- [Technologies Used](#Technologies Used)
+- [Testing](#Testing)
+- [Problems and bugs](#Problems and bugs)
+- [GitHub repository](#GitHub repository)
+- [Deployment](#Deployment)
+- [Credits](#Credits)
+- [Acknowledgements](#Acknowledgements)
 
 ## Description
 
