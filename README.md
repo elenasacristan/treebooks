@@ -8,53 +8,46 @@
 
 
 
-This is last milestone project for the Fullstack Web Developer course with Code Institute. 
+This is the last milestone project for the Fullstack Web Developer course with Code Institute. 
 
 For this website I'm creating a fictitious charity called TreeBooks which aim is to raise money to plant trees by renting second-hand books.
 
 
-
 https://treebooksproject.herokuapp.com/
 
+### Index:
 
+- [Description](#Description)
+- [UX](#UX)
 
-To be able to rent books the user need to register. Once registered, users will be able to rent books, read reviews, join the waiting list for a book, keep track of the books they have read and save the books that they like in a favourites list.
+## Description
 
-
+To be able to rent books the user needs to register. Once registered, users will be able to rent books, read reviews, join the waiting list for a book, keep track of the books they have read and save the books that they like in a favourites list.
 
 The users who are not registered will see in the landing page the main reasons why they should register. 
 
 Unregistered users are unable to rent books but they can see the listing with all the books and the details page. In the book details page, they won't be able to see the reviews but they will be able to see the average ratings for each book and the main details about the books.
 
 
-
 Registered and unregistered users can also donate books to the charity. If they want to donate they can see in the donate.html page the map with the collection points where they can drop their books to help the charity grow the collection of books it has to offer.
 
 
+All users can also read how the website works by reading the about.html page and have access to the projects page where they can see how much money has been raised by the charity to date, how many books have been rented and the projects the charity is going to donate the money raised.
 
-All users can also read how the website works by reading the about.html page and have access to the projects page where they can see how much money has been raised by the charity to date, how many books have been rented and the projects the charityis going to donate the money raised.
-
-
-
-The users can search for a speci%c book or author by typing within the search box.
-
+The users can search for a specific book or author by typing within the search box.
 
 
 The users can contact the charity using the contact form in case they have any questions or projects in mind.
 
 
-
 The users will be able to follow TreeBooks on social media by clicking on the icons on the footer of the page.
-
-
-
 
 
 ## UX
 
 
 
-This website is targeting people who like reading books but at the same time have concerns about how many trees are cut down to create paper for new books. They will want to use the website because by reading second-hand books they are stopping more trees being cut down and because the money paid to rent the bookswill be used in reforestation projects.
+This website is targeting people who like reading books but at the same time have concerns about how many trees are cut down to create paper for new books. They will want to use the website because by reading second-hand books they are stopping more trees being cut down and because the money paid to rent the books will be used in reforestation projects.
 
 
 
@@ -162,9 +155,7 @@ login.html, registration.html, contact.html, review_form.html, password_reset_co
 
 
 
-- The %nal design of the website included some additional functionalities (buttons, carousel, modals and messages) that 
-
-I thought would be useful as I was working on it. I also slightly altered the styles (colours, transparency, shadows, borders) for others that I found nicer.
+- The final design of the website included some additional functionalities (buttons, carousel, modals and messages) that I thought would be useful as I was working on it. I also slightly altered the styles (colours, transparency, shadows, borders) for others that I found nicer.
 
 
 
@@ -172,7 +163,7 @@ I thought would be useful as I was working on it. I also slightly altered the st
 
 
 
-- As a charity (TreeBooks), I want to get users to register to thewebsite so we can rent books to them and raise money to plant new trees.
+- As a charity (TreeBooks), I want to get users to register to the website so we can rent books to them and raise money to plant new trees.
 
 
 
@@ -212,7 +203,7 @@ I thought would be useful as I was working on it. I also slightly altered the st
 
 
 
-- As a member I want to see a noti%cation when it is my turn to hire the book.
+- As a member I want to see a notification when it is my turn to hire the book.
 
 
 
@@ -288,7 +279,7 @@ The accounts app will allow users to register to become members of TreeBooks. Th
 
 
 
-The users will register using the registration form. Registered users will be able to login by using the login form with their username andpassword or with their email and password.
+The users will register using the registration form. Registered users will be able to login by using the login form with their username and password or with their email and password.
 
 
 
@@ -308,7 +299,8 @@ Displays all the books available on the website. The books are displayed by cate
 
 
 
-In this page the user only will see the name of the book, the star rating and the rating score. If they want to know more about the book or rent it, they need to click on the 'more' button. If the user is authenticated then he/she will also be able to see a message about the status of the book ('available', 'check waiting list', 'It's your turn!' or 'you are reading this book'. By clicking on the book title, the 'AVAILABLE' text or the 'It's your turn' badge the user will also be redirected to the detail page. If the user clicks on 'check waiting list' then they will be re-directed to the waiting list for that book.
+In this page the user only will see the name of the book, the star rating and the rating score. If they want to know more about the book or rent it, they need to click on the 'more' button. If the user is authenticated then he/she will also be able to see a message about the status of the book ('available', 'check waiting list', 'It's your turn!' or 'you are reading this book'. 
+By clicking on the book title, the 'AVAILABLE' text or the 'It's your turn' badge the user will also be redirected to the detail page. If the users clicks on 'check waiting list' then they will be re-directed to the waiting list for that book.
 
 
 
@@ -324,7 +316,7 @@ In this page if the book is available and the user is authenticated then the use
 
 
 
-If the book is not available and the user is authenticated then the user can join the waiting list. if the user is already in the waiting list then he/she will see the message 'You are already in the waiting list'and a link to the waiting list so they can see in which position they are placed.
+If the book is not available and the user is authenticated then the user can join the waiting list. if the user is already in the waiting list then he/she will see the message 'You are already in the waiting list' and a link to the waiting list so they can see in which position they are placed.
 
 
 
@@ -336,7 +328,7 @@ If the user is not authenticated he/she will see a button to register because on
 
 
 
-The users can see their personal and membership details by clicking on the profile tab in the navigation bar.
+The authenticated users can see their personal and membership details by clicking on the profile tab in the navigation bar.
 
 
 
@@ -360,7 +352,7 @@ If the user doesn't return the book on time a warning message will be displayed 
 
 - Contact preferences (email, telephone and preferred method).
 
-At the bottom of the page, the user can access the list of books theyhave read since becoming a member, the list of books he/she is waiting for (via the waiting list) and their list of favourite books.
+At the bottom of the page, the user can access the list of books they have read since becoming a member, the list of books he/she is waiting for (via the waiting list) and their list of favourite books.
 
 
 
@@ -372,11 +364,12 @@ In the list of books read the user will have the option to leave a review for th
 
 
 
-By clicking 'books in waiting list' the modal window will appear and the user will be able to see a list of books that he/she is waiting for with a link in each book to see the waiting list.
+By clicking 'You waiting lists' the modal window will appear and the user will be able to see a list of books that he/she is waiting for with a link in each book to see the waiting list.
 
 
 
-TreeBooks will contact the next user in the contact list as soon as the book is returned by the previous user. Also, the user will see a noti%cation saying 'it's your turn' on the books listing. Then the next user in the waiting list can proceed to rent the book online. Only thenext user in the waiting list will have the option to rent the book - for the rest of the website users the book will not be listed as available.
+TreeBooks will contact the next user in the contact list as soon as the book is returned by the previous user. Also, the user will see a notification saying 'It's your turn' on the books listing. 
+Then the next user in the waiting list can proceed to rent the book online. Only the next user in the waiting list will have the option to rent the book - for the rest of the website users the book will not be listed as available.
 
 
 
@@ -412,7 +405,7 @@ This page has a carousel highlighting the main areas of the charity.
 
 
 
-At the bottom the users can see the main benefits of being a member.
+Under the carousel the users can see the main benefits of being a member.
 
 The users that are not authenticated will see the message 'Become a member and you will...' and also they will see the button to register so they can become members.
 
@@ -434,7 +427,7 @@ This page explains the aim of the website and how it works. It has re-directs to
 
 
 
-IIn this page the user can see how much money has been raised by the charity (since it was set-up) and the user also can see how manytimes books have been rented.
+In this page the user can see how much money has been raised by the charity (since it was set-up) and the user also can see how many times books have been rented.
 
 
 
@@ -462,7 +455,7 @@ If the users (registered or not) would like to collaborate with the charity by d
 
 In the footer there is a link to the contact us page. In this page the user can fill out the form to send a message to the charity.
 
-
+The charity will be able to see these messages on the admin page. 
 
 ### Cart app
 
@@ -500,7 +493,7 @@ Then they will need to fill out the payment form in order to rent the book(s).
 
 
 
-Once the payment has gone through a success message will be displayed and then the user can go to the speci%ed store where the book is located and collect it.
+Once the payment has gone through a success message will be displayed and then the user can go to the specified store where the book is located and collect it.
 
 
 
@@ -510,9 +503,11 @@ If there is an error with the payment the user will be notified with an error me
 
 If the payment has been successful the following will happen:
 
+- The user will be notified with a message
+
 - The book(s) will be added to the list of read books and the list of current_books
 
-- The return_date will be calculated buy adding the number of days that the user is renting the book for to the present date.
+- The return_date will be calculated buy adding the number of days that the user is renting the book to the current date.
 
 - The book will become NOT available to other users.
 
@@ -558,7 +553,8 @@ At the bottom of the waiting list there will be two buttons. The "Keep looking" 
 
 Once the user has rented a book he/she can leave a review.
 
-The users can see the books that they have read on their profile page by clicking on "The books you read". For each book in this list the user will have the option to leave a review. Once they have reviewed the book then they will see the message 'Already reviewed' under the book title.
+The users can see the books that they have read on their profile page by clicking on "The books you read". 
+For each book in this list the user will have the option to leave a review. Once they have reviewed the book then they will see the message 'Already reviewed' under the book title.
 
 
 
@@ -574,11 +570,11 @@ Then the review will be added to the detail.html page for that book. Each review
 
 
 
-The user can add/remove the book that he/she wants to read via thelist of favourites – by clicking the heart icon on the pages all_books.html and detail.html.
+The user can add/remove book to the list of favourites by clicking the heart icon on the pages all_books.html and detail.html.
 
 
 
-Then the user can see all the favourites books if he/she clicks on "See your favourites" on the user pro%le page.
+Then the user can see all the favourites books if he/she clicks on "See your favourites" on the user profile page.
 
 
 
@@ -626,7 +622,7 @@ The hamburger button from bootstrap 4 will appear on small screens and when is c
 
 ##### social links
 
-They appear on the page footer on every page on the website and by clicking on them the user will get redirected to the media websites to follow TreeBooks (since the website is %ctitious they will be redirected to the login page for Facebook or Twitter).
+They appear on the page footer on every page on the website and by clicking on them the user will get redirected to the media websites to follow TreeBooks (since the website is fictitious they will be redirected to the login page for Facebook or Twitter).
 
 
 
@@ -640,7 +636,7 @@ The logo will appear in the navigation bar for every section of the website and 
 
 
 
-I would have like to include in the detail.html page the name of the user reading the book and how many days are left until the book will be available again (for the next user in the waiting list of for all users). The reason why I didn't implement this feature is because I was running out of time and I needed to deliver the project.
+I would have like to include in the detail.html page the name of the user reading the book and how many days are left until the book will be available again (for the next user in the waiting list or for all users). The reason why I didn't implement this feature is because I was running out of time and I needed to deliver the project.
 
 
 
@@ -656,7 +652,8 @@ When working locally I have used the [SQLite](https://www.sqlite.org/index.html)
 
 
 
-In order to get the Postgress database I created the Heroku app, then in the Resources tab I searched on the Add-ons search bar for Postgress and I selected the 'Hobby Dev' option. After this the DATABASE_URL was ready on the Config Vars in Heroku. 
+In order to get the Postgress database I created the Heroku app, then in the Resources tab I searched on the Add-ons search bar for Postgress and I selected the 'Hobby Dev' option. After this, the DATABASE_URL was ready on the Config Vars in Heroku. 
+Then I copied the DATABASE_URL link in my env.py on vscode.
 
 
 
@@ -702,7 +699,7 @@ I have used Adobe Fireworks to create the logo and the mock-ups.
 
     - To show the collection points map. 
 
-    - Used for the integration with Stripe
+    - To set up the integration with Stripe
 
 
 
@@ -870,10 +867,9 @@ The **gunicorn** package is needed to connect to Heroku.
 
 I have run tests for the models, forms and views in all apps where applicable.
 
-I have tried to automate the test for as much code as possible but I didn't reach the 100% coverage because in some cases the tests were quite complicated and in these cases I have chosen to test manually.
+I have tried to automate the test for as much code as possible but I didn't reach the 100% coverage because in some cases the tests were quite complicated and in these cases I have chosen to test manually since I was running out of time to present the project.
 
-I have manage to get a coverage of 86.6% on average.
-
+In the end I have manage to get a coverage of 86.6% on average.
 
 
 See the coverage reports for each app below.
@@ -968,10 +964,9 @@ Click [here](/documents/checkList.xlsx) to see the checklist that I have used to
 
 
 
-#### Travis
+#### [Travis](https://travis-ci.org/)
 
-At the top of this Readme file you can see that the website passes the Travis test.
-
+I have used Travis for the continuous integration testing. At the top of this Readme file you can see that the website passes the Travis test.
 
 
 The code that I was meant to use in the Travis.yml file was not working and I found out that there were some issues when using python 3.7 and Django 1.11.17. Finally, I found out in Slack the code that was working well for my python and Django versions.
@@ -990,9 +985,9 @@ I have also used development tools in Google Chrome to check how the website wou
 
 
 
-##### iterating on fields with ManyToMany relationships
+##### Iterating on fields with ManyToMany relationships
 
-I had issues when iterating on %elds with ManyToMany relationships.In the end, I %xed these problems by using "if forloop.%rst" in the templates and in other cases by using values_list in the views.
+I had issues when iterating on fields with ManyToMany relationships. In the end, I fixed these problems by using "if forloop.first" in the templates and in other cases by using values_list in the views.
 
 
 
@@ -1006,21 +1001,18 @@ When I changed from the local database to the Postgress database suddenly if I a
 
 
 
-This was strange because locally I could add more than one user to the same waiting list without any error but changing to Postgress I was getting the error. The tutors suggested that I create a new link to a new Postgres database to see if this could solve the problem but it didn't. Finally, I noticed that every time I was adding a user to the waiting list I was also adding a book and that is why the book Id was duplicated – since the book already existed in the waiting list. This issue was %xed by using get or create. So a book will only be added if it didn't exist already
+This was strange because locally I could add more than one user to the same waiting list without any error but changing to Postgress I was getting the error. The tutors suggested that I create a new link to a new Postgres database to see if this could solve the problem but it didn't. Finally, I noticed that every time I was adding a user to the waiting list I was also adding a book and that is why the book Id was duplicated – since the book already existed in the waiting list. This issue was fixed by using `get_or_create()`. So a book will only be added if it didn't exist already
 
 
 
 ##### Currently reading
 
-I also had an issue in the currently reading section. The original UserProfile model didn't have the field current_books when I first created it. Instead I was displaying the books included in the read_books field, but only the books where the return date was in the future. When the return date was in the past then the book would disappear from this section.
+I also had an issue in the **currently reading** section. The original UserProfile model didn't have the field current_books when I first created it. Instead I was displaying the books included in the read_books field, but only the books where the return date was in the future. When the return date was in the past then the book would disappear from this section. 
+This was working correctly until I noticed that if another user bought the same book after, the return date for the book was updated and then the book was appearing again in the currently reading section for each user who had read that book in the past.
 
 
 
-Then I noticed that if another user bought the same book after, the return date for the book was updated and then the book was appearing again in the currently reading section for each user who had read that book in the past.
-
-
-
-The solution was to create a new field in the UserProfile model for the current_books that way the book will be added to current_books when the payment is completed and will be removed from current_books when the book is returned so that way it won't be displayed again.
+The solution was to create a new field in the UserProfile model for the current_books that way the book will be added to current_books when the payment is completed and will be removed from current_books when the book is returned. And that way it won't be displayed again in that section after the book has been returned.
 
 
 
@@ -1028,7 +1020,8 @@ The solution was to create a new field in the UserProfile model for the current_
 
 ##### Image upload
 
-When I deployed the project to Heroku I tried to upload an image and it was not being displayed. I could see in S3 that the image was uploaded in S3 so that made me think that the issue was with the MEDIA_URL. Then by checking Slack I found the answer. I was using ``` MEDIA_URL = '/media/'``` but I should be using ```MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)``` instead. Once I updated the MEDIA_URL the images uploaded were displaying correctly.
+When I deployed the project to Heroku I tried to upload an image and it was not being displayed. I could see in S3 that the image was uploaded in S3 so that made me think that the issue was with the MEDIA_URL. 
+Then by checking Slack I found the answer. I was using ``` MEDIA_URL = '/media/'``` but I should be using ```MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)``` instead. Once I updated the MEDIA_URL the images uploaded were displaying correctly.
 
 
 
@@ -1048,7 +1041,7 @@ When I deployed the project to Heroku I tried to upload an image and it was not 
 
 
 
-`git init`
+    `git init`
 
 
 
@@ -1060,7 +1053,7 @@ When I deployed the project to Heroku I tried to upload an image and it was not 
 
 
 
-`git add .`
+    `git add .`
 
 
 
@@ -1068,7 +1061,7 @@ When I deployed the project to Heroku I tried to upload an image and it was not 
 
 
 
-`git commit -m “initial commit"`
+    `git commit -m “initial commit"`
 
 
 
@@ -1076,11 +1069,11 @@ When I deployed the project to Heroku I tried to upload an image and it was not 
 
 
 
-`git remote add origin git@github.com:elenasacristan/treebooks.git`
+    `git remote add origin git@github.com:elenasacristan/treebooks.git`
 
 
 
-`git push -u origin master`
+    `git push -u origin master`
 
 
 
@@ -1100,7 +1093,7 @@ When I deployed the project to Heroku I tried to upload an image and it was not 
 
 
 
-`python -m venv .venv`
+    `python -m venv .venv`
 
 
 
@@ -1108,7 +1101,7 @@ When I deployed the project to Heroku I tried to upload an image and it was not 
 
 
 
-`pip install django==1.11.17`
+    `pip install django==1.11.17`
 
 
 
@@ -1142,41 +1135,41 @@ When I deployed the project to Heroku I tried to upload an image and it was not 
 
 
 
-```
+    ```
 
-try:
+    try:
 
-    import env
+        import env
 
-except ImportError:
+    except ImportError:
 
-    pass
-
-
-
-ENVIRONMENT = os.environ.get('ENVIRONMENT')
+        pass
 
 
 
-if ENVIRONMENT=='DEV':
-
-    development = True
-
-else:
-
-    evelopment = False
-
-```
+    ENVIRONMENT = os.environ.get('ENVIRONMENT')
 
 
 
-```
+    if ENVIRONMENT=='DEV':
 
-# will be True in development and False in production
+        development = True
 
-DEBUG = development
+    else:
 
-```
+        evelopment = False
+
+    ```
+
+
+
+    ```
+
+    # will be True in development and False in production
+
+    DEBUG = development
+
+    ```
 
 
 
@@ -1184,7 +1177,7 @@ DEBUG = development
 
 
 
-python manage.py startapp APP
+    `python manage.py startapp APP`
 
 
 
@@ -1198,7 +1191,7 @@ python manage.py startapp APP
 
 
 
-```python manage.py createsuperuser```
+    ```python manage.py createsuperuser```
 
 
 
@@ -1206,21 +1199,18 @@ python manage.py startapp APP
 
 
 
-```python manage.py runserver```
+    ```python manage.py runserver```
 
 
 
 10. When the app has models then I have created the migration files:
 
-```python manage.py makemigrations```
+    ```python manage.py makemigrations```
 
 
 
-and after I have migrated in order to create the tables in the database:
-
-
-
-```python manage.py migrate```
+    and after I have migrated in order to create the tables in the database:
+    ```python manage.py migrate```
 
 
 
@@ -1228,7 +1218,7 @@ and after I have migrated in order to create the tables in the database:
 
 
 
-```pip install django-forms-bootstrap```
+    ```pip install django-forms-bootstrap```
 
 
 
@@ -1236,7 +1226,7 @@ and after I have migrated in order to create the tables in the database:
 
 
 
-```pip install Pillow```
+    ```pip install Pillow```
 
 
 
@@ -1244,11 +1234,9 @@ and after I have migrated in order to create the tables in the database:
 
 
 
-```
-
-'DIRS': [os.path.join(BASE_DIR,'templates')]
-
-```
+    ```
+    'DIRS': [os.path.join(BASE_DIR,'templates')]
+    ```
 
 
 
@@ -1256,25 +1244,21 @@ and after I have migrated in order to create the tables in the database:
 
 
 
-```
+    ```
+    'django.template.context_processors.media'
 
-'django.template.context_processors.media'
-
-```
+    ```
 
 
 
 15. The books that are in the cart won't be saved in the database instead they will be stored in the session while the user is logged in. To ensure that the cart contents are available from every page on the website we need to create a context.
 
-We will create the context.py in the cart app and then that context will be included in the list of contexts inside the TEMPLATES section in the settings.py
+    We will create the context.py in the cart app and then that context will be included in the list of contexts inside the TEMPLATES section in the settings.py
 
+    ```
+    'cart.context.cart_content'
 
-
-```
-
-'cart.context.cart_content'
-
-```
+    ```
 
 
 
@@ -1282,7 +1266,7 @@ We will create the context.py in the cart app and then that context will be incl
 
 
 
-```pip install stripe```
+    ```pip install stripe```
 
 
 
@@ -1292,7 +1276,7 @@ We will create the context.py in the cart app and then that context will be incl
 
 
 
-```pip install dj-database-url```
+    ```pip install dj-database-url```
 
 
 
@@ -1302,7 +1286,7 @@ We will create the context.py in the cart app and then that context will be incl
 
 
 
-```pip install psycopg2```
+    ```pip install psycopg2```
 
 
 
@@ -1310,14 +1294,13 @@ We will create the context.py in the cart app and then that context will be incl
 
 
 
-`
+    ```
+    DATABASES = {
 
-DATABASES = {
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 
-'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-
-} `
-
+    }
+    ```
 
 
 
@@ -1326,7 +1309,7 @@ DATABASES = {
 
 
 
-```python manage.py migrate```
+    ```python manage.py migrate```
 
 
 
@@ -1334,7 +1317,7 @@ DATABASES = {
 
 
 
-```python manage.py createsuperuser```
+    ```python manage.py createsuperuser```
 
 
 
@@ -1342,57 +1325,57 @@ DATABASES = {
 
 
 
-```
+    ```
 
- # in development
+    # in development
 
-if development==True:
+    if development==True:
 
-    DATABASES = {
+        DATABASES = {
 
-        'default': {
+            'default': {
 
-        'ENGINE': 'django.db.backends.sqlite3',
+            'ENGINE': 'django.db.backends.sqlite3',
 
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
+        }
 
     }
 
-}
-
- #in production
-
-else:
-
-    if "DATABASE_URL" in os.environ:
-
-        # production database (Postgress)
-
-        DATABASES = {
-
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-
-        }
+    #in production
 
     else:
 
-        print('Database URL not found. Using SQLite instead')
+        if "DATABASE_URL" in os.environ:
 
-        DATABASES = {
+            # production database (Postgress)
 
-        'default': {
+            DATABASES = {
 
-        'ENGINE': 'django.db.backends.sqlite3',
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            }
 
-        }
+        else:
 
-        }
+            print('Database URL not found. Using SQLite instead')
 
-        
+            DATABASES = {
 
-```
+            'default': {
+
+            'ENGINE': 'django.db.backends.sqlite3',
+
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
+            }
+
+            }
+
+            
+
+    ```
 
 
 
@@ -1404,25 +1387,25 @@ else:
 
 
 
-```pip install django-storages```
+    ```pip install django-storages```
 
-```pip install boto3```
+    ```pip install boto3```
 
 
 
-```
+    ```
 
-INSTALLED_APPS = [
+    INSTALLED_APPS = [
 
-.....
+    .....
 
-'storages',
+    'storages',
 
-....
+    ....
 
-]
+    ]
 
-```
+    ```
 
 
 
@@ -1430,19 +1413,19 @@ INSTALLED_APPS = [
 
 
 
-```
+    ```
 
-class StaticStorage(S3Boto3Storage):
+    class StaticStorage(S3Boto3Storage):
 
-    location = settings.STATICFILES_LOCATION
+        location = settings.STATICFILES_LOCATION
 
 
 
-class MediaStorage(S3Boto3Storage):
+    class MediaStorage(S3Boto3Storage):
 
-    location = settings.MEDIAFILES_LOCATION
+        location = settings.MEDIAFILES_LOCATION
 
-```
+    ```
 
 
 
@@ -1450,101 +1433,7 @@ class MediaStorage(S3Boto3Storage):
 
 
 
-```
-
- # variables and keys needed in order to set up the connection with AWS S3
-
-AWS_S3_OBJECT_PARAMETERS = {
-
-'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-
-'CacheControl': 'max-age=94608000'
-
-}
-
-
-
-AWS_STORAGE_BUCKET_NAME = 'tree-books'
-
-AWS_S3_REGION_NAME = 'eu-west-3'
-
-AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
-
-AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
-
-
-
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-
-
-
-STATICFILES_LOCATION = 'static'
-
-STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-
-
-
-STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
-
-
-
-MEDIAFILES_LOCATION = 'media'
-
-DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-
-
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-
-```
-
-
-
-27. Then we will run the following command to send the files to S3:
-
-
-
-`python manage.py collectstatic`
-
-
-
-26. Finally, we can add additional syntax to the settings.py to use different code for the static and media storage depending on if we are in development or production
-
-
-
-```
-
- # in development we keep the files locally
-
-if development==True:
-
-
-
-    # we need a static root. All static files will be in the static directory
-
-    STATIC_URL = '/static/'
-
-    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
-
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-
-
-    # we need a media root. All media will be in the media directory
-
-    MEDIA_URL = '/media/'
-
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-
-
- # in production we use AWS S3 to host the media and static files
-
-else:
+    ```
 
     # variables and keys needed in order to set up the connection with AWS S3
 
@@ -1594,16 +1483,108 @@ else:
 
     MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 
-```
+    ```
+
+
+
+27. Then we will run the following command to send the files to S3:
+
+
+
+    `python manage.py collectstatic`
+
+
+
+26. Finally, we can add additional syntax to the settings.py to use different code for the static and media storage depending on if we are in development or production
+
+
+
+    ```
+
+    # in development we keep the files locally
+
+    if development==True:
+
+
+
+        # we need a static root. All static files will be in the static directory
+
+        STATIC_URL = '/static/'
+
+        STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+
+        STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
+
+        # we need a media root. All media will be in the media directory
+
+        MEDIA_URL = '/media/'
+
+        MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+
+    # in production we use AWS S3 to host the media and static files
+
+    else:
+
+        # variables and keys needed in order to set up the connection with AWS S3
+
+        AWS_S3_OBJECT_PARAMETERS = {
+
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+
+        'CacheControl': 'max-age=94608000'
+
+        }
+
+
+
+        AWS_STORAGE_BUCKET_NAME = 'tree-books'
+
+        AWS_S3_REGION_NAME = 'eu-west-3'
+
+        AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
+
+        AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+
+
+
+        AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+
+
+        STATICFILES_LOCATION = 'static'
+
+        STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+
+
+
+        STATIC_URL = '/static/'
+
+        STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+
+
+
+        MEDIAFILES_LOCATION = 'media'
+
+        DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+
+
+
+        MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+        MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+
+    ```
 
 
 
 ### Deployment
 
 
-
 Once the website is working correctly I have deployed to Heroku following the steps below:
-
 
 
 1. I have created an app (I already created an app before in order to get the Postgress URL link)
@@ -1616,13 +1597,13 @@ Once the website is working correctly I have deployed to Heroku following the st
 
 3. Then I went back to vscode and I installed gunicorn. This is required to connect to Heroku
 
-```pip install gunicorn```
+    ```pip install gunicorn```
 
 
 
 4. I also updated the requirements.txt
 
-```pip freeze > requirements.txt```
+    ```pip freeze > requirements.txt```
 
 
 
@@ -1630,11 +1611,11 @@ Once the website is working correctly I have deployed to Heroku following the st
 
 
 
-```web: gunicorn treebooks.wsgi:application```
+    ```web: gunicorn treebooks.wsgi:application```
 
 
 
-6. Then I added to the Config Vars DISABLE_COLLECTSTATIC = 1 to tell Heroku not to try to collect Static files.
+6. Then I added to the Config Vars `DISABLE_COLLECTSTATIC = 1` to tell Heroku not to try to collect Static files.
 
 
 
@@ -1682,7 +1663,7 @@ https://treebooksproject.herokuapp.com/
 
 
 
-The books details and images have been taken from Wikipedia.
+All the books details and images have been taken from Wikipedia.
 
 
 
@@ -1698,31 +1679,31 @@ All the images used in the websites have been obtained from Google images using 
 
 
 
-**book icon**:
+- **book icon**:
 
 https://www.netclipart.com/isee/wiiRR_note-clipart-book-biu-tng-cun-sch/
 
 
 
-**timer icon**:
+- **timer icon**:
 
 https://www.needpix.com/photo/17782/hourglass-timer-sand-clock-countdown-deadline-minute-hour-passing
 
 
 
-**heart icon**:
+- **heart icon**:
 
 https://commons.wikimedia.org/wiki/File:Cora%C3%A7%C3%A3o-icone.png
 
 
 
-**tree icon**:
+- **tree icon**:
 
 https://www.needpix.com/photo/33327/tree-environment-save-heart-love-nature-landscape-natural-season
 
 
 
-**store icon**:
+- **store icon**:
 
 https://pixabay.com/illustrations/store-icon-awning-exterior-shop-4433328/
 
@@ -1732,19 +1713,19 @@ https://pixabay.com/illustrations/store-icon-awning-exterior-shop-4433328/
 
 
 
-**book and trees image**:
+- **book and trees image**:
 
 https://pxhere.com/es/photo/1456537
 
 
 
-**reforestation image**:
+- **reforestation image**:
 
 https://pxhere.com/es/photo/1385461
 
 
 
-**books image**:
+- **books image**:
 
 https://pxhere.com/ko/photo/495483
 
@@ -1788,182 +1769,90 @@ https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_Amazon_Rainforest.jpg
 
 
 
-**Templates**
+###Templates
 
-
-
-#####navbar
-
-
-
+- **navbar**
 In order to create the navbar I have used the following link to help me with the alignment.
 
+    https://www.codeply.com/go/qhaBrcWp3v
+
+- **ecommerce template**
+I have used templates from the following link in order to start building the basic design for the all_book.html, the detail.html, the cart.html and the start rating design. Then I have customise it.
+    http://bootstrap-ecommerce.com/
 
 
-LINK
+###Tutorials
 
-
-
-##### ecommerce Xxxx template
-
-
-
-I have used the template Xxxx in order to start building the basic design for the all_book. HTML, the detail. HTML and the cart and the. I have customise it.
-
-
-
-**Tutorials**
-
-
-
-**remove None records**
-
-# remove None records https://www.geeksforgeeks.org/python-remove-none-values-from-list/ users_in_list = list(filter(None, users_in_list_1)) 
-
-
-
-
-
-
-
-**Redirect to the same page**
-
-
-
-I learned how to redirect to the current page in the following post # https://stackoverflow.com/questions/12758786/redirect-return-to-same-previous-page-in-django/12758859 return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-
-
-
-**Client**
-
-
-
-"""I learn about Client in the following link https://docs.djangoproject.com/en/1.11/topics/testing/tools/I learn about setUp in the following linkhttps://realpython.com/testing-in-django-part-1-best-practices-and-examples/"""
-
-
-
-
-"""
-I learn about Client in the following link 
-https://docs.djangoproject.com/en/1.11/topics/testing/tools/
-I learn about setUp in the following link
-https://realpython.com/testing-in-django-part-1-best-practices-and-examples/
-"""
-
-I learn about setUp in the following link
-https://realpython.com/testing-in-django-part-1-best-practices-and-examples/
-
-
-
-<!-- I have used the product cards from http://bootstrap-ecommerce.com/ in order to start building the book cards and then I have
- made some updates. The start rating is also from http://bootstrap-ecommerce.com/ but the score is calculated in the views -->
-
-
- # timedelta - https://stackoverflow.com/questions/27491248/django-default-timezone-now-delta
-
-
-<!--  In order to create the map with the markers using Leaflet I watch the following
-    tutorials:  https://www.youtube.com/watch?v=wVnimcQsuwk   http://bl.ocks.org/d3noob/9150014 -->
-
-
-<!-- alternatively change image alignment by checking if loop counter is divisible by 2
-                        I found that in the following post https://stackoverflow.com/questions/8494209/modulus-in-django-template-->
-
-'''
-I learn about the Q object in the following link
-https://docs.djangoproject.com/en/2.2/topics/db/queries/#complex-lookups-with-q-objects
-'''
-
-
-All the apps in the project are included in INSTALLED_APPS
-And I've also included the following:
-django_extensions - in order to use graph_models to create the db schema
-storages - in  order to use AWS S3 to host the media and static files
-django_forms_bootstrap - in order to apply bootstrap styles to the forms
-django_template_check - in order to check for basic syntax errors in templates 
-https://pypi.org/project/django-template-check/
-
-
-
-'''
-In order to tell django that there is an extension of the User model
-I followed the steps in the following tutorial
-https://www.youtube.com/watch?v=qLRxkStiaUg '''
-
-AUTH_PROFILE_MODULE = 'userprofile.UserProfile'
-
-
-
-
-'''
-GRAPH_MODELS is needed in order to create the data base schemas
-tutorial -> https://django-extensions.readthedocs.io/en/latest/graph_models.html
-tool to conver from .dot file to png -> https://dreampuf.github.io/GraphvizOnline/
-'''
-GRAPH_MODELS = {
-  'all_applications': True,
-  'group_models': True,
-}
-
-
-
-"""
-I learn how to create a list of book id's in the following post
+- **values_list**
+I learn how to use values_list in the following post
 https://stackoverflow.com/questions/37205793/django-values-list-vs-values
 
 
+- **remove None records** 
+I learn how to remove None recors from a list by reading the following tutorial:
+https://www.geeksforgeeks.org/python-remove-none-values-from-list/
+
+
+- **Redirect to the same page** 
+I learned how to redirect to the current page in the following post: 
+https://stackoverflow.com/questions/12758786/redirect-return-to-same-previous-page-in-django/12758859
+
+
+- **Client** 
+While creating tests I learn about Client in the following link: 
+https://docs.djangoproject.com/en/1.11/topics/testing/tools/
+
+- **setUp** 
+I also learn about setUp in the following link:
+https://realpython.com/testing-in-django-part-1-best-practices-and-examples/"""
+
+
+- **timedelta**
+I learn how to calculate dates by using timedelta in the link below:
+https://stackoverflow.com/questions/27491248/django-default-timezone-now-delta
+
+
+- **create the map**
+In order to create the map on the donate.html page I watch the following tutorial and read the tutorials below:
+https://www.youtube.com/watch?v=wVnimcQsuwk   
+http://bl.ocks.org/d3noob/9150014
+
+- **modulus in django**
+Since in django I couldn't use the modulus operator I found how to get the same result by checking if loop counter is divisible by 2. I found that in the following post:
+https://stackoverflow.com/questions/8494209/modulus-in-django-template-->
+
+
+- **Q object**
+I needed to create a query with and OR statement and then is when I learnd about the Q object. See link below:
+https://docs.djangoproject.com/en/2.2/topics/db/queries/#complex-lookups-with-q-objects
+
+
+- **Extend the User model**
+In order to tell django that there is an extension of the User model
+I followed the steps in the following tutorial
+https://www.youtube.com/watch?v=qLRxkStiaUg 
+
+
+- **Creating database schema**
+I learnt how to cexport my database schema by reading the following tutorial
+https://django-extensions.readthedocs.io/en/latest/graph_models.html
+
+- **Convert .dot to png**
+I used the following page in order to convert the .dot file to png
+
+    https://dreampuf.github.io/GraphvizOnline/
+
+
+- **loading icon**
+In the tutorial below I learned how to use loading icon while the page loads completly:
+https://smallenvelop.com/display-loading-icon-page-loads-completely/
 
 
 
+- **scroll automatically on hover**
+I used the code in the link belwow as a reference in order to create the horizontal autoscroll when overing over the books.
 
-Userprofile
-
-
-
-
-
-List values
-
-
-
-
-
-
-
-Test
-
-
-
-Data schema
-
-
-
-Leaflet
-
-
-
-Hover ove4
-
-
-
-Spiner
-
-
-
-
-
-
-
-
-
-The following post help me to create the code in order to xxxx
-
-
-
-I learn how to xxxc by following the tutorial in the link below:
-
-
-
+    https://stackoverflow.com/questions/18188952/scroll-on-hover-click-for-speed
 
 
 
@@ -1971,10 +1860,7 @@ I learn how to xxxc by following the tutorial in the link below:
 * As always the slack community has been very helpful when I had any question.
 
 
-
 - The Tutors were great, they always replied very quick to all my doubts. When I changed database and I had the problem with the waiting list, the were suggesting ways to find out what was the issue and in the end one of their emails made me go in the right direction and I found the solution. 
-
-
 
 
 
