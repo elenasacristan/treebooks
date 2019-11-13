@@ -19,10 +19,24 @@ https://treebooksproject.herokuapp.com/
 
 - [Description](#Description)
 - [UX](#UX)
+    - [mock-ups](#mock-ups)
+    - [User stories](#User-stories)
 - [Features](#Features)
-- [Features Left to Implement](#Features-Left-to-Implement)
+    - [Accounts app](#Accounts-app)
+    - [books app](#books-app)
+    - [Home app](#Home-app)
+    - [Cart app](#Cart-app)    
+    - [Waiting_list app](#Waiting_list-app)
+    - [Reviews app](#Reviews-app)
+    - [Favourites app](#Favourites-app)
+    - [Features Left to Implement](#Features-Left-to-Implement)
+
 - [Technologies Used](#Technologies-Used)
 - [Testing](#Testing)
+    - [Validation](#Validation)
+    - [django tests](#django-tests)
+    - [Additional testing](#Additional-testing)
+
 - [Problems and bugs](#Problems-and-bugs)
 - [GitHub repository](#GitHub-repository)
 - [Deployment](#Deployment)
@@ -641,7 +655,7 @@ The logo will appear in the navigation bar for every section of the website and 
 
 
 
-## Features Left to Implement
+### Features Left to Implement
 
 
 
@@ -870,7 +884,7 @@ The **gunicorn** package is needed to connect to Heroku.
 
 
 
-### django tests
+### Django tests
 
 
 
@@ -965,13 +979,15 @@ See the coverage reports for each app below.
 
 
 
-Click [here](/documents/checkList.xlsx) to see the checklist that I have used to test all the features in all the screen sizes.
+
 
 
 
 ### Additional testing
 
+#### check list
 
+Click [here](/documents/checkList.xlsx) to see the checklist that I have used to test all the features in all the screen sizes.
 
 #### [Travis](https://travis-ci.org/)
 
