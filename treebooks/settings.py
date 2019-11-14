@@ -45,7 +45,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 
 # will be True in development and False in production
-DEBUG = development
+# DEBUG = development
+
+# For testing issue in heroku
+DEBUG = True
 
 # We need to add to allowed host the link to the app in Heroku
 ALLOWED_HOSTS = ['127.0.0.1', 'treebooksproject.herokuapp.com']
