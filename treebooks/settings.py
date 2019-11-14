@@ -202,7 +202,7 @@ USE_TZ = True
 # in development we keep the files locally
 if development==True:
 
-    # we need a static root. All static files will be in the static directory
+     # we need a static root. All static files will be in the static directory
     STATIC_URL = '/static/'
     STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -237,23 +237,32 @@ else:
 
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
     MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-    
+  
 
 # These are the variables needed to use Stripe to take payments
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 
 
-#These are the variables needed to send email to reset the password
-DEFAULT_FROM_EMAIL = os.environ.get("EMAIL_ADDRESS")
-SERVER_EMAIL = os.environ.get("EMAIL_ADDRESS")
+SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
 
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = os.environ.get("EMAIL_ADDRESS")
-EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
 EMAIL_PORT = 587
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_USE_TLS = True
+
+
+#These are the variables needed to send email to reset the password
+# DEFAULT_FROM_EMAIL = os.environ.get("EMAIL_ADDRESS")
+# SERVER_EMAIL = os.environ.get("EMAIL_ADDRESS")
+
+# EMAIL_USE_TLS = True
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = os.environ.get("EMAIL_ADDRESS")
+# EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
+# EMAIL_PORT = 587
+# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
 '''
 In order to tell django that there is an extension of the User model
