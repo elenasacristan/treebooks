@@ -115,7 +115,7 @@ order to start building the cart and then I have made some updates -->
             <hr>
             <div class="row justify-content-center payment-wrapper">
                 <form class="col-8" method="post" id="payment-form" action="{% url 'checkout' %}">
-                    <div id="credit-card-errors" style="display: none;">
+                    <div class="col-12" id="credit-card-errors" style="display: none;">
                         <div class="alert-message block-message error" id="stripe-error-message"></div>
                     </div>
                     <div class="form-group col-md-6">

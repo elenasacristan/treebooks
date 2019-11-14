@@ -1355,8 +1355,13 @@ footer .col-sm-5 a {
 }
 
 /* validation error messages */
-.error-msg {
+.error-msg, #credit-card-errors .error{
   color: red;
+}
+
+#credit-card-errors .error{
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 /* 404- page */
