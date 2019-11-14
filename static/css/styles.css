@@ -499,7 +499,7 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
 
 /* background with transparency for all_books.html */
 .allbooks {
-  background-color: #f2f3f2b3;
+  background: rgba(242, 243, 242, 0.7);
   margin-top: -50px;
   margin-bottom: -50px;
   padding: 50px 0px;
@@ -527,7 +527,7 @@ https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggle
   box-shadow: 3px 3px 5px #563900;
   margin-top: 10px;
   margin-bottom: 30px;
-  max-height: 400px;
+  max-height: 420px;
   text-align: center;
   position: relative;
 }
@@ -771,7 +771,7 @@ fav-form button:active {
 
 /* header background common for detail and view_profile and edit_user_profile pages */
 .detail-profile .header-content {
-  background-color: #62a48b91;
+  background-color: #78b39c;
   color: white;
   height: 70px;
   border-top-right-radius: 25px;
@@ -816,7 +816,7 @@ fav-form button:active {
 
 /* common styles for detail and profile sections */
 .detail-profile {
-  background-color: #fffffff7;
+  background-color: #ffffff;
   margin-bottom: 50px;
   margin-top: -20px;
   border-radius: 25px;
