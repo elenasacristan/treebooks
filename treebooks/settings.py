@@ -244,11 +244,9 @@ STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 
 
-SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
-
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+EMAIL_HOST_PASSWORD = os.getenv('SENDGRID_API_KEY')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
@@ -262,7 +260,7 @@ EMAIL_USE_TLS = True
 # EMAIL_HOST_USER = os.environ.get("EMAIL_ADDRESS")
 # EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
 # EMAIL_PORT = 587
-# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
 '''
 In order to tell django that there is an extension of the User model
