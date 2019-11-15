@@ -243,7 +243,6 @@ STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 
 
 #These are the variables needed to send email to reset the password
-
 if development==True:
     DEFAULT_FROM_EMAIL = os.environ.get("EMAIL_ADDRESS")
     SERVER_EMAIL = os.environ.get("EMAIL_ADDRESS")
@@ -255,6 +254,11 @@ if development==True:
     EMAIL_PORT = 587
 
 else:
+    '''
+    Guido (my mentor) advised me to use SendGrid for Production 
+    instead of my gmail account because I was having issues 
+    trying to reset my password in Production
+    '''
     EMAIL_HOST = 'smtp.sendgrid.net'
     EMAIL_HOST_USER = 'apikey'
     EMAIL_HOST_PASSWORD = os.getenv('SENDGRID_API_KEY')
