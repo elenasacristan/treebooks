@@ -670,13 +670,12 @@ Below is the list of the main packages that I had to install to create the proje
 * **[jQuery](https://jquery.com/)**: This library is needed for all the interactive elements on the website to work.
 
 
-* **[FontAwesome:](https://fontawesome.com/ "https://fontawesome.com/")**: The font awesome icons have been used in different areas of the website (search, cart, login, log out, social media and favourites icons).
+* **[FontAwesome](https://fontawesome.com/ "https://fontawesome.com/")**: The font awesome icons have been used in different areas of the website (search, cart, login, log out, social media and favourites icons).
 
 
-* **[Google Fonts:](https://fonts.google.com/ "https://fonts.google.com/")** I’ve used the fonts from Google Fonts to style the fonts on the website.
+* **[Google Fonts](https://fonts.google.com/ "https://fonts.google.com/")**: I’ve used the fonts from Google Fonts to style the fonts on the website.
 
-* **bootstrap 4**
-I've used bootstrap 4 to align the elements in the website using the grid system. I've also used bootstrap to create the hamburger button, the carousel, the modals, the buttons, the badges, the alerts and to style the forms.
+* **[bootstrap 4](https://getbootstrap.com/)**: I've used bootstrap 4 to align the elements in the website using the grid system. I've also used bootstrap to create the hamburger button, the carousel, the modals, the buttons, the badges, the alerts and to style the forms.
 
 #### Development environment:
 
@@ -691,7 +690,7 @@ I've used bootstrap 4 to align the elements in the website using the grid system
 
 #### Hosting service:
 
-- **[Heroku:](https://www.heroku.com/)** I have used Heroku to deploy the website.
+**[Heroku:](https://www.heroku.com/)** I have used Heroku to deploy the website.
 
 ---
 ## Testing
@@ -943,7 +942,6 @@ Finally, my mentor Guido suggested me to use SendGrid to send the reset-password
 
 
     ```
-
     try:
 
         import env
@@ -963,16 +961,13 @@ Finally, my mentor Guido suggested me to use SendGrid to send the reset-password
     else:
 
         evelopment = False
-
     ```
 
 
     ```
-
     # will be True in development and False in production
 
     DEBUG = development
-
     ```
 
 
@@ -1033,7 +1028,6 @@ Finally, my mentor Guido suggested me to use SendGrid to send the reset-password
 
     ```
     'django.template.context_processors.media'
-
     ```
 
 
@@ -1043,7 +1037,6 @@ Finally, my mentor Guido suggested me to use SendGrid to send the reset-password
 
     ```
     'cart.context.cart_content'
-
     ```
 
 
@@ -1098,7 +1091,6 @@ Finally, my mentor Guido suggested me to use SendGrid to send the reset-password
 
 
     ```
-
     # in development
 
     if development==True:
@@ -1144,9 +1136,6 @@ Finally, my mentor Guido suggested me to use SendGrid to send the reset-password
             }
 
             }
-
-           
-
     ```
 
 
@@ -1162,7 +1151,6 @@ Finally, my mentor Guido suggested me to use SendGrid to send the reset-password
 
 
     ```
-
     INSTALLED_APPS = [
 
     .....
@@ -1172,7 +1160,6 @@ Finally, my mentor Guido suggested me to use SendGrid to send the reset-password
     ....
 
     ]
-
     ```
 
 
@@ -1180,7 +1167,6 @@ Finally, my mentor Guido suggested me to use SendGrid to send the reset-password
 
 
     ```
-
     class StaticStorage(S3Boto3Storage):
 
         location = settings.STATICFILES_LOCATION
@@ -1189,7 +1175,6 @@ Finally, my mentor Guido suggested me to use SendGrid to send the reset-password
     class MediaStorage(S3Boto3Storage):
 
         location = settings.MEDIAFILES_LOCATION
-
     ```
 
 
@@ -1197,7 +1182,6 @@ Finally, my mentor Guido suggested me to use SendGrid to send the reset-password
 
 
     ```
-
     # variables and keys needed in order to set up the connection with AWS S3
 
     AWS_S3_OBJECT_PARAMETERS = {
@@ -1239,7 +1223,6 @@ Finally, my mentor Guido suggested me to use SendGrid to send the reset-password
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
     MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-
     ```
 
 
@@ -1251,10 +1234,8 @@ Finally, my mentor Guido suggested me to use SendGrid to send the reset-password
 
 26. Finally, I added additional syntax to the settings.py to use different code for the static and media storage depending on if we are in development or production.
 
-    I did this because before I was running collecstatic every time I updated to styles.css file and a consequence, I end up using up all my free tier allowance on S3.
+    I did this to avoid running collecstatic every time I did updates to the styles.css file (when working locally).
 
-
-        
 
         # in development we keep the files locally
 
@@ -1397,47 +1378,47 @@ All the images used on the websites have been obtained from Google images using 
 #### icons used on the index, profile and detail pages
 
 
-- **book icon**:
+- ##### book icon:
 
-https://www.netclipart.com/isee/wiiRR_note-clipart-book-biu-tng-cun-sch/
-
-
-- **timer icon**:
-
-https://www.needpix.com/photo/17782/hourglass-timer-sand-clock-countdown-deadline-minute-hour-passing
+    https://www.netclipart.com/isee/wiiRR_note-clipart-book-biu-tng-cun-sch/
 
 
-- **heart icon**:
+- ##### timer icon:
 
-https://commons.wikimedia.org/wiki/File:Cora%C3%A7%C3%A3o-icone.png
-
-
-- **tree icon**:
-
-https://www.needpix.com/photo/33327/tree-environment-save-heart-love-nature-landscape-natural-season
+    https://www.needpix.com/photo/17782/hourglass-timer-sand-clock-countdown-deadline-minute-hour-passing
 
 
-- **store icon**:
+- ##### heart icon:
 
-https://pixabay.com/illustrations/store-icon-awning-exterior-shop-4433328/
+    https://commons.wikimedia.org/wiki/File:Cora%C3%A7%C3%A3o-icone.png
+
+
+- ##### tree icon:
+
+    https://www.needpix.com/photo/33327/tree-environment-save-heart-love-nature-landscape-natural-season
+
+
+- ##### store icon:
+
+    https://pixabay.com/illustrations/store-icon-awning-exterior-shop-4433328/
 
 
 #### images used in the carousel
 
 
-- **book and trees image**:
+- ##### book and trees image:
 
-https://pxhere.com/es/photo/1456537
-
-
-- **reforestation image**:
-
-https://pxhere.com/es/photo/1385461
+    https://pxhere.com/es/photo/1456537
 
 
-- **books image**:
+- ##### reforestation image:
 
-https://pxhere.com/ko/photo/495483
+    https://pxhere.com/es/photo/1385461
+
+
+- ##### books image:
+
+    https://pxhere.com/ko/photo/495483
 
 
 
@@ -1473,74 +1454,86 @@ https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_Amazon_Rainforest.jpg
 
 ### Templates
 
-- **navbar**
+- **navbar**:
 In order to create the navbar I have used the following link to help me with the alignment.
 
     https://www.codeply.com/go/qhaBrcWp3v
 
-- **ecommerce template**
+- **ecommerce template**:
 I have used templates from the following link in order to start building the basic design for the all_book.html, the detail.html, the cart.html and the start rating design. I then customised it.
+
     http://bootstrap-ecommerce.com/
 
 ### Tutorials
 
-- **values_list**
-I learnt how to use values_list via the following post
-https://stackoverflow.com/questions/37205793/django-values-list-vs-values
+- **values_list**: I learnt how to use values_list via the following post
 
-- **remove None records**
+    https://stackoverflow.com/questions/37205793/django-values-list-vs-values
+
+- **remove None records**:
 I learnt how to remove None records from a list by reading the following tutorial:
-https://www.geeksforgeeks.org/python-remove-none-values-from-list/
 
-- **Redirect to the same page**
+    https://www.geeksforgeeks.org/python-remove-none-values-from-list/
+
+- **Redirect to the same page**:
 I learnt how to redirect to the current page in the following post:
-https://stackoverflow.com/questions/12758786/redirect-return-to-same-previous-page-in-django/12758859
 
-- **Client**
+    https://stackoverflow.com/questions/12758786/redirect-return-to-same-previous-page-in-django/12758859
+
+- **Client**:
 While creating tests I learnt about Client in the following link:
-https://docs.djangoproject.com/en/1.11/topics/testing/tools/
 
-- **setUp**
+    https://docs.djangoproject.com/en/1.11/topics/testing/tools/
+
+- **setUp**:
 I also learnt about setUp in the following link:
-https://realpython.com/testing-in-django-part-1-best-practices-and-examples/"""
 
-- **timedelta**
+    https://realpython.com/testing-in-django-part-1-best-practices-and-examples/
+
+- **timedelta**:
 I learnt how to calculate dates by using timedelta in the link below:
-https://stackoverflow.com/questions/27491248/django-default-timezone-now-delta
 
-- **create the map**
+    https://stackoverflow.com/questions/27491248/django-default-timezone-now-delta
+
+- **create the map**:
 In order to create the map on the donate.html page I watched the following tutorial and read the tutorials below:
-https://www.youtube.com/watch?v=wVnimcQsuwk  
-http://bl.ocks.org/d3noob/9150014
 
-- **modulus in Django**
+    https://www.youtube.com/watch?v=wVnimcQsuwk  
+    http://bl.ocks.org/d3noob/9150014
+
+- **modulus in Django**:
 Since in Django I couldn't use the modulus operator I found how to get the same result by checking if loop counter is divisible by 2. I found this information in the following post:
-https://stackoverflow.com/questions/8494209/modulus-in-django-template
 
-- **Q object**
+    https://stackoverflow.com/questions/8494209/modulus-in-django-template
+
+- **Q object**:
 I needed to create a query with an OR statement and this is when I learnt about the Q object. See link below:
-https://docs.djangoproject.com/en/2.2/topics/db/queries/#complex-lookups-with-q-objects
 
-- **Extend the User model**
+    https://docs.djangoproject.com/en/2.2/topics/db/queries/#complex-lookups-with-q-objects
+
+- **Extend the User model**:
 In order to tell Django that there is an extension of the User model
 I followed the steps in the following tutorial:
-https://www.youtube.com/watch?v=qLRxkStiaUg
 
-- **Creating database schema**
+    https://www.youtube.com/watch?v=qLRxkStiaUg
+
+- **Creating database schema**:
 I learnt how to export my database schema by reading the following tutorial
-https://django-extensions.readthedocs.io/en/latest/graph_models.html
+
+    https://django-extensions.readthedocs.io/en/latest/graph_models.html
 
 - **Convert .dot to png**
 I used the following page in order to convert the .dot file to png:
 
     https://dreampuf.github.io/GraphvizOnline/
 
-- **loading icon**
+- **loading icon**:
 In the tutorial below I learnt how to use the loading icon while the page loads completely:
-https://smallenvelop.com/display-loading-icon-page-loads-completely/
+
+    https://smallenvelop.com/display-loading-icon-page-loads-completely/
 
 
-- **scroll automatically on hover**
+- **scroll automatically on hover**:
 I used the code in the link below as a reference in order to create the horizontal autos-croll when hovering over the books.
 
     https://stackoverflow.com/questions/18188952/scroll-on-hover-click-for-speed
