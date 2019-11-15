@@ -401,7 +401,7 @@ Then it will display the total to pay. A £5 deposit per book will be added to t
 The user will have the option to proceed to the payment by clicking the 'checkout' button or continue searching for other books by clicking the button 'keep looking'.
 
 
-### Checkout
+### Checkout app
 
 
 #### checkout.html
