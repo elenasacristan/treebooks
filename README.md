@@ -1251,10 +1251,10 @@ Finally, my mentor Guido suggested me to use SendGrid to send the reset-password
 
 26. Finally, I added additional syntax to the settings.py to use different code for the static and media storage depending on if we are in development or production.
 
-I did this because before I was running collecstatic every time I updated to styles.css file and a consequence, I end up using up all my free tier allowance on S3.
+    I did this because before I was running collecstatic every time I updated to styles.css file and a consequence, I end up using up all my free tier allowance on S3.
 
 
-        ```
+        
 
         # in development we keep the files locally
 
@@ -1322,7 +1322,7 @@ I did this because before I was running collecstatic every time I updated to sty
             MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
             MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-            ```
+            
 
 
 ### Deployment
@@ -1471,7 +1471,7 @@ https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_Amazon_Rainforest.jpg
 ## Acknowledgements
 
 
-###Templates
+### Templates
 
 - **navbar**
 In order to create the navbar I have used the following link to help me with the alignment.
@@ -1482,7 +1482,7 @@ In order to create the navbar I have used the following link to help me with the
 I have used templates from the following link in order to start building the basic design for the all_book.html, the detail.html, the cart.html and the start rating design. I then customised it.
     http://bootstrap-ecommerce.com/
 
-###Tutorials
+### Tutorials
 
 - **values_list**
 I learnt how to use values_list via the following post
