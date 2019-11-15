@@ -786,7 +786,7 @@ See the coverage reports for each app below.
 
 ### Additional testing
 
-#### checklist
+#### Checklist
 
 Click [here](/documents/checklist.pdf) to see the checklist that I have used to test the main features.
 
