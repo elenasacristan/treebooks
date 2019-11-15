@@ -41,6 +41,8 @@ https://treebooksproject.herokuapp.com/
 - [Credits](#Credits)
 - [Acknowledgements](#Acknowledgements)
 
+---
+
 ## Description
 
 To be able to rent books the user needs to register. Once registered, users will be able to rent books, read reviews, join the waiting list for a book, keep track of the books they have read and save the books that they like in a favourites list.
@@ -63,7 +65,7 @@ The users can contact the charity using the contact form in case they have any q
 
 The users will be able to follow TreeBooks on social media by clicking on the icons located at the footer of the page.
 
-
+---
 ## UX
 
 
@@ -83,7 +85,7 @@ TreeBooks is a charity so the website aims to attract users who then will rent b
 Below you can see the mock-ups that I drew using [Adobe Fireworks](https://www.adobe.com/products/fireworks.html).
 
 
-##### Common design used for the following pages:
+#### Common design used for the following pages:
 
 
 login.html, registration.html, contact.html, review_form.html, password_reset_complete.html, password_reset_confirm.html, password_reset_done.html, password_reset_email.html, password_reset_form.html
@@ -92,61 +94,61 @@ login.html, registration.html, contact.html, review_form.html, password_reset_co
 ![many](/documents/mockups/small_common_style1.png)
 
 
-##### index.html
+#### index.html
 
 
 ![home](/documents/mockups/home1.png)
 
 
-##### about.html
+#### about.html
 
 
 ![about](/documents/mockups/about1.png)
 
 
-##### projects.html
+#### projects.html
 
 
 ![projects](/documents/mockups/projects1.png)
 
 
-##### donate.html
+#### donate.html
 
 
 ![donate](/documents/mockups/donate1.png)
 
 
-##### all_books.html
+#### all_books.html
 
 
 ![books](/documents/mockups/books1.png)
 
 
-##### detail.html
+#### detail.html
 
 
 ![detail](/documents/mockups/detail1.png)
 
 
-##### view_profile.html
+#### view_profile.html
 
 
 ![profile](/documents/mockups/profile1.png)
 
 
-##### edit_user_profile.html
+#### edit_user_profile.html
 
 
 ![edit profile](/documents/mockups/edit_profile1.png)
 
 
-##### cart.html
+#### cart.html
 
 
 ![cart](/documents/mockups/cart1.png)
 
 
-##### checkout.html
+#### checkout.html
 
 
 ![checkout](/documents/mockups/checkout1.png)
@@ -235,7 +237,7 @@ login.html, registration.html, contact.html, review_form.html, password_reset_co
 
 - As a charity (TreeBooks), I want to notify the users in case they don't return the books on time.
 
-
+---
 ## Features
 
 
@@ -254,7 +256,7 @@ The users can also reset their password if they forgot the original password usi
 ### Books app
 
 
-##### view-all-books.html
+#### view-all-books.html
 
 
 Displays all the books available on the website. The books are displayed by category and they are sorted in descending order by the review score.
@@ -264,7 +266,7 @@ In this page the user only will see the name of the book, the star rating and th
 By clicking on the book title, the 'AVAILABLE' text or the 'It's your turn' badge the user will also be redirected to the detail page. If the users click on 'check waiting list' then they will be re-directed to the waiting list for that book.
 
 
-##### detail.html
+#### detail.html
 
 
 On this page the user can see all the details about the book. These details are the title, the author (by clicking on the author name they will get redirected to the Wikipedia URL for the author), the summary, the category, the date it was published, the ISBN number, the store where the book has to be collected from, the number of pages and the type of book (hardcover or paperback).
@@ -279,7 +281,7 @@ If the book is not available, and the user is authenticated, then the user can j
 If the user is not authenticated he/she will see a button to register because only authenticated users can rent books or join waiting lists.
 
 
-##### view_profile.html
+#### view_profile.html
 
 
 The authenticated users can see their personal and membership details by clicking on the profile tab in the navigation bar.
@@ -319,7 +321,7 @@ TreeBooks will contact the next user on the waiting list as soon as the book is 
 Then the next user on the waiting list can proceed to rent the book online. Only the next user on the waiting list will have the option to rent the book - for the rest of the website users the book will not be listed as available.
 
 
-##### edit_user_profile.html
+#### edit_user_profile.html
 
 
 The users can edit their profile details by clicking on 'edit profile' on the profile page.
@@ -334,7 +336,7 @@ They can also choose to opt-in for the monthly newsletter and they can also sele
 ### Home app
 
 
-##### index.html
+#### index.html
 
 
 This is the home page and the users will get redirected to this page when they click on the logo or the home tab on the navbar.
@@ -351,13 +353,13 @@ The users that are not authenticated will see the message 'Become a member and y
 If the user is authenticated then he/she won't see the register button and the header will have the message saying 'Hi USERNAME, with TreeBooks you can...'
 
 
-##### about.html
+#### about.html
 
 
 This page explains the aim of the website and how it works. It has re-directs to other areas of the website (projects.html and donate.html)
 
 
-##### projects.html
+#### projects.html
 
 
 On this page the user can see how much money has been raised by the charity (since it was set-up) and the user also can see how many times books have been rented.
@@ -371,13 +373,13 @@ By clicking on the project name the user will be redirected to the projects.
 * Note that the projects that I'm showing are two projects that I found randomly on the internet in order to have them as an example in the website - but I'm not familiar with them.
 
 
-##### donate.html
+#### donate.html
 
 
 If the users (registered or not) would like to collaborate with the charity by donating books, on this page they can see a map with the collections points where they can drop off their books.
 
 
-##### contact.html
+#### contact.html
 
 
 In the footer there is a link to the contact us page. In this page the user can fill out the form to send a message to the charity.
@@ -387,7 +389,7 @@ The charity will be able to see these messages on the admin page.
 ### Cart app
 
 
-##### cart.html
+#### cart.html
 
 
 This page will display the books that the user has added to the shopping cart and will give the user the option to update the number of days selected or remove the books completely.
@@ -402,7 +404,7 @@ The user will have the option to proceed to the payment by clicking the 'checkou
 ### Checkout
 
 
-##### checkout.html
+#### checkout.html
 
 
 In the checkout page the user will see the details of the books that he/she is going to rent and the total to pay.
@@ -437,7 +439,7 @@ If the payment has been successful the following will happen:
 ### Waiting_list app
 
 
-##### waiting_list.html
+#### waiting_list.html
 
 
 Only authenticated users will be able to see or join waiting lists for books.
@@ -455,7 +457,7 @@ At the bottom of the waiting list there will be two buttons. The "Keep looking" 
 ### Reviews app
 
 
-##### review_form.html
+#### review_form.html
 
 
 Once the user has rented a book he/she can leave a review.
@@ -529,7 +531,7 @@ The logo will appear in the navigation bar for every section of the website and 
 
 I would have like to include in the detail.html page the name of the user reading the book and how many days are left until the book would be available again (for the next user in the waiting list or for all users). The reason why I didn't implement this feature is because I was running out of time and I needed to deliver the project.
 
-
+---
 ## Technologies Used
 
 
@@ -595,69 +597,69 @@ I have used Adobe Fireworks to create the logo and the mock-ups.
 Below is the list of the main packages that I had to install to create the project. These packages are listed in the requirements.txt file together with some other packages that have been installed automatically when installing the main packages.
 
 
-**Django** is the framework used to create this project.
+* **Django** is the framework used to create this project.
 
 
-```Django==1.11.17```
+    ```Django==1.11.17```
 
 
-**django-forms-bootstrap** is needed to apply bootstrap styles to the Django forms.
+* **django-forms-bootstrap** is needed to apply bootstrap styles to the Django forms.
 
 
-```django-forms-bootstrap==3.1.0```
+    ```django-forms-bootstrap==3.1.0```
 
 
-The **Pillow** package is needed to allow the upload of images.
+* The **Pillow** package is needed to allow the upload of images.
 
-```Pillow==6.1.0```
-
-
-The **stripe** package is needed to be able to take payments.
+    ```Pillow==6.1.0```
 
 
-```stripe==2.37.1```
+* The **stripe** package is needed to be able to take payments.
 
 
-The **dj-database-url** package is the package needed in order to connect to a database URL.
-
-```dj-database-url==0.5.0```
+    ```stripe==2.37.1```
 
 
-The **psycopg2** package is needed to connect to the Postgress URL.
+* The **dj-database-url** package is the package needed in order to connect to a database URL.
+
+    ```dj-database-url==0.5.0```
 
 
-```psycopg2==2.8.4```
+* The **psycopg2** package is needed to connect to the Postgress URL.
 
 
-**boto3** and **django-storages** packages are needed to connect Django to S3 (AWS) which is where the media and static files are hosted.
-
-```boto3==1.10.2```
-
-```django-storages==1.7.2```
+    ```psycopg2==2.8.4```
 
 
-The **coverage** package is not needed for the project to run but it is needed to create the coverage report when testing the app.
+* **boto3** and **django-storages** packages are needed to connect Django to S3 (AWS) which is where the media and static files are hosted.
 
-```coverage==4.5.4```
+    ```boto3==1.10.2```
 
-
-**django-extensions** and **pydot** packages are needed to create the database schema.
-
-
-```django-extensions==2.2.5```
-
-```pydot==1.4.1```
+    ```django-storages==1.7.2```
 
 
-This **django-template-check** package makes it possible to easily check for basic syntax errors in all loaded Django templates.
+* The **coverage** package is not needed for the project to run but it is needed to create the coverage report when testing the app.
+
+    ```coverage==4.5.4```
 
 
-```django-template-check==0.3.1```
+* **django-extensions** and **pydot** packages are needed to create the database schema.
 
 
-The **gunicorn** package is needed to connect to Heroku.
+    ```django-extensions==2.2.5```
 
-```gunicorn==20.0.0```
+    ```pydot==1.4.1```
+
+
+* This **django-template-check** package makes it possible to easily check for basic syntax errors in all loaded Django templates.
+
+
+    ```django-template-check==0.3.1```
+
+
+* The **gunicorn** package is needed to connect to Heroku.
+
+    ```gunicorn==20.0.0```
 
 
 
@@ -691,7 +693,7 @@ I've used bootstrap 4 to align the elements in the website using the grid system
 
 - **[Heroku:](https://www.heroku.com/)** I have used Heroku to deploy the website.
 
-
+---
 ## Testing
 
 
@@ -719,61 +721,61 @@ In the end I have managed to get a coverage of 86.6% on average.
 See the coverage reports for each app below.
 
 
-##### accounts coverage report
+#### accounts coverage report
 
 
 ![home](/documents/coverage/accounts.png)
 
 
-##### books coverage report
+#### books coverage report
 
 
 ![home](/documents/coverage/books.png)
 
 
-##### cart coverage report
+#### cart coverage report
 
 
 ![home](/documents/coverage/cart.png)
 
 
-##### checkout coverage report
+#### checkout coverage report
 
 
 ![home](/documents/coverage/checkout.png)
 
 
-##### favourites coverage report
+#### favourites coverage report
 
 
 ![home](/documents/coverage/favourites.png)
 
 
-##### home coverage report
+#### home coverage report
 
 
 ![home](/documents/coverage/home.png)
 
 
-##### reviews coverage report
+#### reviews coverage report
 
 
 ![home](/documents/coverage/reviews.png)
 
 
-##### search coverage report
+#### search coverage report
 
 
 ![home](/documents/coverage/search.png)
 
 
-##### userprofile coverage report
+#### userprofile coverage report
 
 
 ![home](/documents/coverage/userprofile.png)
 
 
-##### waiting_list coverage report
+#### waiting_list coverage report
 
 
 ![home](/documents/coverage/waiting_list.png)
@@ -800,16 +802,16 @@ The code that I was meant to use in the Travis.yml file was not working and I fo
 
 I have also used development tools in Google Chrome to check how the website would look on different devices (portrait and landscape mode). In addition to that testing, I have also asked friends and family to have a look at the website to let me know if everything looks fine on their browsers and devices.
 
-
+---
 ## Problems and bugs:
 
 
-##### Iterating on fields with ManyToMany relationships
+#### Iterating on fields with ManyToMany relationships
 
 I had issues when iterating on fields with ManyToMany relationships because I was having  duplication of HTML code. In the end, I fixed these problems by using "if forloop.first" in the templates and in other cases by using values_list in the views.
 
 
-##### IntergrityError - waiting list
+#### IntergrityError - waiting list
 
 When I changed from the local database to the Postgress database suddenly if I added more than one user to the same waiting list I was getting the following error:
 
@@ -820,7 +822,7 @@ When I changed from the local database to the Postgress database suddenly if I a
 This was strange because locally I could add more than one user to the same waiting list without any error but changing to Postgress I was getting the error. The tutors suggested that I create a new link to a new Postgres database to see if this could solve the problem but it didn't. Finally, thanks to some of the suggestions that the Tutors were giving me I noticed that every time I was adding a user to the waiting list I was also adding a book and that is why the book Id was duplicated – since the book already existed in the waiting list. This issue was fixed by using `get_or_create()`. So a book will only be added if it didn't exist already
 
 
-##### Currently reading
+#### Currently reading
 
 I also had an issue in the **currently reading** section. The original UserProfile model didn't have the field current_books when I first created it. Instead I was displaying the books included in the read_books field, but only the books where the return date was in the future. When the return date was in the past then the book would disappear from this section.
 This was working correctly until I noticed that if another user bought the same book after, the return date for the book was updated and then the book was appearing again in the currently reading section for each user who had read that book in the past.
@@ -831,7 +833,7 @@ The solution was to create a new field in the UserProfile model for the current_
 
 
 
-##### Image upload
+#### Image upload
 
 When I deployed the project to Heroku I tried to upload an image and it was not being displayed. I could see in S3 that the image was uploaded in S3 so that made me think that the issue was with the MEDIA_URL.
 
@@ -846,15 +848,15 @@ But instead I should be using the code below:
 Once I updated the MEDIA_URL the images uploaded were displaying correctly.
 
 
-##### Password reset not working on production
+#### Password reset not working on production
 
 My password reset was working perfectly on development but it wasn't working on production. All the environmental variables were set up correctly in Heroku.
 
 I also checked with the Tutors but we didn't understand why. 
 Finally, my mentor Guido suggested me to use SendGrid to send the reset-password link instead of using my email account and that solved the problem.
 
-
-# GitHub repository
+---
+## GitHub repository
 
 
 1. I've created a repository in GitHub called: “elenasacristan/treebooks” [https://github.com/elenasacristan/treebooks.git](https://github.com/elenasacristan/treebooks.git)
@@ -892,7 +894,7 @@ Finally, my mentor Guido suggested me to use SendGrid to send the reset-password
 
 7. I've run regular commits after every important update to the code, and I pushed the changes to GitHub.
 
-
+---
 ## Deployment
 
 
@@ -915,27 +917,27 @@ Finally, my mentor Guido suggested me to use SendGrid to send the reset-password
 
 
 4. I have created an env.py file to keep the variables that I need to keep secret and I have added it to the .gitignore file to ensure it doesn't get pushed to Github. This are the variables that I have in my env.py file:
+    ```
+        - SECRET_KEY
 
-- SECRET_KEY
+        - ENVIRONMENT
 
-- ENVIRONMENT
+        - EMAIL_ADDRESS
 
-- EMAIL_ADDRESS
+        - EMAIL_PASSWORD
 
-- EMAIL_PASSWORD
+        - STRIPE_PUBLISHABLE
 
-- STRIPE_PUBLISHABLE
+        - STRIPE_SECRET
 
-- STRIPE_SECRET
+        - DATABASE_URL
 
-- DATABASE_URL
+        - AWS_ACCESS_KEY_ID
 
-- AWS_ACCESS_KEY_ID
+        - AWS_SECRET_ACCESS_KEY
 
-- AWS_SECRET_ACCESS_KEY
-
-- SENDGRID_API_KEY
-
+        - SENDGRID_API_KEY
+    ```
 
 5. In the settings.py I have added the following syntax in order to run different code depending on if the project is in development or production mode.
 
@@ -1059,7 +1061,7 @@ Finally, my mentor Guido suggested me to use SendGrid to send the reset-password
     ```pip install dj-database-url```
 
 
-* I will also need to import dj-database-url in the settings.py file
+    * I will also need to import dj-database-url in the settings.py file
 
 18. Since the database is Postgres I also had to install the psycopg2 package.
 
@@ -1252,76 +1254,75 @@ Finally, my mentor Guido suggested me to use SendGrid to send the reset-password
 I did this because before I was running collecstatic every time I updated to styles.css file and a consequence, I end up using up all my free tier allowance on S3.
 
 
-    ```
+        ```
 
-    # in development we keep the files locally
+        # in development we keep the files locally
 
-    if development==True:
-
-
-        # we need a static root. All static files will be in the static directory
-
-        STATIC_URL = '/static/'
-
-        STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
-
-        STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+        if development==True:
 
 
-        # we need a media root. All media will be in the media directory
+            # we need a static root. All static files will be in the static directory
 
-        MEDIA_URL = '/media/'
+            STATIC_URL = '/static/'
 
-        MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+            STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 
-
-    # in production we use AWS S3 to host the media and static files
-
-    else:
-
-        # variables and keys needed in order to set up the connection with AWS S3
-
-        AWS_S3_OBJECT_PARAMETERS = {
-
-        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-
-        'CacheControl': 'max-age=94608000'
-
-        }
+            STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
-        AWS_STORAGE_BUCKET_NAME = 'tree-books'
+            # we need a media root. All media will be in the media directory
 
-        AWS_S3_REGION_NAME = 'eu-west-3'
+            MEDIA_URL = '/media/'
 
-        AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
-
-        AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+            MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-        AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+        # in production we use AWS S3 to host the media and static files
+
+        else:
+
+            # variables and keys needed in order to set up the connection with AWS S3
+
+            AWS_S3_OBJECT_PARAMETERS = {
+
+            'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+
+            'CacheControl': 'max-age=94608000'
+
+            }
 
 
-        STATICFILES_LOCATION = 'static'
+            AWS_STORAGE_BUCKET_NAME = 'tree-books'
 
-        STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+            AWS_S3_REGION_NAME = 'eu-west-3'
 
+            AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
 
-        STATIC_URL = '/static/'
-
-        STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
-
-
-        MEDIAFILES_LOCATION = 'media'
-
-        DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+            AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 
 
-        MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+            AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
-        MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 
-    ```
+            STATICFILES_LOCATION = 'static'
+
+            STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+
+
+            STATIC_URL = '/static/'
+
+            STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+
+
+            MEDIAFILES_LOCATION = 'media'
+
+            DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+
+
+            MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+            MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+            ```
 
 
 ### Deployment
@@ -1370,16 +1371,14 @@ Once the website was working correctly I have deployed to Heroku following the s
 
 ### My repository
 
-
 https://github.com/elenasacristan/treebooks
 
 
 ### My deployed app
 
-
 https://treebooksproject.herokuapp.com/
 
-
+---
 ## Credits
 
 
@@ -1468,7 +1467,7 @@ https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_Amazon_Rainforest.jpg
 
 
 
-
+---
 ## Acknowledgements
 
 
@@ -1516,7 +1515,7 @@ http://bl.ocks.org/d3noob/9150014
 
 - **modulus in Django**
 Since in Django I couldn't use the modulus operator I found how to get the same result by checking if loop counter is divisible by 2. I found this information in the following post:
-https://stackoverflow.com/questions/8494209/modulus-in-django-template-->
+https://stackoverflow.com/questions/8494209/modulus-in-django-template
 
 - **Q object**
 I needed to create a query with an OR statement and this is when I learnt about the Q object. See link below:
@@ -1547,8 +1546,8 @@ I used the code in the link below as a reference in order to create the horizont
     https://stackoverflow.com/questions/18188952/scroll-on-hover-click-for-speed
 
 
-
-* As always, the slack community was very helpful when I had a question.
+---
+- As always, the slack community was very helpful when I had a question.
 
 - The Tutors were great, they always replied very quickly to all my doubts. When I changed database and I had the problem with the waiting list, they were suggesting ways to find out what was the issue and in the end one of their emails made me go in the right direction and I found the solution.
 
