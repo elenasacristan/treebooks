@@ -960,7 +960,7 @@ Finally, my mentor Guido suggested me to use SendGrid to send the reset-password
 
     else:
 
-        evelopment = False
+        development = False
     ```
 
 
