@@ -49,7 +49,7 @@ DEBUG = development
 
 
 # We need to add to allowed host the link to the app in Heroku
-ALLOWED_HOSTS = ['127.0.0.1', 'treebooksproject.herokuapp.com', 'web-production-a042.up.railway.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'treebooksproject.herokuapp.com', 'treebooks.up.railway.app/']
 
 
 # Application definition
