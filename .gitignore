@@ -1,6 +1,6 @@
 notas.txt
 env.py
-.venv/
+vir_env/
 .vscode/
 *.sqlite3
 __pycache__
@@ -14,3 +14,4 @@ checklist.xlsx
 my_project.dot
 staticfiles/
 others
+treebokks notes.txt

@@ -1,10 +1,10 @@
-from django.conf.urls import url
+from django.urls import path
 from .views import index, about, donate, projects, contact
 
 urlpatterns = [
-    url(r'^about/$', about, name='about'),
-    url(r'^donate/$', donate, name='donate'),
-    url(r'^projects/$', projects, name='projects'),
-    url(r'^contact/$', contact, name='contact'),
+    path('about/', about, name='about'),
+    path('donate/', donate, name='donate'),
+    path('projects/', projects, name='projects'),
+    path('contact/', contact, name='contact'),
 ]
 

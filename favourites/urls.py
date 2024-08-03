@@ -1,6 +1,6 @@
-from django.conf.urls import url
+from django.urls import path
 from .views import add_remove_favourites
 
 urlpatterns = [
-    url(r'^addremove/(?P<id>\d+)$', add_remove_favourites, name='add_remove_favourites'),
+    path('addremove/<int:id>/', add_remove_favourites, name='add_remove_favourites'),
 ]

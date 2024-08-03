@@ -1,6 +1,6 @@
-from django.conf.urls import url
+from django.urls import path
 from .views import add_review
 
 urlpatterns = [
-url (r'^(?P<pk>\d+)/$', add_review, name='add_review'),
+path('<int:pk>/', add_review, name='add_review'),
 ]
